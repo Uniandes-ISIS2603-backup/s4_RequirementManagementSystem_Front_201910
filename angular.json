@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "sXXX_ZZZ-Front": {
+        "s4_requirement-Front": {
             "root": "",
             "sourceRoot": "src",
             "projectType": "application",
@@ -55,18 +55,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "sXXX_ZZZ-Front:build"
+                        "browserTarget": "s4_requirement-Front:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "sXXX_ZZZ-Front:build:production"
+                            "browserTarget": "s4_requirement-Front:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "sXXX_ZZZ-Front:build"
+                        "browserTarget": "s4_requirement-Front:build"
                     }
                 },
                 "test": {
@@ -101,7 +101,7 @@
                 }
             }
         },
-        "sXXX_ZZZ-Front-e2e": {
+        "s4_requirement-Front-e2e": {
             "root": "e2e",
             "sourceRoot": "e2e",
             "projectType": "application",
@@ -110,7 +110,7 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "./protractor.conf.js",
-                        "devServerTarget": "sXXX_ZZZ-Front:serve"
+                        "devServerTarget": "s4_requirement-Front:serve"
                     }
                 },
                 "lint": {
@@ -127,7 +127,7 @@
             }
         }
     },
-    "defaultProject": "sXXX_ZZZ-Front",
+    "defaultProject": "s4_requirement-Front",
     "schematics": {
         "@schematics/angular:component": {
             "prefix": "app",
