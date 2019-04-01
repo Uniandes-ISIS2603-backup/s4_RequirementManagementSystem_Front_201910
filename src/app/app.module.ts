@@ -14,7 +14,9 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 
+import {CasodeusoModule} from './casodeuso/casodeuso.module';
 
+import {CondicionModule} from './condicion/condicion.module';
 
 
 
@@ -31,6 +33,8 @@ import {AuthModule} from './auth/auth.module';
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,
+        CasodeusoModule,
+        CondicionModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',
