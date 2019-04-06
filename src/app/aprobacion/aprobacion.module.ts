@@ -8,6 +8,7 @@ import { DetailAprobacionComponent } from './detail-aprobacion/detail-aprobacion
   imports: [
     CommonModule
   ],
-  declarations: [CreateAprobacionComponent, ListarAprobacionComponent, DetailAprobacionComponent]
+  declarations: [CreateAprobacionComponent, ListarAprobacionComponent, DetailAprobacionComponent],
+  exports: [CreateAprobacionComponent]
 })
 export class AprobacionModule { }
