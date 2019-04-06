@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from './auth/auth.service';
-
 /**
  * The app component. This component is the base of s4_requirement-Front
  */
