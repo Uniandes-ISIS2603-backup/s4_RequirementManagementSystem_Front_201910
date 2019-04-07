@@ -39,7 +39,7 @@ import {AuthModule} from './auth/auth.module';
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
         NgbModule,
-        InicioModule
+        InicioModule,
     ],
     bootstrap: [AppComponent],
     providers: [
