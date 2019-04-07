@@ -1,0 +1,122 @@
+<!--Template para el Typeahead de los authors-->
+<ng-template #rt let-r="result" let-t="term">
+    <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+</ng-template>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h2 class="text-center">Edit a book</h2>
+            <br>
+            <form name="book" (ngSubmit)="f.form.valid && updateBook()" #f="ngForm" novalidate>
+                  <div class="row">
+                    <div class="col-md-3">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{book.image}}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="bookName"><b>Name</b></label>
+                            <input type="text" name="bookName" class="form-control" id="bookName" [(ngModel)]="book.name"
+                                   #bookName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && bookName.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>The book's name is missing</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookPublishDate"><b>Publication date</b></label>
+                            <div [ngClass]="{ 'is-invalid': f.submitted && bookPublishDate.invalid }">
+                                <input class="form-control" id="bookPublishDate" name="bookPublishDate" [(ngModel)]="book.publishingdate"
+                                   ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #bookPublishDate="ngModel" [ngClass]="{'is-invalid': f.submitted && (bookPublishDate.untouched || bookPublishDate.invalid) }"
+                                   required>
+                                   <div class="invalid-feedback">
+                                    <div>The book's publication date is missing</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookDescription"><b>Description</b></label>
+                            <textarea name="bookDescription" class="form-control" id="bookDescription" [(ngModel)]="book.description"
+                                      #bookDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && bookDescription.invalid }"
+                                      required></textarea>
+                            <div class="invalid-feedback">
+                                <div>The book's description is missing</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookISBN"><b>ISBN</b></label>
+                            <input type="text" name="bookISBN" class="form-control" id="bookISBN" [(ngModel)]="book.isbn"
+                                   #bookISBN="ngModel" [ngClass]="{ 'is-invalid': f.submitted && bookISBN.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>The book's ISBN is missing</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookImage"><b>Image</b></label>
+                            <input type="text" name="authorImage" class="form-control" id="bookImage" [(ngModel)]="book.image"
+                                   #bookImage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && bookImage.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>The book's image is missing</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookEditorial"><b>Editorial</b></label>
+                            <select class="custom-select" name="bookEditorial" id="bookEditorial" [(ngModel)]="book.editorial.id"
+                                    #bookEditorial="ngModel" [ngClass]="{ 'is-invalid': f.submitted && bookEditorial.invalid }"
+                                    required>
+                                    <option [value]="editorial.id" *ngFor="let editorial of editorials">{{editorial.name}}</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <div>The book's editorial is missing</div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <h4>{{book.name}}'s Authors: </h4>
+                        <div class="row">
+                            <div class="col-md-9"> <input id="typeahead-template" type="text" class="form-control" [(ngModel)]="model" [ngModelOptions]="{standalone: true}" [ngbTypeahead]="search" 
+                                                          (focus)="focus$.next($event.target.value)" (click)="click$.next($event.target.value)" #instance="ngbTypeahead"
+                                                          [resultTemplate]="rt" [inputFormatter]="formatter" />
+                            </div>
+                            <button type="button" (click)="addAuthor()" class="btn btn-primary"><span class="fa fa-plus"></span></button>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6 text-center" >
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr *ngFor = "let author of book.authors" >
+                                            <td> <dd>{{author.name}}</dd></td>
+                                    <td id="author-delete">
+                                        <button class="btn btn-danger" (click)="removeAuthor(author)"><span class="fa fa-trash"></span></button>
+                                    </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row form-inline justify-content-center ">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+
+                    <div class="divider"></div>
+
+                    <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>

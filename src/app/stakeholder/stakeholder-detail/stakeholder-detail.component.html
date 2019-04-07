@@ -1,0 +1,74 @@
+<div class="panel panel-default"> 
+    <div>
+        <div class="border margin">
+            <p class="h3 p-3">{{bookDetail.name}}</p> 
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="thumb">
+                                <img class="img-fluid" src="{{bookDetail.image}}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <br>
+                        <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+                            <button class="btn btn-primary text-center" routerLink="/books/{{bookDetail.id}}/edit">Edit</button>
+                            <div class="divider"></div>
+                            <button class="btn btn-danger text-center" (click)="deleteBook()"><span class="fa fa-trash"></span></button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <dl>  
+                        <hr>
+                        <dt> Authors</dt>                      
+                        <div *ngFor = "let author of bookDetail.authors">
+                            <dd class="caption" routerLink="/authors/{{author.id}}">{{author.name}}</dd>
+                        </div>
+                        <hr>
+                        <dt> ISBN</dt>
+                        <dd>{{bookDetail.isbn}}</dd>
+                        <hr>
+                        <dt>Publishing Date</dt>
+                        <dd>{{bookDetail.publishingdate| date:'yyyy-MM-dd'}}</dd>
+                        <hr>
+                        <dt class="bold">Editorial</dt>
+                        <dd class="caption" routerLink="/editorials/{{bookDetail.editorial.id}}">{{bookDetail.editorial.name}}</dd>
+                        <hr>
+                        <dt class="bold">Description</dt>
+                        <dd>{{bookDetail.description}}</dd>
+                    </dl>
+                    <div >
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p *ngIf="bookDetail.reviews.length > 0">
+                                    <button type="button" class="btn" [ngClass]="{ 'btn-primary': reviewListComponent.isCollapsed,'btn-outline-primary':!reviewListComponent.isCollapsed}" (click)="toggleReviews()">
+                                            Reviews of the book
+                                </button>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <button type="button" class="btn" [ngClass]="{ 'btn-primary': reviewAddComponent.isCollapsed,'btn-outline-primary':!reviewAddComponent.isCollapsed}" (click)="toggleCreateReview()">
+                                        Create a Review
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <app-book-reviews [bookReviews]="bookDetail.reviews"></app-book-reviews>
+            <app-book-add-review [book]="bookDetail" (updateReviews)="updateReviews()"></app-book-add-review>
+            <br>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="row border margin">
+    <p class="h3 p-3">Other books you may like</p>
+    <app-book-list [books]="other_books"></app-book-list>
+</div>
+

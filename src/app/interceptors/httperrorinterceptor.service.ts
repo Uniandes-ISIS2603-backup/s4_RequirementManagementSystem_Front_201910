@@ -4,7 +4,7 @@ import {
     HttpHandler,
     HttpRequest,
     HttpErrorResponse
-} from '@angular/common/http';
+} from '../stakeholder/stakeholder-edit/node_modules/@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
