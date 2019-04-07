@@ -13,6 +13,10 @@ import { InicioModule } from './inicio/inicio.module';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import { ListarObjetivosComponent } from './listar-objetivos/listar-objetivos.component';
+import { MostrarObjetivoComponent } from './mostrar-objetivo/mostrar-objetivo.component';
+import { ListarRequisitosComponent } from './listar-requisitos/listar-requisitos.component';
+
 
 
 
@@ -21,7 +25,10 @@ import {AuthModule} from './auth/auth.module';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        ListarRequisitosComponent,
+        ListarObjetivosComponent,
+        MostrarObjetivoComponent
     ],
     imports: [
         BrowserModule,
@@ -39,7 +46,8 @@ import {AuthModule} from './auth/auth.module';
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
         NgbModule,
-        InicioModule
+        InicioModule,
+        
     ],
     bootstrap: [AppComponent],
     providers: [
