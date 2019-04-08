@@ -28,20 +28,14 @@ export class CambioDetailComponent implements OnInit {
   }
 
     ngOnInit() {
-      /*
+      
     this.cambio_id = +this.route.snapshot.paramMap.get('id');
     console.log("detail: ", this.cambio_id);
     if (this.cambio_id) {
       this.cambioDetail = new CambioDetail();
       this.getCambioDetail();
-    }*/
-   /*
-    this.route.params.subscribe(routeParams=>{
-      this.cambioService.getCambioDetail(routeParams.id).subscribe(cls=>{
-        console.log("detail: ", this.cambioDetail);
-        this.cambioDetail = cls;
-      })
-    })*/
+    }
+ 
     console.log("Detail:  ", this.cambioDetail)
 
     }
