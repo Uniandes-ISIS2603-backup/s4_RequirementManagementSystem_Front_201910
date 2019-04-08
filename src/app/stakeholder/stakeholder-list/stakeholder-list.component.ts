@@ -1,10 +1,10 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
 
-import {Stakeholder} from '../../Stakeholder/Stakeholder';
-import {StakeholderService} from '../../Stakeholder/Stakeholder.service';
+import { Stakeholder } from '../../Stakeholder/Stakeholder';
+import { StakeholderService } from '../../Stakeholder/Stakeholder.service';
 @Component({
     selector: 'app-Stakeholder-list',
     templateUrl: './Stakeholder-list.component.html',
@@ -20,7 +20,7 @@ export class StakeholderListComponent implements OnInit {
     /**
     * Constructor
     */
-    constructor(private StakeholderService: StakeholderService, private route: ActivatedRoute) {}
+    constructor(private StakeholderService: StakeholderService, private route: ActivatedRoute) { }
 
     allStakeholders: string = 'no';
 
@@ -38,19 +38,8 @@ export class StakeholderListComponent implements OnInit {
     * Inicializacion del componente
     */
     ngOnInit() {
-        this.route.queryParams
-            .filter(params => params.allStakeholders)
-            .subscribe(params => {
-                console.log(params);
-
-                this.allStakeholders = params.allStakeholders;
-                console.log(this.allStakeholders);
-            });
-        if (this.allStakeholders == 'yes') {
-            console.log("allStakeholders");
-
-            this.getStakeholders();
-        }
+        this.getStakeholders();
     }
-
 }
+
+
