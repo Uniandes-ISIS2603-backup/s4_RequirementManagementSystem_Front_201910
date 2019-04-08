@@ -6,6 +6,7 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import {ListarInicioComponent} from '../inicio/listar-inicio/listar-inicio.component';
+import { ListarCambioComponent } from '../cambio/listar-cambio/listar-cambio.component';
 
 const routes: Routes = [
 
@@ -40,7 +41,17 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'home',
+        redirectTo: 'home'
+    },
+    {
+        path: 'cambio',
+        children: [
+            {
+                path: 'list',
+                component: ListarCambioComponent,
+                outlet: "inicio"
+            }
+        ]
     }
 ];
 

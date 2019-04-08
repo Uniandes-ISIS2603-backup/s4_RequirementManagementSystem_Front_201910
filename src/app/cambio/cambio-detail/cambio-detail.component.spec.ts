@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailCambioComponent } from './detail-cambio.component';
+import { CambioDetailComponent } from './cambio-detail.component';
 
-describe('DetailCambioComponent', () => {
-  let component: DetailCambioComponent;
-  let fixture: ComponentFixture<DetailCambioComponent>;
+describe('CambioDetailComponent', () => {
+  let component: CambioDetailComponent;
+  let fixture: ComponentFixture<CambioDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailCambioComponent ]
+      declarations: [ CambioDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailCambioComponent);
+    fixture = TestBed.createComponent(CambioDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

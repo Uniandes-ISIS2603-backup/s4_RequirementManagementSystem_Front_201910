@@ -1,3 +1,45 @@
-<p>
-  listar-cambio works!
-</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>#</th>
+            <th>Tipo</th>
+            <th>Autor</th>
+            <th>Organización</th>
+            <th>Fecha y Hora</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let i of cambios">
+						<td >
+							<p class="figure-caption">{{i.id}}</p>
+						</td>
+            <td style="cursor: pointer;">
+								<a class="figure-caption" (click)="onSelected(i.id)">{{i.tipo}}</a>
+            </td>
+            <td >
+							<p class="figure-caption">{{i.autor}}</p>
+						</td>
+            <td >
+							<p class="figure-caption">{{i.organizacion}}</p>
+            </td>
+            <td>
+              <p class="figure-caption" >{{i.fechaYHora}}</p>
+          </td>
+					</tr>
+				</tbody>
+      </table>
+		</div>
+		<div class="col">
+				<div *ngIf="selectedCambio">
+						<app-cambio-detail [cambioDetail]="selectedCambio"> </app-cambio-detail>
+					</div>
+		</div>
+	</div>
+	</div>
+
+
+
+ 

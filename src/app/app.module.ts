@@ -13,6 +13,7 @@ import { InicioModule } from './inicio/inicio.module';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import { CambioModule } from './cambio/cambio.module';
 
 
 
@@ -39,7 +40,8 @@ import {AuthModule} from './auth/auth.module';
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
         NgbModule,
-        InicioModule
+        InicioModule,
+        CambioModule
     ],
     bootstrap: [AppComponent],
     providers: [
