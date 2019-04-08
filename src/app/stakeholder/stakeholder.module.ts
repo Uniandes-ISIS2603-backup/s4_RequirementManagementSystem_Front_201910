@@ -8,10 +8,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 
 import {StakeholderListComponent} from './stakeholder-list/Stakeholder-list.component';
-import {StakeholderReviewComponent} from './Stakeholder-reviews/Stakeholder-review.component';
 import {StakeholderCreateComponent} from './Stakeholder-create/Stakeholder-create.component';
 import {StakeholderDetailComponent} from './stakeholder-detail/stakeholder-detail.component';
-import {StakeholderAddReviewComponent} from './Stakeholder-add-review/Stakeholder-add-review.component';
 import {StakeholderEditComponent} from './stakeholder-edit/Stakeholder-edit.component';
 
 import {StakeholderService} from './stakeholder.service';
@@ -28,7 +26,7 @@ import {StakeholderService} from './stakeholder.service';
         NgxPermissionsModule
     ],
     declarations: [
-        StakeholderListComponent, StakeholderDetailComponent, StakeholderReviewComponent, StakeholderCreateComponent, StakeholderAddReviewComponent, StakeholderEditComponent
+        StakeholderListComponent, StakeholderDetailComponent, StakeholderCreateComponent, StakeholderEditComponent
     ],
     providers: [StakeholderService],
     exports: [StakeholderListComponent, StakeholderEditComponent]

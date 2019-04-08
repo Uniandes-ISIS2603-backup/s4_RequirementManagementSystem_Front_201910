@@ -1,5 +1,5 @@
-import {Injectable} from './stakeholder-edit/node_modules/@angular/core';
-import {Observable} from './stakeholder-edit/node_modules/rxjs';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 import {Stakeholder} from './stakeholder';

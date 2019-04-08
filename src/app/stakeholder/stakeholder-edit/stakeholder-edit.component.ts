@@ -1,10 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {DatePipe} from '@angular/common';
 import {Router, ActivatedRoute} from '@angular/router';
-import {NgbTypeahead} from '@ng-bootstrap/ng-bootstrap';
-import {Observable, Subject, merge} from 'rxjs';
-import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
-import {ToastrService} from 'ngx-toastr'
 
 import {StakeholderService} from '../stakeholder.service';
 
@@ -28,9 +24,7 @@ export class StakeholderEditComponent implements OnInit {
     * @param route The route which helps to retrieves the id of the Stakeholder to be shown
     */
     constructor(
-        private dp: DatePipe,
         private StakeholderService: StakeholderService,
-        private toastrService: ToastrService,
         private router: Router,
         private route: ActivatedRoute
     ) {}
@@ -42,12 +36,7 @@ export class StakeholderEditComponent implements OnInit {
     Stakeholder: Stakeholder
 
     Stakeholder_id: number;
-
-
-    @ViewChild('instance') instance: NgbTypeahead;
-    focus$ = new Subject<string>();
-    click$ = new Subject<string>();
-
+    
 /*     search = (text$: Observable<string>) => {
         const debouncedText$ = text$.pipe(debounceTime(200), distinctUntilChanged());
         const clicksWithClosedPopup$ = this.click$.pipe(filter(() => !this.instance.isPopupOpen()));
@@ -74,7 +63,6 @@ export class StakeholderEditComponent implements OnInit {
     * Cancela edicion del Stakeholder
     */
     cancelEdition(): void {
-        this.toastrService.warning('The Stakeholder wasn\'t edited', 'Stakeholder edition');
         this.router.navigate(['/Stakeholders/list']);
     }
 
@@ -107,7 +95,6 @@ export class StakeholderEditComponent implements OnInit {
         this.StakeholderService.updateStakeholder(this.Stakeholder)
             .subscribe(() => {
                 this.router.navigate(['/Stakeholders/' + this.Stakeholder.id]);
-                this.toastrService.success("The Stakeholder was successfully edited", 'Stakeholder edition');
             });
     }
 
