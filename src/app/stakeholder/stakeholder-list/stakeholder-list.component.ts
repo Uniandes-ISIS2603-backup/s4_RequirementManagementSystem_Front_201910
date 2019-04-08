@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {ActivatedRoute} from 'src/app/stakeholder/stakeholder-create/node_modules/@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import 'rxjs/add/operator/filter';
 
 

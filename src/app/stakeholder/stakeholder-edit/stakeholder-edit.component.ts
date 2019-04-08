@@ -1,14 +1,14 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {DatePipe} from '@angular/common';
-import {Router, ActivatedRoute} from 'src/app/stakeholder/stakeholder-detail/node_modules/src/app/stakeholder/organizacion-list/node_modules/@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 import {NgbTypeahead} from '@ng-bootstrap/ng-bootstrap';
 import {Observable, Subject, merge} from 'rxjs';
 import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
-import {ToastrService} from 'src/app/stakeholder/stakeholder-detail/node_modules/src/app/stakeholder/stakeholder-create/node_modules/ngx-toastr';
+import {ToastrService} from 'ngx-toastr'
 
 import {StakeholderService} from '../stakeholder.service';
 
-import {Stakeholder} from '../stakeholder-detail';
+import {Stakeholder} from '../stakeholder';
 
 @Component({
     selector: 'app-Stakeholder-edit',

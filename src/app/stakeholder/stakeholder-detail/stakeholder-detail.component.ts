@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
-import {ActivatedRoute, Router, NavigationEnd} from 'src/app/stakeholder/stakeholder-list/node_modules/@angular/router';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
-import {ToastrService} from 'src/app/stakeholder/stakeholder-create/node_modules/ngx-toastr';
+import {ToastrService} from 'ngx-toastr';
 
 import {StakeholderService} from '../stakeholder.service';
 import {Stakeholder} from '../stakeholder';
@@ -58,32 +58,6 @@ export class StakeholderDetailComponent implements OnInit, OnDestroy {
     */
     navigationSubscription;
 
-
-    /**
-     * The child StakeholderReviewListComponent
-     */
-    @ViewChild(StakeholderReviewComponent) reviewListComponent: StakeholderReviewComponent;
-
-    /**
-     * The child StakeholderReviewListComponent
-     */
-    @ViewChild(StakeholderAddReviewComponent) reviewAddComponent: StakeholderAddReviewComponent;
-
-    toggleReviews(): void {
-        if (this.reviewAddComponent.isCollapsed == false) {
-            this.reviewAddComponent.isCollapsed = true;
-        }
-        this.reviewListComponent.isCollapsed = !this.reviewListComponent.isCollapsed;
-    }
-
-    toggleCreateReview(): void {
-        if (this.reviewListComponent.isCollapsed == false) {
-            this.reviewListComponent.isCollapsed = true;
-        }
-        this.reviewAddComponent.isCollapsed = !this.reviewAddComponent.isCollapsed;
-    }
-
-
     /**
     * The method which retrieves the details of the Stakeholder that
     * we want to show
@@ -104,16 +78,6 @@ export class StakeholderDetailComponent implements OnInit, OnDestroy {
                 this.other_Stakeholders = Stakeholders;
                 this.other_Stakeholders = this.other_Stakeholders.filter(Stakeholder => Stakeholder.id !== this.Stakeholder_id);
             });
-    }
-
-    /**
-     * The function called when a review is posted, so that the child component can refresh the list
-     */
-    updateReviews(): void {
-        this.getStakeholder();
-        this.reviewListComponent.updateReviews(this.Stakeholder.reviews);
-        this.reviewListComponent.isCollapsed = false;
-        this.reviewAddComponent.isCollapsed = true;
     }
 
     /**
