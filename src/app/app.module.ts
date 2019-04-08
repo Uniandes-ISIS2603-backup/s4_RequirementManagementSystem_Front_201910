@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ToastrModule} from 'ngx-toastr';
-import {HttpClientModule, HTTP_INTERCEPTORS} from './stakeholder/stakeholder-edit/node_modules/@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {NgxPermissionsModule} from 'ngx-permissions';
