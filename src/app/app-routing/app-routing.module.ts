@@ -7,7 +7,6 @@ import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import {ListarInicioComponent} from '../inicio/listar-inicio/listar-inicio.component';
 import { ListarCambioComponent } from '../cambio/listar-cambio/listar-cambio.component';
-import { CreateCambioComponent } from '../cambio/create-cambio/create-cambio.component';
 
 const routes: Routes = [
 
@@ -51,11 +50,6 @@ const routes: Routes = [
                 path: 'list',
                 component: ListarCambioComponent,
                 outlet: "inicio"
-            },
-
-            {
-                path: 'add',
-                component: CreateCambioComponent
             }
         ]
     }
