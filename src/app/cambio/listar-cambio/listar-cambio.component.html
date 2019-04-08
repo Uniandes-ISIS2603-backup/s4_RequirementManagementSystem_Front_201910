@@ -17,7 +17,7 @@
 							<p class="figure-caption">{{i.id}}</p>
 						</td>
             <td style="cursor: pointer;">
-								<a class="figure-caption">{{i.tipo}}</a>
+								<a class="figure-caption" (click)="onSelected(i.id)">{{i.tipo}}</a>
             </td>
             <td >
 							<p class="figure-caption">{{i.autor}}</p>
@@ -33,6 +33,9 @@
       </table>
 		</div>
 		<div class="col">
+				<div *ngIf="selectedCambio">
+						<app-cambio-detail [cambioDetail]="selectedCambio"> </app-cambio-detail>
+					</div>
 		</div>
 	</div>
 	</div>

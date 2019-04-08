@@ -6,6 +6,7 @@ import { CambioDetail } from './cambio-detail';
 
 const API_URL = "../../assets/";
 const data = 'cambio.json';
+const cambio = '/cambio';
 
 @Injectable()
 export class CambioService {
@@ -17,10 +18,13 @@ constructor(private http: HttpClient) { }
   }
 
   getCambioDetail(cambioId:number): Observable<CambioDetail> {
-    console.log(cambioId+" "+API_URL + "cambio-" + cambioId+".json");
-      return this.http.get<CambioDetail>(API_URL + "cambio-" + cambioId+".json");
+    //console.log(cambioId+" "+API_URL + "cambio-" + cambioId+".json");
+    return this.http.get<CambioDetail>(API_URL + "cambio-" + cambioId+".json");
   }
 
+  createCambio(cambio): Observable<Cambio> {
+    return this.http.post<Cambio>(API_URL + cambio, cambio);
+}
 
 }
 
