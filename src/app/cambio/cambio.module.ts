@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule, AppRoutingModule, FormsModule
   ],
-  declarations: [CreateCambioComponent, ListarCambioComponent, CambioDetailComponent],
+  declarations: [ ListarCambioComponent, CambioDetailComponent],
   providers: [CambioService],
-  exports: [ListarCambioComponent, CambioDetailComponent, CreateCambioComponent]
+  exports: [ListarCambioComponent, CambioDetailComponent]
 })
 export class CambioModule { }
