@@ -14,10 +14,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { CambioModule } from './cambio/cambio.module';
-
-
-
-
+import { CasodeusoModule } from './casodeuso/casodeuso.module';
 
 
 @NgModule({
@@ -41,7 +38,8 @@ import { CambioModule } from './cambio/cambio.module';
         NgxPermissionsModule.forRoot(),
         NgbModule,
         InicioModule,
-        CambioModule
+        CambioModule,
+        CasodeusoModule
     ],
     bootstrap: [AppComponent],
     providers: [
