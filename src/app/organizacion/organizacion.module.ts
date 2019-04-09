@@ -7,10 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPermissionsModule } from 'ngx-permissions';
 
-import { CreateStakeholderComponent } from './create-stakeholder/create-stakeholder.component';
-import { ListarStakeholderComponent } from './listar-stakeholder/listar-stakeholder.component';
-import { EliminarStakeholderComponent } from './eliminar-stakeholder/eliminar-stakeholder.component';
-import { StakeholderService } from './stakeholder.service';
+import { CreateOrganizacionComponent } from './create-organizacion/create-organizacion.component';
+import { ListarOrganizacionComponent } from './listar-organizacion/listar-organizacion.component';
+import { EliminarOrganizacionComponent } from './eliminar-organizacion/eliminar-organizacion.component';
+import { OrganizacionService } from './organizacion.service';
 
 @NgModule({
   imports: [
@@ -23,8 +23,8 @@ import { StakeholderService } from './stakeholder.service';
     ReactiveFormsModule,
     NgxPermissionsModule
   ],
-  declarations: [CreateStakeholderComponent, ListarStakeholderComponent, EliminarStakeholderComponent],
-  providers: [StakeholderService],
-  exports: [CreateStakeholderComponent, ListarStakeholderComponent, EliminarStakeholderComponent]
+  declarations: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent],
+  providers: [OrganizacionService],
+  exports: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent]
 })
-export class StakeholderModule { }
+export class OrganizacionModule { }
