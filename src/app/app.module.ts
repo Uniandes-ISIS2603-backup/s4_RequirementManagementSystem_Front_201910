@@ -14,12 +14,9 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { CambioModule } from './cambio/cambio.module';
-<<<<<<< HEAD
 import { CasodeusoModule } from './casodeuso/casodeuso.module';
-=======
-import {StakeholderModule} from './stakeholder/stakeholder.module'
-import {OrganizacionModule} from './organizacion/organizacion.module'
->>>>>>> origin/master
+import {StakeholderModule} from './stakeholder/stakeholder.module';
+import {OrganizacionModule} from './organizacion/organizacion.module';
 
 
 @NgModule({
@@ -44,12 +41,9 @@ import {OrganizacionModule} from './organizacion/organizacion.module'
         NgbModule,
         InicioModule,
         CambioModule,
-<<<<<<< HEAD
-        CasodeusoModule
-=======
+        CasodeusoModule,
         StakeholderModule,
         OrganizacionModule
->>>>>>> origin/master
     ],
     bootstrap: [AppComponent],
     providers: [
