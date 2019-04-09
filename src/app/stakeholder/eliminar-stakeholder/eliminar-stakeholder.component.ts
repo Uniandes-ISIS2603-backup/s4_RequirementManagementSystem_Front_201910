@@ -13,6 +13,7 @@ export class EliminarStakeholderComponent implements OnInit {
   constructor(private StakeholderService: StakeholderService, private route: ActivatedRoute) { }
 
   idStakeholder:number;
+  
   /**
   * Eliminare un stakeholder
   */

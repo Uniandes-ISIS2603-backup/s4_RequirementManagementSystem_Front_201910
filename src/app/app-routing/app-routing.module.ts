@@ -10,6 +10,7 @@ import { ListarCambioComponent } from '../cambio/listar-cambio/listar-cambio.com
 import { ListarStakeholderComponent } from '../stakeholder/listar-stakeholder/listar-stakeholder.component';
 import { CreateStakeholderComponent } from '../stakeholder/create-stakeholder/create-stakeholder.component';
 import { EliminarStakeholderComponent } from '../stakeholder/eliminar-stakeholder/eliminar-stakeholder.component';
+import { UpdateStakeholderComponent } from '../stakeholder/update-stakeholder/update-stakeholder.component';
 import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion/listar-organizacion.component';
 import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
 import { EliminarOrganizacionComponent } from '../organizacion/eliminar-organizacion/eliminar-organizacion.component';
@@ -75,6 +76,11 @@ const routes: Routes = [
             {
                 path: 'eliminar',
                 component: EliminarStakeholderComponent,
+                outlet: "inicio"
+            },
+            {
+                path: 'update',
+                component: UpdateStakeholderComponent,
                 outlet: "inicio"
             }
         ]

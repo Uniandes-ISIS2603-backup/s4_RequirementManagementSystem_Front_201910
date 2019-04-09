@@ -1,4 +1,4 @@
-<h2 class="mainTitle">Agregar Organizacion</h2>
+<h2 class="mainTitle">Actualizar un Stakeholder</h2>
 <div class="container-fluid">
   <div class="col-md-2">
       <table class="table table-striped">
@@ -12,18 +12,19 @@
           </thead>
           <tbody>
                 <td>
-                  <input type="number" [(ngModel)] = "organizacion.id" required>
+                  <input type="number" [(ngModel)] = "stakeholder.id" required>
                 </td>
                 <td>
-                  <input type="String"[(ngModel)] = "organizacion.nombre" required>
+                  <input type="String"[(ngModel)] = "stakeholder.nombre" required>
                 </td>
                 <td>
-                  <input type="String"[(ngModel)] = "organizacion.tipo" required>
+                  <input type="String"[(ngModel)] = "stakeholder.tipo" required>
                 </td>
                 <td>
-                  <input type="String"[(ngModel)] = "organizacion.organizacion" required>
+                  <input type="String"[(ngModel)] = "stakeholder.organizacion" required>
                 </td>
           </tbody>
       </table>
   </div>
-  <td><button class="btn btn-success" (click)="createOrganizacion()">Agregar</button></td>
+  <td><button class="btn btn-success" (click)="updateStakeholder()">Agregar</button></td>
+

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nombre": "Organizacion 1",
+    "sector": "Financiero"
+  },
+  {
+    "id": 2,
+    "nombre": "Organizacion 2",
+    "sector": "Tecnologico"
+
+  },
+  {
+    "id": 3,
+    "nombre": "Organizacion 3",
+    "sector": "Social"
+  }
+]

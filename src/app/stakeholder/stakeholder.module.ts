@@ -10,6 +10,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { CreateStakeholderComponent } from './create-stakeholder/create-stakeholder.component';
 import { ListarStakeholderComponent } from './listar-stakeholder/listar-stakeholder.component';
 import { EliminarStakeholderComponent } from './eliminar-stakeholder/eliminar-stakeholder.component';
+import { UpdateStakeholderComponent } from './update-stakeholder/update-stakeholder.component';
 import { StakeholderService } from './stakeholder.service';
 
 @NgModule({
@@ -23,8 +24,8 @@ import { StakeholderService } from './stakeholder.service';
     ReactiveFormsModule,
     NgxPermissionsModule
   ],
-  declarations: [CreateStakeholderComponent, ListarStakeholderComponent, EliminarStakeholderComponent],
+  declarations: [CreateStakeholderComponent, ListarStakeholderComponent, EliminarStakeholderComponent, UpdateStakeholderComponent],
   providers: [StakeholderService],
-  exports: [CreateStakeholderComponent, ListarStakeholderComponent, EliminarStakeholderComponent]
+  exports: [CreateStakeholderComponent, ListarStakeholderComponent, EliminarStakeholderComponent, UpdateStakeholderComponent]
 })
 export class StakeholderModule { }
