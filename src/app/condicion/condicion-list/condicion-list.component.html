@@ -5,7 +5,9 @@
 				<thead class="thead-dark">
 					<tr>
 						<th>id</th>
-            			<th>nombre</th>
+						<th>descripcion</th>
+						<th>seCumplio</th>
+						<th>esPrecondicion</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -14,7 +16,13 @@
 							<a class="figure-caption" (click)="onSelected(i.id)">{{i.id}}</a>
 						</td>
             			<td>
-							<p class="figure-caption">{{i.nombre}}</p>
+							<p class="figure-caption">{{i.descripcion}}</p>
+						</td>
+						<td>
+							<p class="figure-caption">{{i.seCumplio}}</p>
+						</td>
+						<td>
+							<p class="figure-caption">{{i.esPrecondicion}}</p>
             			</td>
 					</tr>
 				</tbody>
