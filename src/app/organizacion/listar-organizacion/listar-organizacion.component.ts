@@ -15,7 +15,7 @@ export class ListarOrganizacionComponent implements OnInit {
   /**
 * Lista de organizacions
 */
-  organizacions: Organizacion[];
+  organizaciones: Organizacion[];
 
   /**
    * Constructor
@@ -28,7 +28,7 @@ export class ListarOrganizacionComponent implements OnInit {
   getOrganizacions(): void {
     this.OrganizacionService.getOrganizacions()
       .subscribe(organizacions => {
-        this.organizacions = organizacions;
+        this.organizaciones = organizacions;
       });
   }
 

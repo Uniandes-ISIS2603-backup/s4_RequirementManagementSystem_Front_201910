@@ -3,24 +3,24 @@ import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
 
-import { Stakeholder } from '../../stakeholder/stakeholder';
-import { StakeholderService } from '../../stakeholder/stakeholder.service';
+import { Stakeholder } from '../stakeholder';
+import { StakeholderService } from '../stakeholder.service';
 @Component({
-  selector: 'app-create-stakeholder',
-  templateUrl: './create-stakeholder.component.html',
-  styleUrls: ['./create-stakeholder.component.css']
+  selector: 'app-update-stakeholder',
+  templateUrl: './update-stakeholder.component.html',
+  styleUrls: ['./update-stakeholder.component.css']
 })
-export class CreateStakeholderComponent implements OnInit {
+export class UpdateStakeholderComponent implements OnInit {
 
   stakeholder: Stakeholder;
 
   constructor(private StakeholderService: StakeholderService, private route: ActivatedRoute) { }
 
   /**
-  * Creates a new Stakeholder
+  * Actualiza un Stakeholder
   */
-   createStakeholder(): Stakeholder {
-    this.StakeholderService.createStakeholder(this.stakeholder).subscribe(Stakeholder => {
+   updateStakeholder(): Stakeholder {
+    this.StakeholderService.updateStakeholder(this.stakeholder).subscribe(Stakeholder => {
       this.stakeholder.id = Stakeholder.id;
       this.stakeholder.nombre = Stakeholder.nombre;
       this.stakeholder.organizacion = Stakeholder.organizacion;
