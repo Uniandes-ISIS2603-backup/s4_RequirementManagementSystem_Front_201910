@@ -15,6 +15,7 @@ const Stakeholders = '/stakeholder.json';
 @Injectable()
 export class StakeholderService {
 
+    values;
     /**
     * Constructor del servicio
     * @param http The HttpClient - This is necessary in order to perform requests
@@ -34,9 +35,9 @@ export class StakeholderService {
     * @param Stakeholder
     * @returns El Stakeholder creado, null si no se creo exitosamente
     */
-    createStakeholder(Stakeholder): Observable<Stakeholder> {
-        return this.http.post<Stakeholder>(API_URL + Stakeholders, Stakeholder);
-    }
+    createStakeholder(stakeholder): Observable<Stakeholder> {
+        return this.http.post<Stakeholder>(API_URL + Stakeholders, stakeholder);
+    } 
 
     /**
     * Returns the Observable object with the details of an author retrieved from the API
