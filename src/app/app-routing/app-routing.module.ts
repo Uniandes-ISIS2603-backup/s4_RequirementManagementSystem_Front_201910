@@ -14,6 +14,7 @@ import { EliminarStakeholderComponent } from '../stakeholder/eliminar-stakeholde
 import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion/listar-organizacion.component';
 import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
 import { EliminarOrganizacionComponent } from '../organizacion/eliminar-organizacion/eliminar-organizacion.component';
+import {CasodeusoDetailComponent} from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
 
 const routes: Routes = [
 
@@ -62,11 +63,17 @@ const routes: Routes = [
     },
     {
         path: 'casosdeuso',
-        children: [{
-          path: 'list',
-          component: CasodeusoListComponent,
-          outlet: "inicio"
-        }
+        children: [
+            {
+                path: 'list',
+                component: CasodeusoListComponent,
+                outlet: "inicio"
+            },
+            {
+              path: ':id',
+              component: CasodeusoDetailComponent,
+              outlet: 'detail'
+            }
         ]
       },
       {

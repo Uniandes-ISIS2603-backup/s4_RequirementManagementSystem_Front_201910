@@ -5,25 +5,25 @@
 				<thead class="thead-dark">
 					<tr>
 						<th>id</th>
-            <th>nombre</th>
+            			<th>nombre</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr *ngFor="let i of casosdeuso">
-						<td >
-							<p class="figure-caption">{{i.id}}</p>
+						<td style="cursor: pointer;">
+							<a class="figure-caption" (click)="onSelected(i.id)">{{i.id}}</a>
 						</td>
-            <td style="cursor: pointer;">
-								<a class="figure-caption" (click)="onSelected(i.id)">{{i.nombre}}</a>
-            </td>
+            			<td>
+							<p class="figure-caption">{{i.nombre}}</p>
+            			</td>
 					</tr>
 				</tbody>
-      </table>
+      		</table>
 		</div>
 		<div class="col">
-				<div *ngIf="selectedCasodeuso">
-						<app-casodeuso-detail [casodeusoDetail]="selectedCasodeuso"> </app-casodeuso-detail>
-					</div>
-		</div>
+			<div *ngIf="selectedCasodeuso">
+					<app-casodeuso-detail [casodeusoDetail]="selectedCasodeuso"> </app-casodeuso-detail>
+				</div>
 	</div>
 	</div>
+</div>

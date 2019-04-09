@@ -4,14 +4,16 @@ import { CasodeusoListComponent } from './casodeuso-list/casodeuso-list.componen
 import { CasodeusoService } from './casodeuso.service';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { CasodeusoDetailComponent } from './casodeuso-detail/casodeuso-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   declarations: [CasodeusoListComponent,CasodeusoDetailComponent],
   providers: [CasodeusoService],
-  exports: [CasodeusoListComponent]
+  exports: [CasodeusoListComponent, CasodeusoDetailComponent]
 })
 export class CasodeusoModule { }
