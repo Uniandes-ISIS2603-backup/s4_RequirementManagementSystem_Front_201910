@@ -1,0 +1,37 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>id</th>
+						<th>descripcion</th>
+						<th>seCumplio</th>
+						<th>esPrecondicion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let i of condiciones">
+						<td style="cursor: pointer;">
+							<a class="figure-caption" (click)="onSelected(i.id)">{{i.id}}</a>
+						</td>
+            			<td>
+							<p class="figure-caption">{{i.descripcion}}</p>
+						</td>
+						<td>
+							<p class="figure-caption">{{i.seCumplio}}</p>
+						</td>
+						<td>
+							<p class="figure-caption">{{i.esPrecondicion}}</p>
+            			</td>
+					</tr>
+				</tbody>
+      		</table>
+		</div>
+		<div class="col">
+			<div *ngIf="selectedCondicion">
+					<app-condicion-detail [condicionDetail]="selectedCondicion"> </app-condicion-detail>
+				</div>
+	</div>
+	</div>
+</div>
