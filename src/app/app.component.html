@@ -1,10 +1,10 @@
-<div class="container-fluid">
+<div class="container-fluid, site-wrapper, site-wrapper-inner, cover-container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="form-inline, site-wrapper, cover-container">
         <a class="navbar-brand" href="#">
-            <div class="form-inline">
-                <h2 class="mainTitle">Startech - Requirement Management System</h2>
-            </div>
+            <img src= '../assets/startech.jpg'>
         </a>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
 
     <div>
         <router-outlet></router-outlet>
-        <router-outlet name="inicio"></router-outlet>
+        <router-outlet name="sidebar"></router-outlet>
 
     </div>
     

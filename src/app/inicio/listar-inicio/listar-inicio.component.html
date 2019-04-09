@@ -72,11 +72,10 @@
           Cambios
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/cambio/list" routerLinkActive="active">Ver historial de cambios</a>
-          
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Crear cambio</a>
-        </div>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['cambio'],sidebar: ['cambio'] } }]" routerLinkActive="active">Ver historial de cambios</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Crear cambio</a>
+      </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -125,12 +124,9 @@
 </nav>
 
 <h1 align='center'>Proyecto 1</h1>
-
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-  <router-outlet name="inicio"></router-outlet>
+<p class="lead" align='center'>Cumple tus expectativas, manejando efectivamente todos tus requerimientos.</p>
  
+
 
 
 
