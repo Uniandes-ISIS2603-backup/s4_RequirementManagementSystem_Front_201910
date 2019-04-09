@@ -5,13 +5,14 @@ import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { CambioService } from './cambio.service';
 import { CambioDetailComponent } from './cambio-detail/cambio-detail.component';
 import { FormsModule } from '@angular/forms';
+import { CambioCreateComponent } from './cambio-create/cambio-create.component';
 
 @NgModule({
   imports: [
     CommonModule, AppRoutingModule, FormsModule
   ],
-  declarations: [ ListarCambioComponent, CambioDetailComponent],
+  declarations: [ ListarCambioComponent, CambioDetailComponent, CambioCreateComponent],
   providers: [CambioService],
-  exports: [ListarCambioComponent, CambioDetailComponent]
+  exports: [ListarCambioComponent, CambioDetailComponent, CambioCreateComponent]
 })
 export class CambioModule { }

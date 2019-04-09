@@ -72,9 +72,9 @@
           Cambios
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['cambio'],sidebar: ['cambio'] } }]" routerLinkActive="active">Ver historial de cambios</a>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['cambio-list'],sidebar: ['cambio-list'] } }]" routerLinkActive="active">Ver historial de cambios</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Crear cambio</a>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['cambio-add'],sidebar: ['cambio-add'] } }]" routerLinkActive="active">Crear cambio</a>
       </div>
       </li>
       <li class="nav-item dropdown">

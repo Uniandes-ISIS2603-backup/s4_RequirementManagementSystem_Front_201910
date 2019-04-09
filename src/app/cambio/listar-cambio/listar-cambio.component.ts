@@ -17,13 +17,10 @@ export class ListarCambioComponent implements OnInit {
 
     cambios: Cambio[];
     cambio_id: number;
-    fechaYHora: Date;
     selectedCambio: CambioDetail;
     
     getCambios(): void {
       this.cambioService.getCambios().subscribe(cambios => this.cambios = cambios);
-      this.fechaYHora = new Date();
-      this.fechaYHora.toDateString;
     }
 
 
