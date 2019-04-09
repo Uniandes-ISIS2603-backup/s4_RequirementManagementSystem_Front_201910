@@ -17,7 +17,7 @@ import { CambioModule } from './cambio/cambio.module';
 import { CasodeusoModule } from './casodeuso/casodeuso.module';
 import {StakeholderModule} from './stakeholder/stakeholder.module';
 import {OrganizacionModule} from './organizacion/organizacion.module';
-
+import {CondicionModule} from './condicion/condicion.module'
 
 @NgModule({
     declarations: [
@@ -42,6 +42,7 @@ import {OrganizacionModule} from './organizacion/organizacion.module';
         InicioModule,
         CambioModule,
         CasodeusoModule,
+        CondicionModule,
         StakeholderModule,
         OrganizacionModule
     ],

@@ -15,6 +15,9 @@ import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion
 import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
 import { EliminarOrganizacionComponent } from '../organizacion/eliminar-organizacion/eliminar-organizacion.component';
 import {CasodeusoDetailComponent} from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
+import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
+import {CondicionDetailComponent} from '../condicion/condicion-detail/condicion-detail.component';
+
 
 const routes: Routes = [
 
@@ -72,6 +75,21 @@ const routes: Routes = [
             {
               path: ':id',
               component: CasodeusoDetailComponent,
+              outlet: 'detail'
+            }
+        ]
+      },
+      {
+        path: 'condiciones',
+        children: [
+            {
+                path: 'list',
+                component: CondicionListComponent,
+                outlet: "inicio"
+            },
+            {
+              path: ':id',
+              component: CondicionDetailComponent,
               outlet: 'detail'
             }
         ]
