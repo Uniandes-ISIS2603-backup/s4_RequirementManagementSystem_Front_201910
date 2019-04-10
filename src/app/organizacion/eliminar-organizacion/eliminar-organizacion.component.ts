@@ -16,8 +16,8 @@ export class EliminarOrganizacionComponent implements OnInit {
   /**
   * Eliminare un organizacion
   */
-  eliminarOrganizacion(Id:number): void {
-    this.OrganizacionService.deleteOrganizacion(Id);
+  eliminarOrganizacion(id:number): void {
+    this.OrganizacionService.deleteOrganizacion(id).subscribe();
   }
 
   ngOnInit() {

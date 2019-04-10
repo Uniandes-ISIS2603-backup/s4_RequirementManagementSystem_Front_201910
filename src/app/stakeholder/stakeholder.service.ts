@@ -61,9 +61,9 @@ export class StakeholderService {
     * @param StakeholderId The Stakeholder's id
     * @returns True if the Stakeholder was deleted, false otherwise
     */
-    deleteStakeholder(StakeholderId): Observable<Stakeholder> {
-        console.log(API_URL + "/" + StakeholderId);
-       return this.http.delete<Stakeholder>(API_URL + "/" + StakeholderId);
+    deleteStakeholder(stakeholderId: number): Observable<Stakeholder> {
+        console.log(API_URL + "/" + stakeholderId);
+       return this.http.delete<Stakeholder>(API_URL + "/" + stakeholderId);
     }
 }
     

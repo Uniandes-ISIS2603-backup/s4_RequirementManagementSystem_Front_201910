@@ -1,26 +1,31 @@
-<h2 class="mainTitle">Actualizar un Stakeholder</h2>
-<div class="container-fluid">
-  <div class="col-md-2">
-      <table class="table table-striped">
+<div class="row">
+  <div class="column">
+    <app-listar-stakeholder></app-listar-stakeholder>
+  </div>
+  <div class="column">
+    <h2 class="text-center">Actualizar</h2>
+    <div class="container-fluid">
+      <div class="col-md-2">
+        <table class="table table-striped">
           <thead class="thead-dark">
-              <tr>
-                  <th>ID</th>
-                  <th>Nombre</th> 
-                  <th>Tipo</th>    
-              </tr>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Tipo</th>
+            </tr>
           </thead>
           <tbody>
-                <td>
-                  <input type="number" [(ngModel)] = "stakeholder.id" required>
-                </td>
-                <td>
-                  <input type="String"[(ngModel)] = "stakeholder.nombre" required>
-                </td>
-                <td>
-                  <input type="String"[(ngModel)] = "stakeholder.tipo" required>
-                </td>
+            <td>
+              <input type="number" [(ngModel)]="stakeholder.id" required>
+            </td>
+            <td>
+              <input type="String" [(ngModel)]="stakeholder.nombre" required>
+            </td>
+            <td>
+              <input type="String" [(ngModel)]="stakeholder.tipo" required>
+            </td>
           </tbody>
-      </table>
-  </div>
-  <td><button class="btn btn-info" (click)="updateStakeholder()">Actualizar</button></td>
-
+        </table>
+      </div>
+      <td><button class="btn btn-info" (click)="updateStakeholder()">Actualizar</button></td>
+    </div>
