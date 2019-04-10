@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AprobacionService } from '../aprobacion.service';
 import { AprobacionDetail } from '../aprobacion-detail';
-import { ListarCambioComponent } from 'src/app/cambio/listar-cambio/listar-cambio.component';
 
 @Component({
   selector: 'app-detail-aprobacion',
