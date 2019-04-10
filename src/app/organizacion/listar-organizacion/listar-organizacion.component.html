@@ -1,0 +1,20 @@
+<h2 class="mainTitle">Lista de Organizaciones</h2>
+<div class="container-fluid">
+  <div class="col-md-2">
+      <table class="table table-striped">
+          <thead class="thead-dark">
+              <tr>
+                  <th>ID</th>
+                  <th>Nombre</th> 
+                  <th>Sector</th>    
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let organizacion of organizaciones">
+                  <td>{{organizacion.id}}</td>
+                  <td>{{organizacion.nombre}}</td>
+                  <td>{{organizacion.sector}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>

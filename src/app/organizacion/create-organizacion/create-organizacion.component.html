@@ -1,0 +1,29 @@
+<h2 class="mainTitle">Agregar Organizacion</h2>
+<div class="container-fluid">
+  <div class="col-md-2">
+      <table class="table table-striped">
+          <thead class="thead-dark">
+              <tr>
+                  <th>ID</th>
+                  <th>Nombre</th> 
+                  <th>Tipo</th> 
+                  <th>Organizacion</th>     
+              </tr>
+          </thead>
+          <tbody>
+                <td>
+                  <input type="number" [(ngModel)] = "organizacion.id" required>
+                </td>
+                <td>
+                  <input type="String"[(ngModel)] = "organizacion.nombre" required>
+                </td>
+                <td>
+                  <input type="String"[(ngModel)] = "organizacion.tipo" required>
+                </td>
+                <td>
+                  <input type="String"[(ngModel)] = "organizacion.organizacion" required>
+                </td>
+          </tbody>
+      </table>
+  </div>
+  <td><button class="btn btn-success" (click)="createOrganizacion()">Agregar</button></td>

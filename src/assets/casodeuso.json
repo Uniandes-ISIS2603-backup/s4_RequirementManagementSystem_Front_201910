@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "primer caso de uso"
+  },
+  {
+    "id": 2,
+    "nombre": "segundo caso de uso"
+  },
+  {
+    "id": 3,
+    "nombre": "tercer caso de uso"
+  }
+]

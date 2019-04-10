@@ -1,0 +1,18 @@
+<h2 class="mainTitle">Eliminar Organizacion</h2>
+<div class="container-fluid">
+  <div class="col-md-2">
+      <table class="table table-striped">
+          <thead class="thead-dark">
+              <tr>
+                  <th>ID</th>
+  
+              </tr>
+          </thead>
+          <tbody>
+                <td>
+                  <input type="number" [(ngModel)] = "id" required>
+                </td>
+          </tbody>
+      </table>
+  </div>
+  <td><button class="btn btn-danger" (click)="eliminarOrganizacion(id)">Eliminar</button></td>

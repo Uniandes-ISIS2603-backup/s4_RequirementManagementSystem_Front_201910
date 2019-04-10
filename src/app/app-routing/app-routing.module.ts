@@ -10,6 +10,18 @@ import { ListarCambioComponent } from '../cambio/listar-cambio/listar-cambio.com
 import { CambioCreateComponent } from '../cambio/cambio-create/cambio-create.component';
 import { ListarAprobacionComponent } from '../aprobacion/listar-aprobacion/listar-aprobacion.component';
 import { CreateAprobacionComponent } from '../aprobacion/create-aprobacion/create-aprobacion.component';
+import { CasodeusoListComponent } from '../casodeuso/casodeuso-list/casodeuso-list.component';
+import { ListarStakeholderComponent } from '../stakeholder/listar-stakeholder/listar-stakeholder.component';
+import { CreateStakeholderComponent } from '../stakeholder/create-stakeholder/create-stakeholder.component';
+import { EliminarStakeholderComponent } from '../stakeholder/eliminar-stakeholder/eliminar-stakeholder.component';
+import { UpdateStakeholderComponent } from '../stakeholder/update-stakeholder/update-stakeholder.component';
+import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion/listar-organizacion.component';
+import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
+import { EliminarOrganizacionComponent } from '../organizacion/eliminar-organizacion/eliminar-organizacion.component';
+import {CasodeusoDetailComponent} from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
+import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
+import {CondicionDetailComponent} from '../condicion/condicion-detail/condicion-detail.component';
+
 
 const routes: Routes = [
 

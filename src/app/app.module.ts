@@ -16,6 +16,10 @@ import {AuthModule} from './auth/auth.module';
 import { CambioModule } from './cambio/cambio.module';
 import { AprobacionModule } from './aprobacion/aprobacion.module';
 
+import { CasodeusoModule } from './casodeuso/casodeuso.module';
+import {StakeholderModule} from './stakeholder/stakeholder.module';
+import {OrganizacionModule} from './organizacion/organizacion.module';
+import {CondicionModule} from './condicion/condicion.module';
 
 @NgModule({
     declarations: [
@@ -39,7 +43,11 @@ import { AprobacionModule } from './aprobacion/aprobacion.module';
         NgbModule,
         InicioModule,
         CambioModule,
-        AprobacionModule
+        AprobacionModule,
+        CasodeusoModule,
+        CondicionModule,
+        StakeholderModule,
+        OrganizacionModule
     ],
     bootstrap: [AppComponent],
     providers: [
