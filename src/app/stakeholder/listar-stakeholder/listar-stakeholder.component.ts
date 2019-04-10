@@ -20,16 +20,13 @@ export class ListarStakeholderComponent implements OnInit {
   /**
    * Constructor
    */
-  constructor(private StakeholderService: StakeholderService, private route: ActivatedRoute) { }
+  constructor(private stakeholderService: StakeholderService, private route: ActivatedRoute) { }
 
   /**
   * Obtener lista de todos los stakeholders
   */
   getStakeholders(): void {
-    this.StakeholderService.getStakeholders()
-      .subscribe(stakeholders => {
-        this.stakeholders = stakeholders;
-      });
+    this.stakeholderService.getStakeholders().subscribe(stakeholders => {this.stakeholders = stakeholders;});
   }
 
   /**

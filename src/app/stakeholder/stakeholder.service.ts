@@ -4,10 +4,9 @@ import {HttpClient} from '@angular/common/http';
 
 import {Stakeholder} from './stakeholder';
 
-
-const API_URL = '../../assets';
-const Stakeholders = '/stakeholder.json';
-
+//http://localhost:8080/s4_RequirementManagementSystem_201910/api
+//http://4c0e33ca.ngrok.io/s4_requirement-api/api/stakeholders/24
+const API_URL = 'http://4c0e33ca.ngrok.io/s4_requirement-api/api/stakeholders';
 
 /**
 * The service provider for everything related to Stakeholders
@@ -27,7 +26,7 @@ export class StakeholderService {
     * @returns The list of Stakeholders in real time
     */
     getStakeholders(): Observable<Stakeholder[]> {
-        return this.http.get<Stakeholder[]>(API_URL + Stakeholders);
+        return this.http.get<Stakeholder[]>(API_URL);
     }
 
     /**
@@ -36,7 +35,8 @@ export class StakeholderService {
     * @returns El Stakeholder creado, null si no se creo exitosamente
     */
     createStakeholder(stakeholder): Observable<Stakeholder> {
-        return this.http.post<Stakeholder>(API_URL + Stakeholders, stakeholder);
+        console.log(stakeholder);
+        return this.http.post<Stakeholder>(API_URL, stakeholder);
     } 
 
     /**
@@ -44,7 +44,7 @@ export class StakeholderService {
     * @returns The author details
     */
     getStakeholder(StakeholderId): Observable<Stakeholder> {
-        return this.http.get<Stakeholder>(API_URL + Stakeholders + '/' + StakeholderId);
+       return this.http.get<Stakeholder>(API_URL + '/' + StakeholderId);
     }
 
     /**
@@ -53,7 +53,7 @@ export class StakeholderService {
         * @returns The updated Stakeholder
         */
     updateStakeholder(Stakeholder): Observable<Stakeholder> {
-        return this.http.put<Stakeholder>(API_URL + Stakeholders + '/' + Stakeholder.id, Stakeholder);
+       return this.http.put<Stakeholder>(API_URL + '/' + Stakeholder.id, Stakeholder);
     }
     
     /**
@@ -61,7 +61,9 @@ export class StakeholderService {
     * @param StakeholderId The Stakeholder's id
     * @returns True if the Stakeholder was deleted, false otherwise
     */
-    deleteStakeholder(StakeholderId): Observable<Stakeholder> {
-        return this.http.delete<Stakeholder>(API_URL + Stakeholders + '/' + StakeholderId);
+    deleteStakeholder(stakeholderId: number): Observable<Stakeholder> {
+        console.log(API_URL + "/" + stakeholderId);
+       return this.http.delete<Stakeholder>(API_URL + "/" + stakeholderId);
     }
 }
+    

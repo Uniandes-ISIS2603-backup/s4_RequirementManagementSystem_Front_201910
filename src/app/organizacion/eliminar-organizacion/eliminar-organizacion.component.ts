@@ -12,15 +12,15 @@ export class EliminarOrganizacionComponent implements OnInit {
 
   constructor(private OrganizacionService: OrganizacionService, private route: ActivatedRoute) { }
 
-  idOrganizacion:number;
+  
   /**
   * Eliminare un organizacion
   */
-  eliminarOrganizacion(Id:number): void {
-    this.OrganizacionService.deleteOrganizacion(Id);
+  eliminarOrganizacion(id:number): void {
+    this.OrganizacionService.deleteOrganizacion(id).subscribe();
   }
 
   ngOnInit() {
-    
+ 
   } 
 }

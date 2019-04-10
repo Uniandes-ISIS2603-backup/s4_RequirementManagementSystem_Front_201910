@@ -21,9 +21,8 @@ export class CreateStakeholderComponent implements OnInit {
   */
    createStakeholder(): Stakeholder {
     this.StakeholderService.createStakeholder(this.stakeholder).subscribe(Stakeholder => {
-      this.stakeholder.id = Stakeholder.id;
+      //this.stakeholder.id = Math.floor(Math.random() * 99) + 1  ;
       this.stakeholder.nombre = Stakeholder.nombre;
-      this.stakeholder.organizacion = Stakeholder.organizacion;
       this.stakeholder.tipo = Stakeholder.tipo
     }
     );
@@ -32,5 +31,6 @@ export class CreateStakeholderComponent implements OnInit {
 
   ngOnInit() {
     this.stakeholder = new Stakeholder();
+    this.stakeholder.id = Math.floor(Math.random() * 9999) + 1;
   } 
 }
