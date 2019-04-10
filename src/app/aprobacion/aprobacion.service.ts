@@ -22,7 +22,7 @@ export class AprobacionService {
     return this.http.get<AprobacionDetail>(API_URL + "aprobacion-" + aprobacionId+".json");
   }
 
-  createAprobacion(aprobacion, cambio_id): Observable<AprobacionDetail> {
+  createAprobacion(aprobacion): Observable<AprobacionDetail> {
     return this.http.post<AprobacionDetail>(API_URL + aprobaciones, aprobaciones);
 }
 }
