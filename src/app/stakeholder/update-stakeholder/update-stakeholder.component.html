@@ -6,8 +6,7 @@
               <tr>
                   <th>ID</th>
                   <th>Nombre</th> 
-                  <th>Tipo</th> 
-                  <th>Organizacion</th>     
+                  <th>Tipo</th>    
               </tr>
           </thead>
           <tbody>
@@ -20,11 +19,8 @@
                 <td>
                   <input type="String"[(ngModel)] = "stakeholder.tipo" required>
                 </td>
-                <td>
-                  <input type="String"[(ngModel)] = "stakeholder.organizacion" required>
-                </td>
           </tbody>
       </table>
   </div>
-  <td><button class="btn btn-success" (click)="updateStakeholder()">Agregar</button></td>
+  <td><button class="btn btn-info" (click)="updateStakeholder()">Actualizar</button></td>
 

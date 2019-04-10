@@ -12,7 +12,7 @@ export class EliminarOrganizacionComponent implements OnInit {
 
   constructor(private OrganizacionService: OrganizacionService, private route: ActivatedRoute) { }
 
-  idOrganizacion:number;
+  
   /**
   * Eliminare un organizacion
   */
@@ -21,6 +21,6 @@ export class EliminarOrganizacionComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+ 
   } 
 }

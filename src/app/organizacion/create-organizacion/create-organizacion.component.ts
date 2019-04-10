@@ -20,7 +20,6 @@ export class CreateOrganizacionComponent implements OnInit {
   */
   createOrganizacion(): Organizacion {
     this.OrganizacionService.createOrganizacion(this.organizacion).subscribe(Organizacion => {
-      this.organizacion.id = Organizacion.id;
       this.organizacion.nombre = Organizacion.nombre;
       this.organizacion.sector = Organizacion.sector;
     }
@@ -30,5 +29,6 @@ export class CreateOrganizacionComponent implements OnInit {
 
   ngOnInit() {
     this.organizacion = new Organizacion();
+    this.organizacion.id = Math.floor(Math.random() * 9999) + 1;
   } 
 }

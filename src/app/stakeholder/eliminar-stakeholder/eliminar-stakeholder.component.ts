@@ -22,6 +22,6 @@ export class EliminarStakeholderComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.idStakeholder = +this.route.snapshot.paramMap.get('id');
   } 
 }

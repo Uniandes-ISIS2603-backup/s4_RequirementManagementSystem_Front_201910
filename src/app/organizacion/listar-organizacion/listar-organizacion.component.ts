@@ -26,7 +26,7 @@ export class ListarOrganizacionComponent implements OnInit {
   * Obtener lista de todos los organizacions
   */
   getOrganizacions(): void {
-    this.OrganizacionService.getOrganizacions()
+    this.OrganizacionService.getOrganizaciones()
       .subscribe(organizacions => {
         this.organizaciones = organizacions;
       });

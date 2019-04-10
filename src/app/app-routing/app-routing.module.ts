@@ -80,6 +80,41 @@ const routes: Routes = [
     component: CondicionListComponent,
     outlet: "sidebar"  
   },
+  {
+    path: 'stakeholder-listar',
+    component: ListarStakeholderComponent,
+    outlet: "sidebar"
+},
+{
+    path: 'stakeholder-crear',
+    component: CreateStakeholderComponent,
+    outlet: "sidebar"
+},
+{
+    path: 'stakeholder-actualizar',
+    component: UpdateStakeholderComponent,
+    outlet: "sidebar"
+},
+{
+    path: 'stakeholder-eliminar',
+    component: EliminarStakeholderComponent,
+    outlet: "sidebar"
+},
+{
+    path: 'organizacion-listar',
+    component: ListarOrganizacionComponent,
+    outlet: "sidebar"
+},
+{
+    path: 'organizacion-crear',
+    component: CreateOrganizacionComponent,
+    outlet: "sidebar"
+},
+{
+    path: 'organizacion-eliminar',
+    component: EliminarOrganizacionComponent,
+    outlet: "sidebar"
+},
    {
        path: '**',
        component: ListarInicioComponent
