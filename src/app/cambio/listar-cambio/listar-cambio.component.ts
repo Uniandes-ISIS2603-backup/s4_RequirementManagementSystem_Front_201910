@@ -29,7 +29,7 @@ export class ListarCambioComponent implements OnInit {
       this.selectedCambio = new CambioDetail();
       console.log("cambio: ", cambio_id);
       this.cambioService.getCambioDetail(cambio_id).subscribe(o => {this.selectedCambio = o;
-        console.log("EN  ls lista") ;
+        console.log("En  la lista") ;
        console.log(o) ;
       });
     }

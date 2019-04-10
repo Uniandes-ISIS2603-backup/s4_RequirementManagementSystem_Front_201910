@@ -1,3 +1,20 @@
-<p>
-  detail-aprobacion works!
-</p>
+<div class="card" style="width: 20rem;">
+    <img class="card-img-top" src= "../../../assets/aprobacion.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" align = 'center'>Resumen: {{aprobacionDetail.tipo}}</h5>
+      <h6 align = 'justify'>Autor: {{aprobacionDetail.autor}}</h6>
+      <p class="card-text" align = 'justify'>Descripción: {{aprobacionDetail.comentario}}</p>
+    </div>
+    <div *ngIf="aprobacionDetail.aprobado">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" checked id="defaultCheck2" disabled>
+            <label class="form-check-label" for="defaultCheck2">
+                Aprobado
+              </label></div></div>
+    <div *ngIf="!aprobacionDetail.aprobado">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+            <label class="form-check-label" for="defaultCheck2">
+                No aprobado aún
+              </label></div></div>
+  </div>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AprobacionService } from '../aprobacion.service';
+import { AprobacionDetail } from '../aprobacion-detail';
 
 @Component({
   selector: 'app-detail-aprobacion',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailAprobacionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private aprobacionService: AprobacionService,
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit() {
+  @Input() aprobacionDetail: AprobacionDetail;
+
+    aprobacion_id: number;
+
+  getCambioDetail(): void {
+    this.aprobacionService.getAprobacionDetail(this.aprobacion_id)
+      .subscribe(aprobacionDetail => {
+        
+        this.aprobacionDetail = aprobacionDetail;
+      });
   }
+
+    ngOnInit() {
+      
+    this.aprobacion_id = +this.route.snapshot.paramMap.get('id');
+    console.log("detail: ", this.aprobacion_id);
+    if (this.aprobacion_id) {
+      this.aprobacionDetail = new AprobacionDetail();
+      this.getCambioDetail();
+    }
+    console.log("Detail:  ", this.aprobacionDetail)
+
+    }
 
 }

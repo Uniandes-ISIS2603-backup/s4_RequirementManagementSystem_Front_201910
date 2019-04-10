@@ -8,6 +8,7 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import {ListarInicioComponent} from '../inicio/listar-inicio/listar-inicio.component';
 import { ListarCambioComponent } from '../cambio/listar-cambio/listar-cambio.component';
 import { CambioCreateComponent } from '../cambio/cambio-create/cambio-create.component';
+import { ListarAprobacionComponent } from '../aprobacion/listar-aprobacion/listar-aprobacion.component';
 
 const routes: Routes = [
 
@@ -44,6 +45,11 @@ const routes: Routes = [
    {
     path: 'cambio-add',
     component: CambioCreateComponent,
+    outlet: "sidebar"
+  },
+  {
+    path: 'aprobacion-list',
+    component: ListarAprobacionComponent,
     outlet: "sidebar"
   },
    {
