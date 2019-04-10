@@ -70,10 +70,20 @@ const routes: Routes = [
     component: CreateAprobacionComponent,
     outlet: "sidebar"
   },
+  {
+    path: 'casodeuso-list',
+    component: CasodeusoListComponent,
+    outlet: "sidebar"
+  },
+  {
+    path: 'condicion-list',
+    component: CondicionListComponent,
+    outlet: "sidebar"  
+  },
    {
        path: '**',
        component: ListarInicioComponent
-   },
+   }
 ];
 
 @NgModule({
