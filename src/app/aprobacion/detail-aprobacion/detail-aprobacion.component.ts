@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AprobacionService } from '../aprobacion.service';
 import { AprobacionDetail } from '../aprobacion-detail';
+import { ListarCambioComponent } from 'src/app/cambio/listar-cambio/listar-cambio.component';
 
 @Component({
   selector: 'app-detail-aprobacion',
@@ -18,6 +19,7 @@ export class DetailAprobacionComponent implements OnInit {
   @Input() aprobacionDetail: AprobacionDetail;
 
     aprobacion_id: number;
+
 
   getCambioDetail(): void {
     this.aprobacionService.getAprobacionDetail(this.aprobacion_id)

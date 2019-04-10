@@ -5,6 +5,8 @@
 				<thead class="thead-dark" align = 'center'>
 					<tr>
 						<th>#</th>
+						<th>ID Req/Obj</th>
+						<th>Nombre</th>
             <th>Tipo</th>
             <th>Autor</th>
             <th>Organización</th>
@@ -17,6 +19,12 @@
 						<td >
 							<p class="figure-caption">{{i.id}}</p>
 						</td>
+						<td >
+								<p class="figure-caption">{{i.id_aprobado}}</p>
+							</td>
+							<td >
+									<p class="figure-caption">{{i.nombre_aprobado}}</p>
+								</td>
             <td style="cursor: pointer;">
 								<a class="figure-caption" (click)="onSelected(i.id)">{{i.tipo}}</a>
             </td>
@@ -29,15 +37,8 @@
             <td>
               <p class="figure-caption" >{{i.fechaYHora}}</p>
           </td>
-          <td scope="row">
-              <div *ngIf="i.aprobado">
-                	<div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" checked="blue" id="defaultCheck2" disabled>
-                    </div></div>
-              <div *ngIf="!i.aprobado">
-                  <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-                    </div></div>              
+          <td >
+							<p class="figure-caption" >{{i.estado}}</p>
           </td>
 					</tr>
 				</tbody>

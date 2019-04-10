@@ -4,6 +4,8 @@ export class Aprobacion {
     autor: string;
     organizacion: string; 
     fechaYHora: string;
-    aprobado: boolean;
+    estado: string;
+    id_aprobado: number;
+    nombre_aprobado: string;
     
 }

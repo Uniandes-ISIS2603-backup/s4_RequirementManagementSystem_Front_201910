@@ -23,13 +23,13 @@ fecha: Date;
 
   /**
     * The output which tells the parent component
-    * that the user no longer wants to create an editorial
+    * that the user no longer wants to create a change
     */
    @Output() cancel = new EventEmitter();
 
    /**
    * The output which tells the parent component
-   * that the user created a new editorial
+   * that the user created a new change
    */
    @Output() create = new EventEmitter();
 
@@ -40,7 +40,7 @@ fecha: Date;
         .subscribe((cambioDetail) => {
             this.cambioDetail = cambioDetail;
             this.create.emit();
-            this.toastrService.success("The change was created", "Editorial creation");
+            this.toastrService.success("The change was created", "Change creation");
         }, err => {
             this.toastrService.error(err, "Error");
         });

@@ -9,6 +9,7 @@ import {ListarInicioComponent} from '../inicio/listar-inicio/listar-inicio.compo
 import { ListarCambioComponent } from '../cambio/listar-cambio/listar-cambio.component';
 import { CambioCreateComponent } from '../cambio/cambio-create/cambio-create.component';
 import { ListarAprobacionComponent } from '../aprobacion/listar-aprobacion/listar-aprobacion.component';
+import { CreateAprobacionComponent } from '../aprobacion/create-aprobacion/create-aprobacion.component';
 
 const routes: Routes = [
 
@@ -50,6 +51,11 @@ const routes: Routes = [
   {
     path: 'aprobacion-list',
     component: ListarAprobacionComponent,
+    outlet: "sidebar"
+  },
+  {
+    path: 'aprobacion-add',
+    component: CreateAprobacionComponent,
     outlet: "sidebar"
   },
    {

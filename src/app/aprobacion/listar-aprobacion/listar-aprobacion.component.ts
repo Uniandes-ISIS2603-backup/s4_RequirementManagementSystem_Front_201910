@@ -41,17 +41,6 @@ export class ListarAprobacionComponent implements OnInit {
         
   }
 
-  isSelected(i: number): boolean{
-      if(this.aprobaciones[i].aprobado)
-      {
-        this.selected = true;
-        return true;
-      }
-      else{
-        this.selected = false;
-      return false;
-    }
-    
-  }
+  
 
 }

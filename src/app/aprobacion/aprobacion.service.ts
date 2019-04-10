@@ -7,6 +7,7 @@ import { AprobacionDetail } from './aprobacion-detail';
 
 const API_URL = "../../assets/";
 const data = 'aprobacion.json';
+const aprobaciones = '/aprobaciones'
 @Injectable()
 export class AprobacionService {
 
@@ -20,4 +21,8 @@ export class AprobacionService {
     //console.log(cambioId+" "+API_URL + "cambio-" + cambioId+".json");
     return this.http.get<AprobacionDetail>(API_URL + "aprobacion-" + aprobacionId+".json");
   }
+
+  createAprobacion(aprobacion, cambio_id): Observable<AprobacionDetail> {
+    return this.http.post<AprobacionDetail>(API_URL + aprobaciones, aprobaciones);
+}
 }
