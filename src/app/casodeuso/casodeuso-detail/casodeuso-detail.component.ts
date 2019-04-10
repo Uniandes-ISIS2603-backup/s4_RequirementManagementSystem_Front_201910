@@ -27,6 +27,7 @@ export class CasodeusoDetailComponent implements OnInit {
     .subscribe(casodeusoDetail => {
       
       this.casodeusoDetail = casodeusoDetail;
+      console.log("-->",this.casodeusoDetail.caminos);
     });  }
 
   /*
@@ -39,7 +40,8 @@ export class CasodeusoDetailComponent implements OnInit {
   }*/
 
   ngOnInit() {
-    console.log("Detail:  ", this.casodeusoDetail)
+    console.log(this.casodeusoDetail)
+    this.getCasosdeusoDetail();
   }
 
   /*ngOnDestroy() {

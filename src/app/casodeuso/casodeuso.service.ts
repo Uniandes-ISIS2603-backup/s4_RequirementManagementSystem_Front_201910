@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { CasodeusoDetail } from './casodeuso-detail';
 
 
-const API_URL = "../../assets/";
-const casos = 'casodeuso.json';
+const API_URL = 'https://fcd0e7c8.ngrok.io/s4_requirement-api/api/';
+const casos = 'casos/';
 
 @Injectable()
 export class CasodeusoService {
@@ -18,6 +18,6 @@ export class CasodeusoService {
   }
 
   getCasosdeusoDetail(casodeusoId): Observable<CasodeusoDetail> {
-    return this.http.get<CasodeusoDetail>(API_URL + "casodeuso-" + casodeusoId + ".json");
+    return this.http.get<CasodeusoDetail>(API_URL+casos + casodeusoId );
   }
 }
