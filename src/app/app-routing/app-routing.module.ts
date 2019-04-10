@@ -7,6 +7,9 @@ import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import {ListarInicioComponent} from '../inicio/listar-inicio/listar-inicio.component';
 import { ListarCambioComponent } from '../cambio/listar-cambio/listar-cambio.component';
+import { CambioCreateComponent } from '../cambio/cambio-create/cambio-create.component';
+import { ListarAprobacionComponent } from '../aprobacion/listar-aprobacion/listar-aprobacion.component';
+import { CreateAprobacionComponent } from '../aprobacion/create-aprobacion/create-aprobacion.component';
 import { CasodeusoListComponent } from '../casodeuso/casodeuso-list/casodeuso-list.component';
 import { ListarStakeholderComponent } from '../stakeholder/listar-stakeholder/listar-stakeholder.component';
 import { CreateStakeholderComponent } from '../stakeholder/create-stakeholder/create-stakeholder.component';
@@ -22,124 +25,55 @@ import {CondicionDetailComponent} from '../condicion/condicion-detail/condicion-
 
 const routes: Routes = [
 
-     {
-        path: 'auth',
-        children: [
-            {
-                path: 'login',
-                component: AuthLoginComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
-            },
-            {
-                path: ':sign-up',
-                component: AuthSignUpComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
-            }
-        ]
-    },
     {
-        path: 'home',
-        component: ListarInicioComponent
-    },
-    {
-        path: '**',
-        redirectTo: 'home'
-    },
-    {
-        path: 'cambio',
-        children: [
-            {
-                path: 'list',
-                component: ListarCambioComponent,
-                outlet: "inicio"
-            }
-        ]
-    },
-    {
-        path: 'casosdeuso',
-        children: [
-            {
-                path: 'list',
-                component: CasodeusoListComponent,
-                outlet: "inicio"
-            },
-            {
-              path: ':id',
-              component: CasodeusoDetailComponent,
-              outlet: 'detail'
-            }
-        ]
-      },
-      {
-        path: 'condiciones',
-        children: [
-            {
-                path: 'list',
-                component: CondicionListComponent,
-                outlet: "inicio"
-            },
-            {
-              path: ':id',
-              component: CondicionDetailComponent,
-              outlet: 'detail'
-            }
-        ]
-      },
-      {
-        path: 'stakeholder',
-        children: [
-            {
-                path: 'listar',
-                component: ListarStakeholderComponent,
-                outlet: "inicio"
-            },
-            {
-                path: 'crear',
-                component: CreateStakeholderComponent,
-                outlet: "inicio"
-            },
-            {
-                path: 'eliminar',
-                component: EliminarStakeholderComponent,
-                outlet: "inicio"
-            },
-            {
-                path: 'update',
-                component: UpdateStakeholderComponent,
-                outlet: "inicio"
-            }
-        ]
-    },
-    {
-        path: 'organizacion',
-        children: [
-            {
-                path: 'listar',
-                component: ListarOrganizacionComponent,
-                outlet: "inicio"
-            },
-            {
-                path: 'crear',
-                component: CreateOrganizacionComponent,
-                outlet: "inicio"
-            },
-            {
-                path: 'eliminar',
-                component: EliminarOrganizacionComponent,
-                outlet: "inicio"
-            }
-        ]
-    }
+       path: 'auth',
+       children: [
+           {
+               path: 'login',
+               component: AuthLoginComponent,
+               canActivate: [NgxPermissionsGuard],
+               data: {
+                   permissions: {
+                       only: ['GUEST']
+                   }
+               }
+           },
+           {
+               path: ':sign-up',
+               component: AuthSignUpComponent,
+               canActivate: [NgxPermissionsGuard],
+               data: {
+                   permissions: {
+                       only: ['GUEST']
+                   }
+               }
+           }
+       ]
+   },
+   {
+       path: 'cambio-list',
+       component: ListarCambioComponent,
+       outlet: "sidebar"
+   },
+   {
+    path: 'cambio-add',
+    component: CambioCreateComponent,
+    outlet: "sidebar"
+  },
+  {
+    path: 'aprobacion-list',
+    component: ListarAprobacionComponent,
+    outlet: "sidebar"
+  },
+  {
+    path: 'aprobacion-add',
+    component: CreateAprobacionComponent,
+    outlet: "sidebar"
+  },
+   {
+       path: '**',
+       component: ListarInicioComponent
+   },
 ];
 
 @NgModule({

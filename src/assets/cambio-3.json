@@ -1,6 +1,6 @@
 {
     "id": 3,
-    "tipo": "Asociar requisito 5 con objetivo 2",
+    "tipo": "Eliminación",
     "autor": "Sofia Alvarez",
-    "descripcion": "El requisito 5, asociado actualmente al objetivo 4, debe asociarse, también, al objetivo 2"
+    "descripcion": "Eliminar el requisito 5 pues no concuerda con los lineamientos del proyecto."
   }

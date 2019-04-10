@@ -1,3 +1,53 @@
-<p>
-  listar-aprobacion works!
-</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-8">
+			<table class="table table-hover">
+				<thead class="thead-dark" align = 'center'>
+					<tr>
+						<th>#</th>
+						<th>ID Req/Obj</th>
+						<th>Nombre</th>
+            <th>Tipo</th>
+            <th>Autor</th>
+            <th>Organización</th>
+            <th>Fecha y Hora</th>
+            <th>Aprobado</th>
+					</tr>
+				</thead>
+				<tbody align = 'center'> 
+					<tr *ngFor="let i of aprobaciones">
+						<td >
+							<p class="figure-caption">{{i.id}}</p>
+						</td>
+						<td >
+								<p class="figure-caption">{{i.id_aprobado}}</p>
+							</td>
+							<td >
+									<p class="figure-caption">{{i.nombre_aprobado}}</p>
+								</td>
+            <td style="cursor: pointer;">
+								<a class="figure-caption" (click)="onSelected(i.id)">{{i.tipo}}</a>
+            </td>
+            <td >
+							<p class="figure-caption">{{i.autor}}</p>
+						</td>
+            <td >
+							<p class="figure-caption">{{i.organizacion}}</p>
+            </td>
+            <td>
+              <p class="figure-caption" >{{i.fechaYHora}}</p>
+          </td>
+          <td >
+							<p class="figure-caption" >{{i.estado}}</p>
+          </td>
+					</tr>
+				</tbody>
+      </table>
+    </div>
+    <div class="col">
+				<div *ngIf="selectedAprobacion">
+						<app-detail-aprobacion [aprobacionDetail]="selectedAprobacion"> </app-detail-aprobacion>
+					</div>
+		</div>
+	</div>
+	</div>

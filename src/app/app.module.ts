@@ -14,6 +14,8 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { CambioModule } from './cambio/cambio.module';
+import { AprobacionModule } from './aprobacion/aprobacion.module';
+
 import { CasodeusoModule } from './casodeuso/casodeuso.module';
 import {StakeholderModule} from './stakeholder/stakeholder.module';
 import {OrganizacionModule} from './organizacion/organizacion.module';
@@ -41,6 +43,7 @@ import {CondicionModule} from './condicion/condicion.module';
         NgbModule,
         InicioModule,
         CambioModule,
+        AprobacionModule,
         CasodeusoModule,
         CondicionModule,
         StakeholderModule,

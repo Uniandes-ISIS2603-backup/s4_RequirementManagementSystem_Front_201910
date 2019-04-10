@@ -6,7 +6,7 @@ import { CambioDetail } from './cambio-detail';
 
 const API_URL = "../../assets/";
 const data = 'cambio.json';
-const cambio = '/cambio';
+const cambios = '/cambio';
 
 @Injectable()
 export class CambioService {
@@ -22,8 +22,8 @@ constructor(private http: HttpClient) { }
     return this.http.get<CambioDetail>(API_URL + "cambio-" + cambioId+".json");
   }
 
-  createCambio(cambio): Observable<Cambio> {
-    return this.http.post<Cambio>(API_URL + cambio, cambio);
+  createCambio(cambio): Observable<CambioDetail> {
+    return this.http.post<CambioDetail>(API_URL + cambios, cambios);
 }
 
 }
