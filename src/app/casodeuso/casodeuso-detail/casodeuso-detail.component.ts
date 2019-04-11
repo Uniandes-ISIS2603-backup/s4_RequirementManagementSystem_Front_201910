@@ -1,7 +1,8 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, ViewChild} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { CasodeusoService } from '../casodeuso.service';
 import { CasodeusoDetail } from '../casodeuso-detail';
+import { CasodeusoUpdateComponent } from '../casodeuso-update/casodeuso-update.component';
 
 @Component({
   selector: 'app-casodeuso-detail',
@@ -10,12 +11,16 @@ import { CasodeusoDetail } from '../casodeuso-detail';
 })
 export class CasodeusoDetailComponent implements OnInit {
 
+  public isCollapsed = false;
+
   constructor(private casodeusoService: CasodeusoService,
     private route: ActivatedRoute) 
     {
       console.log(this.casodeusoDetail);
       
      }
+
+  @ViewChild(CasodeusoUpdateComponent) update: CasodeusoUpdateComponent;
 
 
   @Input()   casodeusoDetail: CasodeusoDetail;
@@ -46,6 +51,11 @@ export class CasodeusoDetailComponent implements OnInit {
   ngOnInit() {
     console.log(this.casodeusoDetail)
     this.getCasosdeusoDetail();
+  }
+
+  updateCasodeuso(): void{
+    this.update.getCasodeuso(this.casodeusoDetail.id);
+
   }
 
   /*ngOnDestroy() {
