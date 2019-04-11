@@ -19,4 +19,8 @@ export class CondicionService {
   getCondicionesDetail(condicionId): Observable<CondicionDetail> {
     return this.http.get<CondicionDetail>(API_URL + condiciones + condicionId );
   }
+
+  createCondicion(condicion): Observable<Condicion> {
+    return this.http.post<Condicion>(API_URL+condiciones, condicion);
+  }
 }

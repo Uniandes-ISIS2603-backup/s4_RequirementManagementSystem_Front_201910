@@ -16,6 +16,7 @@ import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion
 import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
 import {AgregarStakeholderOrganizacionComponent} from '../organizacion/agregarStakeholder-organizacion/agregarStakeholder-organizacion.component';
 import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
+import { CondicionCreateComponent } from '../condicion/condicion-create/condicion-create.component';
 import { ListarObjetivoComponent } from '../objetivo/listar-objetivo/listar-objetivo.component'
 import { CrearObjetivoComponent } from '../objetivo/crear-objetivo/crear-objetivo.component';
 
@@ -46,13 +47,17 @@ const routes: Routes = [
         path: 'casosdeuso',
         component: CasodeusoListComponent        
     },
-/*     {
+    {
         path: 'casosdeuso/new',
         component: CasodeusoCreateComponent        
-    }, */
+    },
     {
         path: 'condiciones',
         component: CondicionListComponent        
+    },
+    {
+        path: 'condiciones/new',
+        component: CondicionCreateComponent        
     },
     {
         path: 'stakeholders',
