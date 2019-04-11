@@ -11,6 +11,7 @@ import { CambioCreateComponent } from '../cambio/cambio-create/cambio-create.com
 import { ListarAprobacionComponent } from '../aprobacion/listar-aprobacion/listar-aprobacion.component';
 import { CreateAprobacionComponent } from '../aprobacion/create-aprobacion/create-aprobacion.component';
 import { CasodeusoListComponent } from '../casodeuso/casodeuso-list/casodeuso-list.component';
+import { CasodeusoCreateComponent } from '../casodeuso/casodeuso-create/casodeuso-create.component';
 import { ListarStakeholderComponent } from '../stakeholder/listar-stakeholder/listar-stakeholder.component';
 import { CreateStakeholderComponent } from '../stakeholder/create-stakeholder/create-stakeholder.component';
 import { EliminarStakeholderComponent } from '../stakeholder/eliminar-stakeholder/eliminar-stakeholder.component';
@@ -73,6 +74,11 @@ const routes: Routes = [
   {
     path: 'casodeuso-list',
     component: CasodeusoListComponent,
+    outlet: "sidebar"
+  },
+  {
+    path: 'casodeuso-add',
+    component: CasodeusoCreateComponent,
     outlet: "sidebar"
   },
   {

@@ -20,4 +20,8 @@ export class CasodeusoService {
   getCasosdeusoDetail(casodeusoId): Observable<CasodeusoDetail> {
     return this.http.get<CasodeusoDetail>(API_URL+casos + casodeusoId );
   }
+
+  createCasodeuso(caso): Observable<CasodeusoDetail>{
+    return this.http.post<CasodeusoDetail>(API_URL+casos,caso);
+  }
 }

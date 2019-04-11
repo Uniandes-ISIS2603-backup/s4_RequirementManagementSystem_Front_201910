@@ -44,7 +44,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['casodeuso-list'],sidebar: ['casodeuso-list'] } }]" routerLinkActive="active">Ver casos de uso</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Crear caso de uso</a>
+          <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['casodeuso-add'],sidebar: ['casodeuso-add'] } }]" routerLinkActive="active">Crear caso de uso</a>
         </div>
       </li>
       <li class="nav-item dropdown">
