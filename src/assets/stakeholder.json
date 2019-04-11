@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mateo Pedroza",
+    "tipo": "Financiero",
+    "organizacion": "Startech"
+  },
+  {
+    "id": 2,
+    "nombre": "Sofia Alvarez",
+    "tipo": "Tecnologico",
+    "organizacion": "Startech"
+
+  },
+  {
+    "id": 3,
+    "nombre": "Sofia Sarmiento",
+    "tipo": "Social",
+    "organizacion": "Startech"
+  }
+]

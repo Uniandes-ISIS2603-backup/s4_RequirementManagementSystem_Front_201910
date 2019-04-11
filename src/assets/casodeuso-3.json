@@ -1,0 +1,5 @@
+{
+  "id": 3,
+  "caminos": ["camino de excepcion 3","curso basico de eventos 3","camino alternativo 3"],
+  "condiciones": ["precondicion 3","poscondicion 3"]
+}

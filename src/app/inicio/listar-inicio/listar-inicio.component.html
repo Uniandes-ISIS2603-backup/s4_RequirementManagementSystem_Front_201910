@@ -42,7 +42,7 @@
           Casos de Uso
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ver casos de uso</a>
+          <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['casodeuso-list'],sidebar: ['casodeuso-list'] } }]" routerLinkActive="active">Ver casos de uso</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Crear caso de uso</a>
         </div>
@@ -62,7 +62,8 @@
           Condiciones
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ver condiciones</a>
+          <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['condicion-list'],sidebar: ['condicion-list'] } }]" routerLinkActive="active">Ver condiciones</a>
+          
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Crear condición</a>
         </div>
@@ -72,21 +73,47 @@
           Cambios
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ver historial de cambios</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Crear cambio</a>
-        </div>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['cambio-list'],sidebar: ['cambio-list'] } }]" routerLinkActive="active">Ver historial de cambios</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['cambio-add'],sidebar: ['cambio-add'] } }]" routerLinkActive="active">Crear cambio</a>            
+      </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Aprobaciones
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ver aprobaciones</a>
+          <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['aprobacion-list'],sidebar: ['aprobacion-list'] } }]" routerLinkActive="active">Ver aprobaciones</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Crear aprobación</a>
+          <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['aprobacion-add'],sidebar: ['aprobacion-add'] } }]" routerLinkActive="active">Crear aprobación</a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Organizaciones
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['organizacion-listar'],sidebar: ['organizacion-listar'] } }]" routerLinkActive="active">Ver organizaciones existentes</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['organizacion-crear'],sidebar: ['organizacion-crear'] } }]" routerLinkActive="active">Crear organización</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['organizacion-eliminar'],sidebar: ['organizacion-eliminar'] } }]" routerLinkActive="active">Eliminar organización</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Stakeholders
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['stakeholder-listar'],sidebar: ['stakeholder-listar'] } }]" routerLinkActive="active">Ver stakeholders existentes</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['stakeholder-crear'],sidebar: ['stakeholder-crear'] } }]" routerLinkActive="active">Crear stakeholder</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['stakeholder-actualizar'],sidebar: ['stakeholder-actualizar'] } }]" routerLinkActive="active">Actualizar stakeholder</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['stakeholder-eliminar'],sidebar: ['stakeholder-eliminar'] } }]" routerLinkActive="active">Eliminar stakeholder</a>
+            </div>
+          </li>
 
 
 
@@ -96,12 +123,8 @@
 </nav>
 
 <h1 align='center'>Proyecto 1</h1>
-
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-
-  
+<p class="lead" align='center'>Cumple tus expectativas, manejando efectivamente todos tus requerimientos.</p>
+ 
 
 
 

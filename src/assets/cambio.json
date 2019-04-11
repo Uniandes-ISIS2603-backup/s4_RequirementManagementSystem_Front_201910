@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "tipo": "Modificación",
+    "autor": "Sofia Alvarez",
+    "organizacion": "Startech",
+    "fechaYHora": "Fri Apr 05 2019 16:06:58 GMT-0500 (-05)",
+    "id_aprobado": "1",
+    "nombre_aprobado": "Objetivo 1"
+  },
+  {
+    "id": 2,
+    "tipo": "Aprobación",
+    "autor": "Sofia Alvarez",
+    "organizacion": "Alpina",
+    "fechaYHora": "Thu Apr 04 2019 23:06:58 GMT-0500 (-05)",
+    "id_aprobado": "2",
+    "nombre_aprobado": "Objetivo 3"
+
+  },
+  {
+    "id": 3,
+    "tipo": "Eliminación",
+    "autor": "Sofia Alvarez",
+    "organizacion": "Universidad de los Andes",
+    "fechaYHora": "Wed Apr 03 2019 12:06:58 GMT-0500 (-05)",
+    "id_aprobado": "5",
+    "nombre_aprobado": "Requisito 5"
+
+  }
+]

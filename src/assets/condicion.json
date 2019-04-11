@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "descripcion": "esta es la primera condicion",
+    "seCumplio": "true",
+    "esPrecondicion": "true"
+  },
+  {
+    "id": 2,
+    "descripcion": "esta es la segunda condicion que no es una precondicion",
+    "seCumplio": "true",
+    "esPrecondicion": "false"
+  },
+  {
+    "id": 3,
+    "descripcion": "esta es la tercera condicion",
+    "seCumplio": "true",
+    "esPrecondicion": "true"
+  }
+]

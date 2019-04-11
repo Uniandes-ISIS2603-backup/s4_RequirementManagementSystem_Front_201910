@@ -1,0 +1,8 @@
+{
+    "id": 3,
+    "tipo": "Eliminación",
+    "autor": "Sofia Alvarez",
+    "descripcion": "Eliminar el requisito 5 pues no concuerda con los lineamientos del proyecto.",
+    "id_aprobado": "5",
+    "nombre_aprobado": "Requisito 5"
+  }

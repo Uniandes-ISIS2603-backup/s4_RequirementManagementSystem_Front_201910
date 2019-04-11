@@ -1,0 +1,13 @@
+{
+    "id": 3,
+    "tipo": "REQUISITO",
+    "autor": "Sofia Alvarez",
+    "organizacion": "Universidad de los Andes",
+    "fechaYHora": "Wed Apr 03 2019 12:06:58 GMT-0500 (-05)",
+    "estado": "En proceso",
+    "comentario": "Se ha evaluado el cambio 3 y se ha propuesto un comentario para revisión. El cambio no ha sido aprobado aún.",
+    "id_aprobado": "3",
+    "nombre_aprobado": "Requisito 3"
+
+
+  }

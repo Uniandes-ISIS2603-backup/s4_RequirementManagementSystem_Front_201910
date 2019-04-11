@@ -1,0 +1,11 @@
+{
+    "id": 1,
+    "tipo": "OBJETIVO",
+    "autor": "Sofia Alvarez",
+    "organizacion": "Startech",
+    "fechaYHora": "Fri Apr 05 2019 16:06:58 GMT-0500 (-05)",
+    "estado": "Aprobado",
+    "comentario": "Se ha evaluado el cambio 1 y se considera pertinente su implementación.",
+    "id_aprobado": "1",
+    "nombre_aprobado": "Objetivo 1"
+  }
