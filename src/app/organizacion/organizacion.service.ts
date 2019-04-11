@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {Organizacion} from './organizacion';
 
 
-const API_URL = '../../assets';
+const API_URL = 'http://4c0e33ca.ngrok.io/s4_requirement-api/api/organizaciones';
 const Organizacions = '/organizacion.json';
 
 
@@ -25,8 +25,8 @@ export class OrganizacionService {
     * Retorna obserbable que contiene lista de Organizacions extraidos del API
     * @returns The list of Organizacions in real time
     */
-    getOrganizacions(): Observable<Organizacion[]> {
-        return this.http.get<Organizacion[]>(API_URL + Organizacions);
+    getOrganizaciones(): Observable<Organizacion[]> {
+        return this.http.get<Organizacion[]>(API_URL);
     }
 
     /**
@@ -35,7 +35,7 @@ export class OrganizacionService {
     * @returns El Organizacion creado, null si no se creo exitosamente
     */
     createOrganizacion(Organizacion): Observable<Organizacion> {
-        return this.http.post<Organizacion>(API_URL + Organizacions, Organizacion);
+        return this.http.post<Organizacion>(API_URL, Organizacion);
     }
 
     /**
@@ -43,7 +43,7 @@ export class OrganizacionService {
     * @returns The author details
     */
     getOrganizacion(OrganizacionId): Observable<Organizacion> {
-        return this.http.get<Organizacion>(API_URL + Organizacions + '/' + OrganizacionId);
+        return this.http.get<Organizacion>(API_URL + '/' + OrganizacionId);
     }
 
     /**
@@ -52,7 +52,7 @@ export class OrganizacionService {
         * @returns The updated Organizacion
         */
     updateOrganizacion(Organizacion): Observable<Organizacion> {
-        return this.http.put<Organizacion>(API_URL + Organizacions + '/' + Organizacion.id, Organizacion);
+        return this.http.put<Organizacion>(API_URL + '/' + Organizacion.id, Organizacion);
     }
     
     /**
@@ -61,6 +61,6 @@ export class OrganizacionService {
     * @returns True if the Organizacion was deleted, false otherwise
     */
     deleteOrganizacion(OrganizacionId): Observable<Organizacion> {
-        return this.http.delete<Organizacion>(API_URL + Organizacions + '/' + OrganizacionId);
+        return this.http.delete<Organizacion>(API_URL + '/' + OrganizacionId);
     }
 }

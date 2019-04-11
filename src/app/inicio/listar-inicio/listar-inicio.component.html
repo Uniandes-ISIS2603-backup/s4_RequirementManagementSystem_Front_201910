@@ -42,7 +42,7 @@
           Casos de Uso
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/casosdeuso/list" routerLinkActive="active">Ver casos de uso</a>
+          <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['casodeuso-list'],sidebar: ['casodeuso-list'] } }]" routerLinkActive="active">Ver casos de uso</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Crear caso de uso</a>
         </div>
@@ -62,7 +62,8 @@
           Condiciones
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/condiciones/list" routerLinkActive="active">Ver condiciones</a>
+          <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['condicion-list'],sidebar: ['condicion-list'] } }]" routerLinkActive="active">Ver condiciones</a>
+          
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Crear condición</a>
         </div>
@@ -95,11 +96,11 @@
             Organizaciones
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/organizacion/listar">Ver organizaciones existentes</a>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['organizacion-listar'],sidebar: ['organizacion-listar'] } }]" routerLinkActive="active">Ver organizaciones existentes</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/organizacion/crear">Crear organización</a>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['organizacion-crear'],sidebar: ['organizacion-crear'] } }]" routerLinkActive="active">Crear organización</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/organizacion/eliminar">Eliminar organización</a>
+            <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['organizacion-eliminar'],sidebar: ['organizacion-eliminar'] } }]" routerLinkActive="active">Eliminar organización</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -107,13 +108,13 @@
               Stakeholders
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/stakeholder/listar">Ver stakeholders existentes</a>
+              <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['stakeholder-listar'],sidebar: ['stakeholder-listar'] } }]" routerLinkActive="active">Ver stakeholders existentes</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/stakeholder/crear">Crear stakeholder</a>
+              <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['stakeholder-crear'],sidebar: ['stakeholder-crear'] } }]" routerLinkActive="active">Crear stakeholder</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/stakeholder/actualizar">Actualizar stakeholder</a>
+              <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['stakeholder-actualizar'],sidebar: ['stakeholder-actualizar'] } }]" routerLinkActive="active">Actualizar stakeholder</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/stakeholder/eliminar">Eliminar stakeholder</a>
+              <a class="dropdown-item" [routerLink]="[{ outlets: { primary: ['stakeholder-eliminar'],sidebar: ['stakeholder-eliminar'] } }]" routerLinkActive="active">Eliminar stakeholder</a>
             </div>
           </li>
 
