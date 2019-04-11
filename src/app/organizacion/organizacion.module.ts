@@ -15,6 +15,7 @@ import { OrganizacionService } from './organizacion.service';
 
 //import{ListarStakeholderComponent} from '../stakeholder/listar-stakeholder/listar-stakeholder.component'
 
+//Declaraciones de los componentes del modulo
 @NgModule({
   imports: [
     BrowserModule,

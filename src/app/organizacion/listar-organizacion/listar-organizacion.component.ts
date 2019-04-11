@@ -13,8 +13,8 @@ import { OrganizacionService } from '../organizacion.service';
 export class ListarOrganizacionComponent implements OnInit {
 
   /**
-* Lista de organizacions
-*/
+  * Lista de organizacions
+  */
   organizaciones: Organizacion[];
 
   /**
@@ -23,10 +23,10 @@ export class ListarOrganizacionComponent implements OnInit {
   constructor(private OrganizacionService: OrganizacionService, private route: ActivatedRoute) { }
 
   /**
-  * Obtener lista de todos los organizacions
+  * Obtener lista de todas las organizacions
   */
   getOrganizacions(): void {
-    this.OrganizacionService.getOrganizaciones().subscribe(organizacions => {this.organizaciones = organizacions;});
+    this.OrganizacionService.getOrganizaciones().subscribe(organizacions => { this.organizaciones = organizacions; });
   }
 
   /**

@@ -2,23 +2,23 @@ import { Stakeholder } from "../stakeholder/stakeholder";
 
 export class Organizacion {
     /**
-    * Id del organizacion
+    * Id de la organizacion
     */
     id: number;
 
     /**
-    * Nombre del organizacion
+    * Nombre de la organizacion
     */
     nombre: string;
 
 
     /**
-    * Tipo del organizacion
+    * Tipo de la organizacion
     */
     sector: string;
 
     /**
      * Lista de stakeholders
      */
-    stakeholders:Stakeholder[];
+    stakeholders: Stakeholder[];
 }
