@@ -8,6 +8,9 @@ import { AprobacionDetail } from '../aprobacion-detail';
   templateUrl: './update-aprobacion.component.html',
   styleUrls: ['./update-aprobacion.component.css']
 })
+/**
+ * Component that updates a specific approbation
+ */
 export class UpdateAprobacionComponent implements OnInit {
 
   /**
@@ -19,12 +22,6 @@ export class UpdateAprobacionComponent implements OnInit {
     private aprobacionService: AprobacionService,
     private toastrService: ToastrService
 ) {}
-
-/**
-* The id of the approbation that the user wants to edit
-* This is passed as a parameter by the parent component
-*/
-@Input() aprobacion_id: number;
 
 /**
 * The output which tells the parent component
@@ -39,12 +36,12 @@ export class UpdateAprobacionComponent implements OnInit {
 @Output() update = new EventEmitter();
 
 /**
-* The change to edit
+* The approbation to edit
 */
 aprobacionDetail: AprobacionDetail;
 
 /**
-* Retrieves the information of the change
+* Retrieves the information of the approbation
 */
 getAprobacion(id: number): void {
     this.aprobacionService.getAprobacionDetail(id)
@@ -54,7 +51,7 @@ getAprobacion(id: number): void {
 }
 
 /**
-* Updates the change's information
+* Updates the approbation's information
 */
 editAprobacion(): void {
     this.aprobacionService.updateAprobacion(this.aprobacionDetail)
@@ -66,7 +63,7 @@ editAprobacion(): void {
 }
 
 /**
-* Informs the parent component that the user no longer wants to update the change.
+* Informs the parent component that the user no longer wants to update the approbation.
 */
 cancelEdition(): void {
     this.cancel.emit();
@@ -80,7 +77,7 @@ ngOnInit() {
 }
 
 /**
-* The function which is called every time the user chooses to edit a different editorial
+* The function which is called every time the user chooses to edit a different approbation
 */
 ngOnChanges() {
     this.ngOnInit();
