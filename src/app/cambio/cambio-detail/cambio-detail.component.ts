@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { CambioService } from '../cambio.service';
 import { ActivatedRoute } from '@angular/router';
 import { CambioDetail } from '../cambio-detail';
+import { CambioUpdateComponent } from '../cambio-update/cambio-update.component';
 
 @Component({
   selector: 'app-cambio-detail',
@@ -9,6 +10,8 @@ import { CambioDetail } from '../cambio-detail';
   styleUrls: ['./cambio-detail.component.css']
 })
 export class CambioDetailComponent implements OnInit {
+  public isCollapsed = false;
+
 
   constructor(
     private cambioService: CambioService,
@@ -19,12 +22,18 @@ export class CambioDetailComponent implements OnInit {
 
     cambio_id: number;
 
+    @ViewChild(CambioUpdateComponent) update: CambioUpdateComponent;
+
   getCambioDetail(): void {
     this.cambioService.getCambioDetail(this.cambio_id)
       .subscribe(cambioDetail => {
         
         this.cambioDetail = cambioDetail;
       });
+  }
+
+  updateCambio(): void{
+    this.update.getCambio(this.cambioDetail.id);
   }
 
     ngOnInit() {

@@ -6,12 +6,14 @@ import { CambioService } from './cambio.service';
 import { CambioDetailComponent } from './cambio-detail/cambio-detail.component';
 import { FormsModule } from '@angular/forms';
 import { CambioCreateComponent } from './cambio-create/cambio-create.component';
+import { CambioUpdateComponent } from './cambio-update/cambio-update.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
-    CommonModule, AppRoutingModule, FormsModule
+    CommonModule, AppRoutingModule, FormsModule, NgbModule
   ],
-  declarations: [ ListarCambioComponent, CambioDetailComponent, CambioCreateComponent],
+  declarations: [ ListarCambioComponent, CambioDetailComponent, CambioCreateComponent, CambioUpdateComponent],
   providers: [CambioService],
   exports: [ListarCambioComponent, CambioDetailComponent, CambioCreateComponent]
 })

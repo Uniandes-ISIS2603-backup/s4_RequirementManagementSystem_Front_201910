@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Editar un cambio</h2>
+        <br>
+        <form name="cambio" (ngSubmit)="f.form.valid && editCambio()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="cambioTipo"><b>Tipo (Resumen) del cambio</b></label>
+                <input type="text" name="cambioTipo" class="form-control" id="cambioTipo" [(ngModel)]="cambioDetail.tipo"
+                    #cambioTipo="ngModel" 
+                    required>
+                <div class="invalid-feedback">
+                    <div>Falta editar el resumen del cambio</div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="cambioTipo"><b>Descripción del cambio</b></label>
+                    <textarea name="cambioDescripcion" class="form-control" id="cambioDescripcion" [(ngModel)]="cambioDetail.descripcion"
+                        #cambioTipo="ngModel" 
+                        required></textarea>
+                    <div class="invalid-feedback">
+                        <div>Falta editar la descripcion del cambio</div>
+                    </div>
+                </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
