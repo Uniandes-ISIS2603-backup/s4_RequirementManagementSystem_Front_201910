@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Objetivo } from '../objetivo';
 
 @Component({
   selector: 'app-crear-objetivo',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearObjetivoComponent implements OnInit {
 
-  constructor() { }
+  objeto: any = {};
+
+  objetivo: Objetivo;
+  constructor() 
+  {
+    
+  }
 
   ngOnInit() {
   }
 
+  crearObjeto()
+  {
+    //console.log(this.objeto);
+    this.objetivo = this.objeto;
+    console.log(this.objetivo);
+    
+  }
 }

@@ -5,10 +5,12 @@ import { ListarObjetivoDetailComponent } from './listar-objetivo-detail/listar-o
 import { CrearObjetivoComponent } from './crear-objetivo/crear-objetivo.component';
 import { UpdateObjetivoComponent } from './update-objetivo/update-objetivo.component';
 import { DeleteObjetivoComponent } from './delete-objetivo/delete-objetivo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [ListarObjetivoComponent, ListarObjetivoDetailComponent, CrearObjetivoComponent, UpdateObjetivoComponent, DeleteObjetivoComponent],
   exports: [ListarObjetivoComponent, ListarObjetivoDetailComponent, CrearObjetivoComponent, UpdateObjetivoComponent, DeleteObjetivoComponent]
