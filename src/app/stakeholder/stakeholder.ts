@@ -15,9 +15,4 @@ export class Stakeholder {
     * Tipo del stakeholder
     */
     tipo: string;
-
-    /**
-     * Organizacion del stakeholder
-     */
-    organizacion: String;
 }

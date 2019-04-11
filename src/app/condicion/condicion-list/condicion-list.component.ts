@@ -22,10 +22,11 @@ export class CondicionListComponent implements OnInit {
   }
 
   onSelected(condicion_id: number): void {
-    this.condicion_id = condicion_id;
-    this.selectedCondicion = new CondicionDetail();
-    console.log("condicion: ", condicion_id);
-    this.condicionService.getCondicionesDetail(condicion_id).subscribe(o => {this.selectedCondicion = o;
+        console.log("condicion: ", condicion_id);
+    this.condicionService.getCondicionesDetail(condicion_id).subscribe(o => {
+      this.condicion_id = condicion_id;
+      this.selectedCondicion = new CondicionDetail();
+      this.selectedCondicion = o;
       console.log("EN  ls lista") ;
      console.log(o) ;
     });

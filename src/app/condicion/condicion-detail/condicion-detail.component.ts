@@ -16,11 +16,11 @@ export class CondicionDetailComponent implements OnInit {
 
   @Input()   condicionDetail: CondicionDetail;
 
-  condicion_id: number;
+  //condicion_id: number;
 
   getCondicionesDetail(): void {
 
-    this.condicionService.getCondicionesDetail(this.condicion_id)
+    this.condicionService.getCondicionesDetail(this.condicionDetail.id)
     .subscribe(condicionDetail => {
       
       this.condicionDetail = condicionDetail;
@@ -28,7 +28,7 @@ export class CondicionDetailComponent implements OnInit {
 
   ngOnInit() {
     console.log("Detail:  ", this.condicionDetail)
-
+    this.getCondicionesDetail();
   }
 
 }

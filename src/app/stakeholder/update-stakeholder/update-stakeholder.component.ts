@@ -12,25 +12,26 @@ import { StakeholderService } from '../stakeholder.service';
 })
 export class UpdateStakeholderComponent implements OnInit {
 
+  //objeto tipo stakeholder, almacenara la informacion a acutalizar
   stakeholder: Stakeholder;
 
+  //Constructor con variables a usar
   constructor(private StakeholderService: StakeholderService, private route: ActivatedRoute) { }
 
   /**
   * Actualiza un Stakeholder
   */
-   updateStakeholder(): Stakeholder {
+  updateStakeholder(): Stakeholder {
     this.StakeholderService.updateStakeholder(this.stakeholder).subscribe(Stakeholder => {
-      this.stakeholder.id = Stakeholder.id;
       this.stakeholder.nombre = Stakeholder.nombre;
-      this.stakeholder.organizacion = Stakeholder.organizacion;
       this.stakeholder.tipo = Stakeholder.tipo
     }
     );
     return this.stakeholder;
   }
 
+  //inicializacion del objeto stakeholder
   ngOnInit() {
     this.stakeholder = new Stakeholder();
-  } 
+  }
 }

@@ -13,6 +13,7 @@ import { EliminarStakeholderComponent } from './eliminar-stakeholder/eliminar-st
 import { UpdateStakeholderComponent } from './update-stakeholder/update-stakeholder.component';
 import { StakeholderService } from './stakeholder.service';
 
+//Importa, declara los componentes del modulo
 @NgModule({
   imports: [
     BrowserModule,

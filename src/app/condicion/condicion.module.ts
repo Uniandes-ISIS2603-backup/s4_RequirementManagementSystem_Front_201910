@@ -5,12 +5,13 @@ import { CondicionDetailComponent } from './condicion-detail/condicion-detail.co
 import { CondicionService } from './condicion.service';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { CondicionCreateComponent } from './condicion-create/condicion-create.component';
 
 @NgModule({
   imports: [
     CommonModule, AppRoutingModule, FormsModule
   ],
-  declarations: [CondicionListComponent, CondicionDetailComponent],
+  declarations: [CondicionListComponent, CondicionDetailComponent, CondicionCreateComponent],
   providers: [CondicionService],
   exports: [CondicionListComponent, CondicionDetailComponent]
 
