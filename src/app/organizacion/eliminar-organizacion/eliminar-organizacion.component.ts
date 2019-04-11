@@ -10,17 +10,17 @@ import { OrganizacionService } from '../organizacion.service';
 })
 export class EliminarOrganizacionComponent implements OnInit {
 
+  //Constructor del componente con variables a usar
   constructor(private OrganizacionService: OrganizacionService, private route: ActivatedRoute) { }
 
-  idOrganizacion:number;
   /**
-  * Eliminare un organizacion
+  * Eliminar una organizacion
   */
-  eliminarOrganizacion(Id:number): void {
-    this.OrganizacionService.deleteOrganizacion(Id);
+  eliminarOrganizacion(id: number): void {
+    this.OrganizacionService.deleteOrganizacion(id).subscribe();
   }
 
+  //Inicializacion del componente
   ngOnInit() {
-    
-  } 
+  }
 }

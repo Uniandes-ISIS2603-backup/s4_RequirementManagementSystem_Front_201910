@@ -1,39 +1,125 @@
 <div class="container-fluid, site-wrapper, site-wrapper-inner, cover-container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="form-inline, site-wrapper, cover-container">
-        <a class="navbar-brand" href="#">
-            <img src= '../assets/startech.jpg'>
-        </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav mr-auto mt-0">
-                
-            </div>
-            <div class="navbar-nav ml-auto flex-column">
-                <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
-                    <div class="form-inline">
-                        <li class="right-space"><a id="signup-navbar-item" routerLink="/auth/sign-up"><span class="fa fa-user"></span>
-                                Sign Up</a></li>
-                        <li><a id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Login</a></li>
-                    </div>
-                </div>
-                <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
-                    <div class="form-inline">
-                        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div>
-        <router-outlet></router-outlet>
-        <router-outlet name="sidebar"></router-outlet>
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="form-inline, site-wrapper, cover-container">
+      <a class="navbar-brand" routerLink="">
+        <img src='../assets/startech.jpg'>
+      </a>
     </div>
-    
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Objetivos </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/objetivos">Ver
+              objetivos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/objetivos/new">Crear objetivo</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Requisitos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/requisitos">Ver requisitos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/requisitos/new">Crear requisito</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Casos de Uso
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/casosdeuso">Ver casos de uso</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/casosdeuso/new">Crear caso de uso</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Caminos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/caminos">Ver caminos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/caminos/new">Crear camino</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Condiciones
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/condiciones">Ver condiciones</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/condiciones/new">Crear condición</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Cambios
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/cambios">Ver historial de cambios</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/cambios/new" routerLinkActive="active">Crear cambio</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Aprobaciones
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/aprobaciones">Ver aprobaciones</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/aprobaciones/new">Crear aprobación</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Organizaciones
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="organizaciones">Ver organizaciones existentes</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/organizaciones/new">Crear organización</a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Stakeholders
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/stakeholders">Ver stakeholders existentes</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/stakeholders/new">Crear stakeholder</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div>
+    <router-outlet></router-outlet>
+    <router-outlet name="sidebar"></router-outlet>
+    <router-outlet name="edit-cambio"></router-outlet>
+
+
+  </div>
+
 </div>

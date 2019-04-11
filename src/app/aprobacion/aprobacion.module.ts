@@ -6,12 +6,16 @@ import { DetailAprobacionComponent } from './detail-aprobacion/detail-aprobacion
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AprobacionService } from './aprobacion.service';
-
+import { UpdateAprobacionComponent } from './update-aprobacion/update-aprobacion.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+/**
+ * The module that has all the components (create, get-all, get and update) of the approbations of the Requirement Management System.
+ */
 @NgModule({
   imports: [
-    CommonModule, AppRoutingModule, FormsModule
+    CommonModule, AppRoutingModule, FormsModule, NgbModule
   ],
-  declarations: [CreateAprobacionComponent, ListarAprobacionComponent, DetailAprobacionComponent],
+  declarations: [CreateAprobacionComponent, ListarAprobacionComponent, DetailAprobacionComponent, UpdateAprobacionComponent],
   providers: [AprobacionService],
   exports: [CreateAprobacionComponent, ListarAprobacionComponent, DetailAprobacionComponent]
 })

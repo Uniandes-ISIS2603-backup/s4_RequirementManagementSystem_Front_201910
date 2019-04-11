@@ -9,38 +9,57 @@ import { AprobacionDetail } from '../aprobacion-detail';
   templateUrl: './create-aprobacion.component.html',
   styleUrls: ['./create-aprobacion.component.css']
 })
+/**
+ * Component that creates a new approbation
+ */
 export class CreateAprobacionComponent implements OnInit {
 
+   /**
+    * Constructor for the component
+    * @param aprobacionService The approbation's service provider
+    * @param toastrService The toastr to show messages to the user 
+    * @param router The router of the component
+    */
   constructor(
     private aprobacionService: AprobacionService,
     private toastrService: ToastrService,
     router: Router
 ) {}
 
+/**
+ * The new approbation to be created.
+ * It is a detail because of the comment on the approbation.
+ */
 aprobacionDetail: AprobacionDetail;
+
+/**
+ * Current time in which the creation of the approbation took place.
+ */
 fecha: Date;
 
 
   /**
     * The output which tells the parent component
-    * that the user no longer wants to create a review.
+    * that the user no longer wants to create an approbation.
     */
    @Output() cancel = new EventEmitter();
 
    /**
    * The output which tells the parent component
-   * that the user created a new review.
+   * that the user created a new approbation.
    */
    @Output() create = new EventEmitter();
 
-
+/**
+ * Creates a new approbation and initializes the date, so that it is the current date-time. 
+ */
    createAprobacion(): AprobacionDetail {
      console.log(this.aprobacionDetail);
     this.aprobacionService.createAprobacion(this.aprobacionDetail)
         .subscribe((aprobacionDetail) => {
             this.aprobacionDetail = aprobacionDetail;
             this.create.emit();
-            this.toastrService.success("The review was created", "Review creation");
+            this.toastrService.success("The approbation was created", "Approbation creation");
         }, err => {
             this.toastrService.error(err, "Error");
         });
@@ -51,7 +70,7 @@ fecha: Date;
 }
 
 /**
-* Informs the parent component that the user no longer wants to create a review.
+* Informs the parent component that the user no longer wants to create an approbation.
 */
 cancelCreation(): void {
     this.cancel.emit();

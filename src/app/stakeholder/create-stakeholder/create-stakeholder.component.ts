@@ -12,25 +12,27 @@ import { StakeholderService } from '../../stakeholder/stakeholder.service';
 })
 export class CreateStakeholderComponent implements OnInit {
 
+  //Stakeholder a crear
   stakeholder: Stakeholder;
 
+  //constructor con variables a usar
   constructor(private StakeholderService: StakeholderService, private route: ActivatedRoute) { }
 
   /**
-  * Creates a new Stakeholder
+  * Crea un nuevo Stakeholder
   */
    createStakeholder(): Stakeholder {
     this.StakeholderService.createStakeholder(this.stakeholder).subscribe(Stakeholder => {
-      this.stakeholder.id = Stakeholder.id;
       this.stakeholder.nombre = Stakeholder.nombre;
-      this.stakeholder.organizacion = Stakeholder.organizacion;
       this.stakeholder.tipo = Stakeholder.tipo
     }
     );
     return this.stakeholder;
   }
 
+  //Inicializacion del componenete, inicializa objeto stakeholder
   ngOnInit() {
     this.stakeholder = new Stakeholder();
+    this.stakeholder.id = Math.floor(Math.random() * 9999) + 1;
   } 
 }

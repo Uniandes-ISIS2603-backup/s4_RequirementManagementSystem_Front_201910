@@ -2,5 +2,7 @@
     "id": 2,
     "tipo": "Aprobación",
     "autor": "Sofia Alvarez",
-    "descripcion": "El objetivo 3 debe modificarse puesto que no tiene requisitos asociados"
+    "descripcion": "El objetivo 3 debe modificarse puesto que no tiene requisitos asociados",
+    "id_aprobado": "2",
+    "nombre_aprobado": "Objetivo 3"
   }
