@@ -24,13 +24,15 @@ import { CasodeusoModule } from './casodeuso/casodeuso.module';
 import {StakeholderModule} from './stakeholder/stakeholder.module';
 import {OrganizacionModule} from './organizacion/organizacion.module';
 import {CondicionModule} from './condicion/condicion.module';
+import { RequisitoDetailComponent } from './requisito-detail/requisito-detail.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         ListarRequisitosComponent,
         ListarObjetivosComponent,
-        MostrarObjetivoComponent
+        MostrarObjetivoComponent,
+        RequisitoDetailComponent
     ],
     imports: [
         BrowserModule,

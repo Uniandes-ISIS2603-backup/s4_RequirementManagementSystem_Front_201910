@@ -11,7 +11,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
  
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class RequisitoService {
  
  
@@ -24,22 +24,12 @@ export class RequisitoService {
     return this.http.get<Requisito[]>(API_URL + reqsPath);
   }
  
-  /* /** GET hero by id. Return `undefined` when id not found 
-  getHeroNo404<Data>(id: number): Observable<Requisito> {
-    const url = `${this.heroesUrl}/?id=${id}`;
-    return this.http.get<Requisito>(url);
-  } */
- 
- 
-  /* GET heroes whose name contains search term */
-  /* searchHeroes(term: string): Observable<Requisito[]> {
-    if (!term.trim()) {
-      // if not search term, return empty hero array.
-      return of([]);
-    }
-    return this.http.get<Requisito[]>(`${this.heroesUrl}/?name=${term}`);
-  } */
- 
-  //////// Save methods //////////
+  // Get requisito by Id, returns undefined when not found.
+
+  getRequisito(id: number): Observable<Requisito> {
+    const url = `${reqsPath}/?id=${id}`;
+    return this.http.get<Requisito>(API_URL + url);
+  } 
+
  
 }
