@@ -13,8 +13,8 @@ import { StakeholderService } from '../../stakeholder/stakeholder.service';
 export class ListarStakeholderComponent implements OnInit {
 
   /**
-* Lista de stakeholders
-*/
+  * Lista de stakeholders
+  */
   stakeholders: Stakeholder[];
 
   /**
@@ -26,7 +26,7 @@ export class ListarStakeholderComponent implements OnInit {
   * Obtener lista de todos los stakeholders
   */
   getStakeholders(): void {
-    this.stakeholderService.getStakeholders().subscribe(stakeholders => {this.stakeholders = stakeholders;});
+    this.stakeholderService.getStakeholders().subscribe(stakeholders => { this.stakeholders = stakeholders; });
   }
 
   /**

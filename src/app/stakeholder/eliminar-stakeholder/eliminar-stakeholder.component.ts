@@ -8,20 +8,20 @@ import { StakeholderService } from '../stakeholder.service';
   templateUrl: './eliminar-stakeholder.component.html',
   styleUrls: ['./eliminar-stakeholder.component.css']
 })
+
 export class EliminarStakeholderComponent implements OnInit {
 
+  //Constructor con variables a usar
   constructor(private stakeholderService: StakeholderService, private route: ActivatedRoute) { }
 
-  idStakeholder:number;
-  
   /**
   * Eliminare un stakeholder
   */
-  eliminarStakeholder(id:number): void {
+  eliminarStakeholder(id: number): void {
     this.stakeholderService.deleteStakeholder(id).subscribe();
   }
 
+  //Inicializacion del componente
   ngOnInit() {
-    this.idStakeholder = +this.route.snapshot.paramMap.get('id');
-  } 
+  }
 }

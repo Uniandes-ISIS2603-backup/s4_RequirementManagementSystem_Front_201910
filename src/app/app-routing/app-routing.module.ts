@@ -18,6 +18,7 @@ import { UpdateStakeholderComponent } from '../stakeholder/update-stakeholder/up
 import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion/listar-organizacion.component';
 import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
 import { EliminarOrganizacionComponent } from '../organizacion/eliminar-organizacion/eliminar-organizacion.component';
+import {AgregarStakeholderOrganizacionComponent} from '../organizacion/agregarStakeholder-organizacion/agregarStakeholder-organizacion.component';
 import {CasodeusoDetailComponent} from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
 import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
 import {CondicionDetailComponent} from '../condicion/condicion-detail/condicion-detail.component';
@@ -119,6 +120,11 @@ const routes: Routes = [
 {
     path: 'organizacion-eliminar',
     component: EliminarOrganizacionComponent,
+    outlet: "sidebar"
+},
+{
+    path: 'organizacion-agregarSH',
+    component: AgregarStakeholderOrganizacionComponent,
     outlet: "sidebar"
 },
    {
