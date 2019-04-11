@@ -13,7 +13,7 @@ export class Aprobacion {
      */
     tipo: string;
     /**
-     * The author of the approbation
+     * Name and Family name of the author of the approbation
      */
     autor: string;
     /**

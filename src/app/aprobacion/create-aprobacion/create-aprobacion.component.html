@@ -39,6 +39,17 @@
                       <option>Requisito 5</option>
                     </select>
                   </div>
+                  <div>
+                      <label for="aprobacionObjReq"><b>Seleccione el id del objetivo/requisito a aprobar/revisar/desaprobar</b></label>
+                      <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.id_aprobado"
+                      #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
+                        <option type="number">1</option>
+                        <option type="number">2</option>
+                        <option type="number">3</option>
+                        <option type="number">4</option>
+                        <option type="number">5</option>
+                      </select>
+                    </div>
                 <label for="aprobacionTipo"><b>Tipo (Resumen) de la aprobacion</b></label>
                     <input type="text" name="aprobacionTipo" class="form-control" id="aprobacionTipo" [(ngModel)]="aprobacionDetail.tipo"
                         #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>

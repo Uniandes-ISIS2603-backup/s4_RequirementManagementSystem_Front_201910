@@ -9,21 +9,43 @@ import { CambioUpdateComponent } from '../cambio-update/cambio-update.component'
   templateUrl: './cambio-detail.component.html',
   styleUrls: ['./cambio-detail.component.css']
 })
+/**
+ * Component that shows the detail of a specific change.
+ */
 export class CambioDetailComponent implements OnInit {
+   /**
+   * This attribute is initialized in false so that the view is not collapsed when one opens the component.
+   */
   public isCollapsed = false;
 
-
+  /**
+    * The component's constructor
+    * @param cambioService The change's service
+    * @param route The route element which helps to obtain the change's id
+    */
   constructor(
     private cambioService: CambioService,
     private route: ActivatedRoute
   ) { }
 
+  /**
+    * The change whose details we want to show
+    */
   @Input() cambioDetail: CambioDetail;
 
+  /**
+    * The change's id retrieved from the address
+    */
     cambio_id: number;
 
+  /**
+   * Viewchild component that displays the update component, to update a change. 
+  */
     @ViewChild(CambioUpdateComponent) update: CambioUpdateComponent;
 
+  /**
+  * The method which retrieves the description (detail) of a change.
+  */
   getCambioDetail(): void {
     this.cambioService.getCambioDetail(this.cambio_id)
       .subscribe(cambioDetail => {
@@ -32,10 +54,17 @@ export class CambioDetailComponent implements OnInit {
       });
   }
 
+  /**
+   * The method that aims to send the id of the current change, to the update component.
+   */
   updateCambio(): void{
     this.update.getCambio(this.cambioDetail.id);
   }
 
+    /**
+      * The method which initializes the component
+      * We need to initialize the change so that it is never considered as undefined
+      */
     ngOnInit() {
       
     this.cambio_id = +this.route.snapshot.paramMap.get('id');

@@ -9,7 +9,7 @@ import { AprobacionService } from './aprobacion.service';
 import { UpdateAprobacionComponent } from './update-aprobacion/update-aprobacion.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 /**
- * The module that has all the components (create, get-all, get and update) of the approbation of the Requirement Management System.
+ * The module that has all the components (create, get-all, get and update) of the approbations of the Requirement Management System.
  */
 @NgModule({
   imports: [

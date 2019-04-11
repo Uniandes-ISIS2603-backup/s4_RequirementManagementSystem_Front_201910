@@ -8,6 +8,9 @@ import { CambioDetail } from '../cambio-detail';
   templateUrl: './cambio-update.component.html',
   styleUrls: ['./cambio-update.component.css']
 })
+/**
+ * Component that updates a specific change
+ */
 export class CambioUpdateComponent implements OnInit {
 
   /**
@@ -19,12 +22,6 @@ export class CambioUpdateComponent implements OnInit {
     private cambioService: CambioService,
     private toastrService: ToastrService
 ) {}
-
-/**
-* The id of the change that the user wants to edit
-* This is passed as a parameter by the parent component
-*/
-@Input() cambio_id: number;
 
 /**
 * The output which tells the parent component
@@ -80,7 +77,7 @@ ngOnInit() {
 }
 
 /**
-* The function which is called every time the user chooses to edit a different editorial
+* The function which is called every time the user chooses to edit a different change
 */
 ngOnChanges() {
     this.ngOnInit();
