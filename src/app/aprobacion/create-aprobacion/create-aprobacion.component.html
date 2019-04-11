@@ -1,3 +1,85 @@
-<p>
-  create-aprobacion works!
-</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear una nueva aprobación</h2>
+        <br>
+        <form name="aprobacion" (ngSubmit)="f.form.valid && createAprobacion()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="aprobacionAutor"><b>Ingrese su nombre y apellido</b></label>
+                <input type="text" name="aprobacionAutor" class="form-control" id="aprobacionAutor" [(ngModel)]="aprobacionDetail.autor"
+                    #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado su nombre y apellido</div>
+                </div>  
+              </div>
+              <div>
+                <label for="aprobacionOrganizaciones"><b>Seleccione su organizacion</b></label>
+                    <select name="aprobacionOrganizaciones" class="form-control" id="aprobacionOrganizaciones" [(ngModel)]="aprobacionDetail.organizacion"
+                    #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
+                      <option>Startech</option>
+                      <option>Alpina</option>
+                      <option>Microsoft</option>
+                      <option>Universidad de los Andes</option>
+                    </select>
+                  </div>
+                <div>
+                    <label for="aprobacionObjReq"><b>Seleccione el objetivo/requisito a aprobar/revisar/desaprobar</b></label>
+                    <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.nombre_aprobado"
+                    #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
+                      <option>Objetivo 1</option>
+                      <option>Objetivo 2</option>
+                      <option>Objetivo 3</option>
+                      <option>Objetivo 4</option>
+                      <option>Objetivo 5</option>
+                      <option>Requisito 1</option>
+                      <option>Requisito 2</option>
+                      <option>Requisito 3</option>
+                      <option>Requisito 4</option>
+                      <option>Requisito 5</option>
+                    </select>
+                  </div>
+                <label for="aprobacionTipo"><b>Tipo (Resumen) de la aprobacion</b></label>
+                    <input type="text" name="aprobacionTipo" class="form-control" id="aprobacionTipo" [(ngModel)]="aprobacionDetail.tipo"
+                        #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>Falta el tipo (resumen) del aprobacion</div>
+                    </div>
+                    <div class="row">
+                    <div class='col-7'>
+                        <label for="aprobacionDescripcion"><b>Comentario sobre la aprobacion</b></label>
+                    <textarea name="aprobacionDescripcion" class="form-control" id="aprobacionDescripcion" rows="5" [(ngModel)]="aprobacionDetail.comentario"
+                        #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required></textarea>
+                    <div class="invalid-feedback">
+                        <div>Falta el comentario sobre la aprobacion</div>
+                    </div> 
+                    </div>  
+                    <div class="col-5">
+                      <p> </p>
+                      <p> </p>
+                      <p> </p>
+                      <p> </p>
+                      <img align='center' src= "../../../assets/aprobacion.jpg" width="270" height='150'>
+                    </div>
+                  </div>
+                  <label for="aprobacionEstado"><b>Seleccione el estado de su aprobación</b></label>
+                    <select name="aprobacionEstado" class="form-control" id="aprobacionEstado" [(ngModel)]="aprobacionDetail.estado"
+                    #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
+                      <option>Aprobado</option>
+                      <option>En proceso</option>
+                      <option>No aprobado</option>
+                    </select>
+                  <label for="aprobacionFechaYHora"><b>Fecha y Hora de publicación</b></label>
+                  <input class="form-control" name="aprobacionFechaYHora" type="text" placeholder= {{fecha}} readonly [(ngModel)]="aprobacionDetail.fechaYHora"
+                  #aprobacionName="ngModel">
+                <p>  </p>
+                  <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Crear</button><p> </p>
+                <div class="divider"></div>
+                <p> </p>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
