@@ -13,7 +13,7 @@ export class CasodeusoListComponent implements OnInit {
 
   constructor(private casodeusoService: CasodeusoService,private router: Router) { }
 
-  casosdeuso: Casodeuso[];
+  casosdeuso: CasodeusoDetail[];
   casodeuso_id:number;
   selectedCasodeuso: CasodeusoDetail;
 
@@ -23,16 +23,19 @@ export class CasodeusoListComponent implements OnInit {
 
   onSelected(casodeuso_id: number): void {
     this.casodeuso_id = casodeuso_id;
+    
     this.selectedCasodeuso = new CasodeusoDetail();
-    console.log("casodeuso: ", casodeuso_id);
-    this.casodeusoService.getCasosdeusoDetail(casodeuso_id).subscribe(o => {this.selectedCasodeuso = o;
-      console.log("EN  ls lista") ;
+    console.log("casodeuso:////// ", casodeuso_id);
+    this.casodeusoService.getCasosdeusoDetail(casodeuso_id).subscribe(o => 
+      {this.selectedCasodeuso = o;
+      console.log("EN  ls lista", this.selectedCasodeuso) ;
      console.log(o) ;
     });
   }
 
   ngOnInit() {
     this.getCasosdeuso();
+    
   }
 
 }

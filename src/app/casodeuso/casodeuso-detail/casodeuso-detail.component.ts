@@ -11,7 +11,11 @@ import { CasodeusoDetail } from '../casodeuso-detail';
 export class CasodeusoDetailComponent implements OnInit {
 
   constructor(private casodeusoService: CasodeusoService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) 
+    {
+      console.log(this.casodeusoDetail);
+      
+     }
 
 
   @Input()   casodeusoDetail: CasodeusoDetail;
