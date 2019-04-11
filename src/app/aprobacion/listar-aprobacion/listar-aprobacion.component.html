@@ -16,8 +16,8 @@
 				</thead>
 				<tbody align = 'center'> 
 					<tr *ngFor="let i of aprobaciones">
-						<td >
-							<p class="figure-caption">{{i.id}}</p>
+						<td style="cursor: pointer;">
+							<a class="figure-caption" (click)="onSelected(i.id)">{{i.id}}</a>
 						</td>
 						<td >
 								<p class="figure-caption">{{i.id_aprobado}}</p>
@@ -25,8 +25,8 @@
 							<td >
 									<p class="figure-caption">{{i.nombre_aprobado}}</p>
 								</td>
-            <td style="cursor: pointer;">
-								<a class="figure-caption" (click)="onSelected(i.id)">{{i.tipo}}</a>
+            <td>
+								<p class="figure-caption">{{i.tipo}}</p>
             </td>
             <td >
 							<p class="figure-caption">{{i.autor}}</p>

@@ -9,7 +9,7 @@ export class Aprobacion {
     id: number;
     /**
      * The type of the approbation. 
-     * It works as a little summary of the approbation
+     * It can be "OBJETIVO" or "REQUISITO"
      */
     tipo: string;
     /**
@@ -32,7 +32,7 @@ export class Aprobacion {
     /**
      * Id of the requirement or objective.
      */
-    id_aprobado: number;
+    id_aprobado: string;
     /**
      * Name of the requirement or objective.
      */
