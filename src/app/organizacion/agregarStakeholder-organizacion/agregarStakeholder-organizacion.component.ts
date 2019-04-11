@@ -45,6 +45,5 @@ export class AgregarStakeholderOrganizacionComponent implements OnInit {
   ngOnInit() {
     this.organizacion = new Organizacion();
     this.stakeholder = new Stakeholder();
-    this.organizacion.id = Math.floor(Math.random() * 9999) + 1;
   }
 }
