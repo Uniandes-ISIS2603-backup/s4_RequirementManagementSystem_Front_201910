@@ -32,123 +32,63 @@ import { CambioUpdateComponent } from '../cambio/cambio-update/cambio-update.com
 const routes: Routes = [
 
     {
-        path: 'auth',
-        children: [
-            {
-                path: 'login',
-                component: AuthLoginComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
-            },
-            {
-                path: ':sign-up',
-                component: AuthSignUpComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
-            }
-        ]
+        path: 'home',
+        component: ListarInicioComponent
     },
     {
-        path: 'cambio-list',
-        component: ListarCambioComponent,
-        outlet: "sidebar"
+        path: 'cambios',
+        component: ListarCambioComponent        
     },
     {
-        path: 'cambio-add',
-        component: CambioCreateComponent,
-        outlet: "sidebar"
+        path: 'cambios/new',
+        component: CambioCreateComponent        
     },
     {
-        path: 'cambio-update',
-        component: CambioUpdateComponent,
-        outlet: "sidebar"
+        path: 'aprobaciones',
+        component: ListarAprobacionComponent        
     },
     {
-        path: 'aprobacion-list',
-        component: ListarAprobacionComponent,
-        outlet: "sidebar"
+        path: 'aprobaciones/new',
+        component: CreateAprobacionComponent        
     },
     {
-        path: 'aprobacion-add',
-        component: CreateAprobacionComponent,
-        outlet: "sidebar"
+        path: 'casosdeuso',
+        component: CasodeusoListComponent        
+    },
+/*     {
+        path: 'casosdeuso/new',
+        component: CasodeusoCreateComponent        
+    }, */
+    {
+        path: 'condiciones',
+        component: CondicionListComponent        
     },
     {
-        path: 'casodeuso-list',
-        component: CasodeusoListComponent,
-        outlet: "sidebar"
+        path: 'stakeholders',
+        component: ListarStakeholderComponent        
     },
     {
-        path: 'condicion-list',
-        component: CondicionListComponent,
-        outlet: "sidebar"
+        path: 'stakeholders/new',
+        component: CreateStakeholderComponent        
     },
     {
-        path: 'stakeholder-listar',
-        component: ListarStakeholderComponent,
-        outlet: "sidebar"
+        path: 'organizaciones',
+        component: ListarOrganizacionComponent        
     },
     {
-        path: 'stakeholder-crear',
-        component: CreateStakeholderComponent,
-        outlet: "sidebar"
-    },
-    {
-        path: 'stakeholder-actualizar',
-        component: UpdateStakeholderComponent,
-        outlet: "sidebar"
-    },
-    {
-        path: 'stakeholder-eliminar',
-        component: EliminarStakeholderComponent,
-        outlet: "sidebar"
-    },
-    {
-        path: 'organizacion-listar',
-        component: ListarOrganizacionComponent,
-        outlet: "sidebar"
-    },
-    {
-        path: 'organizacion-crear',
-        component: CreateOrganizacionComponent,
-        outlet: "sidebar"
-    },
-    {
-        path: 'organizacion-eliminar',
-        component: EliminarOrganizacionComponent,
-        outlet: "sidebar"
+        path: 'organizaciones/new',
+        component: CreateOrganizacionComponent        
     },
     {
         path: 'objetivos',
-        component: ListarObjetivoComponent
-    },
-    {
-        path: 'objetivos/:id',
-        component: ListarObjetivoDetailComponent
+        component: ListarObjetivoComponent        
     },
     {
         path: 'objetivos/new',
-        component: CrearObjetivoComponent
+        component: CrearObjetivoComponent        
     },
     {
-        path: 'objetivos/:id/update',
-        component: UpdateObjetivoComponent
-    },
-    {
-        path: 'objetivos/:id/delete',
-        component: DeleteObjetivoComponent
-    },
-    {
-        path: '**',
-        component: ListarInicioComponent
+        path: '', redirectTo: 'home', pathMatch: 'full'
     }
 ];
 

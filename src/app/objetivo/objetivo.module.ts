@@ -6,6 +6,10 @@ import { CrearObjetivoComponent } from './crear-objetivo/crear-objetivo.componen
 import { UpdateObjetivoComponent } from './update-objetivo/update-objetivo.component';
 import { DeleteObjetivoComponent } from './delete-objetivo/delete-objetivo.component';
 import { FormsModule } from '@angular/forms';
+import { ObjetivoService } from './objetivo.service';
+
+
+
 
 @NgModule({
   imports: [
@@ -13,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   declarations: [ListarObjetivoComponent, ListarObjetivoDetailComponent, CrearObjetivoComponent, UpdateObjetivoComponent, DeleteObjetivoComponent],
-  exports: [ListarObjetivoComponent, ListarObjetivoDetailComponent, CrearObjetivoComponent, UpdateObjetivoComponent, DeleteObjetivoComponent]
+  exports: [ListarObjetivoComponent, ListarObjetivoDetailComponent, CrearObjetivoComponent, UpdateObjetivoComponent, DeleteObjetivoComponent],
+  providers: [ObjetivoService]
 })
 export class ObjetivoModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ObjetivoService } from '../objetivo.service';
+import { Objetivo } from '../objetivo';
 
 @Component({
   selector: 'app-listar-objetivo',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarObjetivoComponent implements OnInit {
 
-  constructor() { }
+  objetivos: Objetivo[];
+  constructor(private srv: ObjetivoService) {
 
-  ngOnInit() {
+  }
+
+  ngOnInit() 
+  {
+    this.srv.getObjetivos().subscribe((objs) => {this.objetivos = objs})
   }
 
 }
