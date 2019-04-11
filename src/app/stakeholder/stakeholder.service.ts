@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Stakeholder } from './stakeholder';
 
-const API_URL = 'http://4c0e33ca.ngrok.io/s4_requirement-api/api/stakeholders';
+const API_URL = 'http://58fc60ad.ngrok.io/s4_requirement-api/api/stakeholders';
 
 
 @Injectable()

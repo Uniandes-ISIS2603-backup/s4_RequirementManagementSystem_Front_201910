@@ -24,7 +24,9 @@ export class AgregarStakeholderOrganizacionComponent implements OnInit {
   //Obtener el stakeholder dado por id ingresado por usuario
   getStakeholder(): Stakeholder {
     this.stakeholderService.getStakeholder(this.stakeholder.id).subscribe(Stakeholder => {
-      this.stakeholder = Stakeholder;
+      this.stakeholder.id = Stakeholder.id;
+      this.stakeholder.nombre = Stakeholder.nombre;
+      this.stakeholder.tipo = Stakeholder.tipo;
     });
     return this.stakeholder;
   }
@@ -32,7 +34,10 @@ export class AgregarStakeholderOrganizacionComponent implements OnInit {
   //Obtener la organizacion dado por id ingresado por usuario
   getOrganizacion(): Organizacion {
     this.organizacionService.getOrganizacion(this.organizacion.id).subscribe(Organizacion => {
-      this.organizacion = Organizacion;
+      this.organizacion.id = Organizacion.id;
+      this.organizacion.nombre = Organizacion.nombre;
+      this.organizacion.sector = Organizacion.sector;
+      this.organizacion.stakeholders = Organizacion.stakeholders;
     });
     return this.organizacion;
   }
