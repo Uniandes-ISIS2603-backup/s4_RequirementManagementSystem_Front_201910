@@ -9,7 +9,7 @@ export class Aprobacion {
     id: number;
     /**
      * The type of the approbation. 
-     * It works as a little summary of the approbation
+     * It can be "OBJETIVO" or "REQUISITO"
      */
     tipo: string;
     /**
