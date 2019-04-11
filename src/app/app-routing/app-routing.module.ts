@@ -20,12 +20,13 @@ import { CreateOrganizacionComponent } from '../organizacion/create-organizacion
 import { EliminarOrganizacionComponent } from '../organizacion/eliminar-organizacion/eliminar-organizacion.component';
 import { CasodeusoDetailComponent } from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
 import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
-import { CondicionDetailComponent } from '../condicion/condicion-detail/condicion-detail.component';
-import { ListarObjetivoComponent} from '../objetivo/listar-objetivo/listar-objetivo.component'
+import { ListarObjetivoComponent } from '../objetivo/listar-objetivo/listar-objetivo.component'
 import { ListarObjetivoDetailComponent } from '../objetivo/listar-objetivo-detail/listar-objetivo-detail.component';
 import { CrearObjetivoComponent } from '../objetivo/crear-objetivo/crear-objetivo.component';
 import { UpdateObjetivoComponent } from '../objetivo/update-objetivo/update-objetivo.component';
 import { DeleteObjetivoComponent } from '../objetivo/delete-objetivo/delete-objetivo.component';
+import { CondicionDetailComponent } from '../condicion/condicion-detail/condicion-detail.component';
+import { CambioUpdateComponent } from '../cambio/cambio-update/cambio-update.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,11 @@ const routes: Routes = [
     {
         path: 'cambio-add',
         component: CambioCreateComponent,
+        outlet: "sidebar"
+    },
+    {
+        path: 'cambio-update',
+        component: CambioUpdateComponent,
         outlet: "sidebar"
     },
     {

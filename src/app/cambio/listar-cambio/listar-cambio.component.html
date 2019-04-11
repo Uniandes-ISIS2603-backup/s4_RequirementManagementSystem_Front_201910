@@ -1,10 +1,12 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-8">
+		<div class="col-12">
 			<table class="table table-striped">
 				<thead class="thead-dark" align = 'center'>
 					<tr>
 						<th>#</th>
+						<th>ID obj/req</th>
+						<th>Nombre</th>
             <th>Tipo</th>
             <th>Autor</th>
             <th>Organización</th>
@@ -16,6 +18,12 @@
 						<td >
 							<p class="figure-caption">{{i.id}}</p>
 						</td>
+						<td >
+								<p class="figure-caption">{{i.id_aprobado}}</p>
+						</td>
+						<td >
+									<p class="figure-caption">{{i.nombre_aprobado}}</p>
+							</td>
             <td style="cursor: pointer;">
 								<a class="figure-caption" (click)="onSelected(i.id)">{{i.tipo}}</a>
             </td>
@@ -30,12 +38,12 @@
           </td>
 					</tr>
 				</tbody>
-      </table>
+			</table>
+			<div class="col">
+					<div *ngIf="selectedCambio">
+							<app-cambio-detail [cambioDetail]="selectedCambio"> </app-cambio-detail>
+						</div>
 		</div>
-		<div class="col">
-				<div *ngIf="selectedCambio">
-						<app-cambio-detail [cambioDetail]="selectedCambio"> </app-cambio-detail>
-					</div>
 		</div>
 	</div>
 	</div>
