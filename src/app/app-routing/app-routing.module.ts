@@ -22,8 +22,8 @@ import { CasodeusoDetailComponent } from '../casodeuso/casodeuso-detail/casodeus
 import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
 import { CondicionDetailComponent } from '../condicion/condicion-detail/condicion-detail.component';
 import { CambioUpdateComponent } from '../cambio/cambio-update/cambio-update.component';
-import { RequisitoDetailComponent } from '../requisito-detail/requisito-detail.component';
-import { ListarRequisitosComponent } from '../listar-requisitos/listar-requisitos.component';
+import { RequisitoDetailComponent } from '../requisito/requisito-detail/requisito-detail.component';
+import { ListarRequisitosComponent } from '../requisito/listar-requisitos/listar-requisitos.component';
 
 
 const routes: Routes = [

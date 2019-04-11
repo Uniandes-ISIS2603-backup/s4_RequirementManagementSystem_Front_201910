@@ -15,7 +15,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { ListarObjetivosComponent } from './listar-objetivos/listar-objetivos.component';
 import { MostrarObjetivoComponent } from './mostrar-objetivo/mostrar-objetivo.component';
-import { ListarRequisitosComponent } from './listar-requisitos/listar-requisitos.component';
+import { ListarRequisitosComponent } from './requisito/listar-requisitos/listar-requisitos.component';
 
 import { CambioModule } from './cambio/cambio.module';
 import { AprobacionModule } from './aprobacion/aprobacion.module';
@@ -24,7 +24,7 @@ import { CasodeusoModule } from './casodeuso/casodeuso.module';
 import {StakeholderModule} from './stakeholder/stakeholder.module';
 import {OrganizacionModule} from './organizacion/organizacion.module';
 import {CondicionModule} from './condicion/condicion.module';
-import { RequisitoDetailComponent } from './requisito-detail/requisito-detail.component';
+import { RequisitoDetailComponent } from './requisito/requisito-detail/requisito-detail.component';
 
 @NgModule({
     declarations: [

@@ -1,4 +1,4 @@
-import { Requisito } from "../requisito";
+import { Requisito } from "../requisito/requisito";
 
 export class Objetivo
 {
