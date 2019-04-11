@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "id_aprobado": 1,
+      "id_aprobado": "1",
       "nombre_aprobado": "Objetivo 1", 
       "tipo": "OBJETIVO",
       "autor": "Sofia Alvarez",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "id_aprobado": 2,
+      "id_aprobado": "2",
       "nombre_aprobado": "Objetivo 2",
       "tipo": "OBJETIVO",
       "autor": "Sofia Alvarez",
@@ -23,7 +23,7 @@
     },
     {
       "id": 3,
-      "id_aprobado": 3,
+      "id_aprobado": "3",
       "nombre_aprobado": "Requisito 3",
       "tipo": "REQUISITO",
       "autor": "Sofia Alvarez",

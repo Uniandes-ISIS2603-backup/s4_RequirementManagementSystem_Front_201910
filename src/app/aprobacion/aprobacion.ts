@@ -32,7 +32,7 @@ export class Aprobacion {
     /**
      * Id of the requirement or objective.
      */
-    id_aprobado: number;
+    id_aprobado: string;
     /**
      * Name of the requirement or objective.
      */
