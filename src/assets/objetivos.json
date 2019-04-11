@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "importancia": 1,
+        "estabilidad": 1,
+        "descripcion": "El inicio del fin",
+        "comentarios": "Haré un monumento a tus pecados"
+    },
+    {
+        "id": 2,
+        "importancia": 2,
+        "estabilidad": 2,
+        "descripcion": "El fin del inicio",
+        "comentarios": "Haré una torta"
+    }
+]
