@@ -25,4 +25,8 @@ export class AprobacionService {
   createAprobacion(aprobacion): Observable<AprobacionDetail> {
     return this.http.post<AprobacionDetail>(API_URL + aprobaciones, aprobaciones);
 }
+
+  updateAprobacion(aprobacion): Observable<AprobacionDetail> {
+  return this.http.put<AprobacionDetail>(API_URL + aprobaciones + '/' + aprobacion.id, aprobacion);
+}
 }
