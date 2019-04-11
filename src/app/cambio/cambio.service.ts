@@ -15,7 +15,7 @@ const data = 'cambio.json';
 /**
  * Route to post or put the results of the services.
  */
-const cambios = '/cambio';
+const cambios = '/cambios';
 
 /**
  * The service provider for everything related to changes.
