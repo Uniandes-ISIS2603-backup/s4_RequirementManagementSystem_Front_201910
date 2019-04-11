@@ -20,14 +20,14 @@ export class CasodeusoDetailComponent implements OnInit {
 
   @Input()   casodeusoDetail: CasodeusoDetail;
 
-  casodeuso_id: number;
+  //casodeuso_id: number;
 
   //loader: any;
 
 
   getCasosdeusoDetail(): void {
 
-    this.casodeusoService.getCasosdeusoDetail(this.casodeuso_id)
+    this.casodeusoService.getCasosdeusoDetail(this.casodeusoDetail.id)
     .subscribe(casodeusoDetail => {
       
       this.casodeusoDetail = casodeusoDetail;

@@ -22,12 +22,10 @@ export class CasodeusoListComponent implements OnInit {
   }
 
   onSelected(casodeuso_id: number): void {
-    this.casodeuso_id = casodeuso_id;
-    
-    this.selectedCasodeuso = new CasodeusoDetail();
-    console.log("casodeuso:////// ", casodeuso_id);
-    this.casodeusoService.getCasosdeusoDetail(casodeuso_id).subscribe(o => 
-      {this.selectedCasodeuso = o;
+        this.casodeusoService.getCasosdeusoDetail(casodeuso_id).subscribe(o => {
+          this.casodeuso_id = casodeuso_id;
+          this.selectedCasodeuso = new CasodeusoDetail();
+          this.selectedCasodeuso = o;
       console.log("EN  ls lista", this.selectedCasodeuso) ;
      console.log(o) ;
     });
