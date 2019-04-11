@@ -22,13 +22,12 @@ export class ListarAprobacionComponent implements OnInit {
    */
   constructor(private aprobacionService: AprobacionService, private router: Router) { }
 
-
-  /**
-   * The list of approbations that belong to the Requirement Management System.
-   */
+    /**
+      * The list of approbations that belong to the Requirement Management System.
+      */
     aprobaciones: Aprobacion[];
     /**
-     * Id of the listed approbation
+     * Id of the selected approbation
      */
     aprobacion_id: number;
   
@@ -46,7 +45,7 @@ export class ListarAprobacionComponent implements OnInit {
     }
     /**
      * Method that executes when the approbation with the aprobacion_id is selected
-     * @param aprobacion_id id of the approbation selected.
+     * @param aprobacion_id id of the selected approbation 
      */
     onSelected(aprobacion_id: number): void {
       this.aprobacion_id = aprobacion_id;

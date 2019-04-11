@@ -5,7 +5,7 @@ import { Aprobacion } from "./aprobacion";
 */
 export class AprobacionDetail extends Aprobacion{
     /**
-     * A review of a stakeholder on a specific approbation.
+     * A comment of a stakeholder on a specific approbation.
      */
     comentario: string;
 }

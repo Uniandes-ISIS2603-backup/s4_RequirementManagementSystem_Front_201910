@@ -9,17 +9,32 @@ import { Router } from '@angular/router';
   templateUrl: './cambio-create.component.html',
   styleUrls: ['./cambio-create.component.css']
 })
+/**
+ * Component that creates a new change
+ */
 export class CambioCreateComponent implements OnInit {
 
+   /**
+    * Constructor for the component
+    * @param cambioService The change's service provider
+    * @param toastrService The toastr to show messages to the user 
+    * @param router The router of the component
+    */
   constructor(
     private cambioService: CambioService,
     private toastrService: ToastrService,
     router: Router
 ) {}
+  /**
+  * The new change to be created.
+  * It is a detail because of the description of the change.
+  */
+  cambioDetail: CambioDetail;
 
-cambioDetail: CambioDetail;
-fecha: Date;
-
+  /**
+  * Current time in which the creation of the change took place.
+  */
+  fecha: Date;
 
   /**
     * The output which tells the parent component
@@ -33,7 +48,9 @@ fecha: Date;
    */
    @Output() create = new EventEmitter();
 
-
+  /**
+  * Creates a new change and initializes the date, so that it is the current date-time. 
+  */
    createCambio(): CambioDetail {
      console.log(this.cambioDetail);
     this.cambioService.createCambio(this.cambioDetail)

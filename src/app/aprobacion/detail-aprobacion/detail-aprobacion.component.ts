@@ -44,7 +44,7 @@ export class DetailAprobacionComponent implements OnInit {
   @ViewChild(UpdateAprobacionComponent) update: UpdateAprobacionComponent;
 
   /**
-    * The method which retrieves the description (detail) of an approbation
+    * The method which retrieves the comment (detail) of an approbation
     */
   getCambioDetail(): void {
     this.aprobacionService.getAprobacionDetail(this.aprobacion_id)
@@ -55,7 +55,7 @@ export class DetailAprobacionComponent implements OnInit {
   }
 
   /**
-   * The method that aims to send the id of the current change, to the update component.
+   * The method that aims to send the id of the current approbation, to the update component.
    */
   updateAprobacion(): void{
     this.update.getAprobacion(this.aprobacionDetail.id);

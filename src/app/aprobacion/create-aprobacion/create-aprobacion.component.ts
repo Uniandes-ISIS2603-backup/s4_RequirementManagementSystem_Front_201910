@@ -28,6 +28,7 @@ export class CreateAprobacionComponent implements OnInit {
 
 /**
  * The new approbation to be created.
+ * It is a detail because of the comment on the approbation.
  */
 aprobacionDetail: AprobacionDetail;
 
