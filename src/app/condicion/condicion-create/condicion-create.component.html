@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h2 class="text-center">Crear una nueva condicion</h2>
+        <form name="casodeuso" (ngSubmit)="f.form.valid && createCondicion()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="condicionDescripcion"><b>Ingrese la descripcion de la condicion</b></label>
+                <input type="text" name="condicionDescripcion" class="form-control" id="condicionDescripcion" [(ngModel)]="condicion.descripcion"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado una descripcion</div>
+                </div>
+                <label for="condicionSeCumplio"><b>Indique si se cumplio la descripcion</b></label>
+                <input type="text" name="condicionSeCumplio" class="form-control" id="condicionSeCumplio" [(ngModel)]="condicion.seCumplio"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado si la condicion se cumplio</div>
+                </div>
+                <label for="condicionEsPrecondicion"><b>Indique si es una precondicion</b></label>
+                <input type="text" name="condicionEsPrecondicion" class="form-control" id="condicionEsPrecondicion" [(ngModel)]="condicion.esPrecondicion"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado si la condicion es precondicion</div>
+                </div>
+                </div>  
+                    <div class="col-5">
+                      <p> </p>
+                      <p> </p>
+                      <p> </p>
+                      <img align='center' src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" width="270" height='150'>
+                    </div>
+            <p>  </p>
+                  <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Crear</button>
+                <div class="divider"><p> </p></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+  </div>

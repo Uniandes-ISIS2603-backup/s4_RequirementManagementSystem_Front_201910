@@ -11,22 +11,27 @@ import { CasodeusoDetail } from '../casodeuso-detail';
 export class CasodeusoDetailComponent implements OnInit {
 
   constructor(private casodeusoService: CasodeusoService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) 
+    {
+      console.log(this.casodeusoDetail);
+      
+     }
 
 
   @Input()   casodeusoDetail: CasodeusoDetail;
 
-  casodeuso_id: number;
+  //casodeuso_id: number;
 
   //loader: any;
 
 
   getCasosdeusoDetail(): void {
 
-    this.casodeusoService.getCasosdeusoDetail(this.casodeuso_id)
+    this.casodeusoService.getCasosdeusoDetail(this.casodeusoDetail.id)
     .subscribe(casodeusoDetail => {
       
       this.casodeusoDetail = casodeusoDetail;
+      console.log("-->",this.casodeusoDetail.caminos);
     });  }
 
   /*
@@ -39,7 +44,8 @@ export class CasodeusoDetailComponent implements OnInit {
   }*/
 
   ngOnInit() {
-    console.log("Detail:  ", this.casodeusoDetail)
+    console.log(this.casodeusoDetail)
+    this.getCasosdeusoDetail();
   }
 
   /*ngOnDestroy() {

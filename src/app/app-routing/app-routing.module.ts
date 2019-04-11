@@ -9,12 +9,14 @@ import { CambioCreateComponent } from '../cambio/cambio-create/cambio-create.com
 import { ListarAprobacionComponent } from '../aprobacion/listar-aprobacion/listar-aprobacion.component';
 import { CreateAprobacionComponent } from '../aprobacion/create-aprobacion/create-aprobacion.component';
 import { CasodeusoListComponent } from '../casodeuso/casodeuso-list/casodeuso-list.component';
+import { CasodeusoCreateComponent } from '../casodeuso/casodeuso-create/casodeuso-create.component';
 import { ListarStakeholderComponent } from '../stakeholder/listar-stakeholder/listar-stakeholder.component';
 import { CreateStakeholderComponent } from '../stakeholder/create-stakeholder/create-stakeholder.component';
 import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion/listar-organizacion.component';
 import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
 import {AgregarStakeholderOrganizacionComponent} from '../organizacion/agregarStakeholder-organizacion/agregarStakeholder-organizacion.component';
 import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
+import { CondicionCreateComponent } from '../condicion/condicion-create/condicion-create.component';
 import { ListarObjetivoComponent } from '../objetivo/listar-objetivo/listar-objetivo.component'
 import { CrearObjetivoComponent } from '../objetivo/crear-objetivo/crear-objetivo.component';
 
@@ -45,13 +47,17 @@ const routes: Routes = [
         path: 'casosdeuso',
         component: CasodeusoListComponent        
     },
-/*     {
+    {
         path: 'casosdeuso/new',
         component: CasodeusoCreateComponent        
-    }, */
+    },
     {
         path: 'condiciones',
         component: CondicionListComponent        
+    },
+    {
+        path: 'condiciones/new',
+        component: CondicionCreateComponent        
     },
     {
         path: 'stakeholders',
