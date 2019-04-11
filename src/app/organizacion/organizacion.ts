@@ -1,3 +1,4 @@
+import { Stakeholder } from "../stakeholder/stakeholder";
 
 export class Organizacion {
     /**
@@ -16,4 +17,8 @@ export class Organizacion {
     */
     sector: string;
 
+    /**
+     * Lista de stakeholders
+     */
+    stakeholders:Stakeholder[];
 }

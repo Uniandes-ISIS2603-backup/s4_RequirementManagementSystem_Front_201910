@@ -9,20 +9,22 @@
       <table class="table table-striped">
           <thead class="thead-dark">
               <tr>
-                  <th>Nombre</th> 
-                  <th>Sector</th>
+                  <th>Id de organizacion</th> 
+                  <th>Id del stakeholder</th>
               </tr>
           </thead>
           <tbody>
                 <td>
-                  <input type="String"[(ngModel)] = "organizacion.nombre" required>
+                  <input type="String"[(ngModel)] = "organizacion.id" required>
                 </td>
                 <td>
-                  <input type="String"[(ngModel)] = "organizacion.sector" required>
+                  <input type="String"[(ngModel)] = "stakeholder.id" required>
                 </td>
           </tbody>
       </table>
   </div>
-  <td><button class="btn btn-success" (click)="createOrganizacion()">Agregar</button></td>
+  <td><button class="btn btn-success" (click)="agegarStakeholderOrganizacion()">Agregar</button></td>
 </div>
+</div>
+<div class="column">
 </div>

@@ -21,7 +21,6 @@ export class UpdateStakeholderComponent implements OnInit {
   */
    updateStakeholder(): Stakeholder {
     this.StakeholderService.updateStakeholder(this.stakeholder).subscribe(Stakeholder => {
-      this.stakeholder.id = Stakeholder.id;
       this.stakeholder.nombre = Stakeholder.nombre;
       this.stakeholder.organizacion = Stakeholder.organizacion;
       this.stakeholder.tipo = Stakeholder.tipo
