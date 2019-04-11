@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AprobacionService } from '../aprobacion.service';
 import { AprobacionDetail } from '../aprobacion-detail';
+import { UpdateAprobacionComponent } from '../update-aprobacion/update-aprobacion.component';
 
 @Component({
   selector: 'app-detail-aprobacion',
@@ -9,7 +10,7 @@ import { AprobacionDetail } from '../aprobacion-detail';
   styleUrls: ['./detail-aprobacion.component.css']
 })
 export class DetailAprobacionComponent implements OnInit {
-
+  public isCollapsed = false;
   constructor(
     private aprobacionService: AprobacionService,
     private route: ActivatedRoute
@@ -19,6 +20,7 @@ export class DetailAprobacionComponent implements OnInit {
 
     aprobacion_id: number;
 
+  @ViewChild(UpdateAprobacionComponent) update: UpdateAprobacionComponent;
 
   getCambioDetail(): void {
     this.aprobacionService.getAprobacionDetail(this.aprobacion_id)
@@ -26,6 +28,10 @@ export class DetailAprobacionComponent implements OnInit {
         
         this.aprobacionDetail = aprobacionDetail;
       });
+  }
+
+  updateAprobacion(): void{
+    this.update.getAprobacion(this.aprobacionDetail.id);
   }
 
     ngOnInit() {

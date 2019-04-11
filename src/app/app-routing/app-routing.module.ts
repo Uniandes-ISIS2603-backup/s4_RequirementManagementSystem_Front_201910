@@ -21,6 +21,7 @@ import { EliminarOrganizacionComponent } from '../organizacion/eliminar-organiza
 import {CasodeusoDetailComponent} from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
 import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
 import {CondicionDetailComponent} from '../condicion/condicion-detail/condicion-detail.component';
+import { CambioUpdateComponent } from '../cambio/cambio-update/cambio-update.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,11 @@ const routes: Routes = [
    {
     path: 'cambio-add',
     component: CambioCreateComponent,
+    outlet: "sidebar"
+  },
+  {
+    path: 'cambio-update',
+    component: CambioUpdateComponent,
     outlet: "sidebar"
   },
   {

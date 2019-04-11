@@ -26,5 +26,9 @@ constructor(private http: HttpClient) { }
     return this.http.post<CambioDetail>(API_URL + cambios, cambios);
 }
 
+updateCambio(cambio): Observable<CambioDetail> {
+  return this.http.put<CambioDetail>(API_URL + cambios + '/' + cambio.id, cambio);
+}
+
 }
 
