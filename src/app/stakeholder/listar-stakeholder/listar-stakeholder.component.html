@@ -1,20 +1,31 @@
-<h2 class="text-center">Lista</h2>
-<div class="container-fluid">
-  <div class="col-md-2">
-      <table class="table table-striped">
-          <thead class="thead-dark">
-              <tr>
-                  <th>ID</th>
-                  <th>Nombre</th> 
-                  <th>Tipo</th>     
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor = "let stakeholder of stakeholders">
-                  <td>{{stakeholder.id}}</td>
-                  <td>{{stakeholder.nombre}}</td>
-                  <td>{{stakeholder.tipo}}</td>
-              </tr>
-          </tbody>
-      </table>
-  </div>
+<div class="column">
+    <h2 class="text-center">Lista de Stakeholders</h2>
+    <div class="container">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stakeholder of stakeholders">
+                    <td>{{stakeholder.id}}</td>
+                    <td>{{stakeholder.nombre}}</td>
+                    <td>{{stakeholder.tipo}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <td><button class="btn btn-info" (click)="actElim = 1">Actualizar</button></td>
+        <td><button class="btn btn-danger" (click)="actElim = 2">Eliminar</button></td>
+    </div>
+</div>
+<div class="column">
+    <div *ngIf="actElim == 1">
+        <app-update-stakeholder> </app-update-stakeholder>
+    </div>
+    <div *ngIf="actElim == 2">
+        <app-eliminar-stakeholder> </app-eliminar-stakeholder>
+    </div>
+</div>

@@ -1,7 +1,7 @@
-<h2 class="text-center">Lista</h2>
-<div class="container">
-    <div class="col">
-        <table align="center" class="table table-striped">
+<div class="column">
+    <h2 class="text-center">Lista</h2>
+    <div class="container">
+        <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
@@ -19,4 +19,15 @@
                 </tr>
             </tbody>
         </table>
+        <td><button class="btn btn-info" (click)="actElim = 1">Agregar un Stakeholder</button></td>
+        <td><button class="btn btn-danger" (click)="actElim = 2">Eliminar</button></td>
     </div>
+</div>
+<div class="column">
+    <div *ngIf="actElim == 1">
+        <app-agregarStakeholder-organizacion> </app-agregarStakeholder-organizacion>
+    </div>
+    <div *ngIf="actElim == 2">
+        <app-eliminar-organizacion> </app-eliminar-organizacion>
+    </div>
+</div>

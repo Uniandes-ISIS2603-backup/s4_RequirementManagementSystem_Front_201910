@@ -16,7 +16,7 @@ export class ListarStakeholderComponent implements OnInit {
   * Lista de stakeholders
   */
   stakeholders: Stakeholder[];
-
+  actElim:number;
   /**
    * Constructor
    */
@@ -34,6 +34,7 @@ export class ListarStakeholderComponent implements OnInit {
   */
   ngOnInit() {
     this.getStakeholders();
+    this.actElim = 0;
   }
 
 }
