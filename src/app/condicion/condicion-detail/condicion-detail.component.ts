@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CondicionService } from '../condicion.service';
 import { CondicionDetail } from '../condicion-detail';
-
+import { CondicionUpdateComponent } from '../condicion-update/condicion-update.component';
 
 @Component({
   selector: 'app-condicion-detail',
@@ -11,8 +11,15 @@ import { CondicionDetail } from '../condicion-detail';
 })
 export class CondicionDetailComponent implements OnInit {
 
+  public isCollapsed = false;
+
   constructor(private condicionService: CondicionService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {      
+      console.log(this.condicionDetail);
+    }
+
+  @ViewChild(CondicionUpdateComponent) update: CondicionUpdateComponent;
+
 
   @Input()   condicionDetail: CondicionDetail;
 
@@ -29,6 +36,11 @@ export class CondicionDetailComponent implements OnInit {
   ngOnInit() {
     console.log("Detail:  ", this.condicionDetail)
     this.getCondicionesDetail();
+  }
+
+  updateCondicion(): void{
+    this.update.getCondicion(this.condicionDetail.id);
+
   }
 
 }
