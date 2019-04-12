@@ -23,4 +23,9 @@ export class CondicionService {
   createCondicion(condicion): Observable<Condicion> {
     return this.http.post<Condicion>(API_URL+condiciones, condicion);
   }
+
+  updateCondicion(condicion): Observable<Condicion> {
+    return this.http.put<Condicion>(API_URL + condiciones + condicion.id, condicion);
+  }
+
 }
