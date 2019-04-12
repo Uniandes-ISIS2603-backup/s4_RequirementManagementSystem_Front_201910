@@ -22,6 +22,7 @@ import { CasodeusoModule } from './casodeuso/casodeuso.module';
 import {StakeholderModule} from './stakeholder/stakeholder.module';
 import {OrganizacionModule} from './organizacion/organizacion.module';
 import {CondicionModule} from './condicion/condicion.module';
+import {CaminoModule} from './camino/camino.module'
 
 import { ObjetivoModule } from './objetivo/objetivo.module';
 
@@ -47,7 +48,7 @@ import { ObjetivoModule } from './objetivo/objetivo.module';
         NgxPermissionsModule.forRoot(),
         NgbModule,
         InicioModule,
-        
+        CaminoModule,
         CambioModule,
         AprobacionModule,
         CasodeusoModule,

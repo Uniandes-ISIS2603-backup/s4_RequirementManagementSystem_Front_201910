@@ -23,6 +23,8 @@ import { ListarRequisitosComponent } from '../requisito/listar-requisitos/listar
 import { CrearRequisitoComponent } from '../requisito/crear-requisito/crear-requisito.component';
 import { RequisitoDetailComponent } from '../requisito/requisito-detail/requisito-detail.component';
 import { ModificarRequisitoComponent } from '../requisito/modificar-requisito/modificar-requisito.component';
+import { CaminoListComponent } from '../camino/camino-list/camino-list.component';
+
 
 
 const routes: Routes = [
@@ -62,6 +64,10 @@ const routes: Routes = [
     {
         path: 'condiciones/new',
         component: CondicionCreateComponent        
+    },
+    {
+        path: 'caminos',
+        component: CaminoListComponent        
     },
     {
         path: 'stakeholders',

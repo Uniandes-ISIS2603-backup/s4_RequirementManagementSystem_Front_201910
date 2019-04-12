@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h2 class="text-center">Editar un camino</h2>
+        <form name="camino" (ngSubmit)="f.form.valid && editCamino()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="caminoTipoPasos"><b>Ingrese el tipo del paso</b></label>
+                <input type="text" name="caminoTipoPasos" class="form-control" id="caminoTipoPasos" [(ngModel)]="caminoDetail.tipoPaso"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && caminoDetail.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado un tipo de camino</div>
+                </div>
+                <label for="caminoPasos"><b>Ingrese los pasos del camino</b></label>
+                <input type="text" name="caminoPasos" class="form-control" id="caminoPasos" [(ngModel)]="caminoDetail.pasos"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && caminoDetail.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado los pasos</div>
+                </div>
+                </div>  
+                    <div class="col-5">
+                      <p> </p>
+                      <p> </p>
+                      <p> </p>
+                      <img align='center' src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" width="270" height='150'>
+                    </div>
+            <p>  </p>
+                  <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
