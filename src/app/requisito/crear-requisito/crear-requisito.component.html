@@ -1,0 +1,47 @@
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/requisitos">Requisito</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear Requisito</li>
+    </ol>
+  </nav>
+</div>
+<div class="container">
+  <h2>Crear Requisito</h2>
+  <form>
+    <div class="form-group">
+      <label>Descripción</label>
+      <input type="text" class="form-control" [(ngModel)]="objeto.descripcion" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <label>Importancia</label>
+      <select class="form-control" [(ngModel)]="objeto.importancia" [ngModelOptions]="{standalone: true}">
+        <option value="1">Baja</option>
+        <option value="2">Media</option>
+        <option value="3">Alta</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Estabilidad</label>
+      <select class="form-control" [(ngModel)]="objeto.estabilidad" [ngModelOptions]="{standalone: true}">
+        <option value="1">Baja</option>
+        <option value="2">Media</option>
+        <option value="3">Alta</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Tipo</label>
+      <select class="form-control" [(ngModel)]="objeto.tipo" [ngModelOptions]="{standalone: true}">
+        <option value="FUNCIONAL"> Funcional </option>
+        <option value="NOFUNCIONAL">No Funcional</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Comentarios</label>
+      <textarea class="form-control" rows="3" [(ngModel)]="objeto.comentarios"
+        [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-primary" (click)='crearObjeto()'>Crear</button> &nbsp;
+    <button type="submit" class="btn btn-outline-danger">Cancelar</button>
+  </form>
+</div>

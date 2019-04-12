@@ -24,7 +24,7 @@
                           <div>
                                 <label for="cambioObjReq"><b>Seleccione el id del objetivo/requisito a aprobar/revisar/desaprobar</b></label>
                                 <select name="cambioObjReq" class="form-control" id="cambioObjReq" [(ngModel)]="cambioDetail.id_aprobado"
-                                #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cambioDetail.invalid }" required>
+                                #cambioObjReq="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cambioDetail.invalid }" required>
                                   <option type="number">1</option>
                                   <option type="number">2</option>
                                   <option type="number">3</option>
@@ -50,10 +50,14 @@
                         <div>Falta editar la descripcion del cambio</div>
                     </div>
                 </div>
+                <label for="cambioFechaYHora"><b>Fecha y Hora de publicación</b></label>
+                <input class="form-control" name="cambioFechaYHora" type="text" placeholder= {{fecha}} readonly [(ngModel)]="cambioDetail.fechaYHora"
+                #cambioName="ngModel">
+                <p> </p>
             <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary">Editar</button>
                 <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancelar</button>
             </div>
         </form>
     </div>

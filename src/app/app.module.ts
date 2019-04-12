@@ -10,21 +10,25 @@ import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.servic
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import { InicioModule } from './inicio/inicio.module';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing/app-routing.module';
-import { AuthModule } from './auth/auth.module';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing/app-routing.module';
+import {AuthModule} from './auth/auth.module';
+import {RequisitoModule} from './requisito/requisito.module';
+
 import { CambioModule } from './cambio/cambio.module';
 import { AprobacionModule } from './aprobacion/aprobacion.module';
 
 import { CasodeusoModule } from './casodeuso/casodeuso.module';
-import { StakeholderModule } from './stakeholder/stakeholder.module';
-import { OrganizacionModule } from './organizacion/organizacion.module';
-import { CondicionModule } from './condicion/condicion.module';
+import {StakeholderModule} from './stakeholder/stakeholder.module';
+import {OrganizacionModule} from './organizacion/organizacion.module';
+import {CondicionModule} from './condicion/condicion.module';
+
 import { ObjetivoModule } from './objetivo/objetivo.module';
+
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,
@@ -43,13 +47,15 @@ import { ObjetivoModule } from './objetivo/objetivo.module';
         NgxPermissionsModule.forRoot(),
         NgbModule,
         InicioModule,
+        
         CambioModule,
         AprobacionModule,
         CasodeusoModule,
         CondicionModule,
         StakeholderModule,
         OrganizacionModule,
-        ObjetivoModule
+        ObjetivoModule,
+        RequisitoModule
     ],
     bootstrap: [AppComponent],
     providers: [

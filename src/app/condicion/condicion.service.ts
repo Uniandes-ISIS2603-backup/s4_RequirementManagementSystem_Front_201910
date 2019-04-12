@@ -4,8 +4,8 @@ import { Condicion } from './condicion';
 import { Observable } from 'rxjs';
 import { CondicionDetail } from './condicion-detail';
 
-const API_URL = "../../assets/";
-const condiciones = 'condicion.json';
+const API_URL = 'https://fcd0e7c8.ngrok.io/s4_requirement-api/api/';
+const condiciones = 'condiciones/';
 
 @Injectable()
 export class CondicionService {
@@ -17,6 +17,15 @@ export class CondicionService {
   }
 
   getCondicionesDetail(condicionId): Observable<CondicionDetail> {
-    return this.http.get<CondicionDetail>(API_URL + "condicion-" + condicionId + ".json");
+    return this.http.get<CondicionDetail>(API_URL + condiciones + condicionId );
   }
+
+  createCondicion(condicion): Observable<Condicion> {
+    return this.http.post<Condicion>(API_URL+condiciones, condicion);
+  }
+
+  updateCondicion(condicion): Observable<Condicion> {
+    return this.http.put<Condicion>(API_URL + condiciones + condicion.id, condicion);
+  }
+
 }

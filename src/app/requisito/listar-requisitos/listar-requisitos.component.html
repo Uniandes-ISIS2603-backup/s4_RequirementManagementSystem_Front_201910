@@ -1,0 +1,26 @@
+<!-- <div class="row">
+    <div class="col"></div>
+    <div class="container col">
+      <div class="card align-items-center">
+        <div class="card-block text-center">
+          <h4 class="card-title"> <br>Listado de Requisitos</h4>
+          <p class="card-text">Mis reqs prro :v</p>
+          <br>
+        </div>
+        <ul class="list-group list-group-flush w-100 align-items-stretch" *ngFor = "let r of reqs">
+          <li class="list-group-item text-center d-inline-block"> <a routerLink="r.id"> Titulo </a> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div> -->
+
+<div class="card-columns">
+  <div class="card text-white mb-3 " style="height: 100%;" *ngFor="let r of reqs" [ngClass]="{'bg-success': r.importancia===1 , 'bg-primary': r.importancia===2, 'bg-danger': r.importancia===3}">
+      <div class="card-header" style="font-size: 25px">{{r.descripcion}}</div>
+    <div class="card-body">
+      <p class="card-text">{{r.comentarios}}</p>
+      <a class="btn btn-outline-light" routerLink="{{r.id}}"> Ver más detalles</a>
+    </div>
+  </div>
+</div>

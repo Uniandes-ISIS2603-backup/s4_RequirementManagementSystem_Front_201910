@@ -1,0 +1,52 @@
+<!-- <div class="card text-center">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body"> -->
+<div *ngIf="req" class="container-fluid" id="tabla">
+  <br>
+  <h3 class="card-title">Visualización Requisito {{req.id}}</h3>
+  <!--Table-->
+  <table id="tablePreview" class="table table-bordered table-striped">
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>Atributo</th>
+        <th>Información</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+    <!--Table body-->
+    <tbody>
+      <tr>
+        <td>Descripcion</td>
+        <td> {{req.descripcion}} </td>
+      </tr>
+      <tr>
+        <td> Importancia </td>
+        <td> {{req.importancia}} </td>
+      </tr>
+      <tr>
+        <td> Estabilidad</td>
+        <td> {{req.estabilidad}} </td>
+      </tr>
+      <tr>
+        <td> Comentarios</td>
+        <td> {{req.comentarios}} </td>
+      </tr>
+
+
+    </tbody>
+    <!--Table body-->
+  </table>
+
+  <a routerLink="modificar" class="btn btn-outline-primary"> Modificar Requisito
+  </a>
+  &nbsp;
+  <!--       <p> </p> -->
+  <a (click)="eliminar()" routerLink="/requisitos" class="btn btn-outline-danger"> Eliminar Requisito
+  </a>
+  <br>
+  <br>
+  <!--     </div>-->
+</div>

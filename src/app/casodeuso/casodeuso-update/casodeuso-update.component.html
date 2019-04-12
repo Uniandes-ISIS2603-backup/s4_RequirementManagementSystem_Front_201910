@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+      <h2 class="text-center">Editar un caso de uso</h2>
+      <form name="casodeuso" (ngSubmit)="f.form.valid && editCasodeuso()" #f="ngForm" novalidate>
+          <div class="form-group">
+              <label for="casodeusoNombre"><b>Ingrese el nuevo nombre del caso de uso</b></label>
+              <input type="text" name="casodeusoNombre" class="form-control" id="casodeusoNombre" [(ngModel)]="casodeusoDetail.nombre"
+                  #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && casodeusoDetail.invalid }" required>
+              <div class="invalid-feedback">
+                  <div>No ha ingresado un nombre</div>
+              </div>
+              </div>  
+                  <div class="col-5">
+                    <p> </p>
+                    <p> </p>
+                    <p> </p>
+                    <img align='center' src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" width="270" height='150'>
+                  </div>
+          <p>  </p>
+                <div class="row form-inline justify-content-center align-self-center">
+              <button type="submit" class="btn btn-primary">Edit</button>
+              <div class="divider"></div>
+              <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+          </div>
+      </form>
+  </div>
+  <div class="col-3"></div>
+</div>
