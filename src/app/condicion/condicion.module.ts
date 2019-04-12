@@ -9,7 +9,9 @@ import { CondicionCreateComponent } from './condicion-create/condicion-create.co
 import { CondicionUpdateComponent } from './condicion-update/condicion-update.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
+/**
+ * The module that has all the components (create, get-all, get and update) of the conditions of the Requirement Management System.
+ */
 @NgModule({
   imports: [
     CommonModule, AppRoutingModule, FormsModule, NgbModule

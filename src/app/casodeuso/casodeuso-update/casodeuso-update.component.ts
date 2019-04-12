@@ -8,26 +8,40 @@ import { CasodeusoDetail } from '../casodeuso-detail';
   templateUrl: './casodeuso-update.component.html',
   styleUrls: ['./casodeuso-update.component.css']
 })
+/**
+ * Component that updates a specific case of use
+ */
 export class CasodeusoUpdateComponent implements OnInit {
 
+  /**
+  * The component's constructor
+  * @param casodeusoService The cases´s service
+  * @param toastrService The toastr to show messages to the user 
+  */
   constructor(private casodeusoService: CasodeusoService,
     private toastrService: ToastrService) { }
 
 
-    /**
+  /**
   * The output which tells the parent component
-  * that the user no longer wants to create an approbation
+  * that the user no longer wants to create a case of use
   */
   @Output() cancel = new EventEmitter();
 
   /**
   * The output which tells the parent component
-  * that the user updated a new approbation
+  * that the user updated a new case of use
   */
   @Output() update = new EventEmitter();
 
+  /**
+  * The case of use to edit
+  */
   casodeusoDetail: CasodeusoDetail;
 
+  /**
+  * Retrieves the information of the case of use
+  */
   getCasodeuso(id: number): void {
     this.casodeusoService.getCasosdeusoDetail(id)
         .subscribe(casodeuso => {
@@ -35,6 +49,9 @@ export class CasodeusoUpdateComponent implements OnInit {
         });
   }
 
+  /**
+  * Updates the case's information
+  */
   editCasodeuso(): void {
     this.casodeusoService.updateCasodeuso(this.casodeusoDetail)
         .subscribe(() => {
@@ -45,16 +62,22 @@ export class CasodeusoUpdateComponent implements OnInit {
   }
 
   /**
-  * Informs the parent component that the user no longer wants to update the approbation.
+  * Informs the parent component that the user no longer wants to update the case of use.
   */
   cancelEdition(): void {
     this.cancel.emit();
   }
 
+  /**
+  * The function which initializes the component
+  */
   ngOnInit() {
     this.casodeusoDetail= new CasodeusoDetail();
   }
 
+  /**
+  * The function which is called every time the user chooses to edit a different case of use
+  */
   ngOnChanges() {
     this.ngOnInit();
   }

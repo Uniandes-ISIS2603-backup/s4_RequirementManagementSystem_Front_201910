@@ -8,25 +8,39 @@ import { CondicionDetail } from '../condicion-detail';
   templateUrl: './condicion-update.component.html',
   styleUrls: ['./condicion-update.component.css']
 })
+/**
+ * Component that updates a specific condition
+ */
 export class CondicionUpdateComponent implements OnInit {
 
+  /**
+  * The component's constructor
+  * @param condicionService The condition´s service
+  * @param toastrService The toastr to show messages to the user 
+  */
   constructor(private condicionService: CondicionService,
     private toastrService: ToastrService) { }
 
    /**
   * The output which tells the parent component
-  * that the user no longer wants to create an approbation
+  * that the user no longer wants to create a condition
   */
   @Output() cancel = new EventEmitter();
 
   /**
   * The output which tells the parent component
-  * that the user updated a new approbation
+  * that the user updated a new condition
   */
   @Output() update = new EventEmitter();
 
+  /**
+  * The condition to edit
+  */
   condicionDetail: CondicionDetail;
 
+  /**
+  * Retrieves the information of the condition
+  */
   getCondicion(id: number): void {
     this.condicionService.getCondicionesDetail(id)
         .subscribe(condicion => {
@@ -34,6 +48,9 @@ export class CondicionUpdateComponent implements OnInit {
         });
   }
 
+  /**
+  * Updates the condition's information
+  */
   editCondicion(): void {
     this.condicionService.updateCondicion(this.condicionDetail)
         .subscribe(() => {
@@ -44,17 +61,23 @@ export class CondicionUpdateComponent implements OnInit {
   }
 
   /**
-   * Informs the parent component that the user no longer wants to update the approbation.
+   * Informs the parent component that the user no longer wants to update the condition.
    */
   cancelEdition(): void {
     this.cancel.emit();
   }
 
+  /**
+  * The function which initializes the component
+  */
   ngOnInit() {
     this.condicionDetail= new CondicionDetail();
 
   }
 
+  /**
+  * The function which is called every time the user chooses to edit a different condition
+  */
   ngOnChanges() {
     this.ngOnInit();
   }
