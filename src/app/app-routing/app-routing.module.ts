@@ -19,6 +19,10 @@ import { CondicionListComponent } from '../condicion/condicion-list/condicion-li
 import { CondicionCreateComponent } from '../condicion/condicion-create/condicion-create.component';
 import { ListarObjetivoComponent } from '../objetivo/listar-objetivo/listar-objetivo.component'
 import { CrearObjetivoComponent } from '../objetivo/crear-objetivo/crear-objetivo.component';
+import { ListarRequisitosComponent } from '../requisito/listar-requisitos/listar-requisitos.component';
+import { CrearRequisitoComponent } from '../requisito/crear-requisito/crear-requisito.component';
+import { RequisitoDetailComponent } from '../requisito/requisito-detail/requisito-detail.component';
+import { ModificarRequisitoComponent } from '../requisito/modificar-requisito/modificar-requisito.component';
 
 
 const routes: Routes = [
@@ -84,8 +88,20 @@ const routes: Routes = [
         component: CrearObjetivoComponent        
     },
     {
+        path : 'requisitos', component: ListarRequisitosComponent
+    },
+    {
+        path: 'requisitos/new', component: CrearRequisitoComponent
+    },
+    {
+        path: 'requisitos/:id', component: RequisitoDetailComponent
+    },
+    {
+        path: 'requisitos/:id/modificar', component: ModificarRequisitoComponent
+    },
+    {
         path: '', redirectTo: 'home', pathMatch: 'full'
-    }
+    },
 ];
 
 @NgModule({
