@@ -7,7 +7,7 @@ import { CambioDetail } from './cambio-detail';
 /**
  * API_URL is the constant of the API in which the back runs.
  */
-const API_URL = "../../assets/";
+const API_URL = "http://f534a80c.ngrok.io/s4_requirement-api/api/cambios";
 /**
  * JSONS to test the services.
  */
@@ -34,7 +34,7 @@ export class CambioService {
     * @returns The list of changes in real time.
     */
   getCambios(): Observable<Cambio[]> {
-      return this.http.get<Cambio[]>(API_URL + data);
+      return this.http.get<Cambio[]>(API_URL);
   }
 
   /**
@@ -44,7 +44,7 @@ export class CambioService {
    */
   getCambioDetail(cambioId:number): Observable<CambioDetail> {
     //console.log(cambioId+" "+API_URL + "cambio-" + cambioId+".json");
-    return this.http.get<CambioDetail>(API_URL + "cambio-" + cambioId+".json");
+    return this.http.get<CambioDetail>(API_URL + "/" + cambioId);
   }
 
   /**
@@ -53,7 +53,7 @@ export class CambioService {
     * @returns The confirmation of the change's creation
     */
   createCambio(cambio): Observable<CambioDetail> {
-    return this.http.post<CambioDetail>(API_URL + cambios, cambio);
+    return this.http.post<CambioDetail>(API_URL, cambio);
 }
 
 /**
@@ -62,7 +62,7 @@ export class CambioService {
   * @returns The confirmation of the change's update
   */
 updateCambio(cambio): Observable<CambioDetail> {
-  return this.http.put<CambioDetail>(API_URL + cambios + '/' + cambio.id, cambio);
+  return this.http.put<CambioDetail>(API_URL + '/' + cambio.id, cambio);
 }
 
 }
