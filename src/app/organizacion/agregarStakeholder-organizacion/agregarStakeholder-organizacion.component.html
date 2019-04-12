@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="column">
+<app-listar-organizacion></app-listar-organizacion>
+</div>
+<div class="column">
+<h2 class="text-center">Agregar</h2>
+<div class="container-fluid">
+  <div class="col-md-2">
+      <table class="table table-striped">
+          <thead class="thead-dark">
+              <tr>
+                  <th>Id de organizacion</th> 
+                  <th>Id del stakeholder</th>
+              </tr>
+          </thead>
+          <tbody>
+                <td>
+                  <input type="String"[(ngModel)] = "organizacion.id" required>
+                </td>
+                <td>
+                  <input type="String"[(ngModel)] = "stakeholder.id" required>
+                </td>
+          </tbody>
+      </table>
+  </div>
+  <td><button class="btn btn-success" (click)="agegarStakeholderOrganizacion()">Agregar</button></td>
+</div>
+</div>
+<div class="column">
+</div>

@@ -5,15 +5,20 @@ import { CasodeusoService } from './casodeuso.service';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { CasodeusoDetailComponent } from './casodeuso-detail/casodeuso-detail.component';
 import { FormsModule } from '@angular/forms';
+import { CasodeusoCreateComponent } from './casodeuso-create/casodeuso-create.component';
+import { CasodeusoUpdateComponent } from './casodeuso-update/casodeuso-update.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   imports: [
     CommonModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
-  declarations: [CasodeusoListComponent,CasodeusoDetailComponent],
+  declarations: [CasodeusoListComponent,CasodeusoDetailComponent, CasodeusoCreateComponent, CasodeusoUpdateComponent],
   providers: [CasodeusoService],
-  exports: [CasodeusoListComponent, CasodeusoDetailComponent]
+  exports: [CasodeusoListComponent, CasodeusoDetailComponent, CasodeusoCreateComponent]
 })
 export class CasodeusoModule { }

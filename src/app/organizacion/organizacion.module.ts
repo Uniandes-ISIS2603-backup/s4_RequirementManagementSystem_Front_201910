@@ -10,8 +10,12 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { CreateOrganizacionComponent } from './create-organizacion/create-organizacion.component';
 import { ListarOrganizacionComponent } from './listar-organizacion/listar-organizacion.component';
 import { EliminarOrganizacionComponent } from './eliminar-organizacion/eliminar-organizacion.component';
+import { AgregarStakeholderOrganizacionComponent } from './agregarStakeholder-organizacion/agregarStakeholder-organizacion.component';
 import { OrganizacionService } from './organizacion.service';
 
+//import{ListarStakeholderComponent} from '../stakeholder/listar-stakeholder/listar-stakeholder.component'
+
+//Declaraciones de los componentes del modulo
 @NgModule({
   imports: [
     BrowserModule,
@@ -23,8 +27,8 @@ import { OrganizacionService } from './organizacion.service';
     ReactiveFormsModule,
     NgxPermissionsModule
   ],
-  declarations: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent],
+  declarations: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent, AgregarStakeholderOrganizacionComponent],
   providers: [OrganizacionService],
-  exports: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent]
+  exports: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent, AgregarStakeholderOrganizacionComponent]
 })
 export class OrganizacionModule { }
