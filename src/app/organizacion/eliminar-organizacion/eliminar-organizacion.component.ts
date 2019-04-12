@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
 import { OrganizacionService } from '../organizacion.service';
+import { ResourceLoader } from '@angular/compiler';
 @Component({
   selector: 'app-eliminar-organizacion',
   templateUrl: './eliminar-organizacion.component.html',

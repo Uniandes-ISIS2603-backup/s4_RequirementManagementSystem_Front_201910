@@ -5,8 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Organizacion } from './organizacion';
 
 
-const API_URL = 'http://58fc60ad.ngrok.io/s4_requirement-api/api/organizaciones';
-const Organizacions = '/organizacion.json';
+const API_URL = 'http://ff34f35f.ngrok.io/s4_requirement-api/api/organizaciones';
 
 
 @Injectable()

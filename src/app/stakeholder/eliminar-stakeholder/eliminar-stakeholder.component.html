@@ -1,11 +1,6 @@
-<div class="row">
-        <div class="column">
-                <app-listar-stakeholder></app-listar-stakeholder>
-        </div>
-        <div class="column">
 <h2 class="text-center">Eliminar</h2>
-<div class="container-fluid">
-  <div class="col-md-2">
+<div class="container">
+  <div class="col">
       <table class="table table-striped">
           <thead class="thead-dark">
               <tr>
@@ -15,10 +10,10 @@
           </thead>
           <tbody>
                 <td>
-                  <input type="number" [(ngModel)] = "id" required>
+                  <input type="number" [(ngModel)] = "id" required >
                 </td>
           </tbody>
       </table>
   </div>
   <td><button class="btn btn-danger" (click)="eliminarStakeholder(id)">Eliminar</button></td>
-</div>
+
