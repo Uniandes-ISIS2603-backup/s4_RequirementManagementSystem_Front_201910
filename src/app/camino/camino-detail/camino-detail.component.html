@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-4" align= 'center'>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Camino: {{caminoDetail.idPaso}}</h5>
+          <p class="card-text">Pasos: {{caminoDetail.pasos}}</p>
+          <p>
+              <button type="button" class="btn btn-outline-primary" (click)="updateCamino()" (click)="isCollapsed = !isCollapsed"
+                      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseUpdate">
+                Editar camino
+              </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-8" align = 'center'>
+
+        <div id="collapseUpdate" [ngbCollapse]="!isCollapsed">
+         
+            <app-camino-update></app-camino-update>
+         
+        </div>
+
+
+        </div>
+  </div>

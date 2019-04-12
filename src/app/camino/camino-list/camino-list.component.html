@@ -1,3 +1,33 @@
-<p>
-  camino-list works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>id</th>
+              <th>tipoPaso</th>
+              <th>pasos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of caminos">
+              <td style="cursor: pointer;">
+                <a class="figure-caption" (click)="onSelected(i.idPaso)">{{i.idPaso}}</a>
+              </td>
+                    <td>
+                <p class="figure-caption">{{i.tipoPaso}}</p>
+              </td>
+              <td>
+                <p class="figure-caption">{{i.pasos}}</p>
+              </td>
+            </tr>
+          </tbody>
+            </table>
+      </div>
+      <div class="col">
+        <div *ngIf="selectedCamino">
+            <app-camino-detail [caminoDetail]="selectedCamino"> </app-camino-detail>
+          </div>
+    </div>
+    </div>
+  </div>
