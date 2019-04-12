@@ -25,6 +25,8 @@ import { RequisitoDetailComponent } from '../requisito/requisito-detail/requisit
 import { ModificarRequisitoComponent } from '../requisito/modificar-requisito/modificar-requisito.component';
 import { ListarObjetivoDetailComponent } from '../objetivo/listar-objetivo-detail/listar-objetivo-detail.component';
 import { UpdateObjetivoComponent } from '../objetivo/update-objetivo/update-objetivo.component';
+import { CaminoListComponent } from '../camino/camino-list/camino-list.component';
+import { CaminoCreateComponent } from '../camino/camino-create/camino-create.component';
 
 
 const routes: Routes = [
@@ -64,6 +66,14 @@ const routes: Routes = [
     {
         path: 'condiciones/new',
         component: CondicionCreateComponent
+    },
+    {
+        path: 'caminos',
+        component: CaminoListComponent        
+    },
+    {
+        path: 'caminos/new',
+        component: CaminoCreateComponent        
     },
     {
         path: 'stakeholders',

@@ -9,7 +9,9 @@ import { CasodeusoCreateComponent } from './casodeuso-create/casodeuso-create.co
 import { CasodeusoUpdateComponent } from './casodeuso-update/casodeuso-update.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
+/**
+ * The module that has all the components (create, get-all, get and update) of the cases of use of the Requirement Management System.
+ */
 @NgModule({
   imports: [
     CommonModule,

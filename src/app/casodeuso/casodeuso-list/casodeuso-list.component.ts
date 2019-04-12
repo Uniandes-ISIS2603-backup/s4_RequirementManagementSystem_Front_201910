@@ -4,6 +4,9 @@ import { CasodeusoService } from '../casodeuso.service';
 import { Router } from '@angular/router';
 import {CasodeusoDetail} from '../casodeuso-detail';
 
+/**
+* The component for the list of cases of use in the Requirement Management System
+*/
 @Component({
   selector: 'app-casodeuso-list',
   templateUrl: './casodeuso-list.component.html',
@@ -11,16 +14,39 @@ import {CasodeusoDetail} from '../casodeuso-detail';
 })
 export class CasodeusoListComponent implements OnInit {
 
+  /**
+   * Constructor of the component.
+   * @param casodeusoService The case's services provider.
+   * @param router The router of the component.
+   */
   constructor(private casodeusoService: CasodeusoService,private router: Router) { }
 
+  /**
+  * The list of cases that belong to the Requirement Management System.
+  */
   casosdeuso: CasodeusoDetail[];
+  
+  /**
+   * Id of the selected case of use
+   */
   casodeuso_id:number;
+
+  /**
+   * condicionDetail, which shows the selected case of use to be shown. 
+   */
   selectedCasodeuso: CasodeusoDetail;
 
+  /**
+    * Asks the service to update the list of cases.
+    */
   getCasosdeuso(): void {
     this.casodeusoService.getCasosdeuso().subscribe(casosdeuso => this.casosdeuso = casosdeuso);
   }
 
+  /**
+   * Method that executes when the case of use with the casodeuso_id is selected
+   * @param casodeuso_id id of the selected case of use 
+   */
   onSelected(casodeuso_id: number): void {
         this.casodeusoService.getCasosdeusoDetail(casodeuso_id).subscribe(o => {
           this.casodeuso_id = casodeuso_id;
@@ -31,6 +57,10 @@ export class CasodeusoListComponent implements OnInit {
     });
   }
 
+  /**
+    * This will initialize the component by retrieving the list of cases from the service
+    * This method will be called when the component is created
+    */
   ngOnInit() {
     this.getCasosdeuso();
     
