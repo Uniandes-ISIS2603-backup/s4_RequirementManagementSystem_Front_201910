@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Objetivo } from '../objetivo';
 
 @Component({
   selector: 'app-update-objetivo',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateObjetivoComponent implements OnInit {
 
+  objetivo: Objetivo;
+
+  objeto:any = {};
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  crearObjetivo() {
+    this.objetivo = this.objeto;
+    console.log(this.objetivo);
+    
   }
 
 }

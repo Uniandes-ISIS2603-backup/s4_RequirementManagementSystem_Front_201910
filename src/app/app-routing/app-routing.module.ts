@@ -14,7 +14,7 @@ import { ListarStakeholderComponent } from '../stakeholder/listar-stakeholder/li
 import { CreateStakeholderComponent } from '../stakeholder/create-stakeholder/create-stakeholder.component';
 import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion/listar-organizacion.component';
 import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
-import {AgregarStakeholderOrganizacionComponent} from '../organizacion/agregarStakeholder-organizacion/agregarStakeholder-organizacion.component';
+import { AgregarStakeholderOrganizacionComponent } from '../organizacion/agregarStakeholder-organizacion/agregarStakeholder-organizacion.component';
 import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
 import { CondicionCreateComponent } from '../condicion/condicion-create/condicion-create.component';
 import { ListarObjetivoComponent } from '../objetivo/listar-objetivo/listar-objetivo.component'
@@ -23,6 +23,8 @@ import { ListarRequisitosComponent } from '../requisito/listar-requisitos/listar
 import { CrearRequisitoComponent } from '../requisito/crear-requisito/crear-requisito.component';
 import { RequisitoDetailComponent } from '../requisito/requisito-detail/requisito-detail.component';
 import { ModificarRequisitoComponent } from '../requisito/modificar-requisito/modificar-requisito.component';
+import { ListarObjetivoDetailComponent } from '../objetivo/listar-objetivo-detail/listar-objetivo-detail.component';
+import { UpdateObjetivoComponent } from '../objetivo/update-objetivo/update-objetivo.component';
 
 
 const routes: Routes = [
@@ -33,62 +35,70 @@ const routes: Routes = [
     },
     {
         path: 'cambios',
-        component: ListarCambioComponent        
+        component: ListarCambioComponent
     },
     {
         path: 'cambios/new',
-        component: CambioCreateComponent        
+        component: CambioCreateComponent
     },
     {
         path: 'aprobaciones',
-        component: ListarAprobacionComponent        
+        component: ListarAprobacionComponent
     },
     {
         path: 'aprobaciones/new',
-        component: CreateAprobacionComponent        
+        component: CreateAprobacionComponent
     },
     {
         path: 'casosdeuso',
-        component: CasodeusoListComponent        
+        component: CasodeusoListComponent
     },
     {
         path: 'casosdeuso/new',
-        component: CasodeusoCreateComponent        
+        component: CasodeusoCreateComponent
     },
     {
         path: 'condiciones',
-        component: CondicionListComponent        
+        component: CondicionListComponent
     },
     {
         path: 'condiciones/new',
-        component: CondicionCreateComponent        
+        component: CondicionCreateComponent
     },
     {
         path: 'stakeholders',
-        component: ListarStakeholderComponent        
+        component: ListarStakeholderComponent
     },
     {
         path: 'stakeholders/new',
-        component: CreateStakeholderComponent        
+        component: CreateStakeholderComponent
     },
     {
         path: 'organizaciones',
-        component: ListarOrganizacionComponent        
+        component: ListarOrganizacionComponent
     },
     {
         path: 'organizaciones/new',
-        component: CreateOrganizacionComponent        
+        component: CreateOrganizacionComponent
     },
     {
         path: 'objetivos',
-        component: ListarObjetivoComponent        
+        component: ListarObjetivoComponent
     },
     {
         path: 'objetivos/new',
-        component: CrearObjetivoComponent        
+        component: CrearObjetivoComponent
     },
     {
-        path : 'requisitos', component: ListarRequisitosComponent
+        path: 'objetivos/:id',
+        component: ListarObjetivoDetailComponent
+    },
+    {
+        path: 'objetivos/:id/update',
+        component: UpdateObjetivoComponent
+    },
+    {
+        path: 'requisitos', component: ListarRequisitosComponent
     },
     {
         path: 'requisitos/new', component: CrearRequisitoComponent

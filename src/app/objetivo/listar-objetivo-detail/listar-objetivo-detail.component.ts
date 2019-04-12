@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Objetivo } from '../objetivo';
+import { ActivatedRoute } from '@angular/router';
+import { ObjetivoService } from '../objetivo.service';
 
 @Component({
   selector: 'app-listar-objetivo-detail',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarObjetivoDetailComponent implements OnInit {
 
-  constructor() { }
+  objetivo: Objetivo;
+  constructor( private objetivoService: ObjetivoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.getObjetivo();
   }
+
+  getObjetivo() 
+  {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.objetivoService.getObjetivo(id)
+      .subscribe(objetivo => this.objetivo = objetivo);
+  }
+
+  eliminar(): void
+  {
+    alert ("Eliminaste el Objetivo actual");
+  } 
 
 }

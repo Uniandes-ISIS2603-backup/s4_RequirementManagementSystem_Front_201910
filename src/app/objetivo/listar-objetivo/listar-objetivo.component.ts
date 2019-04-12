@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ObjetivoService } from '../objetivo.service';
 import { Objetivo } from '../objetivo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-objetivo',
@@ -10,13 +11,13 @@ import { Objetivo } from '../objetivo';
 export class ListarObjetivoComponent implements OnInit {
 
   objetivos: Objetivo[];
-  constructor(private srv: ObjetivoService) {
+  constructor(private srv: ObjetivoService, private router: Router) {
 
   }
 
   ngOnInit() 
   {
-    this.srv.getObjetivos().subscribe((objs) => {this.objetivos = objs})
+    this.srv.getObjetivos().subscribe(objs => this.objetivos = objs)
   }
 
 }

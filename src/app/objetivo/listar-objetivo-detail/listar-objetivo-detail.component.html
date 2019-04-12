@@ -1,3 +1,33 @@
-<p>
-  listar-objetivo-detail works!
-</p>
+<div *ngIf="objetivo" class="container-fluid" id="tabla">
+  <br>
+  <h3 class="card-title">Visualización Objetivo {{objetivo.id}}</h3>
+  <table id="tablePreview" class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Atributo</th>
+        <th>Información</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Descripcion</td>
+        <td> {{objetivo.descripcion}} </td>
+      </tr>
+      <tr>
+        <td> Importancia </td>
+        <td> {{objetivo.importancia}} </td>
+      </tr>
+      <tr>
+        <td> Estabilidad</td>
+        <td> {{objetivo.estabilidad}} </td>
+      </tr>
+      <tr>
+        <td> Comentarios</td>
+        <td> {{objetivo.comentarios}} </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a routerLink="update" class="btn btn-outline-primary"> Modificar Objetivo</a> &nbsp;
+  <a (click)="eliminar()" routerLink="/objetivos" class="btn btn-outline-danger"> Eliminar Objetivo </a>
+</div>
