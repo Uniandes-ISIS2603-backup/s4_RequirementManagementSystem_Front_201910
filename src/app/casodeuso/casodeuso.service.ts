@@ -6,6 +6,7 @@ import { CasodeusoDetail } from './casodeuso-detail';
 
 
 const API_URL = 'https://fcd0e7c8.ngrok.io/s4_requirement-api/api/';
+//http://localhost:8080/s4_requirement-api/api/
 const casos = 'casos/';
 /*const API_URLP= '../../assets/';*/
 
@@ -23,6 +24,10 @@ export class CasodeusoService {
     /*return this.http.get<CasodeusoDetail>(API_URLP+"casodeuso-"+casodeusoId+".json");*/
 
   }
+
+
+
+  
 
   createCasodeuso(caso): Observable<CasodeusoDetail>{
     return this.http.post<CasodeusoDetail>(API_URL+casos,caso);
