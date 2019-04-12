@@ -10,13 +10,13 @@
                 <div class="invalid-feedback">
                     <div>No ha ingresado una descripcion</div>
                 </div>
-                <label for="condicionSeCumplio"><b>Ingrese si se cumplio la condicion</b></label>
+                <label for="condicionSeCumplio"><b>Ingrese 'true' si se cumplio la condicion y 'false' de lo contrario</b></label>
                 <input type="text" name="condicionSeCumplio" class="form-control" id="condicionSeCumplio" [(ngModel)]="condicionDetail.seCumplio"
                     #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicionDetail.invalid }" required>
                 <div class="invalid-feedback">
                     <div>No ha ingresado si se cumplio</div>
                 </div>
-                <label for="condicionEsPrecondicion"><b>Ingrese si es precondicion</b></label>
+                <label for="condicionEsPrecondicion"><b>Ingrese 'true' si es precondicion y 'false' de lo contrario</b></label>
                 <input type="text" name="condicionEsPrecondicion" class="form-control" id="condicionEsPrecondicion" [(ngModel)]="condicionDetail.esPrecondicion"
                     #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicionDetail.invalid }" required>
                 <div class="invalid-feedback">

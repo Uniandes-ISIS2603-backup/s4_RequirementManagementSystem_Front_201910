@@ -1,3 +1,42 @@
-<p>
-  camino-create works!
-</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h2 class="text-center">Crear un nuevo camino</h2>
+        <form name="camino" (ngSubmit)="f.form.valid && createCamino()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="caminoTipoPaso"><b>Ingrese el id del paso</b></label>
+                <input type="text" name="caminoIdPaso" class="form-control" id="caminoIdPaso" [(ngModel)]="camino.idPaso"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && camino.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado el id del paso</div>
+                </div>
+                <label for="caminoTipoPaso"><b>Ingrese el tipo del paso</b></label>
+                <input type="text" name="caminoTipoPaso" class="form-control" id="caminoTipoPaso" [(ngModel)]="camino.tipoPaso"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && camino.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado un tipo de paso</div>
+                </div>
+                <label for="caminoPasos"><b>Indique el paso de la condicion</b></label>
+                <input type="text" name="caminoPasos" class="form-control" id="caminoPasos" [(ngModel)]="camino.pasos"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && camino.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado el paso</div>
+                </div>
+                </div>  
+                    <div class="col-5">
+                      <p> </p>
+                      <p> </p>
+                      <p> </p>
+                      <img align='center' src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" width="270" height='150'>
+                    </div>
+            <p>  </p>
+                  <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Crear</button>
+                <div class="divider"><p> </p></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+
