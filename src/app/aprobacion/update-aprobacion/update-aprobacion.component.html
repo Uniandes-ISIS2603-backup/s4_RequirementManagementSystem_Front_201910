@@ -57,6 +57,9 @@
                       <option>En proceso</option>
                       <option>No aprobado</option>
                     </select>
+                    <label for="aprobacionFechaYHora"><b>Fecha y Hora de edición</b></label>
+                <input name="aprobacionFechaYHora" class="form-control" id="aprobacionFechaYHora" [(ngModel)]="aprobacionDetail.fechaYHora"
+                #aprobacionFechaYHora="ngModel" value="{{fecha}}" disabled> 
                     <p> </p>
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Edit</button>

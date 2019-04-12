@@ -16,6 +16,7 @@ export class ListarOrganizacionComponent implements OnInit {
   * Lista de organizacions
   */
   organizaciones: Organizacion[];
+  actElim:number;
 
   /**
    * Constructor
@@ -34,6 +35,7 @@ export class ListarOrganizacionComponent implements OnInit {
   */
   ngOnInit() {
     this.getOrganizacions();
+    this.actElim = 0;
   }
 
 }

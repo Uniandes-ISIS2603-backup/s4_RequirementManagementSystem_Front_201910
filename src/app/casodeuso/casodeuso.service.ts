@@ -28,5 +28,9 @@ export class CasodeusoService {
     return this.http.post<CasodeusoDetail>(API_URL+casos,caso);
   }
 
+  updateCasodeuso(caso): Observable<CasodeusoDetail> {
+    return this.http.put<CasodeusoDetail>(API_URL + casos + caso.id, caso);
+  }
+
 
 }

@@ -61,9 +61,6 @@ export class CambioCreateComponent implements OnInit {
         }, err => {
             this.toastrService.error(err, "Error");
         });
-        this.fecha = new Date();
-        this.fecha.toString;
-        this.cambioDetail.fechaYHora = this.fecha.toString();
     return this.cambioDetail;
 }
 
@@ -79,6 +76,9 @@ cancelCreation(): void {
 */
 ngOnInit() {
     this.cambioDetail = new CambioDetail();
+    this.fecha = new Date();
+    this.fecha.toLocaleString();
+    this.cambioDetail.fechaYHora = this.fecha.toLocaleString();
 }
 
 

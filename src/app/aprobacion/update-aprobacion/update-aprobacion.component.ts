@@ -40,6 +40,12 @@ export class UpdateAprobacionComponent implements OnInit {
 */
 aprobacionDetail: AprobacionDetail;
 
+ /**
+  * Current time in which the creation of the approbation took place.
+  */
+ fecha: Date;
+
+
 /**
 * Retrieves the information of the approbation
 */
@@ -60,6 +66,9 @@ editAprobacion(): void {
             this.toastrService.success("The approbation's information was updated", "Approbation edition");
         });
         console.log(this.aprobacionDetail);
+        this.fecha = new Date();
+        this.fecha.toLocaleString();
+        this.aprobacionDetail.fechaYHora = this.fecha.toLocaleString();
 }
 
 /**
@@ -81,5 +90,6 @@ ngOnInit() {
 */
 ngOnChanges() {
     this.ngOnInit();
+
 }
 }

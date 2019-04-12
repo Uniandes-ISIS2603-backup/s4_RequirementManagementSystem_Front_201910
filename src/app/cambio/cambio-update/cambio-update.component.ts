@@ -40,6 +40,12 @@ export class CambioUpdateComponent implements OnInit {
 */
 cambioDetail: CambioDetail;
 
+  /**
+  * Current time in which the creation of the change took place.
+  */
+ fecha: Date;
+
+
 /**
 * Retrieves the information of the change
 */
@@ -81,5 +87,9 @@ ngOnInit() {
 */
 ngOnChanges() {
     this.ngOnInit();
+    this.cambioDetail = new CambioDetail();
+    this.fecha = new Date();
+    this.fecha.toLocaleString();
+    this.cambioDetail.fechaYHora = this.fecha.toLocaleString();
 }
 }

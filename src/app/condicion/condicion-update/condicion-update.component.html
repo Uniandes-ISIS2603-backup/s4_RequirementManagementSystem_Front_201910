@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h2 class="text-center">Editar una condicion</h2>
+        <form name="condicion" (ngSubmit)="f.form.valid && editCondicion()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="condicionDescripcion"><b>Ingrese la nueva descripcion</b></label>
+                <input type="text" name="condicionDescripcion" class="form-control" id="condicionDescripcion" [(ngModel)]="condicionDetail.descripcion"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicionDetail.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado una descripcion</div>
+                </div>
+                <label for="condicionSeCumplio"><b>Ingrese si se cumplio la condicion</b></label>
+                <input type="text" name="condicionSeCumplio" class="form-control" id="condicionSeCumplio" [(ngModel)]="condicionDetail.seCumplio"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicionDetail.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado si se cumplio</div>
+                </div>
+                <label for="condicionEsPrecondicion"><b>Ingrese si es precondicion</b></label>
+                <input type="text" name="condicionEsPrecondicion" class="form-control" id="condicionEsPrecondicion" [(ngModel)]="condicionDetail.esPrecondicion"
+                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicionDetail.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No ha ingresado si es precondicion</div>
+                </div>
+                </div>  
+                    <div class="col-5">
+                      <p> </p>
+                      <p> </p>
+                      <p> </p>
+                      <img align='center' src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" width="270" height='150'>
+                    </div>
+            <p>  </p>
+                  <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
