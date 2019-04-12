@@ -34,7 +34,7 @@
       <textarea class="form-control" rows="3" [(ngModel)]="objeto.comentarios"
         [ngModelOptions]="{standalone: true}"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary" (click)='crearObjeto()'>Crear</button>
-    <button type="submit" class="btn btn-default">Cancelar</button>
+    <button type="submit" class="btn btn-primary" (click)='crearObjeto()' routerLink="..">Crear</button>
+    <button type="submit" class="btn btn-default" routerLink="..">Cancelar</button>
   </form>
 </div>
