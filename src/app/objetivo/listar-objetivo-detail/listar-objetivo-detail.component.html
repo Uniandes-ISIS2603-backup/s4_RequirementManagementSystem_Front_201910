@@ -1,3 +1,9 @@
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/objetivos">Objetivo</a></li> 
+      <li class="breadcrumb-item active" aria-current="page">Objetivo {{objetivo.id}}</li>
+    </ol>
+  </nav>
 <div *ngIf="objetivo" class="container-fluid" id="tabla">
   <br>
   <h3 class="card-title">Visualización Objetivo {{objetivo.id}}</h3>
@@ -28,6 +34,6 @@
     </tbody>
   </table>
 
-  <a routerLink="update" class="btn btn-outline-primary"> Modificar Objetivo</a> &nbsp;
-  <a (click)="eliminar()" routerLink="/objetivos" class="btn btn-outline-danger"> Eliminar Objetivo </a>
+  <button routerLink="update" class="btn btn-outline-primary"> Modificar Objetivo</button> &nbsp;
+  <button (click)="eliminar()" class="btn btn-outline-danger"> Eliminar Objetivo </button>
 </div>

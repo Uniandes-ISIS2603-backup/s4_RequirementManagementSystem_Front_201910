@@ -9,12 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./listar-objetivo.component.css']
 })
 export class ListarObjetivoComponent implements OnInit {
-
+  //Lista de los objetivos que existen
   objetivos: Objetivo[];
+
   constructor(private srv: ObjetivoService, private router: Router) {
 
   }
 
+  //Al iniciar la aplicacion llama al servicio y le pide todos los objetivos que existan
   ngOnInit() 
   {
     this.srv.getObjetivos().subscribe(objs => this.objetivos = objs)

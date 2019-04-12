@@ -1,6 +1,14 @@
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">Objetivos</li>
+    </ol>
+  </nav>
+
 <div class="card-columns">
-  <div class="card text-white mb-3 " style="height: 100%;" *ngFor="let o of objetivos" [ngClass]="{'bg-success': o.importancia===1 , 'bg-primary': o.importancia===2, 'bg-danger': o.importancia===3}">
-      <div class="card-header" style="font-size: 25px">{{o.descripcion}}</div>
+  <div class="card text-white mb-3 " style="height: 100%;" *ngFor="let o of objetivos"
+    [ngClass]="{'bg-success': o.importancia===1 , 'bg-primary': o.importancia===2, 'bg-danger': o.importancia===3}">
+    <div class="card-header" style="font-size: 25px">{{o.descripcion}}</div>
     <div class="card-body">
       <p class="card-text">{{o.comentarios}}</p>
       <a class="btn btn-outline-light" routerLink="{{o.id}}"> Ver más detalles</a>
