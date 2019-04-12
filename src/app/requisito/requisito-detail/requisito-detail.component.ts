@@ -22,8 +22,11 @@ export class RequisitoDetailComponent implements OnInit {
   {
     const id = +this.route.snapshot.paramMap.get('id');
     this.reqService.getRequisito(id)
-      .subscribe(req=> this.req = req);
+      .subscribe(req => this.req = req);
   }
 
-  
+  eliminar(): void
+  {
+    alert ("Eliminaste el requisito actual");
+  }
 }
