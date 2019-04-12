@@ -1,3 +1,40 @@
-<p>
-  update-objetivo works!
-</p>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/objetivos">Objetivo</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Modificar Objetivo</li>
+    </ol>
+  </nav>
+</div>
+<div class="container">
+  <h2>Modificar Objetivo</h2>
+  <form>
+    <div class="form-group">
+      <label>Descripción</label>
+      <input id ="description" type="text" class="form-control" [(ngModel)]="objeto.descripcion" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <label>Importancia</label>
+      <select class="form-control" [(ngModel)]="objeto.importancia" [ngModelOptions]="{standalone: true}">
+        <option value="1">Baja</option>
+        <option value="2">Media</option>
+        <option value="3">Alta</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Estabilidad</label>
+      <select class="form-control" [(ngModel)]="objeto.estabilidad" [ngModelOptions]="{standalone: true}">
+        <option value="1">Baja</option>
+        <option value="2">Media</option>
+        <option value="3">Alta</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Comentarios</label>
+      <textarea id ="comments"  class="form-control" rows="3" [(ngModel)]="objeto.comentarios"
+        [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)='crearObjetivo()' routerLink=".." routerLinkActive="router-link-active" >Modificar</button>
+    <button type="submit" class="btn btn-default" >Cancelar</button>
+  </form>
+</div>

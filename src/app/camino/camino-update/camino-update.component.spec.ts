@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MostrarObjetivoComponent } from './mostrar-objetivo.component';
+import { CaminoUpdateComponent } from './camino-update.component';
 
-describe('MostrarObjetivoComponent', () => {
-  let component: MostrarObjetivoComponent;
-  let fixture: ComponentFixture<MostrarObjetivoComponent>;
+describe('CaminoUpdateComponent', () => {
+  let component: CaminoUpdateComponent;
+  let fixture: ComponentFixture<CaminoUpdateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MostrarObjetivoComponent ]
+      declarations: [ CaminoUpdateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MostrarObjetivoComponent);
+    fixture = TestBed.createComponent(CaminoUpdateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,3 @@
+.breadcrumb {background: rgba(33, 32, 32, 1); border: 0px solid rgba(245, 245, 245, 1); border-radius: 2px;}
+.breadcrumb a {color: rgba(14, 132, 235, 1);}
+.breadcrumb>.active {color: rgba(209, 209, 209, 1);}
