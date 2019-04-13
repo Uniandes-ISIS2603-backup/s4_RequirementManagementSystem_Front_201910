@@ -46,7 +46,7 @@ export class CrearRequisitoComponent implements OnInit {
     this.service.addRequisito(this.req).subscribe((req) => {this.req = req});
     this.router.navigate['/requisitos'];
     alert("Requisito creado exitosamente");
-    
+      // Necesito commitear por favor    
   }
 
 }
