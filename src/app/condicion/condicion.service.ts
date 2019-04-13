@@ -3,15 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Condicion } from './condicion';
 import { Observable } from 'rxjs';
 import { CondicionDetail } from './condicion-detail';
+import { environment } from '../../environments/environment.prod';
+
 
 /**
  * API_URL is the constant of the API in which the back runs.
  */
-const API_URL = 'https://fcd0e7c8.ngrok.io/s4_requirement-api/api/';
+const API_URL = environment.apiURL;
 /**
  * condiciones is the constant of the API in which the back runs.
  */
-const condiciones = 'condiciones/';
+const condiciones = '/condiciones/';
 
 /**
  * The service provider for everything related to condition.
