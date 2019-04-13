@@ -3,15 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Casodeuso } from './casodeuso';
 import { Observable } from 'rxjs';
 import { CasodeusoDetail } from './casodeuso-detail';
+import { environment } from '../../environments/environment.prod';
+
 
 /**
  * API_URL is the constant of the API in which the back runs.
  */
-const API_URL = 'https://fcd0e7c8.ngrok.io/s4_requirement-api/api/';
+const API_URL = environment.apiURL;
 /**
  * API_URL is the constant of the route casos to fetch the components of case of use.
  */
-const casos = 'casos/';
+const casos = '/casos/';
 /*const API_URLP= '../../assets/';*/
 
 /**
