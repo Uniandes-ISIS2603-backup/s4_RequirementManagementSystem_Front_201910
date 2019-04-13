@@ -18,4 +18,7 @@ import { ModificarRequisitoComponent } from './modificar-requisito/modificar-req
   exports: [ListarRequisitosComponent, RequisitoDetailComponent],
   providers: [RequisitoService]
 })
+/**
+ * Módulo principal que contiene todos los servicios y componentes necesarios para la correcta implementación de los requerimientos funcionales de rRquisito. 
+ */
 export class RequisitoModule { }
