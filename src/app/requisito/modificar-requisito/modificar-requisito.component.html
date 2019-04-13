@@ -41,7 +41,8 @@
         <textarea id ="comments"  class="form-control" rows="3" [(ngModel)]="objeto.comentarios"
           [ngModelOptions]="{standalone: true}"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" (click)='crearObjeto()'>Modificar</button>
-      <button type="submit" class="btn btn-default">Cancelar</button>
+      <button type="submit" class="btn btn-outline-primary" (click)='actualizarRequisito()'>Modificar</button>
+      &nbsp;
+      <button type="submit" class="btn btn-outline-danger"(click)='cancelarActualizacion()'>Cancelar</button>
     </form>
   </div>

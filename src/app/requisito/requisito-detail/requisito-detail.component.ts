@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Requisito } from '../requisito';
 import { RequisitoService } from '../requisito.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -12,12 +12,14 @@ import { Location } from '@angular/common';
 export class RequisitoDetailComponent implements OnInit {
 
   req: Requisito;
-  constructor(private location: Location, private reqService: RequisitoService, private route: ActivatedRoute) { }
+  constructor(private router: Router, private reqService: RequisitoService, private route: ActivatedRoute) { }
 
+  //Al iniciar se obtiene el objetivo actual, que llega de la ruta activada (componente padre).
   ngOnInit() {
     this.getRequisito();
   }
 
+  //Metodo que llama al servicio y pide el servicio actual con el id dado en la ruta
   getRequisito(): void 
   {
     const id = +this.route.snapshot.paramMap.get('id');
@@ -26,7 +28,11 @@ export class RequisitoDetailComponent implements OnInit {
   }
 
   eliminar(): void
-  {
-    alert ("Eliminaste el requisito actual");
+  { 
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.reqService.deleteRequisito(id).subscribe((res)=>{
+      this.router.navigate(['/requisitos']);
+    });
+    alert ("Eliminaste el Requisito actual");
   }
 }

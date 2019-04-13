@@ -114,7 +114,7 @@ const routes: Routes = [
         path: 'requisitos/new', component: CrearRequisitoComponent
     },
     {
-        path: 'requisitos/:id', component: RequisitoDetailComponent
+        path: 'requisitos/:id', component: RequisitoDetailComponent, runGuardsAndResolvers : 'always'
     },
     {
         path: 'requisitos/:id/modificar', component: ModificarRequisitoComponent

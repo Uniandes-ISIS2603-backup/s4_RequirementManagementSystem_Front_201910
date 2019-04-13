@@ -29,7 +29,20 @@ export class UpdateObjetivoComponent implements OnInit {
     this.servicio.updateObjetivo(id, this.objetivo).subscribe((obj)=> {
       this.objetivo = obj;
     })
-    this.router.navigate(['/objetivos/',id])
+    this.intermediateNavigation();
+    this.finalDestination(id);
   }
-
+  // Métodos auxiliares para refrescar fetcheando desde DB. 
+  intermediateNavigation()
+  {
+    this.router.navigate(['/objetivos/', ]);
+  }
+  finalDestination(id: number)
+  {
+    this.router.navigate(['/objetivos/', id]);
+  }
+  cancelarActualizacion(): void
+  {
+    this.router.navigate(['/objetivos/']);
+  }
 }
