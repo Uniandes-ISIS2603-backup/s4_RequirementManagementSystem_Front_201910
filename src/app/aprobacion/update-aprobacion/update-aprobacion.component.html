@@ -33,13 +33,12 @@
                             </select>
                           </div>
             <div class="form-group">
-                <label for="aprobacionTipo"><b>Tipo (Resumen) de la aprobacion</b></label>
-                <input type="text" name="aprobacionTipo" class="form-control" id="aprobacionTipo" [(ngModel)]="aprobacionDetail.tipo"
-                    #aprobacionTipo="ngModel" 
-                    required>
-                <div class="invalid-feedback">
-                    <div>Falta editar el resumen del cambio</div>
-                </div>
+                <label for="aprobacionTipo"><b>Tipo de la aprobacion</b></label>
+                <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.tipo"
+                #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
+                  <option>OBJETIVO</option>
+                  <option>REQUISITO</option>
+                </select>
             </div>
             <div class="form-group">
                     <label for="cambioTipo"><b>Comentario sobre la aprobación</b></label>

@@ -3,11 +3,12 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Aprobacion } from './aprobacion';
 import { AprobacionDetail } from './aprobacion-detail';
+import { environment } from '../../environments/environment.prod';
 
 /**
  * API_URL is the constant of the API in which the back runs.
  */
-const API_URL = "http://f534a80c.ngrok.io/s4_requirement-api/api/aprobaciones";
+const API_URL = environment.apiURL;
 /**
  * JSONS to test the services.
  */
@@ -34,7 +35,7 @@ export class AprobacionService {
     * @returns The list of approbations in real time.
     */
   getAprobaciones(): Observable<Aprobacion[]> {
-      return this.http.get<Aprobacion[]>(API_URL);
+      return this.http.get<Aprobacion[]>(API_URL + aprobaciones);
   }
 
   /**
@@ -44,7 +45,7 @@ export class AprobacionService {
    */
   getAprobacionDetail(aprobacionId:number): Observable<AprobacionDetail> {
     //console.log(cambioId+" "+API_URL + "cambio-" + cambioId+".json");
-    return this.http.get<AprobacionDetail>(API_URL + "/" + aprobacionId);
+    return this.http.get<AprobacionDetail>(API_URL + aprobaciones + "/" + aprobacionId);
   }
 
    /**
@@ -53,7 +54,7 @@ export class AprobacionService {
     * @returns The confirmation of the approbation's creation
     */
   createAprobacion(aprobacion): Observable<AprobacionDetail> {
-    return this.http.post<AprobacionDetail>(API_URL, aprobacion);
+    return this.http.post<AprobacionDetail>(API_URL + aprobaciones, aprobacion);
 }
 
   /**
@@ -62,6 +63,6 @@ export class AprobacionService {
     * @returns The confirmation of the approbation's update
     */
   updateAprobacion(aprobacion): Observable<AprobacionDetail> {
-  return this.http.put<AprobacionDetail>(API_URL + '/' + aprobacion.id, aprobacion);
+  return this.http.put<AprobacionDetail>(API_URL + aprobaciones + '/' + aprobacion.id, aprobacion);
 }
 }
