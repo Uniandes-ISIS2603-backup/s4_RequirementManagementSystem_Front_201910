@@ -4,6 +4,9 @@ import 'rxjs/add/operator/filter';
 
 import { Stakeholder } from '../../stakeholder/stakeholder';
 import { StakeholderService } from '../../stakeholder/stakeholder.service';
+import { Organizacion } from '../../organizacion/organizacion';
+import { OrganizacionService } from '../../organizacion/organizacion.service';
+
 
 @Component({
   selector: 'app-listar-stakeholder',
@@ -17,10 +20,12 @@ export class ListarStakeholderComponent implements OnInit {
   */
   stakeholders: Stakeholder[];
   actElim:number;
+
+  organizaciones:Organizacion[];
   /**
    * Constructor
    */
-  constructor(private stakeholderService: StakeholderService, private route: ActivatedRoute) { }
+  constructor(private stakeholderService: StakeholderService, private organizacionService: OrganizacionService, private route: ActivatedRoute) { }
 
   /**
   * Obtener lista de todos los stakeholders
@@ -29,12 +34,17 @@ export class ListarStakeholderComponent implements OnInit {
     this.stakeholderService.getStakeholders().subscribe(stakeholders => { this.stakeholders = stakeholders; });
   }
 
+  getOrganizaciones(): void {
+    this.organizacionService.getOrganizaciones().subscribe(organizacions => { this.organizaciones = organizacions; });
+  }
+
   /**
   * Inicializacion del componente
   */
   ngOnInit() {
     this.getStakeholders();
     this.actElim = 0;
+    this.getOrganizaciones();
   }
 
 }

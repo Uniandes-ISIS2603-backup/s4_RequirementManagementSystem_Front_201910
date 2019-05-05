@@ -7,7 +7,7 @@ import { Stakeholder } from './stakeholder';
 import { environment } from '../../environments/environment.prod';
 
 //const API_URL = environment.apiURL+"/stakeholders";
-const API_URL = 'http://2ad1364f.ngrok.io/s4_requirement-api/api/stakeholders';
+const API_URL = 'http://f257f9e9.ngrok.io/s4_requirement-api/api/stakeholders';
 
 
 @Injectable()
@@ -34,7 +34,6 @@ export class StakeholderService {
     * @returns El Stakeholder creado, null si no se creo exitosamente
     */
     createStakeholder(stakeholder): Observable<Stakeholder> {
-        console.log(stakeholder);
         return this.http.post<Stakeholder>(API_URL, stakeholder);
     }
 

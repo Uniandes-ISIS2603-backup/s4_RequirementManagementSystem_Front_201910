@@ -7,17 +7,41 @@
           <th>ID</th>
           <th>Nombre</th>
           <th>Tipo</th>
+          <th>Organizacion</th>
         </tr>
       </thead>
       <tbody>
         <td>
-          <input type="number" [(ngModel)]="stakeholder.id" required>
+            <div class="form-group">
+                <label for="stakeholderId"></label>
+                <select class="custom-select" name="stakeholderId" id="stakeholderId" [(ngModel)]="stakeholder.id"
+                    #stakeholderId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stakeholderId.invalid }"
+                    required>
+                    <option [value]="stakeholder.id" *ngFor="let stakeholder of stakeholders">{{stakeholder.id}}</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>No hay organizaciones en el sistema</div>
+                </div>
+            </div>
         </td>
         <td>
           <input type="String" [(ngModel)]="stakeholder.nombre" required>
         </td>
         <td>
           <input type="String" [(ngModel)]="stakeholder.tipo" required>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="stakeholderOrganizacion"></label>
+                <select class="custom-select" name="stakeholderOrganizacion" id="stakeholderOrganizacion" [(ngModel)]="stakeholder.organizacion.id"
+                    #stakeholderOrganizacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && stakeholderOrganizacion.invalid }"
+                    required>
+                    <option [value]="organizacion.id" *ngFor="let organizacion of organizaciones">{{organizacion.id}}</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>No hay organizaciones en el sistema</div>
+                </div>
+            </div>
         </td>
       </tbody>
     </table>

@@ -25,6 +25,7 @@ export class CreateStakeholderComponent implements OnInit {
     this.StakeholderService.createStakeholder(this.stakeholder).subscribe(Stakeholder => {
       this.stakeholder.nombre = Stakeholder.nombre;
       this.stakeholder.tipo = Stakeholder.tipo
+      this.stakeholder.organizacion.id = Stakeholder.organizacion.id;
     }
     );
     return this.stakeholder;
