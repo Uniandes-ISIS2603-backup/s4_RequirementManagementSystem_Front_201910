@@ -34,11 +34,12 @@ export class AuthSignUpComponent implements OnInit {
     }
 
     /**
-    * This function will initialize the component
+    * This function will initialize the component.
+    *  It specifies the types of users of the application
     */
     ngOnInit() {
         this.user = new User();
-        this.roles = ['Administrator', 'Client'];
+        this.roles = ['Administrator', 'Client', 'Developer'];
     }
 
 }
