@@ -31,7 +31,9 @@ export class ListarStakeholderComponent implements OnInit {
   * Obtener lista de todos los stakeholders
   */
   getStakeholders(): void {
-    this.stakeholderService.getStakeholders().subscribe(stakeholders => { this.stakeholders = stakeholders; });
+    this.stakeholderService.getStakeholders().subscribe(stakeholders => { this.stakeholders = stakeholders; 
+    console.log("Stake", stakeholders[0]);
+    });
   }
 
   getOrganizaciones(): void {

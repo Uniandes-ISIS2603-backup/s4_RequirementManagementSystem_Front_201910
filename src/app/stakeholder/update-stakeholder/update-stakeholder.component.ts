@@ -26,7 +26,6 @@ export class UpdateStakeholderComponent implements OnInit {
   //Constructor con variables a usar
   constructor(private stakeholderService: StakeholderService, private organizacionService: OrganizacionService, private route: ActivatedRoute) { }
 
-  //Obtiene lista de organizaciones en el sistema
   /**
   * Obtener lista de todas las organizacions
   */
@@ -35,11 +34,15 @@ export class UpdateStakeholderComponent implements OnInit {
 }
 
 getStakeholders(): void {
-  this.stakeholderService.getStakeholders().subscribe(stakeholders => { this.stakeholders = stakeholders; });
+  this.stakeholderService.getStakeholders().subscribe(stakeholders => { this.stakeholders = stakeholders; 
+  console.log("Stake", stakeholders);
+  
+  });
 }
   /**
   * Actualiza un Stakeholder
   */
+ 
   updateStakeholder(): Stakeholder {  
     this.stakeholderService.updateStakeholder(this.stakeholder).subscribe(Stakeholder => {
       this.stakeholder.nombre = Stakeholder.nombre;
@@ -54,5 +57,8 @@ getStakeholders(): void {
     this.stakeholder = new Stakeholder();
     this.stakeholder.organizacion = new Organizacion();
     this.getOrganizaciones();
+    console.log("iniy.....");
+    this.getStakeholders();
+
   }
 }

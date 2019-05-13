@@ -17,7 +17,7 @@ export class ListarOrganizacionComponent implements OnInit {
   */
   organizaciones: Organizacion[];
   actElim:number;
-
+  
   /**
    * Constructor
    */

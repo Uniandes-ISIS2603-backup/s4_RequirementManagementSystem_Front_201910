@@ -15,10 +15,11 @@
                     <td>{{stakeholder.id}}</td>
                     <td>{{stakeholder.nombre}}</td>
                     <td>{{stakeholder.tipo}}</td>
-                    <td>{{stakeholder.organizacion.nombre}}</td>
+                    <td *ngIf="stakeholder.organizacion">{{stakeholder.organizacion.nombre}}</td>
                 </tr>
             </tbody>
         </table>
+        <td><button class="btn btn-success" (click)="actElim = 3">Crear</button></td>
         <td><button class="btn btn-info" (click)="actElim = 1">Actualizar</button></td>
         <td><button class="btn btn-danger" (click)="actElim = 2">Eliminar</button></td>
     </div>
@@ -29,5 +30,8 @@
     </div>
     <div *ngIf="actElim == 2">
         <app-eliminar-stakeholder> </app-eliminar-stakeholder>
+    </div>
+    <div *ngIf="actElim == 3">
+        <app-create-stakeholder> </app-create-stakeholder>
     </div>
 </div>

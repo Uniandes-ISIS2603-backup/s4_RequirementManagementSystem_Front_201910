@@ -14,7 +14,6 @@ import { ListarStakeholderComponent } from '../stakeholder/listar-stakeholder/li
 import { CreateStakeholderComponent } from '../stakeholder/create-stakeholder/create-stakeholder.component';
 import { ListarOrganizacionComponent } from '../organizacion/listar-organizacion/listar-organizacion.component';
 import { CreateOrganizacionComponent } from '../organizacion/create-organizacion/create-organizacion.component';
-import { AgregarStakeholderOrganizacionComponent } from '../organizacion/agregarStakeholder-organizacion/agregarStakeholder-organizacion.component';
 import { CondicionListComponent } from '../condicion/condicion-list/condicion-list.component';
 import { CondicionCreateComponent } from '../condicion/condicion-create/condicion-create.component';
 import { ListarObjetivoComponent } from '../objetivo/listar-objetivo/listar-objetivo.component'
@@ -27,6 +26,7 @@ import { ListarObjetivoDetailComponent } from '../objetivo/listar-objetivo-detai
 import { UpdateObjetivoComponent } from '../objetivo/update-objetivo/update-objetivo.component';
 import { CaminoListComponent } from '../camino/camino-list/camino-list.component';
 import { CaminoCreateComponent } from '../camino/camino-create/camino-create.component';
+import { OrganizacionDetailComponent } from '../organizacion/organizacion-detail/organizacion-detail.component';
 
 
 const routes: Routes = [
@@ -90,6 +90,9 @@ const routes: Routes = [
     {
         path: 'organizaciones/new',
         component: CreateOrganizacionComponent
+    },
+    {
+        path: 'organizaciones/organizacion/:id', component: OrganizacionDetailComponent, runGuardsAndResolvers : 'always'
     },
     {
         path: 'objetivos',

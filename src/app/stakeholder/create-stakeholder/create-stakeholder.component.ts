@@ -5,6 +5,8 @@ import 'rxjs/add/operator/filter';
 
 import { Stakeholder } from '../../stakeholder/stakeholder';
 import { StakeholderService } from '../../stakeholder/stakeholder.service';
+import { OrganizacionService } from '../../organizacion/organizacion.service';
+import { Organizacion } from '../../organizacion/organizacion';
 @Component({
   selector: 'app-create-stakeholder',
   templateUrl: './create-stakeholder.component.html',
@@ -12,11 +14,22 @@ import { StakeholderService } from '../../stakeholder/stakeholder.service';
 })
 export class CreateStakeholderComponent implements OnInit {
 
+  //objeto tipo organizacion
+  organizaciones:Organizacion[];
+
   //Stakeholder a crear
   stakeholder: Stakeholder;
 
   //constructor con variables a usar
-  constructor(private StakeholderService: StakeholderService, private route: ActivatedRoute) { }
+  constructor(private StakeholderService: StakeholderService, private organizacionService: OrganizacionService, private route: ActivatedRoute) { }
+
+  /**
+  * Obtener lista de todas las organizacions
+  */
+  getOrganizaciones(): void {
+    this.organizacionService.getOrganizaciones().subscribe(organizacions => { this.organizaciones = organizacions; });
+  }
+
 
   /**
   * Crea un nuevo Stakeholder
@@ -24,8 +37,7 @@ export class CreateStakeholderComponent implements OnInit {
    createStakeholder(): Stakeholder {
     this.StakeholderService.createStakeholder(this.stakeholder).subscribe(Stakeholder => {
       this.stakeholder.nombre = Stakeholder.nombre;
-      this.stakeholder.tipo = Stakeholder.tipo
-      this.stakeholder.organizacion.id = Stakeholder.organizacion.id;
+      this.stakeholder.tipo = Stakeholder.tipo;
     }
     );
     return this.stakeholder;
@@ -34,6 +46,8 @@ export class CreateStakeholderComponent implements OnInit {
   //Inicializacion del componenete, inicializa objeto stakeholder
   ngOnInit() {
     this.stakeholder = new Stakeholder();
-    this.stakeholder.id = Math.floor(Math.random() * 9999) + 1;
+    this.stakeholder.id = Math.floor(Math.random() * 99999) + 1;
+    this.getOrganizaciones();
+    this.stakeholder.organizacion = new Organizacion();
   } 
 }

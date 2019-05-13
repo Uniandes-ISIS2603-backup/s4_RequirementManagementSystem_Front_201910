@@ -17,11 +17,18 @@
           <input type="String" [(ngModel)]="stakeholder.tipo" required>
         </td>
         <td>
-          <input type="String" [(ngModel)]="stakeholder.organizacion" required>
+          <div class="form-group">
+            <label for="stakeholderOrganizacion"></label>
+            <select class="custom-select" name="stakeholderOrganizacion" id="stakeholderOrganizacion"
+              [(ngModel)]="stakeholder.organizacion.id">
+              <option *ngFor="let organizacion of organizaciones" [value]="organizacion.id">{{organizacion.nombre}}
+              </option>
+            </select>
+          </div>
         </td>
       </tbody>
     </table>
   </div>
 
-<td><button class="btn btn-success" (click)="createStakeholder()">Agregar</button></td>
+  <td><button class="btn btn-success" (click)="createStakeholder()">Agregar</button></td>
 </div>
