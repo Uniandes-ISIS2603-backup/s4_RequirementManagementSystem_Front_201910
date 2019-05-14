@@ -2,8 +2,9 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { OrganizacionService } from '../organizacion.service';
 import { OrganizacionDetail } from '../organizacion.detail';
-import { Stakeholder } from 'src/app/stakeholder/stakeholder';
+import { Stakeholder } from '../../stakeholder/stakeholder';
 import { Organizacion } from '../organizacion';
+import { ListarOrganizacionComponent } from '../listar-organizacion/listar-organizacion.component'
 
 /**
  * Component that shows the detail of a specific case of use.
@@ -15,7 +16,7 @@ import { Organizacion } from '../organizacion';
 })
 export class OrganizacionDetailComponent implements OnInit {
 
-  organizacionDetail: OrganizacionDetail;
+  organizacionDetail: Organizacion;
   listaStakeholders: Stakeholder[];
 
   /**
@@ -23,22 +24,18 @@ export class OrganizacionDetailComponent implements OnInit {
     * @param organizacionService The case's service
     * @param route The route element which helps to obtain the condition's id
     */
-  constructor(private organizacionService: OrganizacionService, private route: ActivatedRoute) { }
+  constructor(private organizacionService: OrganizacionService, private route: ActivatedRoute, private lista: ListarOrganizacionComponent) { }
 
   /**
     * The method which retrieves the comment (detail) of a case of use
     */
   getOrganizacionesDetail(): void {
 
-    this.organizacionService.getOrganizacionesDetail(this.organizacionDetail.id).subscribe(organizacion => {
-        this.organizacionDetail.nombre = organizacion.nombre;
-        this.organizacionDetail.sector = organizacion.sector;
-        this.listaStakeholders = organizacion.stakeholders;
-        this.organizacionDetail.stakeholders = organizacion.stakeholders;
-        console.log("Stake....." , organizacion.stakeholders);
-        //console.log("Nombre....." , this.organizacionDetail.nombre);
-        //console.log("Stake....." , this.listaStakeholders[0]);
-      });
+    this.organizacionService.getOrganizacionesDetail(this.lista.id).subscribe(organizacion => {
+      this.organizacionDetail = organizacion;
+      this.listaStakeholders = organizacion.stakeholders;
+      console.log("Stake.....", organizacion.nombre);
+    });
   }
 
   /**
@@ -46,8 +43,10 @@ export class OrganizacionDetailComponent implements OnInit {
     * We need to initialize the case of use so that it is never considered as undefined
     */
   ngOnInit() {
-    this.organizacionDetail = new OrganizacionDetail();
-    this.organizacionDetail.id = +this.route.snapshot.paramMap.get('id');
+    this.organizacionDetail = new Organizacion();
     this.getOrganizacionesDetail();
+    this.listaStakeholders = this.organizacionDetail.stakeholders;
+    console.log(this.listaStakeholders)
+    console.log(this.lista.id)
   }
 }

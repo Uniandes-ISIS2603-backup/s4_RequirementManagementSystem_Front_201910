@@ -15,15 +15,14 @@ import { StakeholderService } from '../stakeholder.service';
 export class EliminarStakeholderComponent implements OnInit {
 
   stakeholders: Stakeholder[];
-  stakeholder:Stakeholder;
+  stakeholder: Stakeholder;
 
   //Constructor con variables a usar
   constructor(private stakeholderService: StakeholderService, private route: ActivatedRoute) { }
 
   getStakeholders(): void {
-    this.stakeholderService.getStakeholders().subscribe(stakeholders => { this.stakeholders = stakeholders; 
-    console.log("Stake", stakeholders);
-    
+    this.stakeholderService.getStakeholders().subscribe(stakeholders => {
+    this.stakeholders = stakeholders;
     });
   }
 
@@ -38,7 +37,7 @@ export class EliminarStakeholderComponent implements OnInit {
   ngOnInit() {
 
     this.getStakeholders();
-this.stakeholder = new Stakeholder();
+    this.stakeholder = new Stakeholder();
 
   }
 }

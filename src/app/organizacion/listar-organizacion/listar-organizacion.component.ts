@@ -4,6 +4,7 @@ import 'rxjs/add/operator/filter';
 
 import { Organizacion } from '../organizacion';
 import { OrganizacionService } from '../organizacion.service';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-listar-organizacion',
@@ -17,6 +18,7 @@ export class ListarOrganizacionComponent implements OnInit {
   */
   organizaciones: Organizacion[];
   actElim:number;
+  id:number;
   
   /**
    * Constructor
@@ -30,12 +32,19 @@ export class ListarOrganizacionComponent implements OnInit {
     this.OrganizacionService.getOrganizaciones().subscribe(organizacions => { this.organizaciones = organizacions; });
   }
 
+  click(id:number): void{
+    this.actElim = 3;
+    this.id = id;
+    console.log(id);
+  }
+
   /**
   * Inicializacion del componente
   */
   ngOnInit() {
     this.getOrganizacions();
     this.actElim = 0;
+    this.id = 0;
   }
 
 }
