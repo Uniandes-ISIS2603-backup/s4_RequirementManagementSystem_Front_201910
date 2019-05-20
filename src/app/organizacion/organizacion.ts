@@ -20,6 +20,6 @@ export class Organizacion {
         /**
      * Lista de stakeholders
      */
-    stakeholders: Stakeholder[];
+    stakeHolders: Stakeholder[];
 
 }

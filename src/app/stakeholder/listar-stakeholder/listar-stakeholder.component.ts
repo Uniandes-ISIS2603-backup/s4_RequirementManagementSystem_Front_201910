@@ -20,6 +20,7 @@ export class ListarStakeholderComponent implements OnInit {
   */
   stakeholders: Stakeholder[];
   actElim:number;
+  cambioLista:Boolean = false;
 
   organizaciones:Organizacion[];
   /**
@@ -39,7 +40,11 @@ export class ListarStakeholderComponent implements OnInit {
   getOrganizaciones(): void {
     this.organizacionService.getOrganizaciones().subscribe(organizacions => { this.organizaciones = organizacions; });
   }
-
+  while(cambioLista){
+    this.ngOnInit();
+    this.cambioLista = false;
+    console.log("Cambio:  ", this.cambioLista);
+  }
   /**
   * Inicializacion del componente
   */

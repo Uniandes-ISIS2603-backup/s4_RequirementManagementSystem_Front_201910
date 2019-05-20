@@ -5,6 +5,7 @@ import 'rxjs/add/operator/filter';
 import { OrganizacionService } from '../organizacion.service';
 import { ResourceLoader, ThrowStmt } from '@angular/compiler';
 import { Organizacion } from '../organizacion';
+import { ListarOrganizacionComponent } from '../listar-organizacion/listar-organizacion.component';
 @Component({
   selector: 'app-eliminar-organizacion',
   templateUrl: './eliminar-organizacion.component.html',
@@ -16,7 +17,7 @@ export class EliminarOrganizacionComponent implements OnInit {
   organizacion: Organizacion;
 
   //Constructor del componente con variables a usar
-  constructor(private OrganizacionService: OrganizacionService, private route: ActivatedRoute) { }
+  constructor(private OrganizacionService: OrganizacionService, private route: ActivatedRoute, private lista:ListarOrganizacionComponent) { }
 
   getOrganizaciones(): void {
     this.OrganizacionService.getOrganizaciones().subscribe(organizaciones => {
@@ -28,6 +29,7 @@ export class EliminarOrganizacionComponent implements OnInit {
   */
   eliminarOrganizacion(): void {
     this.OrganizacionService.deleteOrganizacion(this.organizacion.id).subscribe();
+    this.lista.ngOnInit();
   }
 
   //Inicializacion del componente

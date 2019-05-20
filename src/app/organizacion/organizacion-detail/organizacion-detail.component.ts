@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { OrganizacionService } from '../organizacion.service';
 import { OrganizacionDetail } from '../organizacion.detail';
@@ -16,8 +16,11 @@ import { ListarOrganizacionComponent } from '../listar-organizacion/listar-organ
 })
 export class OrganizacionDetailComponent implements OnInit {
 
+  @Input() public valor: String;
+
   organizacionDetail: Organizacion;
   listaStakeholders: Stakeholder[];
+  lista1: number[];
 
   /**
     * The component's constructor
@@ -31,10 +34,10 @@ export class OrganizacionDetailComponent implements OnInit {
     */
   getOrganizacionesDetail(): void {
 
-    this.organizacionService.getOrganizacionesDetail(this.lista.id).subscribe(organizacion => {
+    this.organizacionService.getOrganizacionesDetail(this.valor).subscribe(organizacion => {
       this.organizacionDetail = organizacion;
-      this.listaStakeholders = organizacion.stakeholders;
-      console.log("Stake.....", organizacion.nombre);
+      //console.log("Organizacion.....", this.organizacionDetail.nombre);
+      console.log("Organizacion detail.....", this.organizacionDetail.stakeHolders);
     });
   }
 
@@ -42,11 +45,17 @@ export class OrganizacionDetailComponent implements OnInit {
     * The method which initializes the component
     * We need to initialize the case of use so that it is never considered as undefined
     */
-  ngOnInit() {
-    this.organizacionDetail = new Organizacion();
+
+  ngOnChanges(changes: SimpleChanges){
+    console.log("Valor>>>:", this.valor);
     this.getOrganizacionesDetail();
-    this.listaStakeholders = this.organizacionDetail.stakeholders;
-    console.log(this.listaStakeholders)
+  }
+  ngOnInit() {
+    
+    this.organizacionDetail = new Organizacion();
     console.log(this.lista.id)
+    this.getOrganizacionesDetail();
+    console.log("Organizacion.....", this.organizacionDetail.nombre);
+    //this.listaStakeholders = this.organizacionDetail.stakeholders;    
   }
 }

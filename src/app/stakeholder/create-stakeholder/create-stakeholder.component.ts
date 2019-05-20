@@ -7,6 +7,7 @@ import { Stakeholder } from '../../stakeholder/stakeholder';
 import { StakeholderService } from '../../stakeholder/stakeholder.service';
 import { OrganizacionService } from '../../organizacion/organizacion.service';
 import { Organizacion } from '../../organizacion/organizacion';
+import { ListarStakeholderComponent } from '../listar-stakeholder/listar-stakeholder.component';
 @Component({
   selector: 'app-create-stakeholder',
   templateUrl: './create-stakeholder.component.html',
@@ -21,7 +22,7 @@ export class CreateStakeholderComponent implements OnInit {
   stakeholder: Stakeholder;
 
   //constructor con variables a usar
-  constructor(private StakeholderService: StakeholderService, private organizacionService: OrganizacionService, private route: ActivatedRoute) { }
+  constructor(private StakeholderService: StakeholderService, private organizacionService: OrganizacionService, private route: ActivatedRoute, private lista:ListarStakeholderComponent) { }
 
   /**
   * Obtener lista de todas las organizacions
@@ -30,7 +31,6 @@ export class CreateStakeholderComponent implements OnInit {
     this.organizacionService.getOrganizaciones().subscribe(organizacions => { this.organizaciones = organizacions; });
   }
 
-
   /**
   * Crea un nuevo Stakeholder
   */
@@ -38,6 +38,7 @@ export class CreateStakeholderComponent implements OnInit {
     this.StakeholderService.createStakeholder(this.stakeholder).subscribe(Stakeholder => {
       this.stakeholder.nombre = Stakeholder.nombre;
       this.stakeholder.tipo = Stakeholder.tipo;
+      this.lista.ngOnInit();
     }
     );
     return this.stakeholder;

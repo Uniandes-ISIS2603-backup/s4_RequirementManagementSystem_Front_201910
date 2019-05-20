@@ -69,9 +69,6 @@ export class OrganizacionService {
    * @returns the case of use, with its detail.
    */
   getOrganizacionesDetail(orgId): Observable<OrganizacionDetail> {
-    //console.log(API_URL + '/'+ orgId );
     return this.http.get<OrganizacionDetail>(API_URL + '/'+ orgId );
-    /*return this.http.get<CasodeusoDetail>(API_URLP+"casodeuso-"+casodeusoId+".json");*/
-
   }
 }

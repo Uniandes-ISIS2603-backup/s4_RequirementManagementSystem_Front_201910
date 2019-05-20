@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
@@ -7,6 +7,7 @@ import { Stakeholder } from '../stakeholder';
 import { StakeholderService } from '../stakeholder.service';
 import { OrganizacionService } from '../../organizacion/organizacion.service';
 import { Organizacion } from '../../organizacion/organizacion';
+import { ListarStakeholderComponent } from '../listar-stakeholder/listar-stakeholder.component';
 
 @Component({
   selector: 'app-update-stakeholder',
@@ -22,9 +23,9 @@ export class UpdateStakeholderComponent implements OnInit {
   organizaciones:Organizacion[];
 
   stakeholders: Stakeholder[];
-
+  
   //Constructor con variables a usar
-  constructor(private stakeholderService: StakeholderService, private organizacionService: OrganizacionService, private route: ActivatedRoute) { }
+  constructor(private stakeholderService: StakeholderService, private organizacionService: OrganizacionService, private route: ActivatedRoute, private lista:ListarStakeholderComponent) { }
 
   /**
   * Obtener lista de todas las organizacions
@@ -47,6 +48,7 @@ getStakeholders(): void {
     this.stakeholderService.updateStakeholder(this.stakeholder).subscribe(Stakeholder => {
       this.stakeholder.nombre = Stakeholder.nombre;
       this.stakeholder.tipo = Stakeholder.tipo;
+      this.lista.ngOnInit();
     }
     );
     return this.stakeholder;

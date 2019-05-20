@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-6">
+    <div class="col-8">
         <h2 class="text-center">Lista</h2>
         <div class="container">
             <table class="table table-striped">
@@ -16,16 +16,16 @@
                         <td>{{organizacion.id}}</td>
                         <td>{{organizacion.nombre}}</td>
                         <td>{{organizacion.sector}}</td>
-                        <td><button class="btn" (click)="click(organizacion.id)" >Lista de
+                        <td><button class="btn-info" (click)="click(organizacion.id)" >Lista de
                                 stakeholders</button></td>
                     </tr>
                 </tbody>
             </table>
             <td><button class="btn btn-success" (click)="actElim = 2">Agregar una Organizacion</button></td>
-            <td><button class="btn btn-danger" (click)="actElim = 1">Eliminar</button></td>
+            <td><button class="btn btn-danger" (click)="actElim = 1">Eliminar una Organizacion</button></td>
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-4">
         <div *ngIf="actElim == 1">
             <app-eliminar-organizacion> </app-eliminar-organizacion>
         </div>
@@ -33,7 +33,7 @@
             <app-create-organizacion> </app-create-organizacion>
         </div>
         <div *ngIf="actElim == 3">
-            <app-organizacion-detail></app-organizacion-detail>
+            <app-organizacion-detail [valor]="id"></app-organizacion-detail>
         </div>
     </div>
 </div>

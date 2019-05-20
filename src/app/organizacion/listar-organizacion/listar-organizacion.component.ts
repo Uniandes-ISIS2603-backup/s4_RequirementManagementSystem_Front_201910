@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
@@ -19,7 +19,8 @@ export class ListarOrganizacionComponent implements OnInit {
   organizaciones: Organizacion[];
   actElim:number;
   id:number;
-  
+  cambioLista:Boolean = false;
+ 
   /**
    * Constructor
    */
@@ -35,9 +36,12 @@ export class ListarOrganizacionComponent implements OnInit {
   click(id:number): void{
     this.actElim = 3;
     this.id = id;
-    console.log(id);
+    console.log("Printing id:", id);
   }
-
+  
+  ngOnChanges(changes: SimpleChanges){
+    this.getOrganizacions();
+  }
   /**
   * Inicializacion del componente
   */
