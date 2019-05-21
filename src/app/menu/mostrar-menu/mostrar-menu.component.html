@@ -1,0 +1,175 @@
+<div data-component="navbar">
+
+    <nav class="navbar p-0 fixed-top">
+          <button class="navbar-toggler navbar-toggler-left rounded-0 border-0" data-toggle="collapse" data-target="#megamenu-dropdown" aria-controls="megamenu-dropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ml-3">Advanced</span>
+          </button>
+      
+      <div>
+    
+      <div class="right-links float-right mr-4">
+        <a href="#" class="home"><i class="fa fa-home mr-3" style="color:white"></i></a>
+        
+        <div class="d-inline dropdown rounded-0 mx-3">
+          <a class="dropdown-toggle" id="tools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-wrench" style="color:white" aria-hidden="true"></i></a>
+          <div class="dropdown-menu dropdown-menu-right rounded-0 text-center" aria-labelledby="tools">
+            <a class="dropdown-item px-2" href="#">Recompile CSS</a>
+          </div>
+        </div> <!-- /.dropdown -->
+        
+        <div class="d-inline dropdown mr-3">
+          <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>10</span><i class="fa fa-bell" style="color:white"></i></a>
+          <div class="dropdown-menu dropdown-menu-right rounded-0 pt-0" aria-labelledby="notifications">
+            <div class="list-group">
+              <div class="lg">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                  <h5 class="mb-1">Real Estate Marketing Automation: 6 Simple Systems</h5>
+                  <p class="mb-0">17 October 2016 | 9:32 pm</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">How to Generate Seller Leads For $0.88 Using...</h5>
+                  <p class="mb-0">3 October 2016 | 9:58 pm</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">AgentFire Re-Opens For Business. New Services,...</h5>
+                  <p class="mb-0">20 September 2016 | 6:28 pm</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">Real Estate Blogging 101: How To Get Better...</h5>
+                  <p class="mb-0">7 September 2016 | 3:03 pm</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">How To Get More Listings With Strategic...</h5>
+                  <p class="mb-0">16 August 2016 | 8:26 pm</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">How To Find Strategic Real Estate Partners as...</h5>
+                  <p class="mb-0">9 August 2016 | 6:44 pm</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">Top 10 Real Estate Marketing Tools</h5>
+                  <p class="mb-0">2 August 2016 | 10:25 pm</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">The Beginner Guide To Google Adwords For Real...</h5>
+                  <p class="mb-0">27 July 2016 | 1:15 am</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">The Complete Guide To Hyper-Local SEO For Realtors</h5>
+                  <p class="mb-0">19 July 2016 | 5:51 pm</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                  <h5 class="mb-1">How We Took Ed Eakin’s Real Estate Website...</h5>
+                  <p class="mb-0">11 July 2016 | 6:19 pm</p>
+                </a>
+              </div> <!-- /.lg -->
+            </div> <!-- /.list group -->
+          </div> <!-- /.dropdown-menu -->
+        </div> <!-- /.dropdown -->
+        
+        <div class="d-inline dropdown mr-3">
+          <a class="dropdown-toggle" id="messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-envelope" style="color:white"></i></a>
+          <div class="dropdown-menu dropdown-menu-right rounded-0 text-center" aria-labelledby="messages">
+            <a class="dropdown-item">There are no new messages</a>
+          </div> <!-- /.dropdown-menu -->
+      </div> <!-- /.dropdown -->
+        
+        
+        <div class="d-inline dropdown">
+          <a class="dropdown-toggle" id="messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+            <img src="http://1.gravatar.com/avatar/47db31bd2e0b161008607d84c74305b5?s=96&d=mm&r=g">
+          </a>
+          <div class="dropdown-menu dropdown-menu-right rounded-0" aria-labelledby="messages">
+            <a class="dropdown-item" href="#">Edit my profile</a>
+            <a class="dropdown-item" href="#">Log Out</a>
+          </div> <!-- /.dropdown-menu -->
+        </div> <!-- /.dropdown -->
+        
+      </div> <!-- /.right-links -->
+      
+      </div>
+      
+      
+      
+      
+      
+      
+      
+  
+    </nav>
+    </div> <!-- END TOP NAVBAR -->
+    
+    
+    
+    <div data-component="sidebar">
+      <div class="sidebar">
+      <ul class="list-group flex-column d-inline-block first-menu">
+        <li class="list-group-item pl-3 py-2" *ngFor="let o of objetivos">
+          <a routerLink="/objetivos/{{o.id}}"><i class="fa fa fa-book fa-fw" aria-hidden="true"><span class="ml-2 align-middle">{{o.descripcion}}</span></i></a>
+          
+          <ul class="list-group flex-column d-inline-block submenu">
+            <li class="list-group-item pl-4">
+              <a href="#" class="">Dashboard</a>
+              
+              <ul class="list-group flex-column d-inline-block sub-submenu">
+                <span class="arrow"></span>
+                <li class="list-group-item pl-4">
+                  <a href="#">Home</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">My Sites</a>
+                </li>
+              </ul>
+              
+            </li> 
+            
+            <li class="list-group-item pl-4">
+              <a href="">SEO</a>
+              
+              <ul class="list-group flex-column d-inline-block sub-submenu">
+                <span class="arrow" style="top:113px;"></span>
+                <li class="list-group-item pl-4">
+                  <a href="#">Dashboard</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Titles & Metas</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Social</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">XML Sitemaps</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Advanced</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Tools</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Search Console</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Go Premium</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Manual</a>
+                </li>
+              </ul>
+            
+            </li>
+          </ul> <!-- /.submenu --> 
+        </li> <!-- /.list-group-item -->
+     
+  
+        
+      </ul> <!-- /.first-menu -->
+    </div> <!-- /.sidebar -->
+    </div>
+    
+    <div class="wp-content">
+      <div class="container-fluid">
+          <app-listar-inicio></app-listar-inicio>      
+        </div>
+    </div>
+  
