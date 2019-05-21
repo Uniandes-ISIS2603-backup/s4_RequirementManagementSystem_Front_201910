@@ -27,6 +27,8 @@ import { UpdateObjetivoComponent } from '../objetivo/update-objetivo/update-obje
 import { CaminoListComponent } from '../camino/camino-list/camino-list.component';
 import { CaminoCreateComponent } from '../camino/camino-create/camino-create.component';
 import { OrganizacionDetailComponent } from '../organizacion/organizacion-detail/organizacion-detail.component';
+import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
+import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 
 
 const routes: Routes = [
@@ -34,6 +36,14 @@ const routes: Routes = [
     {
         path: 'home',
         component: ListarInicioComponent
+    },
+    {
+        path:'login',
+        component:AuthLoginComponent
+    },
+    {
+        path:'signup',
+        component:AuthSignUpComponent
     },
     {
         path: 'cambios',

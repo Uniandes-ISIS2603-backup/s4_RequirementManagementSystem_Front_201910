@@ -6,6 +6,7 @@ import { User } from '../user';
 
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
     selector: 'app-auth-login',
     templateUrl: './auth-login.component.html',
@@ -23,24 +24,49 @@ export class AuthLoginComponent implements OnInit {
         private toastrService: ToastrService,
     ) { }
 
-    user: User;
+    usuario: User;
+    usuarios:User[];
+    tipos: String[];
+    nombre:String
+    existe:Boolean = false;
 
-    roles: String[];
+    /**
+    * Obtener lista de todas las organizacions
+    */
+   getUsuarios(): void {
+    this.authService.getUsuarios().subscribe(usuarios => { this.usuarios = usuarios; });
+}
 
     /**
     * Logs the user in with the selected role
     */
     login(): void {
-        this.authService.login(this.user.role);
+        console.log("lenght usuarios:   ", this.usuarios.length);
+        console.log("nombre del usuario:   ", this.usuario.usuario);
+        console.log("contrasena del usuario:   ", this.usuario.contrasena);
+        console.log("tipo del usuario:   ", this.usuario.tipo);
+        for(var i = 0; i<this.usuarios.length; i++){
+            if(this.usuarios[i].usuario == this.usuario.usuario && this.usuarios[i].contrasena == this.usuario.contrasena && this.usuarios[i].tipo == this.usuario.tipo){
+                this.existe = true;
+            }
+        }
+        if(this.existe){
+        this.authService.login(this.usuario.tipo);
         this.toastrService.success('Logged in')
+        }
+        else {
+            this.toastrService.success('Usuario o contraseña invalida')
+        }
     }
 
     /**
     * This function will initialize the component
     */
     ngOnInit() {
-        this.user = new User();
-        this.roles = ['Administrator', 'Client'];
+        this.usuario = new User();
+        this.getUsuarios();
+        this.tipos = ['Administrador', 'Cliente', 'Desarrollador'];
+        this.existe = false;
     }
 
 }
