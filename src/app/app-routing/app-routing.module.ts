@@ -29,13 +29,10 @@ import { CaminoCreateComponent } from '../camino/camino-create/camino-create.com
 import { OrganizacionDetailComponent } from '../organizacion/organizacion-detail/organizacion-detail.component';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
-<<<<<<< HEAD
 import { ListarProyectoComponent } from '../proyecto/listar-proyecto/listar-proyecto.component';
 import { CreateProyectoComponent } from '../proyecto/create-proyecto/create-proyecto.component';
-=======
 import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
 
->>>>>>> origin/master
 
 const routes: Routes = [
 
