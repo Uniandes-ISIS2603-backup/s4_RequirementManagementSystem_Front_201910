@@ -7,17 +7,33 @@
           <th>ID</th>
           <th>Nombre</th>
           <th>Tipo</th>
+          <th>Organizacion</th>
         </tr>
       </thead>
       <tbody>
         <td>
-          <input type="number" [(ngModel)]="stakeholder.id" required>
+          <div class="form-group">
+            <label for="stakeholderId"></label>
+            <select class="custom-select" name="stakeholderId" id="stakeholderId" [(ngModel)]="stakeholder.id">
+              <option *ngFor="let stakeholder of stakeholders" [value]="stakeholder.id">{{stakeholder.id}}</option>
+            </select>
+          </div>
         </td>
         <td>
           <input type="String" [(ngModel)]="stakeholder.nombre" required>
         </td>
         <td>
           <input type="String" [(ngModel)]="stakeholder.tipo" required>
+        </td>
+        <td>
+          <div class="form-group">
+            <label for="stakeholderOrganizacion"></label>
+            <select class="custom-select" name="stakeholderOrganizacion" id="stakeholderOrganizacion"
+              [(ngModel)]="stakeholder.organizacion.id">
+              <option *ngFor="let organizacion of organizaciones" [value]="organizacion.id">{{organizacion.nombre}}
+              </option>
+            </select>
+          </div>
         </td>
       </tbody>
     </table>

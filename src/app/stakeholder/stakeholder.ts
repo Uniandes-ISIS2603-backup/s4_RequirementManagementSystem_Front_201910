@@ -1,3 +1,4 @@
+import { Organizacion } from "../organizacion/organizacion";
 
 export class Stakeholder {
     /**
@@ -15,4 +16,9 @@ export class Stakeholder {
     * Tipo del stakeholder
     */
     tipo: string;
+
+    /**
+    * organizacion del stakeholder
+    */
+   organizacion: Organizacion;
 }

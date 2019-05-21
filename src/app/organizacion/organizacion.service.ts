@@ -3,11 +3,12 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Organizacion } from './organizacion';
+import { OrganizacionDetail } from './organizacion.detail';
 
 import { environment } from '../../environments/environment.prod';
 
-const API_URL = environment.apiURL+"/organizaciones";
-//const API_URL = 'http://ff34f35f.ngrok.io/s4_requirement-api/api/organizaciones';
+//const API_URL = environment.apiURL+"/organizaciones";
+const API_URL = 'http://f257f9e9.ngrok.io/s4_requirement-api/api/organizaciones';
 
 
 @Injectable()
@@ -61,4 +62,13 @@ export class OrganizacionService {
     deleteOrganizacion(OrganizacionId): Observable<Organizacion> {
         return this.http.delete<Organizacion>(API_URL + '/' + OrganizacionId);
     }
+
+      /**
+   * Returns the Observable object containing the case of use, with its detail, retrieved from the API
+   * @param casodeusoId id of the case of use to be retrieved.
+   * @returns the case of use, with its detail.
+   */
+  getOrganizacionesDetail(orgId): Observable<OrganizacionDetail> {
+    return this.http.get<OrganizacionDetail>(API_URL + '/'+ orgId );
+  }
 }

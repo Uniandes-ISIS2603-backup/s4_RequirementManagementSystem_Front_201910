@@ -17,8 +17,9 @@ export class Organizacion {
     */
     sector: string;
 
-    /**
+        /**
      * Lista de stakeholders
      */
-    stakeholders: Stakeholder[];
+    stakeHolders: Stakeholder[];
+
 }
