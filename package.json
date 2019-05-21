@@ -36,6 +36,7 @@
         "glyphicons": "^0.2.0",
         "intl": "^1.2.5",
         "jquery": "^3.2.1",
+        "ng6-toastr-notifications": "^1.0.4",
         "ngx-bootstrap": "^3.0.1",
         "ngx-cookie-service": "^1.0.10",
         "ngx-modal-dialog": "^3.0.0",

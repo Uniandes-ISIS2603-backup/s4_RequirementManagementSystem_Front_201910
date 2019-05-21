@@ -4,15 +4,17 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
+                    <th>Seleccione la organizacion que desea eliminar</th>
                 </tr>
             </thead>
             <tbody>
-                <td>
-                    <input type="number" [(ngModel)]="id" required>
-                </td>
+                <div class="form-group">
+                    <label for="organizacionId"></label>
+                    <select class="custom-select" name="organizacionId" id="organizacionId" [(ngModel)]="organizacion.id">
+                        <option *ngFor="let organizacion of organizaciones" [value]="organizacion.id" >(ID, Nombre): ({{organizacion.id}}, {{organizacion.nombre}}) </option>
+                    </select>
+                </div>
             </tbody>
         </table>
     </div>
-    <td><button class="btn btn-danger" (click)="eliminarOrganizacion(id)">Eliminar</button></td>
-</div>
+    <td><button class="btn btn-danger" (click)="eliminarOrganizacion()">Eliminar</button></td></div>

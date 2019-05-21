@@ -5,17 +5,17 @@
         <br>
         <form name="login" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="username"><b>Name</b></label>
-                <input type="text" name="username" class="form-control" id="username" [(ngModel)]="user.name" required>
+                <label for="usuario"><b>Usuario</b></label>
+                <input type="text" name="usuario" class="form-control" id="usuario" [(ngModel)]="usuario.usuario" required>
             </div>
             <div class="form-group">
-                <label for="password"><b>Password</b></label>
-                <input type="text" name="password" class="form-control" id="password" [(ngModel)]="user.password" required>
+                <label for="contrasena"><b>Contraseña</b></label>
+                <input type="text" name="contrasena" class="form-control" id="contrasena" [(ngModel)]="usuario.contrasena" required>
             </div>
             <div class="form-group">
-                <label for="role"><b>Role</b></label>
-                <select class="custom-select" name="role" id="role" [(ngModel)]="user.role" required>
-                    <option [value]="role" *ngFor="let role of roles">{{role}}</option>
+                <label for="role"><b>Tipo</b></label>
+                <select class="custom-select" name="tipo" id="tipo" [(ngModel)]="usuario.tipo" required>
+                    <option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
                 </select>
             </div>
             <div class="justify-content-center align-self-center">
