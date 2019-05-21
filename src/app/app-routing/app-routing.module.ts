@@ -29,7 +29,8 @@ import { CaminoCreateComponent } from '../camino/camino-create/camino-create.com
 import { OrganizacionDetailComponent } from '../organizacion/organizacion-detail/organizacion-detail.component';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
-
+import { ListarProyectoComponent } from '../proyecto/listar-proyecto/listar-proyecto.component';
+import { CreateProyectoComponent } from '../proyecto/create-proyecto/create-proyecto.component';
 
 const routes: Routes = [
 
@@ -68,6 +69,14 @@ const routes: Routes = [
     {
         path: 'casosdeuso/new',
         component: CasodeusoCreateComponent
+    },
+    {
+        path: 'proyectos',
+        component: ListarProyectoComponent
+    },
+    {
+        path: 'proyectos/new',
+        component: CreateProyectoComponent
     },
     {
         path: 'condiciones',
