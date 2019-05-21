@@ -1,3 +1,33 @@
-<p>
-  listar-proyecto works!
-</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>id</th>
+                  <th>nombre</th>
+                  <th>descripcion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let i of proyectos">
+						<td style="cursor: pointer;">
+							<a class="figure-caption" (click)="onSelected(i.id)">{{i.id}}</a>
+						</td>
+            			<td>
+							<p class="figure-caption">{{i.nombre}}</p>
+                  </td>
+                  <td>
+              <p class="figure-caption">{{i.descripcion}}</p>
+                  </td>
+					</tr>
+				</tbody>
+      		</table>
+		</div>
+		<div class="col">
+			<div *ngIf="selectedProyecto">
+					<app-detail-proyecto [proyectoDetail]="selectedProyecto"> </app-detail-proyecto>
+				</div>
+	</div>
+	</div>
+</div>

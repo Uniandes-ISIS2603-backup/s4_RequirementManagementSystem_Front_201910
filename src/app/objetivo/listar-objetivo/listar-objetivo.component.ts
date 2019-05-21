@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './listar-objetivo.component.html',
   styleUrls: ['./listar-objetivo.component.css']
 })
+
 export class ListarObjetivoComponent implements OnInit {
   //Lista de los objetivos que existen
   objetivos: Objetivo[];
