@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import {CreateAprobacionComponent} from './aprobacion/create-aprobacion/create-aprobacion.component';
-
-
+import {Objetivo} from './objetivo/objetivo';
+import { ObjetivoService } from './objetivo/objetivo.service';
 /**
  * The app component. This component is the base of s4_requirement-Front
  */
@@ -18,18 +18,27 @@ export class AppComponent implements OnInit {
      */
     title: String;
 
+    objetivos: Objetivo[];
+
+    mostrarObjetivos(){
+        this.objetivoService.getObjetivos().subscribe(objs => this.objetivos = objs);
+    }
+
+
+
     /**
      * Assigns a title to the web page
      */
     ngOnInit(): void {
         this.title = "s4_requirement-Front";
         this.authService.start();
+        this.mostrarObjetivos();
     }
 
        /**
      * @ignore
      */
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService, private objetivoService: ObjetivoService) { }
 
     logout(): void {
         this.authService.logout()

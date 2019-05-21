@@ -4,16 +4,19 @@
       <table class="table table-striped">
           <thead class="thead-dark">
               <tr>
-                  <th>ID</th>
+                  <th>Seleccione el Stakeholder que desea eliminar</th>
   
               </tr>
           </thead>
           <tbody>
-                <td>
-                  <input type="number" [(ngModel)] = "id" required >
-                </td>
+            <div class="form-group">
+                <label for="stakeholderId"></label>
+                <select class="custom-select" name="stakeholderId" id="stakeholderId" [(ngModel)]="stakeholder.id">
+                    <option *ngFor="let stakeholder of stakeholders" [value]="stakeholder.id" >(ID, Nombre): ({{stakeholder.id}}, {{stakeholder.nombre}}) </option>
+                </select>
+            </div>
           </tbody>
       </table>
   </div>
-  <td><button class="btn btn-danger" (click)="eliminarStakeholder(id)">Eliminar</button></td>
+  <td><button class="btn btn-danger" (click)="eliminarStakeholder()">Eliminar</button></td>
 

@@ -65,5 +65,13 @@ export class CasodeusoService {
     return this.http.put<CasodeusoDetail>(API_URL + casos + caso.id, caso);
   }
 
+  /**
+   * DELETE:
+   * Borra el requisito de la base de datos que tiene el mismo identificador pasado por parámetro.
+   * @param id El identificador único del requisito a borrar
+   */
+  deleteCasodeuso(casodeusoId): Observable<{}> {
+    return this.http.delete(API_URL+casos+casodeusoId);
+  }
 
 }

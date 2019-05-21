@@ -257,7 +257,7 @@
 	/* Notification Dropdown */
 }
  [data-component='navbar'] .navbar {
-	 background-color: #fff;
+	 background-color: #292a2c;
 }
  [data-component='navbar'] .navbar-toggler {
 	 line-height: 2.4;
@@ -293,7 +293,7 @@
 	 transition: height 0.3s ease;
 }
  [data-component='navbar'] .navbar-brand {
-	 background-color: #fff;
+	 background-color: rgb(7, 7, 7);
 	 height: 60px;
 	 width: 75px;
 	 text-align: center;
@@ -422,7 +422,7 @@
 	 background-color: #292a2c;
 	 height: 100vw;
 	 width: 75px;
-	 top: 60px;
+	 top: 55px;
 	 overflow: hidden;
 	 transition: width 0.5s;
 }
@@ -459,12 +459,12 @@
 	 position: fixed;
 	 left: 160px;
 	 width: 195px;
-	 top: 60px;
+	 top: 55px;
 	 background-color: #093d5e;
 	 height: 100vw;
 	 opacity: 0;
 	 visibility: hidden;
-	 transition: 600ms opacity 600ms, 600ms visibility 600ms;
+	 transition: 300ms opacity 300ms, 300ms visibility 300ms;
 }
  [data-component='sidebar'] .submenu .list-group-item {
 	 margin-top: 8px;
@@ -477,7 +477,7 @@
 	 position: fixed;
 	 background-color: rgb(173, 169, 169);
 	 left: 355px;
-	 top: 60px;
+	 top: 55px;
 	 height: 100vw;
 	 width: 195px;
 	 opacity: 0;

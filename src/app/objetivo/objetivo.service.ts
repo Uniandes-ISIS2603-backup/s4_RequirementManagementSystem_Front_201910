@@ -5,7 +5,8 @@ import { Observable, of } from 'rxjs';
 
 import { Objetivo } from './objetivo';
 import { environment } from '../../environments/environment';
-const API_URL = environment.apiURL;
+//const API_URL = environment.apiURL;
+const API_URL = '../../assets'
 const objetivosPath = '/objetivos';
 
 const httpOptions = {
@@ -22,12 +23,12 @@ export class ObjetivoService {
  
   /* GET Objetivos from the server */
   getObjetivos(): Observable<Objetivo[]> {
-    return this.http.get<Objetivo[]>(API_URL + objetivosPath);
+    return this.http.get<Objetivo[]>(API_URL + objetivosPath + '.json');
   }
 
   // Get Objetivo by Id, returns undefined when not found.
   getObjetivo(id: number): Observable<Objetivo> {
-    const url = objetivosPath + '/' + id;
+    const url = objetivosPath + '/' + id + '.json';
     return this.http.get<Objetivo>(API_URL + url);
   }
 

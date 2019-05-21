@@ -10,10 +10,20 @@
       </thead>
       <tbody>
         <td>
-          <input type="String" [(ngModel)]="organizacion.id" required>
+          <div class="form-group">
+            <label for="organizacionId"></label>
+            <select class="custom-select" name="organizacionId" id="organizacionId" [(ngModel)]="organizacion.id">
+                <option *ngFor="let organizacion of organizaciones" [value]="organizacion.id" >(ID, Nombre): ({{organizacion.id}}, {{organizacion.nombre}}) </option>
+            </select>
+        </div>
         </td>
         <td>
-          <input type="String" [(ngModel)]="stakeholder.id" required>
+          <div class="form-group">
+            <label for="stakeholderId"></label>
+            <select class="custom-select" name="stakeholderId" id="stakeholderId" [(ngModel)]="stakeholder.id">
+                <option *ngFor="let stakeholder of stakeholders" [value]="stakeholder.id" >(ID, Nombre): ({{stakeholder.id}}, {{stakeholder.nombre}}) </option>
+            </select>
+        </div>
         </td>
       </tbody>
     </table>
