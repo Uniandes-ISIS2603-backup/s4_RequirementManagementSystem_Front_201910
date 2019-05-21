@@ -1,3 +1,33 @@
-<p>
-  detail-proyecto works!
-</p>
+<div class="row">
+  <div class="col-4" align= 'center'>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"align = 'center'>Proyecto: {{proyectoDetail.id}}</h5>
+        <p class="card-text">Nombre: {{proyectoDetail.nombre}}</p>
+        <p class="card-text">Nombre: {{proyectoDetail.descripcion}}</p>
+        <p>
+            <button type="button" class="btn btn-outline-primary" (click)="updateProyecto()" (click)="isCollapsed = !isCollapsed"
+                    [attr.aria-expanded]="!isCollapsed" aria-controls="collapseUpdate">
+              Editar proyecto
+            </button>
+        </p>
+        <p>
+          <button type="button" (click)="deleteProyecto()" routerLink="/proyectos" class="btn btn-outline-danger">
+            Eliminar proyecto
+          </button>
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-8" align = 'center'>
+
+      <div id="collapseUpdate" [ngbCollapse]="!isCollapsed">
+       
+          <app-update-proyecto></app-update-proyecto>
+       
+      </div>
+
+
+      </div>
+</div>
