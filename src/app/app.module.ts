@@ -27,6 +27,7 @@ import {CaminoModule} from './camino/camino.module'
 
 import { ObjetivoModule } from './objetivo/objetivo.module';
 import { MenuModule } from './menu/menu.module';
+import { StartModule } from './start/start.module';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MenuModule } from './menu/menu.module';
     imports: [
         BrowserModule,
         MenuModule,
+        StartModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,

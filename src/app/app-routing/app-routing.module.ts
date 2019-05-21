@@ -30,6 +30,7 @@ import { OrganizacionDetailComponent } from '../organizacion/organizacion-detail
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
+import { MostrarStartComponent } from '../start/mostrar-start/mostrar-start.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
     {
         path: 'home',
         component: MostrarMenuComponent
+    },
+    {
+        path:  'start',
+        component: MostrarStartComponent
     },
     {
         path:'login',
