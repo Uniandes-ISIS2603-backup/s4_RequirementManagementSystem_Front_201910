@@ -293,7 +293,7 @@
 	 transition: height 0.3s ease;
 }
  [data-component='navbar'] .navbar-brand {
-	 background-color: #093d5e;
+	 background-color: #fff;
 	 height: 60px;
 	 width: 75px;
 	 text-align: center;
