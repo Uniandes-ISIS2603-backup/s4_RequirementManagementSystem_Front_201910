@@ -19,6 +19,20 @@ export class ListarObjetivoComponent implements OnInit {
   //Al iniciar la aplicacion llama al servicio y le pide todos los objetivos que existan
   ngOnInit() 
   {
+    $(document).ready(function(){
+	
+      $('.element-card').on('click', function(){
+        
+        if ( $(this).hasClass('open') ) {
+          $(this).removeClass('open');
+        } else {
+          $('.element-card').removeClass('open');
+          $(this).addClass('open');
+        }
+        
+      });
+      
+    });
     this.srv.getObjetivos().subscribe(objs => this.objetivos = objs)
   }
 

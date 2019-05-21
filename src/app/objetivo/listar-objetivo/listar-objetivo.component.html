@@ -1,4 +1,28 @@
-
+<!--
+<div class="container -column">
+    <div class="card-holder">
+      <div class="card -small -back -flipped">
+        <a class="card--title" href="#">Flipping card</a>
+        <p class="card--text">
+          hiding backface is the key
+        </p>
+      </div>
+      <div class="card -small -front -orange">
+      </div>
+    </div>
+    <div class="card-holder">
+      <div class="card -small -back -flipped">
+        <a class="card--title" href="#">Flipping card</a>
+        <p class="card--text">
+          hiding backface is the key
+        </p>
+      </div>
+      <div class="card -small -front -green">
+      </div>
+    </div>
+  </div>
+-->
+<!--
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Objetivos</li>
@@ -15,3 +39,22 @@
     </div>
   </div>
 </div>
+-->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">Objetivos</li>
+    </ol>
+  </nav>
+<div class="container">
+	
+    <div class="element-card" *ngFor="let o of objetivos">
+      <div class="front-facing">
+        <h1 class="abr">{{o.id}}</h1>
+        <p class="title">{{o.descripcion}}</p>
+      </div>
+      <div class="back-facing">
+        <p>{{o.comentarios}}</p>
+        <p><a class="btn" routerLink="{{o.id}}" >Ver mas detalles</a></p>
+      </div>
+    </div>  
+  </div>

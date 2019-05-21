@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
         this.title = "s4_requirement-Front";
         this.authService.start();
         this.mostrarObjetivos();
+        
     }
 
        /**
