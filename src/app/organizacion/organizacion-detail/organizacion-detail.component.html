@@ -1,0 +1,21 @@
+<div class="column">
+  <h2 class="text-center">Lista de Stakeholders</h2>
+  <div class="container">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stakeholder of organizacionDetail.stakeHolders">
+          <td>{{stakeholder.id}}</td>
+          <td>{{stakeholder.nombre}}</td>
+          <td>{{stakeholder.tipo}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

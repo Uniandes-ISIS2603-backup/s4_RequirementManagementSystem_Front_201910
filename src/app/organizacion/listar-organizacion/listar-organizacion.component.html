@@ -1,33 +1,39 @@
-<div class="column">
-    <h2 class="text-center">Lista</h2>
-    <div class="container">
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Sector</th>
-                    <th>Stakeholders</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let organizacion of organizaciones">
-                    <td>{{organizacion.id}}</td>
-                    <td>{{organizacion.nombre}}</td>
-                    <td>{{organizacion.sector}}</td>
-                    <td>{{organizacion.stakeholders}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <td><button class="btn btn-info" (click)="actElim = 1">Agregar un Stakeholder</button></td>
-        <td><button class="btn btn-danger" (click)="actElim = 2">Eliminar</button></td>
+<div class="row">
+    <div class="col-8">
+        <h2 class="text-center">Lista</h2>
+        <div class="container">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Sector</th>
+                        <th>Stakeholders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let organizacion of organizaciones">
+                        <td>{{organizacion.id}}</td>
+                        <td>{{organizacion.nombre}}</td>
+                        <td>{{organizacion.sector}}</td>
+                        <td><button class="btn-info" (click)="click(organizacion.id)" >Lista de
+                                stakeholders</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <td><button class="btn btn-success" (click)="actElim = 2">Agregar una Organizacion</button></td>
+            <td><button class="btn btn-danger" (click)="actElim = 1">Eliminar una Organizacion</button></td>
+        </div>
     </div>
-</div>
-<div class="column">
-    <div *ngIf="actElim == 1">
-        <app-agregarStakeholder-organizacion> </app-agregarStakeholder-organizacion>
-    </div>
-    <div *ngIf="actElim == 2">
-        <app-eliminar-organizacion> </app-eliminar-organizacion>
+    <div class="col-4">
+        <div *ngIf="actElim == 1">
+            <app-eliminar-organizacion> </app-eliminar-organizacion>
+        </div>
+        <div *ngIf="actElim == 2">
+            <app-create-organizacion> </app-create-organizacion>
+        </div>
+        <div *ngIf="actElim == 3">
+            <app-organizacion-detail [valor]="id"></app-organizacion-detail>
+        </div>
     </div>
 </div>
