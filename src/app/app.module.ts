@@ -27,6 +27,7 @@ import {ProyectoModule} from './proyecto/proyecto.module';
 
 
 import { ObjetivoModule } from './objetivo/objetivo.module';
+import { MenuModule } from './menu/menu.module';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ObjetivoModule } from './objetivo/objetivo.module';
     ],
     imports: [
         BrowserModule,
+        MenuModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
