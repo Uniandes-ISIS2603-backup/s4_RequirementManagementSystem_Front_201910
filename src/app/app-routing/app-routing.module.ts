@@ -29,13 +29,14 @@ import { CaminoCreateComponent } from '../camino/camino-create/camino-create.com
 import { OrganizacionDetailComponent } from '../organizacion/organizacion-detail/organizacion-detail.component';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
+import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
 
 
 const routes: Routes = [
 
     {
         path: 'home',
-        component: ListarInicioComponent
+        component: MostrarMenuComponent
     },
     {
         path:'login',
