@@ -1,3 +1,36 @@
-<p>
-  create-proyecto works!
-</p>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+      <h2 class="text-center">Crear un nuevo proyecto</h2>
+      <form name="proyecto" (ngSubmit)="f.form.valid && createProyecto()" #f="ngForm" novalidate>
+          <div class="form-group">
+              <label for="proyectoNombre"><b>Ingrese el nombre del proyecto</b></label>
+              <input type="text" name="proyectoNombre" class="form-control" id="proyectoNombre" [(ngModel)]="proyectoDetail.nombre"
+                  #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proyectoDetail.invalid }" required>
+              <div class="invalid-feedback">
+                  <div>No ha ingresado un nombre</div>
+              </div>
+              <label for="proyectoDescripcion"><b>Ingrese la descripcion del proyecto</b></label>
+              <input type="text" name="proyectoDescripcion" class="form-control" id="proyectoDescripcion" [(ngModel)]="proyectoDetail.descripcion"
+                  #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proyectoDetail.invalid }" required>
+              <div class="invalid-feedback">
+                  <div>No ha ingresado una descripcion</div>
+              </div>
+              </div>  
+                  <div class="col-5">
+                    <p> </p>
+                    <p> </p>
+                    <p> </p>
+                    <img align='center' src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" width="270" height='150'>
+                  </div>
+          <p>  </p>
+                <div class="row form-inline justify-content-center align-self-center">
+              <button type="submit" class="btn btn-primary">Crear</button>
+              <div class="divider"><p> </p></div>
+              <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+          </div>
+      </form>
+  </div>
+  <div class="col-3"></div>
+</div>
+

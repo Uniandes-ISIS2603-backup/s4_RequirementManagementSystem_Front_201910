@@ -14,9 +14,5 @@ export class Proyecto {
      */
     descripcion: string;
 
-    /**
-     * The array of objectives
-     */
-    objetivos: any[];
 
 }

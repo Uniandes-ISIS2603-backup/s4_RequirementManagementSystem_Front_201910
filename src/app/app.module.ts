@@ -22,10 +22,12 @@ import { CasodeusoModule } from './casodeuso/casodeuso.module';
 import {StakeholderModule} from './stakeholder/stakeholder.module';
 import {OrganizacionModule} from './organizacion/organizacion.module';
 import {CondicionModule} from './condicion/condicion.module';
-import {CaminoModule} from './camino/camino.module'
+import {CaminoModule} from './camino/camino.module';
+import {ProyectoModule} from './proyecto/proyecto.module';
 
 
 import { ObjetivoModule } from './objetivo/objetivo.module';
+import { MenuModule } from './menu/menu.module';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { ObjetivoModule } from './objetivo/objetivo.module';
     ],
     imports: [
         BrowserModule,
+        MenuModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
@@ -57,7 +60,8 @@ import { ObjetivoModule } from './objetivo/objetivo.module';
         StakeholderModule,
         OrganizacionModule,
         ObjetivoModule,
-        RequisitoModule
+        RequisitoModule,
+        ProyectoModule
     ],
     bootstrap: [AppComponent],
     providers: [

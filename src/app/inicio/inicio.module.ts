@@ -7,10 +7,11 @@ import {CasodeusoModule} from '../casodeuso/casodeuso.module';
 import {StakeholderModule} from '../stakeholder/stakeholder.module';
 import {CondicionModule} from '../condicion/condicion.module';
 import { AuthModule } from '../auth/auth.module';
+import { ObjetivoModule } from '../objetivo/objetivo.module';
 
 @NgModule({
   imports: [
-    CommonModule, CambioModule, AppRoutingModule, StakeholderModule, CasodeusoModule, CondicionModule, AuthModule
+    CommonModule, CambioModule, AppRoutingModule, StakeholderModule, CasodeusoModule, CondicionModule, AuthModule, ObjetivoModule
   ],
   declarations: [ListarInicioComponent],
   exports: [ListarInicioComponent]
