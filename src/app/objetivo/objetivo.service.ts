@@ -6,8 +6,9 @@ import { Observable, of } from 'rxjs';
 import { Objetivo } from './objetivo';
 import { environment } from '../../environments/environment';
 //const API_URL = environment.apiURL;
-const API_URL = '../../assets'
+const API_URL = environment.apiURL;
 const objetivosPath = '/objetivos';
+const proyectosPath = '/proyectos/'
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -21,16 +22,27 @@ export class ObjetivoService {
     private http: HttpClient
     ) { }
  
+    
+
   /* GET Objetivos from the server */
-  getObjetivos(): Observable<Objetivo[]> {
-    return this.http.get<Objetivo[]>(API_URL + objetivosPath + '.json');
+  getObjetivos(proyectoId: number): Observable<Objetivo[]> {
+    return this.http.get<Objetivo[]>(API_URL + proyectosPath + proyectoId + objetivosPath);
+  }
+
+
+  getObjetivo(id: number): Observable<Objetivo> {
+    const url = `${API_URL}${objetivosPath}/${id}`;
+    console.log(url);
+    return this.http.get<Objetivo>(url);
   }
 
   // Get Objetivo by Id, returns undefined when not found.
+  /** 
   getObjetivo(id: number): Observable<Objetivo> {
     const url = objetivosPath + '/' + id + '.json';
     return this.http.get<Objetivo>(API_URL + url);
   }
+  */
 
    /** DELETE: delete the Objetivo from the server */
   deleteObjetivo(id: number): Observable<any> {

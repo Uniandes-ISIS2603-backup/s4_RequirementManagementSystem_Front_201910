@@ -14,11 +14,9 @@ export class MostrarMenuComponent implements OnInit {
 
   constructor(private proyectoService:ProyectoService, private objetivoService: ObjetivoService) { }
 
-  objetivos: Objetivo[];
+  objetivos: any[];
 
   proyectos:Proyecto[];
-
-  proyectoId: Number;
 
     /*mostrarObjetivos(){
         this.objetivoService.getObjetivos().subscribe(objs => this.objetivos = objs);
@@ -29,16 +27,21 @@ export class MostrarMenuComponent implements OnInit {
       
     }
 
+   
+    
     mostrarObjetivos(proyectoId){
-      this.proyectoService.getObjetivos(this.proyectoId).subscribe(objs=>this.objetivos = objs);
-    }
+      this.objetivoService.getObjetivos(proyectoId).subscribe(objs => {this.objetivos = objs;
+      console.log(objs);})
+      console.log(this.objetivos[0])
+        }
+      
 
   
 
   ngOnInit() {
     /*this.mostrarObjetivos();*/
     this.mostrarProyectos();
-    this.mostrarObjetivos(this.proyectoId);
+    /*this.mostrarObjetivos(this.proyectoId);*/
   }
 
 }
