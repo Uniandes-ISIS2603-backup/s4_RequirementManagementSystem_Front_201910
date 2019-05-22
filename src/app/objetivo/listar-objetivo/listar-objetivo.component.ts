@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ObjetivoService } from '../objetivo.service';
 import { Objetivo } from '../objetivo';
 import { Router } from '@angular/router';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-listar-objetivo',
