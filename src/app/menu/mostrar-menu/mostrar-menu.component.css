@@ -310,6 +310,7 @@
  [data-component='navbar'] .home {
 	 border-right: 1px solid #ababab;
 }
+
  [data-component='navbar'] .dropdown-toggle::after {
 	 display: none;
 }
@@ -350,6 +351,9 @@
 	 font-size: 0.6875em;
 	 font-weight: 700;
 	 line-height: 2;
+}
+[data-component='navbar'] .search i{
+	left:0;
 }
  [data-component='navbar'] .list-group p {
 	 font-size: 0.5625em;
@@ -422,7 +426,7 @@
 	 background-color: #292a2c;
 	 height: 100vw;
 	 width: 75px;
-	 top: 55px;
+	 top: 60px;
 	 overflow: hidden;
 	 transition: width 0.5s;
 }
@@ -511,3 +515,44 @@
  [data-component='sidebar'] .arrow:nth-child(3) {
 	 top: 20px;
 }
+
+.searchbar {
+	font-size: 0.9rem;
+	width: 12rem;
+	height: 1rem;
+	border: none;
+	outline: none;
+	border-radius: 10rem;
+	box-shadow: 0 1rem 2rem rgba(black, .1);
+	padding: 1rem;
+	position: relative;
+	transition: all .2s;
+	transition-delay: .1s;
+  }
+  
+  .searchbar:hover {
+	width: 14rem;
+	height: 3rem;
+  }
+  
+  .button {
+	height: 2rem;
+	top: 1.5rem;
+	right: 1rem;
+	transition: all .2s;
+	transition-delay: .1s;
+  }
+  
+  .button:hover {
+	cursor: pointer;
+  }
+  
+  .searchbar:hover + .button {
+	height: 2rem;
+	top: 1rem;
+	right: 0;
+  }
+  
+  .searchbar::placeholder {
+	opacity: .5;
+  }

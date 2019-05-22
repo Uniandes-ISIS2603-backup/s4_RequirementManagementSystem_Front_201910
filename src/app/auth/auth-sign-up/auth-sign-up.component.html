@@ -6,10 +6,10 @@
         
         <hr />
         
-        <form name="signUp" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
+        <form name="signUpForm" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
           <input type="text" name="usuario" id="username" placeholder="Usuario" [(ngModel)]="usuario.usuario" required />
           <input input name="contrasena" type="password" name="password" id="password" [(ngModel)]="usuario.contrasena" required  placeholder="Contraseña"/>
-          <select class="select" placeholder="Escoja un tipo" name="tipo" id="tipo" [(ngModel)]="usuario.tipo" required>
+          <select class="select"  name="tipo" id="tipo" [(ngModel)]="usuario.tipo" required>
                     <option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
                 </select>
           <input type="submit" value="Crear cuenta" />
