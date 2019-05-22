@@ -6,6 +6,7 @@ import { Organizacion } from '../organizacion';
 import { OrganizacionService } from '../organizacion.service';
 import { identifierModuleUrl } from '@angular/compiler';
 
+
 @Component({
   selector: 'app-listar-organizacion',
   templateUrl: './listar-organizacion.component.html',

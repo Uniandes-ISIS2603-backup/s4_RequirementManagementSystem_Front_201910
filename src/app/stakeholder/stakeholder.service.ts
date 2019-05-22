@@ -7,7 +7,7 @@ import { Stakeholder } from './stakeholder';
 import { environment } from '../../environments/environment.prod';
 
 //const API_URL = environment.apiURL+"/stakeholders";
-const API_URL = 'http://f257f9e9.ngrok.io/s4_requirement-api/api/stakeholders';
+const API_URL = 'http://0e049f17.ngrok.io/s4_requirement-api/api/stakeholders';
 
 
 @Injectable()
