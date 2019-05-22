@@ -23,7 +23,8 @@ export class MostrarMenuComponent implements OnInit {
     }*/
 
     mostrarProyectos(){
-      this.proyectoService.getProyectos().subscribe(projs => this.proyectos = projs);
+      this.proyectoService.getProyectos().subscribe(projs => {this.proyectos = projs; console.log(projs);
+      });
       
     }
 
@@ -40,6 +41,7 @@ export class MostrarMenuComponent implements OnInit {
 
   ngOnInit() {
     /*this.mostrarObjetivos();*/
+    
     this.mostrarProyectos();
     /*this.mostrarObjetivos(this.proyectoId);*/
   }
