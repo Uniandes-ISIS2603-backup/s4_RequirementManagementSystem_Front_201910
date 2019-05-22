@@ -6,7 +6,7 @@ import { NgxRolesService, NgxPermissionsService } from 'ngx-permissions'
 import 'rxjs/add/operator/catch';
 import { User } from './user';
 
-const API_URL = 'http://f257f9e9.ngrok.io/s4_requirement-api/api/usuarios';
+const API_URL = 'http://0e049f17.ngrok.io/s4_requirement-api/api/usuarios';
 /**
  * The service provider for everything related to authentication
  */

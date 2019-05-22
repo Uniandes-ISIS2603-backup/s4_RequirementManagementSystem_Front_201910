@@ -5,6 +5,9 @@ import { AuthService } from '../auth.service';
 import { User } from '../user';
 
 import { ToastrService } from 'ngx-toastr';
+import { Router } from "@angular/router";
+import { ROUTER_FORROOT_GUARD, routerNgProbeToken } from '@angular/router/src/router_module';
+import { link } from 'fs';
 
 
 @Component({
@@ -22,6 +25,7 @@ export class AuthLoginComponent implements OnInit {
     constructor(
         private authService: AuthService,
         private toastrService: ToastrService,
+        private router:Router
     ) { }
 
     usuario: User;
@@ -52,7 +56,8 @@ export class AuthLoginComponent implements OnInit {
         }
         if(this.existe){
         this.authService.login(this.usuario.tipo);
-        this.toastrService.success('Logged in')
+        this.toastrService.success('Logged in');
+        this.router.navigateByUrl('/start');
         }
         else {
             this.toastrService.success('Usuario o contraseña invalida')
