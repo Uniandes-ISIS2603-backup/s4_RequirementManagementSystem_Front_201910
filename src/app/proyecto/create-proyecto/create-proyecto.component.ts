@@ -48,7 +48,7 @@ export class CreateProyectoComponent implements OnInit {
        .subscribe((proyectoDetail) => {
            this.proyectoDetail = proyectoDetail;
            this.create.emit();
-           this.toastrService.success("The change was created", "Change creation");
+           this.toastrService.success("El proyecto fue creado", "Creacion de proyecto");
        }, err => {
            this.toastrService.error(err, "Error");
        });

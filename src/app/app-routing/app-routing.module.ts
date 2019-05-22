@@ -35,6 +35,7 @@ import { DetailProyectoComponent } from '../proyecto/detail-proyecto/detail-proy
 
 import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
 import { MostrarStartComponent } from '../start/mostrar-start/mostrar-start.component';
+import { ProyectoDetail } from '../proyecto/proyecto-detail';
 
 
 const routes: Routes = [
@@ -81,11 +82,19 @@ const routes: Routes = [
     },
     {
         path: 'proyectos',
-        component: ListarProyectoComponent
+        component: CreateProyectoComponent
     },
     {
         path: 'proyectos/new',
         component: CreateProyectoComponent
+    },
+    {
+        path: 'proyectos/nuevo',
+        component: CreateProyectoComponent
+    },
+    {
+        path: 'proyectos/:id',
+        component: DetailProyectoComponent
     },
     {
         path: 'condiciones',
@@ -152,7 +161,7 @@ const routes: Routes = [
     },
     {
         path: '', redirectTo: 'home', pathMatch: 'full'
-    },
+    }
 ];
 
 @NgModule({
