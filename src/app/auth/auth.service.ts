@@ -8,7 +8,7 @@ import { User } from './user';
 import { environment } from '../../environments/environment.prod';
 
 //const API_URL = 'http://0e049f17.ngrok.io/s4_requirement-api/api/usuarios';
-const API_URL = environment.apiURL+"/usuarios"
+const API_URL = environment.apiURL + "/usuarios"
 
 /**
  * The service provider for everything related to authentication
