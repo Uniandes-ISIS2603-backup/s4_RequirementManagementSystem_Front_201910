@@ -28,7 +28,7 @@ export class AuthLoginComponent implements OnInit {
     usuarios:User[];
     tipos: String[];
     nombre:String
-    existe:Boolean = false;
+    existe:Boolean;
 
     /**
     * Obtener lista de todas las organizacions
@@ -45,7 +45,7 @@ export class AuthLoginComponent implements OnInit {
         console.log("nombre del usuario:   ", this.usuario.usuario);
         console.log("contrasena del usuario:   ", this.usuario.contrasena);
         console.log("tipo del usuario:   ", this.usuario.tipo);
-        for(var i = 0; i<this.usuarios.length; i++){
+        for(let i = 0; i<this.usuarios.length; i++){
             if(this.usuarios[i].usuario == this.usuario.usuario && this.usuarios[i].contrasena == this.usuario.contrasena && this.usuarios[i].tipo == this.usuario.tipo){
                 this.existe = true;
             }
@@ -66,7 +66,6 @@ export class AuthLoginComponent implements OnInit {
         this.usuario = new User();
         this.getUsuarios();
         this.tipos = ['Administrador', 'Cliente', 'Desarrollador'];
-        this.existe = false;
     }
 
 }

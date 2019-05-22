@@ -1,15 +1,15 @@
 <div data-component="navbar">
 
-    <nav class="navbar p-0 fixed-top">
-          <button class="navbar-toggler navbar-toggler-left rounded-0 border-0" data-toggle="collapse" data-target="#megamenu-dropdown" aria-controls="megamenu-dropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="ml-3">Advanced</span>
-          </button>
+    <nav class="navbar fixed-top">
+        <input type="text" maxlength= "12" placeholder="Search..." class="searchbar">
+        <a [routerLink]="['/start']" routerLinkActive="router-link-active" class="search i"><i class="fa fa-search" style="color:white"></i></a>
+     
       
       <div>
     
       <div class="right-links float-right mr-4">
-        <a href="#" class="home"><i class="fa fa-home mr-3" style="color:white"></i></a>
-        
+          
+          <a [routerLink]="['/start']" routerLinkActive="router-link-active"  class="home"><i class="fa fa-home mr-3" style="color:white"></i></a>
         <div class="d-inline dropdown rounded-0 mx-3">
           <a class="dropdown-toggle" id="tools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-wrench" style="color:white" aria-hidden="true"></i></a>
           <div class="dropdown-menu dropdown-menu-right rounded-0 text-center" aria-labelledby="tools">
@@ -108,8 +108,8 @@
           <a routerLink="/proyectos/{{p.id}}"><i class="fa fa fa-book fa-fw" aria-hidden="true"><span class="ml-2 align-middle">{{p.nombre}}</span></i></a>
           
           <ul class="list-group flex-column d-inline-block submenu">
-            <li class="list-group-item pl-4" *ngFor="let o of mostrarObjetivos(p.id)">
-              <a routerLink="/objetivos/{{p.id}}" class="">{{o.descripcion}}</a>
+            <li class="list-group-item pl-4" >
+              <a routerLink="/objetivos/{{p.id}}" ></a>
               
               <ul class="list-group flex-column d-inline-block sub-submenu">
                 <span class="arrow"></span>
