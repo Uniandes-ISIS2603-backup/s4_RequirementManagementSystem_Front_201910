@@ -3,6 +3,8 @@ import { environment } from '../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { ProyectoDetail } from './proyecto-detail';
 import { Observable } from 'rxjs';
+import { retryWhen } from 'rxjs/operators';
+import { Objetivo } from '../objetivo/objetivo';
 
 
 /**
@@ -13,7 +15,7 @@ const API_URL = environment.apiURL;
  * API_URL is the constant of the route proyectos to fetch the components of proyects.
  */
 const proyectos = '/proyectos/';
-
+const objetivos = '/objetivos/';
 /**
  * The service provider for everything related to project.
  */
@@ -68,7 +70,11 @@ updateProyecto(proyecto): Observable<ProyectoDetail> {
  * @param id El identificador único del proyecto a borrar
  */
 deleteProyecto(proyectoId): Observable<{}> {
-  return this.http.delete(API_URL+proyectos+proyectoId);
+  return this.http.delete(API_URL+proyectos+proyectoId)
+}
+
+getObjetivos(proyectoId): Observable<Objetivo[]> {
+  return this.http.get<Objetivo[]>(API_URL+proyectos+proyectoId+objetivos)
 }
 
 
