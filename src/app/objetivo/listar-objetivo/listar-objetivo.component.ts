@@ -11,6 +11,7 @@ import * as $ from "jquery";
 })
 
 export class ListarObjetivoComponent implements OnInit {
+  
   //Lista de los objetivos que existen
   objetivos: Objetivo[];
 
