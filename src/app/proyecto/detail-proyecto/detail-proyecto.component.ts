@@ -80,7 +80,7 @@ export class DetailProyectoComponent implements OnInit {
     this.loader.unsubscribe();
   }
 */
-  deleteCasodeuso(): void
+  deleteProyecto(): void
   { 
     
     this.proyectoService.deleteProyecto(this.proyectoDetail.id).subscribe((res)=>{
