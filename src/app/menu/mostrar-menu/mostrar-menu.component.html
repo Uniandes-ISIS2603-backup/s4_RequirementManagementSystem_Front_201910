@@ -104,12 +104,12 @@
     <div data-component="sidebar">
       <div class="sidebar">
       <ul class="list-group flex-column d-inline-block first-menu">
-        <li class="list-group-item pl-3 py-2" *ngFor="let o of objetivos">
-          <a routerLink="/objetivos/{{o.id}}"><i class="fa fa fa-book fa-fw" aria-hidden="true"><span class="ml-2 align-middle">{{o.descripcion}}</span></i></a>
+        <li class="list-group-item pl-3 py-2" *ngFor="let p of proyectos">
+          <a routerLink="/proyectos/{{p.id}}"><i class="fa fa fa-book fa-fw" aria-hidden="true"><span class="ml-2 align-middle">{{p.nombre}}</span></i></a>
           
           <ul class="list-group flex-column d-inline-block submenu">
-            <li class="list-group-item pl-4">
-              <a href="#" class="">Dashboard</a>
+            <li class="list-group-item pl-4" *ngFor="let o of mostrarObjetivos(p.id)">
+              <a routerLink="/objetivos/{{p.id}}" class="">{{o.descripcion}}</a>
               
               <ul class="list-group flex-column d-inline-block sub-submenu">
                 <span class="arrow"></span>

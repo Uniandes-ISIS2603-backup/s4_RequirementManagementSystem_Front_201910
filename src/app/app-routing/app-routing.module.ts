@@ -31,6 +31,8 @@ import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { ListarProyectoComponent } from '../proyecto/listar-proyecto/listar-proyecto.component';
 import { CreateProyectoComponent } from '../proyecto/create-proyecto/create-proyecto.component';
+import { DetailProyectoComponent } from '../proyecto/detail-proyecto/detail-proyecto.component';
+
 import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
 import { MostrarStartComponent } from '../start/mostrar-start/mostrar-start.component';
 
