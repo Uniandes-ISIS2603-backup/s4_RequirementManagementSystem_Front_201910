@@ -82,7 +82,7 @@ const routes: Routes = [
     },
     {
         path: 'proyectos',
-        component: CreateProyectoComponent
+        component: ListarProyectoComponent
     },
     {
         path: 'proyectos/new',
@@ -94,7 +94,25 @@ const routes: Routes = [
     },
     {
         path: 'proyectos/:id',
-        component: DetailProyectoComponent
+        component: DetailProyectoComponent,
+        children: [
+            {
+            path: 'objetivos',
+            component: ListarObjetivoComponent
+            },
+            {
+                path: 'objetivos/new',
+                component: CrearObjetivoComponent
+            },
+            {
+                path: 'objetivos/:id',
+                component: ListarObjetivoDetailComponent
+            },
+            {
+                path: 'objetivos/:id/update',
+                component: UpdateObjetivoComponent
+            },
+        ]
     },
     {
         path: 'condiciones',
@@ -130,22 +148,6 @@ const routes: Routes = [
     },
     {
         path: 'organizaciones/organizacion/:id', component: OrganizacionDetailComponent, runGuardsAndResolvers : 'always'
-    },
-    {
-        path: 'objetivos',
-        component: ListarObjetivoComponent
-    },
-    {
-        path: 'objetivos/new',
-        component: CrearObjetivoComponent
-    },
-    {
-        path: 'objetivos/:id',
-        component: ListarObjetivoDetailComponent
-    },
-    {
-        path: 'objetivos/:id/update',
-        component: UpdateObjetivoComponent
     },
     {
         path: 'requisitos', component: ListarRequisitosComponent

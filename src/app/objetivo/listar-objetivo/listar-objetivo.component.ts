@@ -35,7 +35,7 @@ export class ListarObjetivoComponent implements OnInit {
       });
       
     });
-    this.srv.getObjetivos().subscribe(objs => this.objetivos = objs)
+    /*this.srv.getObjetivos().subscribe(objs => this.objetivos = objs)*/
   }
 
 }

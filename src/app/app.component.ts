@@ -20,10 +20,7 @@ export class AppComponent implements OnInit {
 
     objetivos: Objetivo[];
 
-    mostrarObjetivos(){
-        this.objetivoService.getObjetivos().subscribe(objs => this.objetivos = objs);
-    }
-
+   
 
 
     /**
@@ -32,7 +29,6 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.title = "s4_requirement-Front";
         this.authService.start();
-        this.mostrarObjetivos();
         
     }
 
