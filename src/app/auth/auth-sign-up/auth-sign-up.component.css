@@ -1,7 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.container {
+background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/login_background.jpg') no-repeat center center fixed;
+  margin: 0 auto;
+  padding: 0;
+  width: 500px;
+  height: 500px;
+  background: black;
+  border-radius: 500px;
+  margin-top: 15%;
+  border: 8px solid rgba(245, 245, 245, 0.5);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: #e9e6e2;
+  margin: 15px 100px;
+}
+a {
+  text-decoration: none;
+  color: #4ec7f3;
+}
+a:hover {
+  text-decoration: underline;
+  color: #4ec7f3;
+}
+.header {
+  text-align: center;
+  margin-top: 70px;
+  font-size: 16px;
+}
+.header .login {
+color: #6c6763;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+.header .signup {
+ color: #4ec7f3;
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+input {
+  outline: none;
+  display: block;
+  width: 70%;
+  border: 1px solid #d9d9d9;
+  border: none;
+  border-radius: 3px;
+  background: #f7f6f5;
+  margin: 20px auto;
+  padding: 18px 15px;
+}
+select {
+    outline: none;
+    display: block;
+    width: 70%;
+    border: 1px solid #d9d9d9;
+    border: none;
+    color: black;
+    border-radius: 3px;
+    margin: 20px auto;
+    padding: 18px 15px;
+  }
+input[type="submit"] {
+  width: 35%;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  background: linear-gradient(#4ec7f3, #4ec7f3);
+  cursor: pointer;
+  padding: 13px 20px;
+}
+input[type="submit"]:hover {
+  background: linear-gradient(#4ec7f3, #4ec7f3);
+}
+.help-block {
+  margin-top: -10px;
+  font-size: 12px;
+  text-align: center;
+}
+::-webkit-input-placeholder {
+  font-size: 13px;
+}
+::-moz-placeholder {
+  font-size: 13px;
+}
+
 #toastrService > .success {
     background-image: none;
     background-color: #e9e9e9;
-    color: black;
+    color: green;
 }
 #toastrService > .error {
     background-image: none;
