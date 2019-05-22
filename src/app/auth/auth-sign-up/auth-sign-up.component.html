@@ -6,7 +6,7 @@
         
         <hr />
         
-        <form name="loginForm" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
+        <form name="signUpForm" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
           <input type="text" name="usuario" id="username" placeholder="Usuario" [(ngModel)]="usuario.usuario" required />
           <input input name="contrasena" type="password" name="password" id="password" [(ngModel)]="usuario.contrasena" required  placeholder="Contraseña"/>
           <select class="select"  name="tipo" id="tipo" [(ngModel)]="usuario.tipo" required>

@@ -22,10 +22,10 @@ export class AuthSignUpComponent implements OnInit {
     ) { }
 
     usuario: User;
-    usuarios:User[];
+    usuarios: User[];
     tipos: String[];
-    nombre:String
-    existe:Boolean = false;
+    nombre: String
+    existe: Boolean = false;
 
 
     //Crear usuario
@@ -39,29 +39,32 @@ export class AuthSignUpComponent implements OnInit {
     /**
     * Obtener lista de todas las organizacions
     */
-   getUsuarios(): void {
-    this.authService.getUsuarios().subscribe(usuarios => { this.usuarios = usuarios; });
-}
+    getUsuarios(): void {
+        this.authService.getUsuarios().subscribe(usuarios => { this.usuarios = usuarios; });
+    }
 
     /**
     * Sign the user up with the selected role
     */
     signUp(): void {
-        for(var i = 0; i<this.usuarios.length; i++){
-            if(this.usuarios[i].usuario == this.usuario.usuario && this.usuarios[i].tipo == this.usuario.tipo){
+        console.log("nombre del usuario:   ", this.usuario.usuario);
+        console.log("contrasena del usuario:   ", this.usuario.contrasena);
+        console.log("tipo del usuario:   ", this.usuario.tipo);
+        for (var i = 0; i < this.usuarios.length; i++) {
+            if (this.usuarios[i].usuario == this.usuario.usuario && this.usuarios[i].tipo == this.usuario.tipo) {
                 this.existe = true;
             }
         }
-        if(!this.existe){
-            this.createUsuario();
+        if (!this.existe) {
             console.log("nombre del usuario:   ", this.usuario.usuario);
             console.log("contrasena del usuario:   ", this.usuario.contrasena);
             console.log("tipo del usuario:   ", this.usuario.tipo);
+            this.createUsuario();
             this.authService.login(this.usuario.tipo);
             this.toastrService.success('Successfully signed up')
         }
-        
-        else{
+
+        else {
             this.toastrService.error('Ya existe un usuario con ese nombre de ese tipo')
         }
     }
@@ -72,10 +75,10 @@ export class AuthSignUpComponent implements OnInit {
     */
     ngOnInit() {
         this.usuario = new User();
+        this.getUsuarios();
         this.usuario.id = Math.floor(Math.random() * 99999) + 999;
         this.tipos = ['Administrador', 'Cliente', 'Desarrollador'];
         this.existe = false;
-        this.getUsuarios();
     }
 
 }
