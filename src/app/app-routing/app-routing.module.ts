@@ -39,11 +39,11 @@ const routes: Routes = [
 
     {
         path: 'home',
-        component: MostrarMenuComponent
+        component: MostrarStartComponent
     },
     {
         path:  'start',
-        component: MostrarStartComponent
+        component: MostrarMenuComponent
     },
     {
         path:'login',
