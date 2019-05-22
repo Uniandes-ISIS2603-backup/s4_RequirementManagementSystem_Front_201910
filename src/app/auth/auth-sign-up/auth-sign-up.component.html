@@ -1,3 +1,25 @@
+<div class="container">
+        <div class="header">
+          <span class="login" [routerLink]="['/login']" routerLinkActive="router-link-active" >Log In</span> or 
+          <span class="signup" >Sign Up</span>
+        </div> <!-- end header -->
+        
+        <hr />
+        
+        <form name="login" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+          <input type="text" name="usuario" id="username" placeholder="Usuario" [(ngModel)]="usuario.usuario" required />
+          <input input name="contrasena" type="password" name="password" id="password" [(ngModel)]="usuario.contrasena" required  placeholder="Contraseña"/>
+          <select class="select" placeholder="Escoja un tipo" name="tipo" id="tipo" [(ngModel)]="usuario.tipo" required>
+                    <option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
+                </select>
+          <input type="submit" routerLink="/start" value="Crear cuenta" />
+        </form>
+      
+  </div>
+
+
+
+<!--
 <div class="row">
     <div class="col-6 offset-3">
         <br>
@@ -24,3 +46,4 @@
         </form>
     </div>
 </div>
+--->
