@@ -1,33 +1,27 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="col">
-			<table class="table table-striped">
-				<thead class="thead-dark">
-					<tr>
-						<th>id</th>
-                  <th>nombre</th>
-                  <th>descripcion</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr *ngFor="let i of proyectos">
-						<td style="cursor: pointer;">
-							<a class="figure-caption" (click)="onSelected(i.id)">{{i.id}}</a>
-						</td>
-            			<td>
-							<p class="figure-caption">{{i.nombre}}</p>
-                  </td>
-                  <td>
-              <p class="figure-caption">{{i.descripcion}}</p>
-                  </td>
-					</tr>
-				</tbody>
-      		</table>
-		</div>
-		<div class="col">
-			<div *ngIf="selectedProyecto">
-					<app-detail-proyecto [proyectoDetail]="selectedProyecto"> </app-detail-proyecto>
-				</div>
-	</div>
-	</div>
-</div>
+
+<div *ngIf="proyectos" class="container-fluid" id="tabla">
+	<br>
+	<h3 class="card-title">Lista de Proyectos </h3>
+	<!--Table-->
+	<table id="tablePreview" class="table table-bordered table-striped">
+	  <!--Table head-->
+	  <thead>
+		<tr>
+		  <th>Proyecto</th>
+		  <th>Nombre</th>
+		</tr>
+	  </thead>
+	  <!--Table head-->
+	  <!--Table body-->
+	  <tbody>
+		<tr *ngFor="let i of proyectos">
+		  <td><a routerLink="{{i.id}}"> {{i.id}} </a></td>
+		  <td> {{i.nombre}} </td>
+		</tr>
+	  </tbody>
+	  <!--Table body-->
+	</table>
+	<br>
+	<br>
+	<!--     </div>-->
+  </div>
