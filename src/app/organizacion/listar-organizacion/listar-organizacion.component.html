@@ -203,6 +203,7 @@
             </tbody>
           </table>
           <td><button class="btn btn-success" (click)="actElim = 2">Agregar una Organizacion</button></td>
+          <td><button class="btn btn-info" (click)="actElim = 5">Asociar una organizacion con un proyecto</button></td>
           <td><button class="btn btn-danger" (click)="actElim = 1">Eliminar una Organizacion</button></td>
         </div>
       </div>
@@ -218,6 +219,9 @@
         </div>
         <div *ngIf="actElim == 4">
           <app-organizacion-proyecto [valor]="id"></app-organizacion-proyecto>
+        </div>
+        <div *ngIf="actElim == 5">
+          <app-proyecto-organizacion></app-proyecto-organizacion>
         </div>
       </div>
     </div>

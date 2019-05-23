@@ -38,6 +38,15 @@ export class OrganizacionService {
     }
 
     /**
+* Crea una nueva Organizacion
+* @param Organizacion
+* @returns El Organizacion creado, null si no se creo exitosamente
+*/
+    ProyectoOrganizacion(Organizacion): Observable<Organizacion> {
+        return this.http.post<Organizacion>(API_URL, Organizacion);
+    }
+
+    /**
     * Retorna organizacion con id dado por parametro extraido del api
     * @returns The author details
     */
@@ -63,12 +72,17 @@ export class OrganizacionService {
         return this.http.delete<Organizacion>(API_URL + '/' + OrganizacionId);
     }
 
-      /**
-   * Returns the Observable object containing the case of use, with its detail, retrieved from the API
-   * @param casodeusoId id of the case of use to be retrieved.
-   * @returns the case of use, with its detail.
-   */
-  getOrganizacionesDetail(orgId): Observable<OrganizacionDetail> {
-    return this.http.get<OrganizacionDetail>(API_URL + '/'+ orgId );
-  }
+    /**
+ * Returns the Observable object containing the case of use, with its detail, retrieved from the API
+ * @param casodeusoId id of the case of use to be retrieved.
+ * @returns the case of use, with its detail.
+ */
+    getOrganizacionesDetail(orgId): Observable<OrganizacionDetail> {
+        return this.http.get<OrganizacionDetail>(API_URL + '/' + orgId);
+    }
+
+    relacionOrganizacionProyecto(idO, idP, organizacion): Observable<Organizacion> {
+        return this.http.post<Organizacion>(API_URL + '/' + idO + '/' + 'proyectos/' + idP, organizacion);
+    
+}
 }

@@ -11,7 +11,8 @@ import { Objetivo } from '../objetivo/objetivo';
  * API_URL is the constant of the API in which the back runs.
  */
 //const API_URL = environment.apiURL;
-const API_URL = environment.apiURL;
+const API_URL = 'http://64c93694.ngrok.io/s4_requirement-api/api';
+
 /**
  * API_URL is the constant of the route proyectos to fetch the components of proyects.
  */

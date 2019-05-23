@@ -6,22 +6,24 @@ import { Organizacion } from '../organizacion';
 import { Stakeholder } from '../../stakeholder/stakeholder'
 import { OrganizacionService } from '../organizacion.service';
 import { StakeholderService } from '../../stakeholder/stakeholder.service'
+import { Proyecto } from '../../proyecto/proyecto';
+import { ProyectoService } from '../../proyecto/proyecto.service';
 @Component({
-  selector: 'app-agregarStakeholder-organizacion',
-  templateUrl: './agregarStakeholder-organizacion.component.html',
-  styleUrls: ['./agregarStakeholder-organizacion.component.css']
+  selector: 'app-proyecto-organizacion',
+  templateUrl: './proyecto-organizacion.component.html',
+  styleUrls: ['./proyecto-organizacion.component.css']
 })
 
-export class AgregarStakeholderOrganizacionComponent implements OnInit {
+export class AgregarProyectoOrganizacionComponent implements OnInit {
 
   //Organizacion y stakeholder a vincular
   organizacion: Organizacion;
   organizaciones: Organizacion[];
-  stakeholder: Stakeholder;
-  stakeholders: Stakeholder[];
+  proyecto: Proyecto;
+  proyectos: Proyecto[];
 
   //Constructor del componente con variables a usar
-  constructor(private organizacionService: OrganizacionService, private stakeholderService: StakeholderService, private route: ActivatedRoute) { }
+  constructor(private organizacionService: OrganizacionService, private route: ActivatedRoute, private proyectoService: ProyectoService) { }
 
   getOrganizaciones(): void {
     this.organizacionService.getOrganizaciones().subscribe(organizaciones => {
@@ -29,29 +31,27 @@ export class AgregarStakeholderOrganizacionComponent implements OnInit {
     });
   }
 
-  getStakeholders(): void {
-    this.stakeholderService.getStakeholders().subscribe(stakeholders => {
-    this.stakeholders = stakeholders;
-    });
+  getProyectos(): void{
+    this.proyectoService.getProyectos().subscribe(proyectos => {this.proyectos = proyectos;})
   }
   
   /**
   * Agregar a la organizacion un stakeholder
   */
-  agegarStakeholderOrganizacion(): Stakeholder {
+  agegarProyectoOrganizacion(): Organizacion {
     console.log("Organizacion ID:  ", this.organizacion.id);
-    console.log("Stakeholder ID:  ", this.stakeholder.id);
-    this.stakeholderService.updateStakeholder(this.stakeholder).subscribe(stakeholder => {
-      this.stakeholder.organizacion.id = stakeholder.organizacion.id;
+    console.log("Proyecto ID:  ", this.proyecto.id);
+    this.organizacionService.relacionOrganizacionProyecto(this.organizacion.id, this.proyecto.id, this.organizacion).subscribe(organizacion => {
+      this.organizacion = organizacion;
     });
-    return this.stakeholder;
+    return this.organizacion;
   }
 
   //Inicializacion del componente, inicializacion de la organizacion y stakeholder a vincular
   ngOnInit() {
     this.organizacion = new Organizacion();
-    this.stakeholder = new Stakeholder();
+    this.proyecto = new Proyecto();
     this.getOrganizaciones();
-    this.getStakeholders();
+    this.getProyectos();
   }
 }
