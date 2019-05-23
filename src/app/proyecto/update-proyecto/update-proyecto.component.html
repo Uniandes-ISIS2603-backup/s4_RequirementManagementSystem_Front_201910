@@ -1,3 +1,37 @@
+<div class="container" onclick="onclick">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="center">
+                <p> </p>
+                <h1> </h1>
+                <h3> </h3>
+                <h4> </h4>
+                <h3>ACTUALIZAR PROYECTO</h3>
+                <form name="proyecto" (ngSubmit)="f.form.valid && editProyecto()" #f="ngForm" novalidate>
+                        <input placeholder="Nombre del proyecto"  name="proyectoNombre" id="proyectoNombre" [(ngModel)]="proyectoDetail.nombre"
+                        #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proyectoDetail.invalid }" required />
+                        <div class="invalid-feedback">
+                                <div>No ha ingresado un nombre</div>
+                        </div>                        
+                    <div class = "button">
+                            <button type="submit" routerLinkActive="router-link-active"  class="btn btn-outline-dark">Actualizar</button> &nbsp;
+                            <button type="button" routerLink=".." class="btn btn-outline-danger" (click)="cancelCreation()">Cancelar</button>
+                          <!---  <a type="submit" class="brk-btn">
+                                Crear proyecto
+                              </a>
+                              <a (click)="cancelCreation()" [routerLink]="['/home']" routerLinkActive="router-link-active" class="brk-btn-red">
+                                Cancelar
+                              </a> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+     
+
+
+
+<!--
+<div class="content">
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6">
@@ -27,3 +61,4 @@
   </div>
   <div class="col-3"></div>
 </div>
+-->
