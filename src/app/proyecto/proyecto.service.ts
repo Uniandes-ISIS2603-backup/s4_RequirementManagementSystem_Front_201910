@@ -11,7 +11,7 @@ import { Objetivo } from '../objetivo/objetivo';
  * API_URL is the constant of the API in which the back runs.
  */
 //const API_URL = environment.apiURL;
-const API_URL = 'http://0e049f17.ngrok.io/s4_requirement-api/api';
+const API_URL = environment.apiURL;
 /**
  * API_URL is the constant of the route proyectos to fetch the components of proyects.
  */
@@ -42,9 +42,16 @@ export class ProyectoService {
  * @param proyectoId id of the project to be retrieved.
  * @returns the project, with its detail.
  */
-getProyectoDetail(proyectoId): Observable<ProyectoDetail> {
+/* getProyectoDetail(proyectoId): Observable<ProyectoDetail> {
   return this.http.get<ProyectoDetail>(API_URL+proyectos + proyectoId );
 
+}
+*/
+
+getProyectoDetail(id: number): Observable<ProyectoDetail> {
+  const url = `${API_URL}${proyectos}${id}`;
+  console.log(url);
+  return this.http.get<ProyectoDetail>(url);
 }
 
 /**

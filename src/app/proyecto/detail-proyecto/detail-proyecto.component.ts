@@ -16,6 +16,8 @@ export class DetailProyectoComponent implements OnInit {
    */
   public isCollapsed = false;
 
+  proyecto : ProyectoDetail;
+
   /**
     * The component's constructor
     * @param proyectoService The project's service
@@ -43,12 +45,11 @@ export class DetailProyectoComponent implements OnInit {
     */
   getProyectoDetail(): void {
 
-    this.proyectoService.getProyectoDetail(this.proyectoDetail.id)
-    .subscribe(proyectoDetail => {
-      
-      this.proyectoDetail = proyectoDetail;
-      console.log("-->",this.proyectoDetail.objetivos);
-    });  }
+    const id = +this.route.snapshot.paramMap.get('proyectoId');
+    this.proyectoService.getProyectoDetail(id)
+      .subscribe(proyecto => this.proyectoDetail = proyecto); 
+  
+  }
 
   /*
   onLoad(params) {

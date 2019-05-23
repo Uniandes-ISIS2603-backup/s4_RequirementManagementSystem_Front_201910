@@ -21,12 +21,19 @@
                         <div>No ha ingresado una descripcion</div>
                     </div>
                     <div class = "button">
-                    <button type="submit" class="btn btn-primary" id="button">Crear</button>
-                    <button type="button" class="btn btn-danger" (click)="cancelCreation()" [routerLink]="['/home']" routerLinkActive="router-link-active" id="button">Cancelar</button>
+
+                            <button type="submit" class="btn btn-outline-dark">Crear</button> &nbsp;
+                            <button type="button" class="btn btn-outline-danger" (click)="cancelCreation()">Cancelar</button>
+                          <!---  <a type="submit" class="brk-btn">
+                                Crear proyecto
+                              </a>
+                              <a (click)="cancelCreation()" [routerLink]="['/home']" routerLinkActive="router-link-active" class="brk-btn-red">
+                                Cancelar
+                              </a> -->
                     </div>
                     <p> </p>
                 </form>
-                <a [routerLink]="['/login']" routerLinkActive="router-link-active"> ¿Ya tienes una cuenta? Login</a>
+                <a  [routerLink]="['/login']" routerLinkActive="router-link-active"> ¿Ya tienes una cuenta? Login</a>
                     <a [routerLink]="['/signup']" routerLinkActive="router-link-active">¿No tienes una cuenta aun? Sign up</a>
                 <h2>&nbsp;</h2>
             </div>

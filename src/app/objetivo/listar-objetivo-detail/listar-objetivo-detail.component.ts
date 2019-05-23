@@ -21,20 +21,20 @@ export class ListarObjetivoDetailComponent implements OnInit {
 
   //Metodo que llama al servicio y pide el servicio actual con el id dado en la ruta
   getObjetivo() 
-  {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.objetivoService.getObjetivo(id)
+  {const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    this.objetivoService.getObjetivo(proyectoId, objetivoId)
       .subscribe(objetivo => this.objetivo = objetivo);
   }
 
   //Metodo para eliminar el objetivo actual. Este método llama el servicio y pide la eliminacion del servicio actual
   eliminar(): void
   {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.objetivoService.deleteObjetivo(id).subscribe((res)=>{
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    this.objetivoService.deleteObjetivo(proyectoId, objetivoId).subscribe((res)=>{
       this.router.navigate(['/objetivos']);
     });
-    alert ("Eliminaste el Objetivo actual");
   } 
 
 }

@@ -23,26 +23,26 @@ export class UpdateObjetivoComponent implements OnInit {
 
   //Se crea un objetivo del formulario y se actualiza con el id actual
   crearObjetivo() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
     this.objetivo = this.objeto;
-    console.log(id);
-    this.servicio.updateObjetivo(id, this.objetivo).subscribe((obj)=> {
+    this.servicio.updateObjetivo(proyectoId, objetivoId, this.objetivo).subscribe((obj)=> {
       this.objetivo = obj;
     })
-    this.intermediateNavigation();
-    this.finalDestination(id);
+    // this.intermediateNavigation();
+    // this.finalDestination(id);
   }
-  // Métodos auxiliares para refrescar fetcheando desde DB. 
-  intermediateNavigation()
-  {
-    this.router.navigate(['/objetivos/', ]);
-  }
-  finalDestination(id: number)
-  {
-    this.router.navigate(['/objetivos/', id]);
-  }
-  cancelarActualizacion(): void
-  {
-    this.router.navigate(['/objetivos/']);
-  }
+  // // Métodos auxiliares para refrescar fetcheando desde DB. 
+  // intermediateNavigation()
+  // {
+  //   this.router.navigate(['/objetivos/', ]);
+  // }
+  // finalDestination(id: number)
+  // {
+  //   this.router.navigate(['/objetivos/', id]);
+  // }
+  // cancelarActualizacion(): void
+  // {
+  //   this.router.navigate(['/objetivos/']);
+  // }
 }
