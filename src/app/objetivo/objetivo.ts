@@ -1,3 +1,6 @@
+import { Proyecto } from "../proyecto/proyecto";
+import { ProyectoDetail } from "../proyecto/proyecto-detail";
+
 /** Clase que reopresenta un objetivo*/
 export class Objetivo
 {

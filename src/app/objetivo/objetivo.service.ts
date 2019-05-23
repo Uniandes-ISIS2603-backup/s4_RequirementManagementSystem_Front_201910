@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
  
 import { Observable, of } from 'rxjs';
-import { Requisito } from '../requisito/requisito';
 import { Objetivo } from './objetivo';
 import { environment } from '../../environments/environment';
+import { Requisito } from '../requisito/requisito';
 //const API_URL = environment.apiURL;
 const API_URL = environment.apiURL;
 const objetivosPath = '/objetivos/';
 const proyectosPath = '/proyectos/'
+const requisitosPath = '/requisitos/'
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,19 +17,15 @@ const httpOptions = {
  
 @Injectable()
 export class ObjetivoService {
- 
- 
+
   constructor(
     private http: HttpClient
     ) { }
- 
-    
 
   /* GET Objetivos from the server */
   getObjetivos(proyectoId: number): Observable<Objetivo[]> {
     return this.http.get<Objetivo[]>(API_URL + proyectosPath + proyectoId + objetivosPath);
   }
-
 
   getObjetivo(proyectoId:number ,objetivoId: number): Observable<Objetivo> {
     return this.http.get<Objetivo>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId);
@@ -50,5 +47,8 @@ export class ObjetivoService {
    return this.http.put<Objetivo>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId, nuevo, httpOptions);
   }
 
+  getRequisitos(proyectoId, objetivoId): Observable<Requisito[]> {
+    return this.http.get<Requisito[]>(API_URL+proyectosPath+proyectoId+objetivosPath+objetivoId+requisitosPath);
+  }
 
 }

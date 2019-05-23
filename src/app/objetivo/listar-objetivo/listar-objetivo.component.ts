@@ -14,6 +14,7 @@ export class ListarObjetivoComponent implements OnInit {
   
   //Lista de los objetivos que existen
   objetivos: Objetivo[];
+  proyectoId2 = +this.route.snapshot.paramMap.get('proyectoId');
 
   constructor(private srv: ObjetivoService, private router: Router, private route: ActivatedRoute) {
 
