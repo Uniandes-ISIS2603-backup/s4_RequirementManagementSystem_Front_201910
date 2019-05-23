@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CaminoService } from '../camino.service';
 import { CaminoDetail } from '../camino-detail';
 import { CaminoUpdateComponent } from '../camino-update/camino-update.component';
@@ -24,7 +24,7 @@ export class CaminoDetailComponent implements OnInit {
     * @param caminoService The camino's service
     * @param route The route element which helps to obtain the camino's id
     */
-  constructor(private caminoService: CaminoService,
+  constructor(private caminoService: CaminoService, private router:Router,
     private route: ActivatedRoute) {      
       console.log(this.caminoDetail);
     }
@@ -45,8 +45,12 @@ export class CaminoDetailComponent implements OnInit {
     * The method which retrieves the comment (detail) of a camino
     */
   getCaminosDetail(): void {
-
-    this.caminoService.getCaminosDetail(this.caminoDetail.idPaso)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    const caminoId = +this.route.snapshot.paramMap.get('caminoId');
+    this.caminoService.getCaminosDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId, caminoId)
     .subscribe(caminoDetail => {
       
       this.caminoDetail = caminoDetail;
@@ -65,8 +69,22 @@ export class CaminoDetailComponent implements OnInit {
    * The method that aims to send the id of the current camino, to the update component.
    */
   updateCamino(): void{
+
     this.update.getCamino(this.caminoDetail.idPaso);
 
+  }
+  
+  deleteCamino(): void
+  { 
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    const caminoId = +this.route.snapshot.paramMap.get('caminoId');
+    this.caminoService.deleteCamino(proyectoId, objetivoId, requisitoId, casoDeUsoId, caminoId).subscribe((res)=>{
+      this.router.navigate(['..']);
+    });
+      
   }
 
 }
