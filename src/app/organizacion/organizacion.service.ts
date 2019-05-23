@@ -8,7 +8,7 @@ import { OrganizacionDetail } from './organizacion.detail';
 import { environment } from '../../environments/environment.prod';
 
 //const API_URL = environment.apiURL+"/organizaciones";
-const API_URL = 'http://0e049f17.ngrok.io/s4_requirement-api/api/organizaciones';
+const API_URL = 'http://64c93694.ngrok.io/s4_requirement-api/api/organizaciones';
 
 
 @Injectable()
