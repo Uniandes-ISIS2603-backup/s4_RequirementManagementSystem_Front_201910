@@ -12,6 +12,16 @@
     width:100%;
     height: 100%;
   }
+
+  .align{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-self: center;
+    justify-self: center;
+    
+  }
   
   .blue {
     color: #29b6f6;
