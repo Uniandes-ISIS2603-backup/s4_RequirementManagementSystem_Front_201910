@@ -7,7 +7,7 @@ import { Component, OnInit, Input, ViewChild} from '@angular/core';
 
 import { UpdateObjetivoComponent } from '../update-objetivo/update-objetivo.component';
 import { Observable } from 'rxjs';
-import { Requisito } from 'src/app/requisito/requisito';
+import { Requisito } from '../../requisito/requisito';
 
 @Component({
   selector: 'app-listar-detail-objetivo',

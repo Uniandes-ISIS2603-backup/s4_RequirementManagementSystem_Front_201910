@@ -43,6 +43,7 @@ export class CrearRequisitoComponent implements OnInit {
     const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
     const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
     this.req = this.objeto;
+    this.req.fuentes = [this.objeto.fuentes];
     console.log(this.req);
     this.service.addRequisito(proyectoId, objetivoId, this.req).subscribe((req) => {this.req = req});
     this.router.navigate['/requisitos'];
