@@ -10,12 +10,12 @@
 
 .over-container {
   background-color: #313237;
-  width: 100vw;
-  left: 30px;
+  width: 100vmax;
+  left: 50px;
   /* font-family: 'Amatic SC', cursive; */
   font-family: 'Rajdhani', sans-serif;
   letter-spacing: .1em;
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
   height: 100vh;
   display: flex;
@@ -24,8 +24,9 @@
 }
 
 .container {
-  align-self: center;
+  left: 0px;
   width: 100vmax;
+  height: 100vh;
 }
 
 .search-container {
@@ -71,8 +72,8 @@ input {
 
 .button {
   text-decoration: none;
-  background-color: rgb(238, 245, 247);
-  color: rgb(18, 19, 20);
+  background-color: rgb(86, 94, 101);
+  color: rgb(218, 220, 222);
   padding: 7px 30px;
 }
 
