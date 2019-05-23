@@ -1,6 +1,9 @@
+html{
+  margin: 0;
+  padding: 0;
+	border: 0;
+	background-size: 100%;
+	border-color: #282931;
 
-body {
-	background-color: black;
-	margin: 0;
-	padding: 0;
-  }
+
+}

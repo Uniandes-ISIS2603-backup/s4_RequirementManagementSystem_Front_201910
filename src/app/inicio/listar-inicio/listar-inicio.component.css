@@ -1,6 +1,124 @@
 
 
+*{
+ 
+  border-color: #313237;
+  background-color: #313237;
+  left: 0px;
+}
 
+
+.over-container {
+  background-color: #313237;
+  width: 100vw;
+  left: 50px;
+  /* font-family: 'Amatic SC', cursive; */
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: .1em;
+  font-size: 1.5em;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.container {
+  align-self: center;
+  width: 100vmax;
+}
+
+.search-container {
+  justify-self: center;
+  margin-bottom: 15px;
+}
+
+.search {
+  border: none;
+  border-bottom: 3px solid rgb(86, 94, 101);
+  height: 46px;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: rgb(243, 244, 245);
+  color: rgb(174, 180, 184);
+  width: 60%;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  color: rgb(174, 180, 184);
+}
+
+input {
+  border: none;
+}
+
+.menu {
+  min-width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tiles {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  text-decoration: none;
+  background-color: rgb(86, 94, 101);
+  color: rgb(218, 220, 222);
+  padding: 7px 30px;
+}
+
+.tile1 {
+  background: rgb(149, 199, 174);
+  color: rgb(86, 94, 101);
+  padding: 7px 30px;
+}
+
+.tile2 {
+  background-color: rgb(199, 174, 149);
+  color: rgb(86, 94, 101);
+  padding: 7px 30px;
+}
+
+.tile3 {
+  background-color: rgb(199, 149, 174);
+  color: rgb(86, 94, 101);
+  padding: 7px 30px;
+}
+
+.tile4 {
+  background-color: rgb(149, 174, 199);
+  color: rgb(86, 94, 101);
+  padding: 7px 30px;
+}
+
+.tile5 {
+  background-color: rgb(174, 199, 149);
+  color: rgb(86, 94, 101);
+  padding: 7px 30px;
+}
+
+.tile6 {
+  background-color: rgb(174, 149, 199);
+  color: rgb(86, 94, 101);
+  padding: 7px 30px;
+}
+
+a:hover {
+  background-color: #343c43;
+}
+
+
+
+/*
 * {
   box-sizing: border-box;
   top: 53px;
@@ -250,7 +368,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
-/* Demo purposes */
+/* Demo purposes **
 body {
   font-family: 'Lato';
   -webkit-font-smoothing: antialiased;
@@ -271,4 +389,4 @@ h2 {
 p {
   margin: 0 0 16px;
 }
-
+****/

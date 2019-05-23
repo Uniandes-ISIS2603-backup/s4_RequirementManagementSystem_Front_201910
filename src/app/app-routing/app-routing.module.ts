@@ -35,7 +35,6 @@ import { DetailProyectoComponent } from '../proyecto/detail-proyecto/detail-proy
 
 import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
 import { MostrarStartComponent } from '../start/mostrar-start/mostrar-start.component';
-import { ProyectoDetail } from '../proyecto/proyecto-detail';
 import { UpdateProyectoComponent } from '../proyecto/update-proyecto/update-proyecto.component';
 import { CasodeusoDetail } from '../casodeuso/casodeuso-detail';
 import { CasodeusoUpdateComponent } from '../casodeuso/casodeuso-update/casodeuso-update.component';
@@ -179,30 +178,6 @@ const routes: Routes = [
                             ]
                         }
                     ]
-                },
-                {
-                    path: 'cambios',
-                    component: ListarCambioComponent
-                },
-                {
-                    path: 'cambios/new',
-                    component: CambioCreateComponent
-                },
-                {
-                    path: 'cambios/:cambioId',
-                    component: CambioDetailComponent
-                },
-                {
-                    path: 'cambios/:cambioId/update',
-                    component: CambioUpdateComponent
-                },
-                {
-                    path: 'aprobaciones',
-                    component: ListarAprobacionComponent
-                },
-                {
-                    path: 'aprobaciones/new',
-                    component: CreateAprobacionComponent
                 }
                 ]
             }

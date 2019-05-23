@@ -8,6 +8,8 @@ import { DetailProyectoComponent } from './detail-proyecto/detail-proyecto.compo
 import { CreateProyectoComponent } from './create-proyecto/create-proyecto.component';
 import { UpdateProyectoComponent } from './update-proyecto/update-proyecto.component';
 import { ProyectoService } from './proyecto.service';
+import { ObjetivoModule } from '../objetivo/objetivo.module';
+import { MenuModule } from '../menu/menu.module';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ProyectoService } from './proyecto.service';
     CommonModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ObjetivoModule,
+    MenuModule
   ],
   declarations: [ListarProyectoComponent, DetailProyectoComponent, CreateProyectoComponent, UpdateProyectoComponent],
   providers: [ProyectoService],
