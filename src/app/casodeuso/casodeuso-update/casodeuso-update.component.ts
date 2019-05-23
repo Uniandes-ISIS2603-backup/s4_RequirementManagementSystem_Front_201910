@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CasodeusoService } from '../casodeuso.service';
 import { ToastrService } from 'ngx-toastr';
 import { CasodeusoDetail } from '../casodeuso-detail';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-casodeuso-update',
@@ -19,7 +20,7 @@ export class CasodeusoUpdateComponent implements OnInit {
   * @param toastrService The toastr to show messages to the user 
   */
   constructor(private casodeusoService: CasodeusoService,
-    private toastrService: ToastrService) { }
+    private toastrService: ToastrService, private route: ActivatedRoute) { }
 
 
   /**
@@ -43,7 +44,11 @@ export class CasodeusoUpdateComponent implements OnInit {
   * Retrieves the information of the case of use
   */
   getCasodeuso(id: number): void {
-    this.casodeusoService.getCasosdeusoDetail(id)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    this.casodeusoService.getCasosdeusoDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId)
         .subscribe(casodeuso => {
             this.casodeusoDetail = casodeuso;
         });
@@ -53,7 +58,11 @@ export class CasodeusoUpdateComponent implements OnInit {
   * Updates the case's information
   */
   editCasodeuso(): void {
-    this.casodeusoService.updateCasodeuso(this.casodeusoDetail)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    this.casodeusoService.updateCasodeuso(proyectoId, objetivoId, requisitoId, casoDeUsoId, this.casodeusoDetail)
         .subscribe(() => {
             this.update.emit();
             this.toastrService.success("The case of use information was updated", "Case of use edition");

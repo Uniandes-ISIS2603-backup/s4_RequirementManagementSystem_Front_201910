@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Casodeuso } from '../casodeuso';
 import { CasodeusoService } from '../casodeuso.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {CasodeusoDetail} from '../casodeuso-detail';
 
 /**
@@ -19,7 +19,7 @@ export class CasodeusoListComponent implements OnInit {
    * @param casodeusoService The case's services provider.
    * @param router The router of the component.
    */
-  constructor(private casodeusoService: CasodeusoService,private router: Router) { }
+  constructor(private casodeusoService: CasodeusoService,private router: Router, private route: ActivatedRoute) { }
 
   /**
   * The list of cases that belong to the Requirement Management System.
@@ -40,7 +40,10 @@ export class CasodeusoListComponent implements OnInit {
     * Asks the service to update the list of cases.
     */
   getCasosdeuso(): void {
-    this.casodeusoService.getCasosdeuso().subscribe(casosdeuso => this.casosdeuso = casosdeuso);
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    this.casodeusoService.getCasosdeuso(proyectoId, objetivoId, requisitoId).subscribe(casosdeuso => this.casosdeuso = casosdeuso);
   }
 
   /**
@@ -48,7 +51,10 @@ export class CasodeusoListComponent implements OnInit {
    * @param casodeuso_id id of the selected case of use 
    */
   onSelected(casodeuso_id: number): void {
-        this.casodeusoService.getCasosdeusoDetail(casodeuso_id).subscribe(o => {
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+        this.casodeusoService.getCasosdeusoDetail(proyectoId, objetivoId, requisitoId, casodeuso_id).subscribe(o => {
           this.casodeuso_id = casodeuso_id;
           this.selectedCasodeuso = new CasodeusoDetail();
           this.selectedCasodeuso = o;

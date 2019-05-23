@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {CasodeusoService} from '../casodeuso.service';
 import { ToastrService } from 'ngx-toastr';
 import {CasodeusoDetail} from '../casodeuso-detail';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 /**
  * Component that creates a new case of use
@@ -22,7 +22,7 @@ export class CasodeusoCreateComponent implements OnInit {
     */
   constructor(private casodeusoService: CasodeusoService,
     private toastrService: ToastrService,
-    router: Router) { }
+    router: Router, private route: ActivatedRoute) { }
 
   /**
  * The new case of use to be created.
@@ -46,8 +46,12 @@ export class CasodeusoCreateComponent implements OnInit {
  * Creates a new case of use. 
  */
   createCasodeuso(): CasodeusoDetail {
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
     console.log(this.casodeusoDetail);
-   this.casodeusoService.createCasodeuso(this.casodeusoDetail)
+   this.casodeusoService.createCasodeuso(proyectoId, objetivoId, requisitoId, casoDeUsoId, this.casodeusoDetail)
        .subscribe((casodeusoDetail) => {
            this.casodeusoDetail = casodeusoDetail;
            this.create.emit();
