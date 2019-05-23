@@ -1,39 +1,41 @@
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/objetivos">Objetivo</a></li> 
-      <li class="breadcrumb-item active" aria-current="page">Objetivo {{objetivo.id}}</li>
-    </ol>
-  </nav>
-<div *ngIf="objetivo" class="container-fluid" id="tabla">
-  <br>
-  <h3 class="card-title">Visualización Objetivo {{objetivo.id}}</h3>
-  <table id="tablePreview" class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Atributo</th>
-        <th>Información</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Descripcion</td>
-        <td> {{objetivo.descripcion}} </td>
-      </tr>
-      <tr>
-        <td> Importancia </td>
-        <td> {{objetivo.importancia}} </td>
-      </tr>
-      <tr>
-        <td> Estabilidad</td>
-        <td> {{objetivo.estabilidad}} </td>
-      </tr>
-      <tr>
-        <td> Comentarios</td>
-        <td> {{objetivo.comentarios}} </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <button routerLink="update" class="btn btn-outline-primary"> Modificar Objetivo</button> &nbsp;
-  <button (click)="eliminar()" class="btn btn-outline-danger"> Eliminar Objetivo </button>
+<app-mostrar-menu></app-mostrar-menu>
+<div class="content" >
+    <div class="titulos">
+        <h1 color="white;">{{objetivo.id}}</h1>
+        <h2 color="white;">{{objetivo.descripcion}}</h2>
+    </div>
+    <div class="cards" *ngFor="let r of requisitos"> 
+    <div class="card">
+      <div class="card__side card__side--front">
+        <!-- Front Content -->
+        <div class="card__cont">
+          <span class="blue">{{r.id}}. </span><span><span class="green">{{ r.tipo}}</span></span>
+        </div>
+      </div>
+      <div class="card__side card__side--back">
+        <!-- Back Content -->
+        <div class="card__cta">
+          <p><span class="purple">Requisito </span> {{r.id}} <span class="cyan">:</span> 
+            <br />
+            <span class="space red">Tipo</span><span class="cyan"> : </span> <span class="green">{{r.tipo}}</span>
+            <br/>
+            <span class="space red">Descripcion</span><span class="cyan"> : </span> <span class="green">{{r.descripcion}}</span>
+            <br/>
+            <span class="space red">Importancia</span><span class="cyan">:</span> <span class="green">{{r.importancia}}</span>
+            <br/>
+            <span class="space red">Estabilidad</span><span class="cyan">:</span> <span class="green">{{r.estabilidad}}</span>
+            <br/>
+            <span class="space red">Comentarios</span><span class="cyan">:</span> <span class="green">{{r.comentarios}}</span>
+            <br/>
+            <span class="space red">Aprobaciones</span><span class="cyan">:</span> <span class="green">{{r.aprobaciones}}</span>
+            <br/>
+            <span class="space red">Fuentes</span><span class="cyan">:</span> <span class="green">{{r.fuentes}}</span>
+            <br/>
+            <span class="space red">Cambios</span><span class="cyan">:</span> <span class="green">{{r.cambios}}</span>
+            <br/>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

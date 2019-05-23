@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
  
 import { Observable, of } from 'rxjs';
-
+import { Requisito } from '../requisito/requisito';
 import { Objetivo } from './objetivo';
 import { environment } from '../../environments/environment';
 //const API_URL = environment.apiURL;
@@ -49,4 +49,6 @@ export class ObjetivoService {
   {
    return this.http.put<Objetivo>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId, nuevo, httpOptions);
   }
+
+
 }
