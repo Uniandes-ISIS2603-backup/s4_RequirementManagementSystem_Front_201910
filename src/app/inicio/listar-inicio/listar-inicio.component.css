@@ -1,22 +1,17 @@
 
 
 *{
-  outline: 0px;
-  margin: 0px;
-  padding: 0px;
-  border: 40px;
-  background-size: 100%;
-  border-color: #282931;
-  background-color: #282931;
+ 
+  border-color: #313237;
+  background-color: #313237;
+  left: 0px;
 }
 
 
 .over-container {
-  background-color: #282931;
-  padding: 0;
-  margin: 0;
-  margin-left: -50;
-  width: 105%;
+  background-color: #313237;
+  width: 100vw;
+  left: 50px;
   /* font-family: 'Amatic SC', cursive; */
   font-family: 'Rajdhani', sans-serif;
   letter-spacing: .1em;
@@ -30,6 +25,7 @@
 
 .container {
   align-self: center;
+  width: 100vmax;
 }
 
 .search-container {

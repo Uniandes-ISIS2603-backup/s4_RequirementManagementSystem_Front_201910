@@ -35,7 +35,6 @@ import { DetailProyectoComponent } from '../proyecto/detail-proyecto/detail-proy
 
 import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
 import { MostrarStartComponent } from '../start/mostrar-start/mostrar-start.component';
-import { ProyectoDetail } from '../proyecto/proyecto-detail';
 import { UpdateProyectoComponent } from '../proyecto/update-proyecto/update-proyecto.component';
 import { CasodeusoDetail } from '../casodeuso/casodeuso-detail';
 import { CasodeusoUpdateComponent } from '../casodeuso/casodeuso-update/casodeuso-update.component';
@@ -43,6 +42,9 @@ import { CondicionDetailComponent } from '../condicion/condicion-detail/condicio
 import { CondicionUpdateComponent } from '../condicion/condicion-update/condicion-update.component';
 import { CaminoDetailComponent } from '../camino/camino-detail/camino-detail.component';
 import { CaminoUpdateComponent } from '../camino/camino-update/camino-update.component';
+import { CasodeusoDetailComponent } from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
+import { CambioUpdateComponent } from '../cambio/cambio-update/cambio-update.component';
+import { CambioDetailComponent } from '../cambio/cambio-detail/cambio-detail.component';
 
 
 const routes: Routes = [
@@ -52,33 +54,18 @@ const routes: Routes = [
         component: MostrarStartComponent
     },
     {
-        path:  'start',
+        path: 'start',
         component: MostrarMenuComponent
     },
     {
-        path:'login',
-        component:AuthLoginComponent
+        path: 'login',
+        component: AuthLoginComponent
     },
     {
-        path:'signup',
-        component:AuthSignUpComponent
+        path: 'signup',
+        component: AuthSignUpComponent
     },
-    {
-        path: 'cambios',
-        component: ListarCambioComponent
-    },
-    {
-        path: 'cambios/new',
-        component: CambioCreateComponent
-    },
-    {
-        path: 'aprobaciones',
-        component: ListarAprobacionComponent
-    },
-    {
-        path: 'aprobaciones/new',
-        component: CreateAprobacionComponent
-    },
+
     {
         path: 'proyectos',
         component: ListarProyectoComponent
@@ -105,8 +92,8 @@ const routes: Routes = [
         path: 'proyectos/:proyectoId',
         children: [
             {
-            path: 'objetivos',
-            component: ListarObjetivoComponent
+                path: 'objetivos',
+                component: ListarObjetivoComponent
             },
             {
                 path: 'objetivos/new',
@@ -129,14 +116,14 @@ const routes: Routes = [
                     path: 'requisitos/new', component: CrearRequisitoComponent
                 },
                 {
-                    path: 'requisitos/:requisitoId', component: RequisitoDetailComponent, runGuardsAndResolvers : 'always'
+                    path: 'requisitos/:requisitoId', component: RequisitoDetailComponent, runGuardsAndResolvers: 'always'
                 },
                 {
                     path: 'requisitos/:requisitoId/update', component: ModificarRequisitoComponent
                 },
                 {
                     path: 'requisitos/:requisitoId',
-                    children : [
+                    children: [
                         {
                             path: 'casosDeUso',
                             component: CasodeusoListComponent
@@ -147,7 +134,7 @@ const routes: Routes = [
                         },
                         {
                             path: 'casosDeUso/:casoDeUsoId',
-                            component: CasodeusoDetail
+                            component: CasodeusoDetailComponent
                         },
                         {
                             path: 'casosDeUso/:casoDeUsoId/update',
@@ -155,7 +142,7 @@ const routes: Routes = [
                         },
                         {
                             path: 'casosDeUso/:casoDeUsoId',
-                            children: [
+                            children: [
                                 {
                                     path: 'condiciones',
                                     component: CondicionListComponent
@@ -174,29 +161,29 @@ const routes: Routes = [
                                 },
                                 {
                                     path: 'caminos',
-                                    component: CaminoListComponent        
+                                    component: CaminoListComponent
                                 },
                                 {
                                     path: 'caminos/new',
-                                    component: CaminoCreateComponent        
+                                    component: CaminoCreateComponent
                                 },
                                 {
                                     path: 'caminos/:caminoId',
-                                    component: CaminoDetailComponent        
+                                    component: CaminoDetailComponent
                                 },
                                 {
                                     path: 'caminos/:caminoId/update',
-                                    component: CaminoUpdateComponent        
+                                    component: CaminoUpdateComponent
                                 },
                             ]
                         }
                     ]
                 }
-            ]
-            },
+                ]
+            }
         ]
     },
-    
+
     {
         path: 'stakeholders',
         component: ListarStakeholderComponent
@@ -214,7 +201,7 @@ const routes: Routes = [
         component: CreateOrganizacionComponent
     },
     {
-        path: 'organizaciones/organizacion/:id', component: OrganizacionDetailComponent, runGuardsAndResolvers : 'always'
+        path: 'organizaciones/organizacion/:id', component: OrganizacionDetailComponent, runGuardsAndResolvers: 'always'
     },
     {
         path: '', redirectTo: 'home', pathMatch: 'full'

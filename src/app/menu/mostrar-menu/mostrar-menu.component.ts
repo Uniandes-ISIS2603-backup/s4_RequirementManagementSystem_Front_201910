@@ -3,6 +3,7 @@ import { Objetivo } from '../../objetivo/objetivo';
 import {ObjetivoService} from '../../objetivo/objetivo.service';
 import { Proyecto } from '../../proyecto/proyecto';
 import {ProyectoService} from '../../proyecto/proyecto.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import {ProyectoService} from '../../proyecto/proyecto.service';
 })
 export class MostrarMenuComponent implements OnInit {
 
-  constructor(private proyectoService:ProyectoService, private objetivoService: ObjetivoService) { }
+  constructor(private proyectoService:ProyectoService, private objetivoService: ObjetivoService, private router: Router) { }
 
   objetivos: any[];
 

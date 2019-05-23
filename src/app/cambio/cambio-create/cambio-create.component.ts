@@ -2,7 +2,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { CambioService } from '../cambio.service';
 import { ToastrService } from 'ngx-toastr';
 import { CambioDetail } from '../cambio-detail';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cambio-create',
@@ -23,7 +23,8 @@ export class CambioCreateComponent implements OnInit {
   constructor(
     private cambioService: CambioService,
     private toastrService: ToastrService,
-    router: Router
+    private router: Router,
+    private route: ActivatedRoute
 ) {}
   /**
   * The new change to be created.
@@ -53,7 +54,11 @@ export class CambioCreateComponent implements OnInit {
   */
    createCambio(): CambioDetail {
      console.log(this.cambioDetail);
-    this.cambioService.createCambio(this.cambioDetail)
+     const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const cambioId = +this.route.snapshot.paramMap.get('cambioId');
+    this.cambioService.createCambio(proyectoId, objetivoId, requisitoId, this.cambioDetail)
         .subscribe((cambioDetail) => {
             this.cambioDetail = cambioDetail;
             this.create.emit();

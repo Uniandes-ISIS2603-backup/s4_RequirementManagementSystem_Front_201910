@@ -39,7 +39,7 @@ export class CaminoService {
   * Returns the Observable object containing the list of caminos retrieved from the API
   * @returns The list of caminos in real time.
   */
-  getCaminos(proyectoId:number, objetivoId: number, requisitoId: number, casoId: number): Observable<Camino[]> {
+  getCaminos(proyectoId: number, objetivoId: number, requisitoId: number, casoId: number): Observable<Camino[]> {
     return this.http.get<Camino[]>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId + casosPath + casoId + caminoPath);
   }
 
@@ -48,7 +48,7 @@ export class CaminoService {
    * @param caminoId id of the camino to be retrieved.
    * @returns the camino, with its detail.
    */
-  getCaminosDetail(proyectoId:number, objetivoId: number, requisitoId: number, casoId: number, caminoId:number): Observable<CaminoDetail> {
+  getCaminosDetail(proyectoId: number, objetivoId: number, requisitoId: number, casoId: number, caminoId: number): Observable<CaminoDetail> {
     return this.http.get<CaminoDetail>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId + casosPath + casoId + caminoPath + caminoId);
   }
 
@@ -57,7 +57,7 @@ export class CaminoService {
     * @param camino The camino that will be created.
     * @returns The confirmation of the camino's creation
     */
-  createCamino(proyectoId:number, objetivoId: number, requisitoId: number, casoId: number, camino): Observable<Camino> {
+  createCamino(proyectoId: number, objetivoId: number, requisitoId: number, casoId: number, camino): Observable<Camino> {
     return this.http.post<Camino>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId + casosPath + casoId + caminoPath, camino, httpOptions);
   }
 
@@ -66,12 +66,12 @@ export class CaminoService {
     * @param camino The camino which will be updated
     * @returns The confirmation of the camino's update
     */
-  updateCamino(proyectoId:number, objetivoId: number, requisitoId: number, casoId: number, caminoId: number, camino): Observable<Camino> {
+  updateCamino(proyectoId: number, objetivoId: number, requisitoId: number, casoId: number, caminoId: number, camino): Observable<Camino> {
     return this.http.put<Camino>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId + casosPath + casoId + caminoPath + caminoId, camino);
   }
 
-  deleteCamino(proyectoId:number, objetivoId:number,requisitoId: number, casoDeUsoId:number, caminoId: number): Observable<{}> {
-    return this.http.delete(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId + casosPath + casoDeUsoId + caminoId);
+  deleteCamino(proyectoId: number, objetivoId: number, requisitoId: number, casoDeUsoId: number, caminoId: number): Observable<{}> {
+    return this.http.delete(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId + casosPath + casoDeUsoId + caminoPath + caminoId);
   }
 
 }
