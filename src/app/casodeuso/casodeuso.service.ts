@@ -16,7 +16,7 @@ const API_URL = environment.apiURL;
 const proyectosPath = '/proyectos/';
 const objetivosPath = '/objetivos/';
 const reqsPath = '/requisitos/';
-const casosPath = '/casos/';
+const casosPath = '/casosDeUso/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

@@ -39,6 +39,10 @@ import { ProyectoDetail } from '../proyecto/proyecto-detail';
 import { UpdateProyectoComponent } from '../proyecto/update-proyecto/update-proyecto.component';
 import { CasodeusoDetail } from '../casodeuso/casodeuso-detail';
 import { CasodeusoUpdateComponent } from '../casodeuso/casodeuso-update/casodeuso-update.component';
+import { CondicionDetailComponent } from '../condicion/condicion-detail/condicion-detail.component';
+import { CondicionUpdateComponent } from '../condicion/condicion-update/condicion-update.component';
+import { CaminoDetailComponent } from '../camino/camino-detail/camino-detail.component';
+import { CaminoUpdateComponent } from '../camino/camino-update/camino-update.component';
 
 
 const routes: Routes = [
@@ -148,6 +152,43 @@ const routes: Routes = [
                         {
                             path: 'casosDeUso/:casoDeUsoId/update',
                             component: CasodeusoUpdateComponent
+                        },
+                        {
+                            path: 'casosDeUso/:casoDeUsoId',
+                            children: [
+                                {
+                                    path: 'condiciones',
+                                    component: CondicionListComponent
+                                },
+                                {
+                                    path: 'condiciones/new',
+                                    component: CondicionCreateComponent
+                                },
+                                {
+                                    path: 'condiciones/:condicionId',
+                                    component: CondicionDetailComponent
+                                },
+                                {
+                                    path: 'condiciones/:condicionId/update',
+                                    component: CondicionUpdateComponent
+                                },
+                                {
+                                    path: 'caminos',
+                                    component: CaminoListComponent        
+                                },
+                                {
+                                    path: 'caminos/new',
+                                    component: CaminoCreateComponent        
+                                },
+                                {
+                                    path: 'caminos/:caminoId',
+                                    component: CaminoDetailComponent        
+                                },
+                                {
+                                    path: 'caminos/:caminoId/update',
+                                    component: CaminoUpdateComponent        
+                                },
+                            ]
                         }
                     ]
                 }
@@ -155,22 +196,7 @@ const routes: Routes = [
             },
         ]
     },
-    {
-        path: 'condiciones',
-        component: CondicionListComponent
-    },
-    {
-        path: 'condiciones/new',
-        component: CondicionCreateComponent
-    },
-    {
-        path: 'caminos',
-        component: CaminoListComponent        
-    },
-    {
-        path: 'caminos/new',
-        component: CaminoCreateComponent        
-    },
+    
     {
         path: 'stakeholders',
         component: ListarStakeholderComponent
