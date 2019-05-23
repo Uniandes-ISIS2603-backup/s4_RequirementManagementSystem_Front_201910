@@ -37,6 +37,8 @@ import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.componen
 import { MostrarStartComponent } from '../start/mostrar-start/mostrar-start.component';
 import { ProyectoDetail } from '../proyecto/proyecto-detail';
 import { UpdateProyectoComponent } from '../proyecto/update-proyecto/update-proyecto.component';
+import { CasodeusoDetail } from '../casodeuso/casodeuso-detail';
+import { CasodeusoUpdateComponent } from '../casodeuso/casodeuso-update/casodeuso-update.component';
 
 
 const routes: Routes = [
@@ -72,14 +74,6 @@ const routes: Routes = [
     {
         path: 'aprobaciones/new',
         component: CreateAprobacionComponent
-    },
-    {
-        path: 'casosdeuso',
-        component: CasodeusoListComponent
-    },
-    {
-        path: 'casosdeuso/new',
-        component: CasodeusoCreateComponent
     },
     {
         path: 'proyectos',
@@ -135,7 +129,29 @@ const routes: Routes = [
                 },
                 {
                     path: 'requisitos/:requisitoId/update', component: ModificarRequisitoComponent
-                },]
+                },
+                {
+                    path: 'requisitos/:requisitoId',
+                    children : [
+                        {
+                            path: 'casosDeUso',
+                            component: CasodeusoListComponent
+                        },
+                        {
+                            path: 'casosDeUso/new',
+                            component: CasodeusoCreateComponent
+                        },
+                        {
+                            path: 'casosDeUso/:casoDeUsoId',
+                            component: CasodeusoDetail
+                        },
+                        {
+                            path: 'casosDeUso/:casoDeUsoId/update',
+                            component: CasodeusoUpdateComponent
+                        }
+                    ]
+                }
+            ]
             },
         ]
     },

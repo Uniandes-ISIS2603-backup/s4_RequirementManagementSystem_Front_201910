@@ -49,13 +49,15 @@ export class CasodeusoDetailComponent implements OnInit {
     * The method which retrieves the comment (detail) of a case of use
     */
   getCasosdeusoDetail(): void {
-
-    this.casodeusoService.getCasosdeusoDetail(this.casodeusoDetail.id)
-    .subscribe(casodeusoDetail => {
-      
-      this.casodeusoDetail = casodeusoDetail;
-      console.log("-->",this.casodeusoDetail.caminos);
-    });  }
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    //  this.reqService.getRequisito(proyectoId, objetivoId, requisitoId)
+    // .subscribe(req => this.req = req);
+    this.casodeusoService.getCasosdeusoDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId)
+    .subscribe(casoDeUso => this.casodeusoDetail = casoDeUso);
+   }
 
   /*
   onLoad(params) {
@@ -89,9 +91,12 @@ export class CasodeusoDetailComponent implements OnInit {
 */
   deleteCasodeuso(): void
   { 
-    
-    this.casodeusoService.deleteCasodeuso(this.casodeusoDetail.id).subscribe((res)=>{
-      this.router.navigate(['/casosdeuso']);
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    this.casodeusoService.deleteCasodeuso(proyectoId, objetivoId, requisitoId, casoDeUsoId).subscribe((res)=>{
+      this.router.navigate(['..']);
     });
     alert ("Eliminaste el caso de uso actual");
       
