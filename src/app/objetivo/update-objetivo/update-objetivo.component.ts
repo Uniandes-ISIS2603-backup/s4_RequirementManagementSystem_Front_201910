@@ -3,7 +3,6 @@ import { Objetivo } from '../objetivo';
 import { ObjetivoService } from '../objetivo.service';
 import { Router, ActivatedRoute, Route } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Requisito } from 'src/app/requisito/requisito';
 
 @Component({
   selector: 'app-update-objetivo',

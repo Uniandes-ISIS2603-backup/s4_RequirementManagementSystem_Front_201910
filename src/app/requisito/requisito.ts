@@ -7,6 +7,7 @@ export class Requisito
      * Atributo que representa el identificador único del requisito
      */
     id: number;
+    autor: string;
      /**
      * Atributo que representa el tipo del requisito. El valor debe ser alguno de: {"NOFUNCIONAL", "FUNCIONAL"}
      */
@@ -30,13 +31,13 @@ export class Requisito
      /**
      * Atributo que representa las aprobaciones dadas al requisito.
      */
-    aprobaciones: string; 
+    aprobaciones: any; 
     /**
     * Atributo que representa las fuentes de creación del requisito. 
     */
-    fuentes: string;
+    fuentes: string[];
      /**
      * Atributo que representa los cambios hechos sobre el requisito.
      */
-    cambios: string;
+    cambios: any;
 }
