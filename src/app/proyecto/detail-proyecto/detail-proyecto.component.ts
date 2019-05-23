@@ -55,6 +55,8 @@ export class DetailProyectoComponent implements OnInit {
     this.objetivoService.getObjetivos(id).subscribe(objs => this.objetivos = objs);
   }
 
+  
+
  
 
 

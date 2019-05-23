@@ -7,6 +7,7 @@
 
 
 .over-container {
+  margin-left: 90px;
   background-color: #313237;
   width: 100vmax;
   left: 50px;
@@ -22,6 +23,7 @@
 }
 
 .container {
+  margin-left: 90px;
   left: 0px;
   width: 100vmax;
   height: 100vh;

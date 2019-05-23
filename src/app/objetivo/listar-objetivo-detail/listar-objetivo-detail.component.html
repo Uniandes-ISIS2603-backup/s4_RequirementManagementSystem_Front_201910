@@ -170,8 +170,19 @@
               <div class="row align" align="center">
                   <button type="button" class="btn btn-outline-light" routerLink="update" routerLinkActive="router-link-active" >Editar objetivo</button>&nbsp;
                   <button type="button" class="btn btn-outline-danger" (click)="deleteObjetivo()" routerLink="..">Eliminar objetivo</button>&nbsp;
-                  <button type="button" class="btn btn-outline-success" routerLink="requisitos/new">Crear nuevo requisito</button>&nbsp;
+                  <button type="button" class="btn btn-outline-success" routerLink="requisitos/new">Crear nuevo requisito</button>&nbsp;               
                 </div> 
+                &nbsp;
+                <div class="row align" align="center">
+                    <button type="button" class="btn btn-outline-primary" routerLink="cambios/new">Crear cambio</button>&nbsp;
+                    <button type="button" class="btn btn-outline-primary" routerLink="aprobaciones/new">Crear aprobacion</button>&nbsp;
+                </div>
+                &nbsp;
+                <div class="row align" align="center">
+                    <button type="button" class="btn btn-outline-secondary" routerLink="cambios">Ver cambios</button>&nbsp;
+                    <button type="button" class="btn btn-outline-secondary" routerLink="aprobaciones">Ver aprobaciones</button>&nbsp;
+
+                </div>
               &nbsp;
           </div>
           <div class="cards" *ngFor="let o of requisitos"> 
