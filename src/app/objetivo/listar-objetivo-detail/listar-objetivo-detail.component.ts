@@ -14,7 +14,7 @@ import {Requisito} from '../../requisito/requisito';
 export class ListarObjetivoDetailComponent implements OnInit {
   //Objetivo actual a ser detallado
   objetivo: Objetivo;
-  requisitos: Requisito[];
+  requisitos: any[];
 
 
 

@@ -9,6 +9,7 @@ import { ObjetivoService } from './objetivo.service';
 import { RouterModule } from '@angular/router';
 /*import { MenuModule } from '../menu/menu.module';*/
 import { RequisitoModule } from '../requisito/requisito.module';
+import { AppRoutingModule } from '../app-routing/app-routing.module';
 
 
 
@@ -17,7 +18,7 @@ import { RequisitoModule } from '../requisito/requisito.module';
     CommonModule,
     FormsModule,
     RouterModule,
-    
+    AppRoutingModule,
     RequisitoModule
   ],
   declarations: [ListarObjetivoComponent, ListarObjetivoDetailComponent, CrearObjetivoComponent, UpdateObjetivoComponent],
