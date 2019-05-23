@@ -40,21 +40,33 @@
   </div>
 </div>
 -->
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">Objetivos</li>
-    </ol>
-  </nav>
-<div class="container">
-	
-    <div class="element-card" *ngFor="let o of objetivos">
-      <div class="front-facing">
-        <h1 class="abr">{{o.id}}</h1>
-        <p class="title">{{o.descripcion}}</p>
-      </div>
-      <div class="back-facing">
-        <p>{{o.comentarios}}</p>
-        <p><a class="btn" routerLink="{{o.id}}" >Ver mas detalles</a></p>
-      </div>
-    </div>  
-  </div>
+
+
+
+<div *ngIf="objetivos" class="container-fluid" id="tabla">
+    <br>
+    <h3 class="card-title">Lista de Objetivos para el proyecto con id {{proyectoId2}} </h3>
+    <!--Table-->
+    <table id="tablePreview" class="table table-bordered table-striped">
+      <!--Table head-->
+      <thead>
+      <tr>
+        <th>Objetivo</th>
+        <th>Nombre</th>
+      </tr>
+      </thead>
+      <!--Table head-->
+      <!--Table body-->
+      <tbody>
+      <tr *ngFor="let i of objetivos">
+        <td><a routerLink="{{i.id}}"> {{i.id}} </a></td>
+        <td> {{i.descripcion}} </td>
+      </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <br>
+    <br>
+    <!--     </div>-->
+    </div>
+  
