@@ -19,6 +19,7 @@ export class ListarObjetivoDetailComponent implements OnInit {
 
 
   constructor( private objetivoService: ObjetivoService, private requisitoService: RequisitoService, private route: ActivatedRoute, private router:Router) { 
+    console.log(this.objetivo);
   }
 
   //Al iniciar se obtiene el objetivo actual
@@ -31,8 +32,9 @@ export class ListarObjetivoDetailComponent implements OnInit {
   {const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
     const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
     this.objetivoService.getObjetivo(proyectoId, objetivoId)
-      .subscribe(objetivo => this.objetivo = objetivo);
-      this.requisitoService.getRequisitos(proyectoId, objetivoId).subscribe(reqs => this.requisitos = reqs);
+      .subscribe(objetivo => {this.objetivo = objetivo; console.log(objetivo);
+      });
+      this.requisitoService.getRequisitos(proyectoId,objetivoId).subscribe(reqs => this.requisitos = reqs);
 
   }
 
