@@ -47,7 +47,11 @@ export class CambioDetailComponent implements OnInit {
   * The method which retrieves the description (detail) of a change.
   */
   getCambioDetail(): void {
-    this.cambioService.getCambioDetail(this.cambio_id)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const cambioId = +this.route.snapshot.paramMap.get('cambioId');
+    this.cambioService.getCambioDetail(proyectoId, objetivoId, requisitoId, cambioId)
       .subscribe(cambioDetail => {
         
         this.cambioDetail = cambioDetail;
@@ -58,7 +62,7 @@ export class CambioDetailComponent implements OnInit {
    * The method that aims to send the id of the current change, to the update component.
    */
   updateCambio(): void{
-    this.update.getCambio(this.cambioDetail.id);
+    this.update.getCambio();
   }
 
     /**
