@@ -13,49 +13,8 @@
                     <div>No ha ingresado su nombre y apellido</div>
                 </div>  
               </div>
-              <div>
-                <label for="aprobacionOrganizaciones"><b>Seleccione su organizacion</b></label>
-                    <select name="aprobacionOrganizaciones" class="form-control" id="aprobacionOrganizaciones" [(ngModel)]="aprobacionDetail.organizacion"
-                    #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
-                      <option>Startech</option>
-                      <option>Alpina</option>
-                      <option>Microsoft</option>
-                      <option>Universidad de los Andes</option>
-                    </select>
-                  </div>
-                <div>
-                    <label for="aprobacionObjReq"><b>Seleccione el objetivo/requisito a aprobar/revisar/desaprobar</b></label>
-                    <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.nombre_aprobado"
-                    #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
-                      <option>Objetivo 1</option>
-                      <option>Objetivo 2</option>
-                      <option>Objetivo 3</option>
-                      <option>Objetivo 4</option>
-                      <option>Objetivo 5</option>
-                      <option>Requisito 1</option>
-                      <option>Requisito 2</option>
-                      <option>Requisito 3</option>
-                      <option>Requisito 4</option>
-                      <option>Requisito 5</option>
-                    </select>
-                  </div>
-                  <div>
-                      <label for="aprobacionObjReq"><b>Seleccione el id del objetivo/requisito a aprobar/revisar/desaprobar</b></label>
-                      <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.id_aprobado"
-                      #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
-                        <option type="number">1</option>
-                        <option type="number">2</option>
-                        <option type="number">3</option>
-                        <option type="number">4</option>
-                        <option type="number">5</option>
-                      </select>
-                    </div>
-                <label for="aprobacionTipo"><b>Tipo de la aprobacion</b></label>
-                <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.tipo"
-                #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
-                  <option>OBJETIVO</option>
-                  <option>REQUISITO</option>
-                </select>
+              
+               
                     <div class="row">
                     <div class='col-7'>
                         <label for="aprobacionDescripcion"><b>Comentario sobre la aprobacion</b></label>
