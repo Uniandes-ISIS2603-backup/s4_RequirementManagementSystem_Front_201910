@@ -45,7 +45,7 @@ export class DetailProyectoComponent implements OnInit {
     */
   getProyectoDetail(): void {
 
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('proyectoId');
     this.proyectoService.getProyectoDetail(id)
       .subscribe(proyecto => this.proyectoDetail = proyecto); 
   

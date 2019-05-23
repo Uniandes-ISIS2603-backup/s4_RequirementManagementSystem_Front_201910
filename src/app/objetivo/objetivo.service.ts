@@ -7,7 +7,7 @@ import { Objetivo } from './objetivo';
 import { environment } from '../../environments/environment';
 //const API_URL = environment.apiURL;
 const API_URL = environment.apiURL;
-const objetivosPath = '/objetivos';
+const objetivosPath = '/objetivos/';
 const proyectosPath = '/proyectos/'
 
 const httpOptions = {
@@ -30,35 +30,23 @@ export class ObjetivoService {
   }
 
 
-  getObjetivo(id: number): Observable<Objetivo> {
-    const url = `${API_URL}${objetivosPath}/${id}`;
-    console.log(url);
-    return this.http.get<Objetivo>(url);
+  getObjetivo(proyectoId:number ,objetivoId: number): Observable<Objetivo> {
+    return this.http.get<Objetivo>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId);
   }
-
-  // Get Objetivo by Id, returns undefined when not found.
-  /** 
-  getObjetivo(id: number): Observable<Objetivo> {
-    const url = objetivosPath + '/' + id + '.json';
-    return this.http.get<Objetivo>(API_URL + url);
-  }
-  */
 
    /** DELETE: delete the Objetivo from the server */
-  deleteObjetivo(id: number): Observable<any> {
-    const url = objetivosPath + '/' + id;
-    //console.log(url);
-    return this.http.delete<any>(API_URL + url);
+  deleteObjetivo(proyectoId:number ,objetivoId: number): Observable<any> {
+    return this.http.delete<any>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId);
   }
 
   /** POST: add a new Objetivo to the database */
-  addObjetivo(req: Objetivo): Observable<Objetivo> {
-    return this.http.post<Objetivo>(API_URL+objetivosPath, req, httpOptions);
+  addObjetivo(proyectoId:number, req: Objetivo): Observable<Objetivo> {
+    return this.http.post<Objetivo>(API_URL + proyectosPath + proyectoId + objetivosPath, req, httpOptions);
   }
 
   /** Update del objetivo dado por parametro */
-  updateObjetivo(id:number, nuevo)
+  updateObjetivo(proyectoId: number, objetivoId:number, nuevo)
   {
-   return this.http.put<Objetivo>(API_URL + objetivosPath + '/' + id, nuevo, httpOptions);
+   return this.http.put<Objetivo>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId, nuevo, httpOptions);
   }
 }
