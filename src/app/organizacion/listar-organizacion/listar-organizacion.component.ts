@@ -4,12 +4,7 @@ import 'rxjs/add/operator/filter';
 
 import { Organizacion } from '../organizacion';
 import { OrganizacionService } from '../organizacion.service';
-<<<<<<< HEAD
-
-
-=======
 import { identifierModuleUrl } from '@angular/compiler';
->>>>>>> origin/master
 
 
 @Component({
