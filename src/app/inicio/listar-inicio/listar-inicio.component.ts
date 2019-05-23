@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
+import { StakeholderService } from '../../stakeholder/stakeholder.service';
+import { Stakeholder } from '../../stakeholder/stakeholder';
+import { OrganizacionService } from '../../organizacion/organizacion.service';
+import { Organizacion } from '../../organizacion/organizacion';
 
 @Component({
   selector: 'app-listar-inicio',
@@ -11,7 +15,22 @@ import * as $ from "jquery";
  */
 export class ListarInicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private stakeholderService: StakeholderService, private organizacionService:OrganizacionService) { }
+
+stakeholders: Stakeholder[];
+organizaciones: Organizacion[];
+
+  mostrarStakeholders(){
+    this.stakeholderService.getStakeholders().subscribe(staks => {this.stakeholders = staks; console.log(staks);
+    });
+    
+  }
+
+  mostrarOrganizaciones(){
+    this.organizacionService.getOrganizaciones().subscribe(orgs => {this.organizaciones = orgs; console.log(orgs);
+    });
+    
+  }
 
   ngOnInit() {
     $('.hover-box').mouseenter(function(){
@@ -20,7 +39,10 @@ export class ListarInicioComponent implements OnInit {
 
 		$('.hover-box').mouseleave(function(){
 			$(this).find('.content').removeClass('hover-content');	
-		});
+    });
+    this.mostrarStakeholders();
+
+    this.mostrarOrganizaciones();
     // var Expand = (function() {
     //   var tile = $('.strips__strip');
     //   var tileLink = $('.strips__strip > .strip__content');
@@ -71,5 +93,6 @@ export class ListarInicioComponent implements OnInit {
     
     // Expand.init();
   }
+  
 
 }
