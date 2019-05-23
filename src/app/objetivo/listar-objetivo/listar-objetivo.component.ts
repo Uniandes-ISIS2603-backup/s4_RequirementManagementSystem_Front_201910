@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ObjetivoService } from '../objetivo.service';
 import { Objetivo } from '../objetivo';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import * as $ from "jquery";
 
 @Component({
@@ -11,16 +11,18 @@ import * as $ from "jquery";
 })
 
 export class ListarObjetivoComponent implements OnInit {
+  
   //Lista de los objetivos que existen
   objetivos: Objetivo[];
 
-  constructor(private srv: ObjetivoService, private router: Router) {
+  constructor(private srv: ObjetivoService, private router: Router, private route: ActivatedRoute) {
 
   }
 
   //Al iniciar la aplicacion llama al servicio y le pide todos los objetivos que existan
   ngOnInit() 
   {
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
     $(document).ready(function(){
 	
       $('.element-card').on('click', function(){
@@ -35,7 +37,7 @@ export class ListarObjetivoComponent implements OnInit {
       });
       
     });
-    /*this.srv.getObjetivos().subscribe(objs => this.objetivos = objs)*/
+    this.srv.getObjetivos(proyectoId).subscribe(objs => this.objetivos = objs)
   }
 
 }

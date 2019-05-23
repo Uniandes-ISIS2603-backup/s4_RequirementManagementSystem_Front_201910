@@ -36,6 +36,7 @@ import { DetailProyectoComponent } from '../proyecto/detail-proyecto/detail-proy
 import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
 import { MostrarStartComponent } from '../start/mostrar-start/mostrar-start.component';
 import { ProyectoDetail } from '../proyecto/proyecto-detail';
+import { UpdateProyectoComponent } from '../proyecto/update-proyecto/update-proyecto.component';
 
 
 const routes: Routes = [
@@ -93,8 +94,17 @@ const routes: Routes = [
         component: CreateProyectoComponent
     },
     {
-        path: 'proyectos/:id',
+        path: 'proyectos/:proyectoId',
         component: DetailProyectoComponent,
+
+    },
+    {
+        path: 'proyectos/:proyectoId/update',
+        component: UpdateProyectoComponent,
+
+    },
+    {
+        path: 'proyectos/:proyectoId',
         children: [
             {
             path: 'objetivos',
@@ -105,12 +115,27 @@ const routes: Routes = [
                 component: CrearObjetivoComponent
             },
             {
-                path: 'objetivos/:id',
+                path: 'objetivos/:objetivoId',
                 component: ListarObjetivoDetailComponent
             },
             {
-                path: 'objetivos/:id/update',
+                path: 'objetivos/:objetivoId/update',
                 component: UpdateObjetivoComponent
+            },
+            {
+                path: 'objetivos/:objetivoId',
+                children: [{
+                    path: 'requisitos', component: ListarRequisitosComponent
+                },
+                {
+                    path: 'requisitos/new', component: CrearRequisitoComponent
+                },
+                {
+                    path: 'requisitos/:requisitoId', component: RequisitoDetailComponent, runGuardsAndResolvers : 'always'
+                },
+                {
+                    path: 'requisitos/:requisitoId/update', component: ModificarRequisitoComponent
+                },]
             },
         ]
     },
@@ -148,18 +173,6 @@ const routes: Routes = [
     },
     {
         path: 'organizaciones/organizacion/:id', component: OrganizacionDetailComponent, runGuardsAndResolvers : 'always'
-    },
-    {
-        path: 'requisitos', component: ListarRequisitosComponent
-    },
-    {
-        path: 'requisitos/new', component: CrearRequisitoComponent
-    },
-    {
-        path: 'requisitos/:id', component: RequisitoDetailComponent, runGuardsAndResolvers : 'always'
-    },
-    {
-        path: 'requisitos/:id/modificar', component: ModificarRequisitoComponent
     },
     {
         path: '', redirectTo: 'home', pathMatch: 'full'

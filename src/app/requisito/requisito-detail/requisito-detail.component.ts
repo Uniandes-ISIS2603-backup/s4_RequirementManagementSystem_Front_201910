@@ -4,12 +4,15 @@ import { RequisitoService } from '../requisito.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
+ 
+
 @Component({
   selector: 'app-requisito-detail',
   templateUrl: './requisito-detail.component.html',
   styleUrls: ['./requisito-detail.component.css']
 })
 export class RequisitoDetailComponent implements OnInit {
+  
 
   req: Requisito;
   constructor(private router: Router, private reqService: RequisitoService, private route: ActivatedRoute) { }
@@ -22,17 +25,20 @@ export class RequisitoDetailComponent implements OnInit {
   //Metodo que llama al servicio y pide el servicio actual con el id dado en la ruta
   getRequisito(): void 
   {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.reqService.getRequisito(id)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    this.reqService.getRequisito(proyectoId, objetivoId, requisitoId)
       .subscribe(req => this.req = req);
   }
 
   eliminar(): void
   { 
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.reqService.deleteRequisito(id).subscribe((res)=>{
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    this.reqService.deleteRequisito(proyectoId, objetivoId, requisitoId).subscribe((res)=>{
       this.router.navigate(['/requisitos']);
     });
-    alert ("Eliminaste el Requisito actual");
   }
 }

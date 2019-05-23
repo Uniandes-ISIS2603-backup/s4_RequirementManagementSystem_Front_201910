@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Requisito } from '../requisito';
 import { RequisitoService } from '../requisito.service';
 import { ActivatedRoute, Router } from '@angular/router';
+
+   
 @Component({
   selector: 'app-modificar-requisito',
   templateUrl: './modificar-requisito.component.html',
@@ -32,28 +34,29 @@ export class ModificarRequisitoComponent implements OnInit {
    */
   actualizarRequisito(): void
   {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
     this.req = this.objeto;
-    console.log(id);
-    this.reqS.updateRequisito(id, this.req).subscribe((req)=> {
+    this.reqS.updateRequisito(proyectoId, objetivoId, requisitoId, this.req).subscribe((req)=> {
       this.req = req;
     })
-    this.intermediateNavigation();
-    this.finalDestination(id);
+    // this.intermediateNavigation();
+    // this.finalDestination(id);
   }
   
   //--------------------------------------------------------
   // Métodos auxiliares para refrescar fetcheando desde DB. 
   //--------------------------------------------------------
 
-  intermediateNavigation()
-  {
-    this.router.navigate(['/requisitos/', ]);
-  }
-  finalDestination(id: number)
-  {
-    this.router.navigate(['/requisitos/', id]);
-  }
+  // intermediateNavigation()
+  // {
+  //   this.router.navigate(['/requisitos/', ]);
+  // }
+  // finalDestination(id: number)
+  // {
+  //   this.router.navigate(['/requisitos/', id]);
+  // }
 
   //--------------------------------------------------------
  
@@ -61,11 +64,11 @@ export class ModificarRequisitoComponent implements OnInit {
   /**
    * Respuesta a la cancelación de la actualización. Se devuelve al menú de visualización de requisitos. 
    */
-  cancelarActualizacion(): void
-  {
-    this.router.navigate(['/requisitos']);
-    alert("Modificación de requisito cancelada");
-  }
+  // cancelarActualizacion(): void
+  // {
+  //   this.router.navigate(['/requisitos']);
+  //   alert("Modificación de requisito cancelada");
+  // }
   
 }
 
