@@ -1,4 +1,5 @@
 import { Stakeholder } from "../stakeholder/stakeholder";
+import { Proyecto } from "../proyecto/proyecto";
 
 export class Organizacion {
     /**
@@ -17,9 +18,14 @@ export class Organizacion {
     */
     sector: string;
 
-        /**
+    /**
      * Lista de stakeholders
      */
     stakeHolders: Stakeholder[];
+
+    /**
+     * Lista de proyectos
+     */
+    proyectos: Proyecto[];
 
 }

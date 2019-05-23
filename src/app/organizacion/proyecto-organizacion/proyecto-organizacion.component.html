@@ -4,8 +4,8 @@
     <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
-          <th>Id de organizacion</th>
-          <th>Id del stakeholder</th>
+          <th>Id de la Organizacion</th>
+          <th>Id del Proyecto</th>
         </tr>
       </thead>
       <tbody>
@@ -19,14 +19,14 @@
         </td>
         <td>
           <div class="form-group">
-            <label for="stakeholderId"></label>
-            <select class="custom-select" name="stakeholderId" id="stakeholderId" [(ngModel)]="stakeholder.id">
-                <option *ngFor="let stakeholder of stakeholders" [value]="stakeholder.id" >(ID, Nombre): ({{stakeholder.id}}, {{stakeholder.nombre}}) </option>
+            <label for="proyectoId"></label>
+            <select class="custom-select" name="proyectoId" id="proyectoId" [(ngModel)]="proyecto.id">
+                <option *ngFor="let proyecto of proyectos" [value]="proyecto.id" >(ID, Nombre): ({{proyecto.id}}, {{proyecto.nombre}}) </option>
             </select>
         </div>
         </td>
       </tbody>
     </table>
   </div>
-  <td><button class="btn btn-success" (click)="agegarStakeholderOrganizacion()">Agregar</button></td>
+  <td><button class="btn btn-success" (click)="agegarProyectoOrganizacion()">Agregar</button></td>
 </div>
