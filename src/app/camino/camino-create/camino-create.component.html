@@ -1,3 +1,52 @@
+<div class="container" onclick="onclick">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <div class="center">
+            <p> </p>
+            <h1> </h1>
+            <h3> </h3>
+            <h4> </h4>
+            <h4>CREA UN CAMINO</h4>
+            <form name="camino" (ngSubmit)="f.form.valid && createCamino()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="caminoTipoPaso"><b>Ingrese el id del paso</b></label>
+                        <input type="text" name="caminoIdPaso" class="form-control" id="caminoIdPaso" [(ngModel)]="camino.idPaso"
+                            #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && camino.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>No ha ingresado el id del paso</div>
+                        </div>
+                        <label for="caminoTipoPaso"><b>Ingrese el tipo del paso</b></label>
+                        <input type="text" name="caminoTipoPaso" class="form-control" id="caminoTipoPaso" [(ngModel)]="camino.tipoPaso"
+                            #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && camino.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>No ha ingresado un tipo de paso</div>
+                        </div>
+                        <label for="caminoPasos"><b>Indique el paso de la condicion</b></label>
+                        <input type="text" name="caminoPasos" class="form-control" id="caminoPasos" [(ngModel)]="camino.pasos"
+                            #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && camino.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>No ha ingresado el paso</div>
+                        </div>
+                    </div>  
+                <div class = "button">
+
+                        <button type="submit" class="btn btn-outline-dark">Crear</button> &nbsp;
+                        <button type="button" class="btn btn-outline-danger" (click)="cancelCreation()">Cancelar</button>
+                      <!---  <a type="submit" class="brk-btn">
+                            Crear proyecto
+                          </a>
+                          <a (click)="cancelCreation()" [routerLink]="['/home']" routerLinkActive="router-link-active" class="brk-btn-red">
+                            Cancelar
+                          </a> -->
+                </div>
+            </form>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+
+
+
+<!--
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
@@ -39,4 +88,4 @@
     </div>
     <div class="col-3"></div>
   </div>
-
+-->
