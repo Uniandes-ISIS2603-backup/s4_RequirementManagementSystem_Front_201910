@@ -131,10 +131,10 @@ const routes: Routes = [
                     path: 'requisitos/new', component: CrearRequisitoComponent
                 },
                 {
-                    path: 'requisitos/:id', component: RequisitoDetailComponent, runGuardsAndResolvers : 'always'
+                    path: 'requisitos/:requisitoId', component: RequisitoDetailComponent, runGuardsAndResolvers : 'always'
                 },
                 {
-                    path: 'requisitos/:id/update', component: ModificarRequisitoComponent
+                    path: 'requisitos/:requisitoId/update', component: ModificarRequisitoComponent
                 },]
             },
         ]

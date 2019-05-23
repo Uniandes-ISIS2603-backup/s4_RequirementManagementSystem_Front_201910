@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Requisito } from '../requisito';
 import { RequisitoService } from '../requisito.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-crear-requisito',
@@ -24,7 +24,7 @@ export class CrearRequisitoComponent implements OnInit {
    * @param service El servicio de angular que es inyectado al componente de requisitos.
    * @param router La funcionalidad de ruteo de angular, se usa para la navegación entre rutas.
    */
-  constructor(private service: RequisitoService, private router: Router) 
+  constructor(private service: RequisitoService, private router: Router, private route: ActivatedRoute) 
   {
     
   }
@@ -40,12 +40,12 @@ export class CrearRequisitoComponent implements OnInit {
    */
   crearObjeto()
   {
-    
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
     this.req = this.objeto;
     console.log(this.req);
-    this.service.addRequisito(this.req).subscribe((req) => {this.req = req});
+    this.service.addRequisito(proyectoId, objetivoId, this.req).subscribe((req) => {this.req = req});
     this.router.navigate['/requisitos'];
-    alert("Requisito creado exitosamente");
       // Necesito commitear por favor    
   }
 

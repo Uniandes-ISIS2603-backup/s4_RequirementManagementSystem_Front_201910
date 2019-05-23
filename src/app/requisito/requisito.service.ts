@@ -11,7 +11,9 @@ import { environment } from '../../environments/environment.prod';
  */
 const API_URL = environment.apiURL;
 
-const reqsPath = '/requisitos';
+const proyectosPath = '/proyectos/';
+const objetivosPath = '/objetivos/';
+const reqsPath = '/requisitos/';
 /**
  * Constante de clase para definir la lectura de objetos en formato json.
  */
@@ -38,19 +40,16 @@ export class RequisitoService {
    * GET
    * Pide la lista de todos los requisitos desde la DB.
    */
-  getRequisitos(): Observable<Requisito[]> {
-    return this.http.get<Requisito[]>(API_URL + reqsPath);
+  getRequisitos(proyectoId:number, objetivoId:number): Observable<Requisito[]> {
+    return this.http.get<Requisito[]>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath);
   }
 
   /**
    * GET/:id
    * @param id El identificador único del requisito que se busca en la DB. 
    */
-
-  getRequisito(id: number): Observable<Requisito> {
-    const url = `${API_URL}${reqsPath}/${id}`;
-    console.log(url);
-    return this.http.get<Requisito>(url);
+  getRequisito(proyectoId:number, objetivoId:number,requisitoId: number): Observable<Requisito> {
+    return this.http.get<Requisito>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId);
   }
 
   /**
@@ -58,9 +57,8 @@ export class RequisitoService {
    * Borra el requisito de la base de datos que tiene el mismo identificador pasado por parámetro.
    * @param id El identificador único del requisito a borrar
    */
-  deleteRequisito(id: number): Observable<{}> {
-    const url = `${API_URL}${reqsPath}/${id}`; 
-    return this.http.delete(url, httpOptions);
+  deleteRequisito(proyectoId:number, objetivoId:number,requisitoId: number): Observable<{}> {
+    return this.http.delete(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId);
   }
 
    /**
@@ -68,8 +66,8 @@ export class RequisitoService {
     * Agrega un requisito a la DB, a partir del Requisito req que llega por parámetro. 
     * @param req 
     */
-   addRequisito(req: Requisito): Observable<Requisito> {
-    return this.http.post<Requisito>(API_URL+ reqsPath, req, httpOptions);
+   addRequisito(proyectoId:number, objetivoId:number, req): Observable<Requisito> {
+    return this.http.post<Requisito>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath, req, httpOptions);
   }
 
   /**
@@ -78,9 +76,9 @@ export class RequisitoService {
    * @param id 
    * @param nuevo 
    */
-  updateRequisito(id:number, nuevo)
+  updateRequisito(proyectoId:number, objetivoId:number,requisitoId: number, nuevo)
   {
-   return this.http.put<Requisito>(API_URL + reqsPath + '/' + id, nuevo, httpOptions);
+   return this.http.put<Requisito>(API_URL + proyectosPath + proyectoId + objetivosPath + objetivoId + reqsPath + requisitoId, nuevo, httpOptions);
   }
 
 

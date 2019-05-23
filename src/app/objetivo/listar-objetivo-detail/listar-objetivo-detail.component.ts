@@ -21,8 +21,7 @@ export class ListarObjetivoDetailComponent implements OnInit {
 
   //Metodo que llama al servicio y pide el servicio actual con el id dado en la ruta
   getObjetivo() 
-  {
-    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+  {const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
     const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
     this.objetivoService.getObjetivo(proyectoId, objetivoId)
       .subscribe(objetivo => this.objetivo = objetivo);

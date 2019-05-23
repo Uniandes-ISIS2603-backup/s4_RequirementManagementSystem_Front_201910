@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Requisito } from '../requisito';
 import { RequisitoService } from '../requisito.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -23,14 +23,16 @@ export class ListarRequisitosComponent implements OnInit {
    * @param reqS El proveedor de servicios para los Requisitos
    * @param router El ruteador del componente.
    */
-  constructor(private reqS: RequisitoService, private router: Router) { }
+  constructor(private reqS: RequisitoService, private router: Router, private route: ActivatedRoute) { }
 
   /**
    * Métodos a realizar post-inicialización del componente. Una vez la instancia del componente existe,
    * lo lógico es que se pidan los requisitos asíncronamente a la DB. 
    */
   ngOnInit() {
-    this.reqS.getRequisitos().subscribe(reqs => this.reqs = reqs);
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    this.reqS.getRequisitos(proyectoId, objetivoId).subscribe(reqs => this.reqs = reqs);
   }
 
 }
