@@ -7,12 +7,18 @@ import { UpdateObjetivoComponent } from './update-objetivo/update-objetivo.compo
 import { FormsModule } from '@angular/forms';
 import { ObjetivoService } from './objetivo.service';
 import { RouterModule } from '@angular/router';
+import { MenuModule } from '../menu/menu.module';
+import { RequisitoModule } from '../requisito/requisito.module';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    MenuModule,
+    RequisitoModule
   ],
   declarations: [ListarObjetivoComponent, ListarObjetivoDetailComponent, CrearObjetivoComponent, UpdateObjetivoComponent],
   exports: [ListarObjetivoComponent, ListarObjetivoDetailComponent, CrearObjetivoComponent, UpdateObjetivoComponent],
