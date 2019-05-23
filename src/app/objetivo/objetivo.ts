@@ -11,4 +11,6 @@ export class Objetivo
     estabilidad: number;
     //Comentarios del objetivo
     comentarios: string;
+    autor: string;
+    fuentes: string[];
 }
