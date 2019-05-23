@@ -55,7 +55,7 @@ const routes: Routes = [
     },
     {
         path:  'start',
-        component: MostrarMenuComponent
+        component: MostrarMenuComponent,
     },
     {
         path:'login',
@@ -176,35 +176,8 @@ const routes: Routes = [
                                     component: CaminoUpdateComponent        
                                 },
                             ]
-                        },
-                        {
-
                         }
                     ]
-                },
-                {
-                    path: 'cambios',
-                    component: ListarCambioComponent
-                },
-                {
-                    path: 'cambios/new',
-                    component: CambioCreateComponent
-                },
-                {
-                    path: 'cambios/:cambioId',
-                    component: CambioDetailComponent
-                },
-                {
-                    path: 'cambios/:cambioId/update',
-                    component: CambioUpdateComponent
-                },
-                {
-                    path: 'aprobaciones',
-                    component: ListarAprobacionComponent
-                },
-                {
-                    path: 'aprobaciones/new',
-                    component: CreateAprobacionComponent
                 }
             ]
             }
