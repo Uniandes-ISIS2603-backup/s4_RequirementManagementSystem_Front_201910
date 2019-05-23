@@ -1,3 +1,39 @@
+<div class="container" onclick="onclick">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <div class="center">
+            <p> </p>
+            <h1> </h1>
+            <h3> </h3>
+            <h4> </h4>
+            <h4>CREA UNA CONDICION</h4>
+            <form name="casodeuso" (ngSubmit)="f.form.valid && createCasodeuso()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="casodeusoNombre"><b>Ingrese el nombre del caso de uso</b></label>
+                        <input type="text" name="casodeusoNombre" class="form-control" id="casodeusoNombre" [(ngModel)]="casodeusoDetail.nombre"
+                            #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && casodeusoDetail.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>No ha ingresado un nombre</div>
+                        </div>
+                        </div>  
+                <div class = "button">
+
+                        <button type="submit" class="btn btn-outline-dark">Crear</button> &nbsp;
+                        <button type="button" class="btn btn-outline-danger" (click)="cancelCreation()">Cancelar</button>
+                      <!---  <a type="submit" class="brk-btn">
+                            Crear proyecto
+                          </a>
+                          <a (click)="cancelCreation()" [routerLink]="['/home']" routerLinkActive="router-link-active" class="brk-btn-red">
+                            Cancelar
+                          </a> -->
+                </div>
+            </form>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+
+
+<!--
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6">
@@ -27,3 +63,4 @@
   </div>
   <div class="col-3"></div>
 </div>
+-->
