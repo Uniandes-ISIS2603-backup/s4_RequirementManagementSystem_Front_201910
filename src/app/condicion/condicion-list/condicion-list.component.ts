@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Condicion } from '../condicion';
 import { CondicionService } from '../condicion.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {CondicionDetail} from '../condicion-detail';
 
 /**
@@ -19,7 +19,7 @@ export class CondicionListComponent implements OnInit {
    * @param condicionService The condition's services provider.
    * @param router The router of the component.
    */
-  constructor(private condicionService: CondicionService,private router: Router) { }
+  constructor(private condicionService: CondicionService,private router: Router, private route: ActivatedRoute) { }
 
   /**
     * The list of conditions that belong to the Requirement Management System.
@@ -40,7 +40,11 @@ export class CondicionListComponent implements OnInit {
     * Asks the service to update the list of conditions.
     */
   getCondiciones(): void {
-    this.condicionService.getCondiciones().subscribe(condiciones => this.condiciones = condiciones);
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    this.condicionService.getCondiciones(proyectoId, objetivoId, requisitoId, casoDeUsoId).subscribe(condiciones => this.condiciones = condiciones);
   }
 
   /**
@@ -48,8 +52,12 @@ export class CondicionListComponent implements OnInit {
    * @param condicion_id id of the selected condition 
    */
   onSelected(condicion_id: number): void {
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
         console.log("condicion: ", condicion_id);
-    this.condicionService.getCondicionesDetail(condicion_id).subscribe(o => {
+    this.condicionService.getCondicionesDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId, condicion_id).subscribe(o => {
       this.condicion_id = condicion_id;
       this.selectedCondicion = new CondicionDetail();
       this.selectedCondicion = o;

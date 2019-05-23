@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CondicionService } from '../condicion.service';
 import { ToastrService } from 'ngx-toastr';
 import { CondicionDetail } from '../condicion-detail';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-condicion-update',
@@ -19,7 +20,7 @@ export class CondicionUpdateComponent implements OnInit {
   * @param toastrService The toastr to show messages to the user 
   */
   constructor(private condicionService: CondicionService,
-    private toastrService: ToastrService) { }
+    private toastrService: ToastrService, private route: ActivatedRoute) { }
 
    /**
   * The output which tells the parent component
@@ -42,7 +43,12 @@ export class CondicionUpdateComponent implements OnInit {
   * Retrieves the information of the condition
   */
   getCondicion(id: number): void {
-    this.condicionService.getCondicionesDetail(id)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    const condicionId = +this.route.snapshot.paramMap.get('condicionId');
+    this.condicionService.getCondicionesDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId, condicionId)
         .subscribe(condicion => {
             this.condicionDetail = condicion;
         });
@@ -52,7 +58,12 @@ export class CondicionUpdateComponent implements OnInit {
   * Updates the condition's information
   */
   editCondicion(): void {
-    this.condicionService.updateCondicion(this.condicionDetail)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    const condicionId = +this.route.snapshot.paramMap.get('condicionId');
+    this.condicionService.updateCondicion(proyectoId, objetivoId, requisitoId, casoDeUsoId, condicionId, this.condicionDetail)
         .subscribe(() => {
             this.update.emit();
             this.toastrService.success("The condition information was updated", "Condition edition");

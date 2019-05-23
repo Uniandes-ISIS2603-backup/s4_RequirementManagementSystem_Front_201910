@@ -42,6 +42,9 @@ import { CondicionDetailComponent } from '../condicion/condicion-detail/condicio
 import { CondicionUpdateComponent } from '../condicion/condicion-update/condicion-update.component';
 import { CaminoDetailComponent } from '../camino/camino-detail/camino-detail.component';
 import { CaminoUpdateComponent } from '../camino/camino-update/camino-update.component';
+import { CasodeusoDetailComponent } from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
+import { CambioUpdateComponent } from '../cambio/cambio-update/cambio-update.component';
+import { CambioDetailComponent } from '../cambio/cambio-detail/cambio-detail.component';
 
 
 const routes: Routes = [
@@ -52,7 +55,7 @@ const routes: Routes = [
     },
     {
         path:  'start',
-        component: MostrarMenuComponent,
+        component: MostrarMenuComponent
     },
     {
         path:'login',
@@ -62,22 +65,7 @@ const routes: Routes = [
         path:'signup',
         component:AuthSignUpComponent
     },
-    {
-        path: 'cambios',
-        component: ListarCambioComponent
-    },
-    {
-        path: 'cambios/new',
-        component: CambioCreateComponent
-    },
-    {
-        path: 'aprobaciones',
-        component: ListarAprobacionComponent
-    },
-    {
-        path: 'aprobaciones/new',
-        component: CreateAprobacionComponent
-    },
+    
     {
         path: 'proyectos',
         component: ListarProyectoComponent
@@ -146,7 +134,7 @@ const routes: Routes = [
                         },
                         {
                             path: 'casosDeUso/:casoDeUsoId',
-                            component: CasodeusoDetail
+                            component: CasodeusoDetailComponent
                         },
                         {
                             path: 'casosDeUso/:casoDeUsoId/update',
@@ -188,11 +176,38 @@ const routes: Routes = [
                                     component: CaminoUpdateComponent        
                                 },
                             ]
+                        },
+                        {
+
                         }
                     ]
+                },
+                {
+                    path: 'cambios',
+                    component: ListarCambioComponent
+                },
+                {
+                    path: 'cambios/new',
+                    component: CambioCreateComponent
+                },
+                {
+                    path: 'cambios/:cambioId',
+                    component: CambioDetailComponent
+                },
+                {
+                    path: 'cambios/:cambioId/update',
+                    component: CambioUpdateComponent
+                },
+                {
+                    path: 'aprobaciones',
+                    component: ListarAprobacionComponent
+                },
+                {
+                    path: 'aprobaciones/new',
+                    component: CreateAprobacionComponent
                 }
             ]
-            },
+            }
         ]
     },
     
