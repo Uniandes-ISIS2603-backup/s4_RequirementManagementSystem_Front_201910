@@ -3,13 +3,19 @@
     <div class="titulos">
         <h1 color="white;">{{proyectoDetail.nombre}}</h1>
         <h2 color="white;">{{proyectoDetail.descripcion}}</h2>
+        <div class="row align" align="center">
+            <button type="button" class="btn btn-outline-light" routerLink="update" routerLinkActive="router-link-active" >Editar proyecto</button>&nbsp;
+            <button type="button" class="btn btn-outline-danger" (click)="deleteProyecto()" routerLink="..">Eliminar proyecto</button>&nbsp;
+            <button type="button" class="btn btn-outline-success" routerLink="objetivos/new">Crear nuevo objetivo</button>&nbsp;
+        </div> 
+        &nbsp;
     </div>
     <div class="cards" *ngFor="let o of objetivos"> 
     <div class="card">
       <div class="card__side card__side--front">
         <!-- Front Content -->
         <div class="card__cont">
-          <span class="blue">{{o.id}}. </span><span><span class="green">{{ o.descripcion}}</span></span>
+          <span class="blue">{{o.id}}. </span><span><span class="green">{{ o.descripcion}}</span></span> 
         </div>
       </div>
       <div class="card__side card__side--back">
