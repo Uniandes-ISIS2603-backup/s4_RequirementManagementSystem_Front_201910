@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ObjetivoService } from './objetivo.service';
 import { RouterModule } from '@angular/router';
 import { MenuModule } from '../menu/menu.module';
+import { ProyectoModule } from '../proyecto/proyecto.module';
 
 @NgModule({
   imports: [

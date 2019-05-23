@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Objetivo } from '../objetivo';
 import { ObjetivoService } from '../objetivo.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ProyectoDetail } from '../../proyecto/proyecto-detail';
 
 @Component({
   selector: 'app-crear-objetivo',
@@ -16,7 +17,7 @@ export class CrearObjetivoComponent implements OnInit {
   //Objetivo a crear
   objetivo: Objetivo;
 
-  constructor(private service:ObjetivoService, private router: Router, private route: ActivatedRoute) 
+  constructor(private service:ObjetivoService, private router: Router, private route: ActivatedRoute, private lista: ProyectoDetail) 
   {
     
   }
