@@ -1,3 +1,6 @@
+import { Proyecto } from "../proyecto/proyecto";
+import { ProyectoDetail } from "../proyecto/proyecto-detail";
+
 /** Clase que reopresenta un objetivo*/
 export class Objetivo
 {
@@ -11,4 +14,6 @@ export class Objetivo
     estabilidad: number;
     //Comentarios del objetivo
     comentarios: string;
+    autor: string;
+    fuentes: string[];
 }

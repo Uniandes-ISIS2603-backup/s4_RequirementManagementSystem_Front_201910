@@ -31,6 +31,7 @@ export class CrearObjetivoComponent implements OnInit {
     const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
     //console.log(this.objeto);
     this.objetivo = this.objeto;
+    this.objetivo.fuentes = [this.objeto.fuentes];
     console.log(this.objetivo);
     this.service.addObjetivo(proyectoId, this.objetivo).subscribe((obj)=> {this.objetivo = obj})
     this.router.navigate(['/objetivos']);

@@ -1,0 +1,17 @@
+<div class="column">
+  <h2 class="text-center">Lista de Proyectos</h2>
+  <div class="container">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let proyecto of organizacionProyectos.proyectos">
+          <td>{{proyecto.nombre}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

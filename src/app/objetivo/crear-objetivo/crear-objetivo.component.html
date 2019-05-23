@@ -35,6 +35,16 @@
       <textarea class="form-control" rows="3" [(ngModel)]="objeto.comentarios"
         [ngModelOptions]="{standalone: true}"></textarea>
     </div>
+    <div class="form-group">
+      <label>Autor</label>
+      <textarea class="form-control" rows="3" [(ngModel)]="objeto.autor"
+        [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Fuentes</label>
+      <textarea class="form-control" rows="3" [(ngModel)]="objeto.fuentes"
+        [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
     <button type="submit" class="btn btn-primary" (click)='crearObjeto()' routerLink="..">Crear</button>
     <button type="submit" class="btn btn-default" >Cancelar</button>
   </form>

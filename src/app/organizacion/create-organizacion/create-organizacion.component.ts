@@ -5,6 +5,8 @@ import 'rxjs/add/operator/filter';
 import { Organizacion } from '../organizacion';
 import { OrganizacionService } from '../organizacion.service';
 import { ListarOrganizacionComponent } from '../listar-organizacion/listar-organizacion.component';
+import { Proyecto } from '../../proyecto/proyecto';
+
 @Component({
   selector: 'app-create-organizacion',
   templateUrl: './create-organizacion.component.html',
@@ -14,6 +16,8 @@ export class CreateOrganizacionComponent implements OnInit {
   
   //Organizacion a crear
   organizacion: Organizacion;
+
+  proyectos: Proyecto[];
 
   //Constructor del componente con variables a usar
   constructor(private organizacionService: OrganizacionService, private route: ActivatedRoute, private lista:ListarOrganizacionComponent) { }
