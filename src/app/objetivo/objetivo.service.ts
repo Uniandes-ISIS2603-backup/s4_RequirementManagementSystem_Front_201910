@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
  
 import { Observable, of } from 'rxjs';
-
 import { Objetivo } from './objetivo';
 import { environment } from '../../environments/environment';
 import { Requisito } from '../requisito/requisito';
@@ -51,4 +50,5 @@ export class ObjetivoService {
   getRequisitos(proyectoId, objetivoId): Observable<Requisito[]> {
     return this.http.get<Requisito[]>(API_URL+proyectosPath+proyectoId+objetivosPath+objetivoId+requisitosPath);
   }
+
 }
