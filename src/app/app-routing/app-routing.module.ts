@@ -54,18 +54,18 @@ const routes: Routes = [
         component: MostrarStartComponent
     },
     {
-        path:  'start',
-        component: MostrarMenuComponent,
+        path: 'start',
+        component: MostrarMenuComponent
     },
     {
-        path:'login',
-        component:AuthLoginComponent
+        path: 'login',
+        component: AuthLoginComponent
     },
     {
-        path:'signup',
-        component:AuthSignUpComponent
+        path: 'signup',
+        component: AuthSignUpComponent
     },
-    
+
     {
         path: 'proyectos',
         component: ListarProyectoComponent
@@ -92,8 +92,8 @@ const routes: Routes = [
         path: 'proyectos/:proyectoId',
         children: [
             {
-            path: 'objetivos',
-            component: ListarObjetivoComponent
+                path: 'objetivos',
+                component: ListarObjetivoComponent
             },
             {
                 path: 'objetivos/new',
@@ -116,14 +116,14 @@ const routes: Routes = [
                     path: 'requisitos/new', component: CrearRequisitoComponent
                 },
                 {
-                    path: 'requisitos/:requisitoId', component: RequisitoDetailComponent, runGuardsAndResolvers : 'always'
+                    path: 'requisitos/:requisitoId', component: RequisitoDetailComponent, runGuardsAndResolvers: 'always'
                 },
                 {
                     path: 'requisitos/:requisitoId/update', component: ModificarRequisitoComponent
                 },
                 {
                     path: 'requisitos/:requisitoId',
-                    children : [
+                    children: [
                         {
                             path: 'casosDeUso',
                             component: CasodeusoListComponent
@@ -142,7 +142,7 @@ const routes: Routes = [
                         },
                         {
                             path: 'casosDeUso/:casoDeUsoId',
-                            children: [
+                            children: [
                                 {
                                     path: 'condiciones',
                                     component: CondicionListComponent
@@ -161,29 +161,29 @@ const routes: Routes = [
                                 },
                                 {
                                     path: 'caminos',
-                                    component: CaminoListComponent        
+                                    component: CaminoListComponent
                                 },
                                 {
                                     path: 'caminos/new',
-                                    component: CaminoCreateComponent        
+                                    component: CaminoCreateComponent
                                 },
                                 {
                                     path: 'caminos/:caminoId',
-                                    component: CaminoDetailComponent        
+                                    component: CaminoDetailComponent
                                 },
                                 {
                                     path: 'caminos/:caminoId/update',
-                                    component: CaminoUpdateComponent        
+                                    component: CaminoUpdateComponent
                                 },
                             ]
                         }
                     ]
                 }
-            ]
+                ]
             }
         ]
     },
-    
+
     {
         path: 'stakeholders',
         component: ListarStakeholderComponent
@@ -201,7 +201,7 @@ const routes: Routes = [
         component: CreateOrganizacionComponent
     },
     {
-        path: 'organizaciones/organizacion/:id', component: OrganizacionDetailComponent, runGuardsAndResolvers : 'always'
+        path: 'organizaciones/organizacion/:id', component: OrganizacionDetailComponent, runGuardsAndResolvers: 'always'
     },
     {
         path: '', redirectTo: 'home', pathMatch: 'full'

@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CambioService } from '../cambio.service';
 import { ToastrService } from 'ngx-toastr';
 import { CambioDetail } from '../cambio-detail';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cambio-update',
@@ -20,7 +21,8 @@ export class CambioUpdateComponent implements OnInit {
     */
    constructor(
     private cambioService: CambioService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private route:ActivatedRoute
 ) {}
 
 /**
@@ -49,8 +51,12 @@ cambioDetail: CambioDetail;
 /**
 * Retrieves the information of the change
 */
-getCambio(id: number): void {
-    this.cambioService.getCambioDetail(id)
+getCambio(): void {
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const cambioId = +this.route.snapshot.paramMap.get('cambioId');
+    this.cambioService.getCambioDetail(proyectoId, objetivoId, requisitoId, cambioId)
         .subscribe(cambio => {
             this.cambioDetail = cambio;
         });
@@ -60,7 +66,11 @@ getCambio(id: number): void {
 * Updates the change's information
 */
 editCambio(): void {
-    this.cambioService.updateCambio(this.cambioDetail)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const cambioId = +this.route.snapshot.paramMap.get('cambioId');
+    this.cambioService.updateCambio(proyectoId, objetivoId, requisitoId, cambioId, this.cambioDetail)
         .subscribe(() => {
             this.update.emit();
             this.toastrService.success("The change's information was updated", "Change edition");
