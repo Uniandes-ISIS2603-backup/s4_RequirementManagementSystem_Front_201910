@@ -1,6 +1,6 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AprobacionService } from '../aprobacion.service';
 import { AprobacionDetail } from '../aprobacion-detail';
 
@@ -23,7 +23,8 @@ export class CreateAprobacionComponent implements OnInit {
   constructor(
     private aprobacionService: AprobacionService,
     private toastrService: ToastrService,
-    router: Router
+    private router: Router,
+    private route: ActivatedRoute
 ) {}
 
 /**
@@ -55,7 +56,10 @@ fecha: Date;
  */
    createAprobacion(): AprobacionDetail {
      console.log(this.aprobacionDetail);
-    this.aprobacionService.createAprobacion(this.aprobacionDetail)
+     const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+     const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+     const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    this.aprobacionService.createAprobacion(proyectoId, objetivoId, requisitoId, this.aprobacionDetail)
         .subscribe((aprobacionDetail) => {
             this.aprobacionDetail = aprobacionDetail;
             this.create.emit();

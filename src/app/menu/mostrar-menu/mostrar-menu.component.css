@@ -263,6 +263,7 @@
  [data-component='navbar'] .navbar-toggler {
 	 line-height: 2.4;
 	 margin-left: 0px;
+	 
 }
  [data-component='navbar'] .navbar-toggler span {
 	 text-transform: uppercase;
