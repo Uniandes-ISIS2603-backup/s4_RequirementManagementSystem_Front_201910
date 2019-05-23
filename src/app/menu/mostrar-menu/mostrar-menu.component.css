@@ -252,6 +252,7 @@
 	 box-shadow: none !important;
 }
  [data-component='navbar'] {
+	background-color: #282931;
 	/* Right Menu Dropdowns */
 	/* Notification */
 	/* Notification Dropdown */
