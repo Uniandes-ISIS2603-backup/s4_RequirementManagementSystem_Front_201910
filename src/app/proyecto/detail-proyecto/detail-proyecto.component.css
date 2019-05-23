@@ -10,6 +10,7 @@
     background: #313237;
     background-image: #313237;
     width:100%;
+    height: 100%;
   }
   
   .blue {
@@ -48,13 +49,23 @@
   
   .content {
     top: 45px;
-    height: 100vh;
+    height: 100vmax;
     width: 100vmax;
+  }
+
+  .cards {
+    display: inline-flex;
+    justify-content: space-between;
   }
   
   .card {
     color: #313237;
-    display: flex;
+    width: 30rem;
+    position: relative;
+    height: 15em;
+    display: grid;
+    perspective: 150em;
+    /*display: flex;
     justify-content: center;
     align-items: center;
     -webkit-perspective: 150rem;
@@ -63,10 +74,10 @@
     height: -5rem;
     left: 10rem;
     right: 10rem;
-    position: relative;
+    position: relative;*/
   }
   .card__side {
-    height: 15rem;
+    height: 15em;
     transition: all 0.8s ease;
     position: absolute;
     top: 0;
