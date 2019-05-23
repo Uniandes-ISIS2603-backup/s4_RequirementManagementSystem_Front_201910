@@ -2,11 +2,13 @@
 
 * {
     font-family: 'Roboto';
-    
   }
   
   .content{
-    background-image: linear-gradient(to bottom right, #ff9800, #ffa726);
+    margin-top: 67px;
+    top: 45px;  
+    background: #313237;
+    background-image: #313237;
     width:100%;
   }
   
@@ -29,21 +31,38 @@
   .red {
     color: #ef5350;
   }
+
+  h1,h2{
+    text-justify: center;
+    align-items: center;
+    text-align: center;
+    color:white;
+  }
+
+  .titulos{
+    margin-top: 67px;
+    width: 100vmax;
+    
+  }
+  
   
   .content {
+    top: 45px;
     height: 100vh;
     width: 100vmax;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   
   .card {
+    color: #313237;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     -webkit-perspective: 150rem;
             perspective: 150rem;
-    height: 20rem;
     width: 30rem;
+    height: -5rem;
+    left: 10rem;
+    right: 10rem;
     position: relative;
   }
   .card__side {
@@ -61,12 +80,13 @@
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
   }
   .card__side--front {
-    background-color: #1c1c1c;
+    background-color: #fff;
+    
   }
   .card__side--back {
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
-    background-color: #1c1c1c;
+    background-color: #fff;
   }
   .card:hover .card__side--front {
     -webkit-transform: rotateY(-180deg);
@@ -78,7 +98,7 @@
   }
   .card__cont {
     height: 15rem;
-    background-color: #1c1c1c;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +110,7 @@
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     width: 90%;
-    color: white;
+    color: #313237;
   }
   .card__cta p {
     margin-left: 1rem;
@@ -99,23 +119,4 @@
     margin-left: 2rem;
   }
   
-  
-  .link-to-portfolio {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 200000;
-  cursor: pointer;
-  width: 45px;
-  height: 40px;
-  text-align: center;
-  border-radius: 5px;
-  background-position: center center; background-size: cover;
-  background-image: url('https://i.postimg.cc/8C92BGKR/gglogo.png');
-  }
-  
-  .link-to-portfolio:hover {  
-   opacity: 0.8;
-   border-radius:50%;
-   box-shadow: 0 0 0 20px rgba(255,255,255,.1);
-  }
+

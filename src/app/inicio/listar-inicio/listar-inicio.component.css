@@ -8,6 +8,8 @@
 }
 
 
+
+
 .over-container {
   background-color: #313237;
   width: 100vw;
@@ -24,8 +26,9 @@
 }
 
 .container {
-  align-self: center;
+  align-self: auto;
   width: 100vmax;
+  height: 100%;
 }
 
 .search-container {
