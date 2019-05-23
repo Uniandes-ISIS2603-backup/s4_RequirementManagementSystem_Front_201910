@@ -10,14 +10,13 @@ import { environment } from '../../environments/environment.prod';
  * API_URL is the constant of the API in which the back runs.
  */
 const API_URL = environment.apiURL;
-/**
- * JSONS to test the services.
- */
-const data = 'cambio.json';
+const proyectosPath = '/proyectos/';
+const objetivosPath = '/objetivos/';
+const reqsPath = '/requisitos/';
 /**
  * Route to post or put the results of the services.
  */
-const cambios = '/cambios';
+const cambios = '/cambios/';
 
 /**
  * The service provider for everything related to changes.

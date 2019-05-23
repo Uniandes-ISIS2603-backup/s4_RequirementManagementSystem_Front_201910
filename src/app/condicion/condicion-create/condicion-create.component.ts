@@ -44,8 +44,11 @@ export class CondicionCreateComponent implements OnInit {
  * Creates a new condition. 
  */
   createCondicion(): Condicion {
-    console.log(this.condicion);
-   this.condicionService.createCondicion(this.condicion)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+   this.condicionService.createCondicion(proyectoId, objetivoId, requisitoId, casoDeUsoId, this.condicion)
        .subscribe((condicion) => {
            this.condicion = condicion;
            this.create.emit();

@@ -45,8 +45,12 @@ export class CondicionDetailComponent implements OnInit {
     * The method which retrieves the comment (detail) of a condition
     */
   getCondicionesDetail(): void {
-
-    this.condicionService.getCondicionesDetail(this.condicionDetail.id)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    const condicionId = +this.route.snapshot.paramMap.get('condicionId');
+    this.condicionService.getCondicionesDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId, condicionId)
     .subscribe(condicionDetail => {
       
       this.condicionDetail = condicionDetail;
