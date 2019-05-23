@@ -7,6 +7,7 @@
 
 
 .over-container {
+  margin-left: 90px;
   background-color: #313237;
   width: 100vmax;
   left: 50px;
@@ -16,15 +17,20 @@
   font-size: 1.5em;
   text-align: center;
   height: 100vh;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-content: center;
 }
 
 .container {
+  margin-left: 90px;
   left: 0px;
   width: 100vmax;
   height: 100vh;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  align-content: center;
 }
 
 .search-container {
@@ -87,29 +93,6 @@ input {
   padding: 7px 30px;
 }
 
-.tile3 {
-  background-color: rgb(199, 149, 174);
-  color: rgb(86, 94, 101);
-  padding: 7px 30px;
-}
-
-.tile4 {
-  background-color: rgb(149, 174, 199);
-  color: rgb(86, 94, 101);
-  padding: 7px 30px;
-}
-
-.tile5 {
-  background-color: rgb(174, 199, 149);
-  color: rgb(86, 94, 101);
-  padding: 7px 30px;
-}
-
-.tile6 {
-  background-color: rgb(174, 149, 199);
-  color: rgb(86, 94, 101);
-  padding: 7px 30px;
-}
 
 a:hover {
   background-color: #343c43;
