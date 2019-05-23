@@ -1,3 +1,50 @@
+<div class="container" onclick="onclick">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="center">
+                <p> </p>
+                <h1> </h1>
+                <h3> </h3>
+                <h4> </h4>
+                <h4>CREA UNA CONDICION</h4>
+                <form name="casodeuso" (ngSubmit)="f.form.valid && createCondicion()" #f="ngForm" novalidate>
+                        <div class="form-group">
+                            <label for="condicionDescripcion"><b>Ingrese la descripcion de la condicion</b></label>
+                            <input type="text" name="condicionDescripcion" class="form-control" id="condicionDescripcion" [(ngModel)]="condicion.descripcion"
+                                #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicion.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div>No ha ingresado una descripcion</div>
+                            </div>
+                            <label for="condicionSeCumplio"><b>Indique si se cumplio la descripcion</b></label>
+                            <input type="text" name="condicionSeCumplio" class="form-control" id="condicionSeCumplio" [(ngModel)]="condicion.seCumplio"
+                                #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicion.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div>No ha ingresado si la condicion se cumplio</div>
+                            </div>
+                            <label for="condicionEsPrecondicion"><b>Indique si es una precondicion</b></label>
+                            <input type="text" name="condicionEsPrecondicion" class="form-control" id="condicionEsPrecondicion" [(ngModel)]="condicion.esPrecondicion"
+                                #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && condicion.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div>No ha ingresado si la condicion es precondicion</div>
+                            </div>
+                        </div>
+                    <div class = "button">
+
+                            <button type="submit" class="btn btn-outline-dark">Crear</button> &nbsp;
+                            <button type="button" class="btn btn-outline-danger" (click)="cancelCreation()">Cancelar</button>
+                          <!---  <a type="submit" class="brk-btn">
+                                Crear proyecto
+                              </a>
+                              <a (click)="cancelCreation()" [routerLink]="['/home']" routerLinkActive="router-link-active" class="brk-btn-red">
+                                Cancelar
+                              </a> -->
+                    </div>
+                </form>
+                <h2>&nbsp;</h2>
+            </div>
+        </div>
+     
+<!---
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
@@ -39,3 +86,4 @@
     </div>
     <div class="col-3"></div>
   </div>
+-->
