@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
 body {
+  background: black;
   margin:0px;
   font-family:'Roboto';
   text-align:center;
@@ -11,6 +12,7 @@ body {
 }
 
 #container {
+  background: black;
   margin:0px;
   font-family:'Roboto';
   text-align:center;
