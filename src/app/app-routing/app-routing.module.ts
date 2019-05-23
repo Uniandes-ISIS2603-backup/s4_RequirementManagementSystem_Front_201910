@@ -45,6 +45,8 @@ import { CaminoUpdateComponent } from '../camino/camino-update/camino-update.com
 import { CasodeusoDetailComponent } from '../casodeuso/casodeuso-detail/casodeuso-detail.component';
 import { CambioUpdateComponent } from '../cambio/cambio-update/cambio-update.component';
 import { CambioDetailComponent } from '../cambio/cambio-detail/cambio-detail.component';
+import { DetailAprobacionComponent } from '../aprobacion/detail-aprobacion/detail-aprobacion.component';
+import { UpdateAprobacionComponent } from '../aprobacion/update-aprobacion/update-aprobacion.component';
 
 
 const routes: Routes = [
@@ -176,8 +178,67 @@ const routes: Routes = [
                                     component: CaminoUpdateComponent
                                 },
                             ]
+                        }, {
+                            path: 'cambios',
+                            component: ListarCambioComponent
+                        },
+                        {
+                            path: 'cambios/new',
+                            component: CambioCreateComponent
+                        },
+                        {
+                            path: 'cambios/:cambioId',
+                            component: CambioDetailComponent
+                        },
+                        {
+                            path: 'cambios/:cambioId/update',
+                            component: CambioUpdateComponent
+                        },
+                        {
+                            path: 'aprobaciones',
+                            component: ListarAprobacionComponent
+                        },
+                        {
+                            path: 'aprobaciones/new',
+                            component: CreateAprobacionComponent
+                        }, {
+                            path: 'aprobaciones/:aprobacionId',
+                            component: DetailAprobacionComponent
+                        }, {
+                            path: 'aprobaciones/:aprobacionId/update',
+                            component: UpdateAprobacionComponent
                         }
                     ]
+                },
+                {
+                    path: 'cambios',
+                    component: ListarCambioComponent
+                },
+                {
+                    path: 'cambios/new',
+                    component: CambioCreateComponent
+                },
+                {
+                    path: 'cambios/:cambioId',
+                    component: CambioDetailComponent
+                },
+                {
+                    path: 'cambios/:cambioId/update',
+                    component: CambioUpdateComponent
+                },
+                {
+                    path: 'aprobaciones',
+                    component: ListarAprobacionComponent
+                },
+                {
+                    path: 'aprobaciones/new',
+                    component: CreateAprobacionComponent
+                }, {
+                    path: 'aprobaciones/:aprobacionId',
+                    component: DetailAprobacionComponent
+                }, {
+                    path: 'aprobaciones/:aprobacionId/update',
+                    component: UpdateAprobacionComponent
                 }
                 ]
             }

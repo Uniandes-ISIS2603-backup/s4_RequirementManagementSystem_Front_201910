@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AprobacionService } from '../aprobacion.service';
 import { ToastrService } from 'ngx-toastr';
 import { AprobacionDetail } from '../aprobacion-detail';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-update-aprobacion',
@@ -20,7 +21,8 @@ export class UpdateAprobacionComponent implements OnInit {
     */
    constructor(
     private aprobacionService: AprobacionService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private route : ActivatedRoute
 ) {}
 
 /**
@@ -49,8 +51,12 @@ aprobacionDetail: AprobacionDetail;
 /**
 * Retrieves the information of the approbation
 */
-getAprobacion(id: number): void {
-    this.aprobacionService.getAprobacionDetail(id)
+getAprobacion(): void {
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const aprobacionId = +this.route.snapshot.paramMap.get('aprobacionId');
+    this.aprobacionService.getAprobacionDetail(proyectoId, objetivoId, requisitoId, aprobacionId)
         .subscribe(aprobacion => {
             this.aprobacionDetail = aprobacion;
         });
@@ -60,7 +66,11 @@ getAprobacion(id: number): void {
 * Updates the approbation's information
 */
 editAprobacion(): void {
-    this.aprobacionService.updateAprobacion(this.aprobacionDetail)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const aprobacionId = +this.route.snapshot.paramMap.get('aprobacionId');
+    this.aprobacionService.updateAprobacion(proyectoId, objetivoId, requisitoId, aprobacionId, this.aprobacionDetail)
         .subscribe(() => {
             this.update.emit();
             this.toastrService.success("The approbation's information was updated", "Approbation edition");
