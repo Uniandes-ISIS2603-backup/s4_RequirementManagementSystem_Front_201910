@@ -5,7 +5,6 @@ import 'rxjs/add/operator/filter';
 import { Organizacion } from '../organizacion';
 import { OrganizacionService } from '../organizacion.service';
 import { identifierModuleUrl } from '@angular/compiler';
-import { Proyecto } from 'src/app/proyecto/proyecto';
 
 
 @Component({
@@ -35,16 +34,10 @@ export class ListarOrganizacionComponent implements OnInit {
     this.OrganizacionService.getOrganizaciones().subscribe(organizacions => { this.organizaciones = organizacions; });
   }
 
-  clickSH(id:number): void{
+  click(id:number): void{
     this.actElim = 3;
     this.id = id;
-    console.log("Printing id de SH:", id);
-  }
-
-  clickP(id:number): void{
-    this.actElim = 4;
-    this.id = id;
-    console.log("Printing id de P:", id);
+    console.log("Printing id:", id);
   }
   
   ngOnChanges(changes: SimpleChanges){

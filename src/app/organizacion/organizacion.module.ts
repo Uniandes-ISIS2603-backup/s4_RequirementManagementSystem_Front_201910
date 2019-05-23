@@ -13,7 +13,6 @@ import { EliminarOrganizacionComponent } from './eliminar-organizacion/eliminar-
 import { OrganizacionService } from './organizacion.service';
 import { OrganizacionDetailComponent } from './organizacion-detail/organizacion-detail.component';
 import { AgregarStakeholderOrganizacionComponent } from './agregarStakeholder-organizacion/agregarStakeholder-organizacion.component';
-import { OrganizacionProyectoComponent } from './organizacion-proyecto/organizacion-proyecto.component';
 
 //import{ListarStakeholderComponent} from '../stakeholder/listar-stakeholder/listar-stakeholder.component'
 
@@ -29,8 +28,8 @@ import { OrganizacionProyectoComponent } from './organizacion-proyecto/organizac
     ReactiveFormsModule,
     NgxPermissionsModule
   ],
-  declarations: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent, OrganizacionDetailComponent, AgregarStakeholderOrganizacionComponent, OrganizacionProyectoComponent],
+  declarations: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent, OrganizacionDetailComponent, AgregarStakeholderOrganizacionComponent],
   providers: [OrganizacionService],
-  exports: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent, OrganizacionDetailComponent, AgregarStakeholderOrganizacionComponent, OrganizacionProyectoComponent]
+  exports: [CreateOrganizacionComponent, ListarOrganizacionComponent, EliminarOrganizacionComponent, OrganizacionDetailComponent, AgregarStakeholderOrganizacionComponent]
 })
 export class OrganizacionModule { }
