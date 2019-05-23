@@ -4,13 +4,13 @@
       <div class="container">
         <div class="menu">
           <div class="tiles">
-            <a class="tile1" class="button" routerLink="/stakeholders" >Stakeholders</a>
-            <div  target="_blank" *ngFor="let s of stakeholders" >{{s.nombre}} </div>
+            <a class="tile1" routerLink="/stakeholders" >Stakeholders</a>
+            <div class="button" target="_blank" *ngFor="let s of stakeholders" >{{s.nombre}} </div>
 
           </div>
           <div class="tiles">
-            <a class="tile2" class="button" routerLink="/organizaciones">Organizaciones</a>
-            <div *ngFor="let o of organizaciones">{{o.nombre}}</div>
+            <a class="tile2" routerLink="/organizaciones">Organizaciones</a>
+            <div class="button" *ngFor="let o of organizaciones">{{o.nombre}}</div>
 
           </div>
           
