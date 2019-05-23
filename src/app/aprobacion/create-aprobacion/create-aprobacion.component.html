@@ -76,7 +76,7 @@
                   <label for="aprobacionEstado"><b>Seleccione el estado de su aprobación</b></label>
                     <select name="aprobacionEstado" class="form-control" id="aprobacionEstado" [(ngModel)]="aprobacionDetail.estado"
                     #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
-                      <option>Aprobado</option>
+                      <option value="APROBADO">Aprobado</option>
                       <option>En proceso</option>
                       <option>No aprobado</option>
                     </select>
