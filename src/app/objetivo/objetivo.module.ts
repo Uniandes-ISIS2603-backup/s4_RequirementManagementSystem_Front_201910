@@ -7,6 +7,7 @@ import { UpdateObjetivoComponent } from './update-objetivo/update-objetivo.compo
 import { FormsModule } from '@angular/forms';
 import { ObjetivoService } from './objetivo.service';
 import { RouterModule } from '@angular/router';
+import { MenuModule } from '../menu/menu.module';
 
 @NgModule({
   imports: [

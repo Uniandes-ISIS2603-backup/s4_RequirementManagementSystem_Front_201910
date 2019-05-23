@@ -7,7 +7,7 @@
             <button type="button" class="btn btn-outline-light" routerLink="update" routerLinkActive="router-link-active" >Editar proyecto</button>&nbsp;
             <button type="button" class="btn btn-outline-danger" (click)="deleteProyecto()" routerLink="..">Eliminar proyecto</button>&nbsp;
             <button type="button" class="btn btn-outline-success" routerLink="objetivos/new">Crear nuevo objetivo</button>&nbsp;
-        </div> 
+          </div> 
         &nbsp;
     </div>
     <div class="cards" *ngFor="let o of objetivos"> 
@@ -29,6 +29,7 @@
             <br/>
             <span class="space red">Importancia</span><span class="cyan">:</span> <span class="green">{{o.importancia}}</span>
             <br/>
+            <a class="cyan"  routerLink="objetivos/{{o.id}}">Ver info adicional</a>
           </p>
         </div>
       </div>

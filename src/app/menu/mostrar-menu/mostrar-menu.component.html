@@ -107,15 +107,11 @@
         <li class="list-group-item pl-3 py-2" *ngFor="let p of proyectos">
           <a routerLink="/proyectos/{{p.id}}"><i class="fa fa fa-book fa-fw" aria-hidden="true" (mouseenter) = 'mostrarObjetivos(p.id)'><span class="ml-2 align-middle">{{p.nombre}}</span></i></a>         
           <ul class="list-group flex-column d-inline-block submenu" >
-            <li class="list-group-item pl-4" *ngFor="let o of objetivos">
-              <a routerLink="/objetivos/{{o.id}}">{{o.descripcion}}</a>
+            <li class="list-group-item pl-4" *ngFor="let o of objetivos" (mouseenter) = 'mostrarRequisitos(p.id, o.id)'>
+              <a routerLink="/proyectos/{{p.id}}/objetivos/{{o.id}}">{{o.descripcion}}</a>
               <ul class="list-group flex-column d-inline-block sub-submenu">
-                <span class="arrow"></span>
-                <li class="list-group-item pl-4">
-                  <a href="#">Home</a>
-                </li>
-                <li class="list-group-item pl-4">
-                  <a href="#">My Sites</a>
+                <li class="list-group-item pl-4" *ngFor="let r of requisitos">
+                  <a routerLink="/proyectos/{{p.id}}/objetivos/{{o.id}}/requisitos/{{r.id}}">{{r.descripcion}}</a>  
                 </li>
               </ul>             
             </li> 
