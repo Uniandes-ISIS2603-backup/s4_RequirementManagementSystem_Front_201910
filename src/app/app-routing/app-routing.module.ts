@@ -35,7 +35,6 @@ import { DetailProyectoComponent } from '../proyecto/detail-proyecto/detail-proy
 
 import { MostrarMenuComponent } from '../menu/mostrar-menu/mostrar-menu.component';
 import { MostrarStartComponent } from '../start/mostrar-start/mostrar-start.component';
-import { ProyectoDetail } from '../proyecto/proyecto-detail';
 import { UpdateProyectoComponent } from '../proyecto/update-proyecto/update-proyecto.component';
 import { CasodeusoDetail } from '../casodeuso/casodeuso-detail';
 import { CasodeusoUpdateComponent } from '../casodeuso/casodeuso-update/casodeuso-update.component';

@@ -166,9 +166,14 @@
     </div> <!-- /.sidebar -->
     </div>
     
-    <div class="wp-content">
-      <div class="container-fluid">
-          <app-listar-inicio></app-listar-inicio>      
-        </div>
+    <div class="wp-content" >
+      <div class="container-fluid" *ngIf="router.url === '/start'">
+        <app-listar-inicio></app-listar-inicio>
     </div>
+    <div class="container-fluid" *ngIf="router.url != '/start'">
+    <router-outlet></router-outlet>
+  </div>
+
+    </div>
+
   

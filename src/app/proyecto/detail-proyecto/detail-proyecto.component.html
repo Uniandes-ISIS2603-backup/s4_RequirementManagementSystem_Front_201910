@@ -1,3 +1,5 @@
+<app-mostrar-menu></app-mostrar-menu>
+
 <div class="row">
   <div class="col-4" align= 'center'>
     <div class="card" style="width: 18rem;">
@@ -6,6 +8,12 @@
         <h5 class="card-title"align = 'center'>Proyecto: {{proyectoDetail.id}}</h5>
         <p class="card-text">Nombre: {{proyectoDetail.nombre}}</p>
         <p class="card-text">Descripcion: {{proyectoDetail.descripcion}}</p>
+        <div *ngFor="let o of objetivos">
+            <p>descripcion: {{o.descripcion}}</p>
+            <p>estabilidad: {{o.estabilidad}}</p>
+            <p>importancia: {{o.importancia}}</p>
+    
+          </div>
         <p>
             <button type="button" class="btn btn-outline-primary" (click)="updateProyecto()" (click)="isCollapsed = !isCollapsed"
                     [attr.aria-expanded]="!isCollapsed" aria-controls="collapseUpdate">
@@ -17,6 +25,7 @@
             Eliminar proyecto
           </button>
       </p>
+     
       </div>
     </div>
   </div>
