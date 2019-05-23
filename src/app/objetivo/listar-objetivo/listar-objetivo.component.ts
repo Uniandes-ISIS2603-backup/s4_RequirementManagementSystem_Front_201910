@@ -3,6 +3,7 @@ import { ObjetivoService } from '../objetivo.service';
 import { Objetivo } from '../objetivo';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as $ from "jquery";
+import { DetailProyectoComponent } from '../../proyecto/detail-proyecto/detail-proyecto.component';
 
 @Component({
   selector: 'app-listar-objetivo',
