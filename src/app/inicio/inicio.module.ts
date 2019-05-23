@@ -8,10 +8,20 @@ import {StakeholderModule} from '../stakeholder/stakeholder.module';
 import {CondicionModule} from '../condicion/condicion.module';
 import { AuthModule } from '../auth/auth.module';
 import { ObjetivoModule } from '../objetivo/objetivo.module';
+import { RouterModule } from '@angular/router';
+import { MenuModule } from '../menu/menu.module';
 
 @NgModule({
   imports: [
-    CommonModule, CambioModule, AppRoutingModule, StakeholderModule, CasodeusoModule, CondicionModule, AuthModule, ObjetivoModule
+    CommonModule, 
+    CambioModule,
+    AppRoutingModule,
+    StakeholderModule, 
+    CasodeusoModule, 
+    CondicionModule, 
+    AuthModule, 
+    ObjetivoModule,
+    RouterModule
   ],
   declarations: [ListarInicioComponent],
   exports: [ListarInicioComponent]

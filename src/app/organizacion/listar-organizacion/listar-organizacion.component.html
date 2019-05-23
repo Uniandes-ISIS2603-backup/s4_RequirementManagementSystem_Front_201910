@@ -1,28 +1,24 @@
 <div data-component="navbar">
 
-  <nav class="navbar fixed-top">
-    <input type="text" maxlength="12" placeholder="Search..." class="searchbar">
-    <a [routerLink]="['/start']" routerLinkActive="router-link-active" class="search i"><i class="fa fa-search"
-        style="color:white"></i></a>
-
-
-    <div>
-
+    <nav class="navbar fixed-top">
+        <input type="text" maxlength= "12" placeholder="Search..." class="searchbar">
+        <a [routerLink]="['/start']" routerLinkActive="router-link-active" class="search i"><i class="fa fa-search" style="color:white"></i></a>
+     
+      
+      <div>
+    
       <div class="right-links float-right mr-4">
-
-        <a [routerLink]="['/start']" routerLinkActive="router-link-active" class="home"><i class="fa fa-home mr-3"
-            style="color:white"></i></a>
+          
+          <a [routerLink]="['/start']" routerLinkActive="router-link-active"  class="home"><i class="fa fa-home mr-3" style="color:white"></i></a>
         <div class="d-inline dropdown rounded-0 mx-3">
-          <a class="dropdown-toggle" id="tools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            href="#"><i class="fa fa-wrench" style="color:white" aria-hidden="true"></i></a>
+          <a class="dropdown-toggle" id="tools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-wrench" style="color:white" aria-hidden="true"></i></a>
           <div class="dropdown-menu dropdown-menu-right rounded-0 text-center" aria-labelledby="tools">
             <a class="dropdown-item px-2" href="#">Recompile CSS</a>
           </div>
         </div> <!-- /.dropdown -->
-
+        
         <div class="d-inline dropdown mr-3">
-          <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false" href="#"><span>10</span><i class="fa fa-bell" style="color:white"></i></a>
+          <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><span>10</span><i class="fa fa-bell" style="color:white"></i></a>
           <div class="dropdown-menu dropdown-menu-right rounded-0 pt-0" aria-labelledby="notifications">
             <div class="list-group">
               <div class="lg">
@@ -70,19 +66,17 @@
             </div> <!-- /.list group -->
           </div> <!-- /.dropdown-menu -->
         </div> <!-- /.dropdown -->
-
+        
         <div class="d-inline dropdown mr-3">
-          <a class="dropdown-toggle" id="messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            href="#"><i class="fa fa-envelope" style="color:white"></i></a>
+          <a class="dropdown-toggle" id="messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa fa-envelope" style="color:white"></i></a>
           <div class="dropdown-menu dropdown-menu-right rounded-0 text-center" aria-labelledby="messages">
             <a class="dropdown-item">There are no new messages</a>
           </div> <!-- /.dropdown-menu -->
-        </div> <!-- /.dropdown -->
-
-
+      </div> <!-- /.dropdown -->
+        
+        
         <div class="d-inline dropdown">
-          <a class="dropdown-toggle" id="messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            href="#">
+          <a class="dropdown-toggle" id="messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
             <img src="http://1.gravatar.com/avatar/47db31bd2e0b161008607d84c74305b5?s=96&d=mm&r=g">
           </a>
           <div class="dropdown-menu dropdown-menu-right rounded-0" aria-labelledby="messages">
@@ -90,8 +84,9 @@
             <a class="dropdown-item" href="#">Log Out</a>
           </div> <!-- /.dropdown-menu -->
         </div> <!-- /.dropdown -->
-
+        
       </div> <!-- /.right-links -->
+<<<<<<< HEAD
 
     </div>
 
@@ -206,24 +201,137 @@
           <td><button class="btn btn-info" (click)="actElim = 5">Asociar una organizacion con un proyecto</button></td>
           <td><button class="btn btn-danger" (click)="actElim = 1">Eliminar una Organizacion</button></td>
         </div>
+=======
+      
+>>>>>>> origin/master
       </div>
-      <div class="col-4">
-        <div *ngIf="actElim == 1">
-          <app-eliminar-organizacion> </app-eliminar-organizacion>
+      
+      
+      
+      
+      
+      
+      
+  
+    </nav>
+    </div> <!-- END TOP NAVBAR -->
+    
+    
+    
+    <div data-component="sidebar">
+      <div class="sidebar">
+      <ul class="list-group flex-column d-inline-block first-menu">
+        <li class="list-group-item pl-3 py-2" *ngFor="let p of proyectos">
+          <a routerLink="/proyectos/{{p.id}}"><i class="fa fa fa-book fa-fw" aria-hidden="true"><span class="ml-2 align-middle">{{p.nombre}}</span></i></a>
+          
+          <ul class="list-group flex-column d-inline-block submenu">
+            <li class="list-group-item pl-4" >
+              <a routerLink="/objetivos/{{p.id}}" ></a>
+              
+              <ul class="list-group flex-column d-inline-block sub-submenu">
+                <span class="arrow"></span>
+                <li class="list-group-item pl-4">
+                  <a href="#">Home</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">My Sites</a>
+                </li>
+              </ul>
+              
+            </li> 
+            
+            <li class="list-group-item pl-4">
+              <a href="">SEO</a>
+              
+              <ul class="list-group flex-column d-inline-block sub-submenu">
+                <span class="arrow" style="top:113px;"></span>
+                <li class="list-group-item pl-4">
+                  <a href="#">Dashboard</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Titles & Metas</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Social</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">XML Sitemaps</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Advanced</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Tools</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Search Console</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Go Premium</a>
+                </li>
+                <li class="list-group-item pl-4">
+                  <a href="#">Manual</a>
+                </li>
+              </ul>
+            
+            </li>
+          </ul> <!-- /.submenu --> 
+        </li> <!-- /.list-group-item -->
+     
+  
+        
+      </ul> <!-- /.first-menu -->
+    </div> <!-- /.sidebar -->
+    </div>
+    <br><br />
+    <div class="wp-content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <h2 class="text-center">Lista</h2>
+                <div class="container">
+                    <table table class="table table-striped table-responsive-md btn-table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Sector</th>
+                                <th>Stakeholders</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let organizacion of organizaciones">
+                                <td>{{organizacion.id}}</td>
+                                <td>{{organizacion.nombre}}</td>
+                                <td>{{organizacion.sector}}</td>
+                                <td><button type="button" mdbBtn color="light" mdbWavesEffect (click)="click(organizacion.id)" >Lista de
+                                        stakeholders</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <td><button class="btn btn-success" (click)="actElim = 2">Agregar una Organizacion</button></td>
+                    <td><button class="btn btn-danger" (click)="actElim = 1">Eliminar una Organizacion</button></td>
+                </div>
+            </div>
+            <div class="col-4">
+                <div *ngIf="actElim == 1">
+                    <app-eliminar-organizacion> </app-eliminar-organizacion>
+                </div>
+                <div *ngIf="actElim == 2">
+                    <app-create-organizacion> </app-create-organizacion>
+                </div>
+                <div *ngIf="actElim == 3">
+                    <app-organizacion-detail [valor]="id"></app-organizacion-detail>
+                </div>
+            </div>
+        </div>    
         </div>
-        <div *ngIf="actElim == 2">
-          <app-create-organizacion> </app-create-organizacion>
-        </div>
-        <div *ngIf="actElim == 3">
-          <app-organizacion-detail [valor]="id"></app-organizacion-detail>
-        </div>
-        <div *ngIf="actElim == 4">
-          <app-organizacion-proyecto [valor]="id"></app-organizacion-proyecto>
-        </div>
+<<<<<<< HEAD
         <div *ngIf="actElim == 5">
           <app-proyecto-organizacion></app-proyecto-organizacion>
         </div>
       </div>
+=======
+>>>>>>> origin/master
     </div>
-  </div>
-</div>
+  

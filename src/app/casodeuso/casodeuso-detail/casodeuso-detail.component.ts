@@ -98,7 +98,6 @@ export class CasodeusoDetailComponent implements OnInit {
     this.casodeusoService.deleteCasodeuso(proyectoId, objetivoId, requisitoId, casoDeUsoId).subscribe((res)=>{
       this.router.navigate(['..']);
     });
-    alert ("Eliminaste el caso de uso actual");
       
   }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Camino } from '../camino';
 import { CaminoService } from '../camino.service';
-import { Router } from '@angular/router';
-import {CaminoDetail} from '../camino-detail';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CaminoDetail } from '../camino-detail';
 
 /**
 * The component for the list of caminos in the Requirement Management System
@@ -19,7 +19,7 @@ export class CaminoListComponent implements OnInit {
    * @param caminoService The camino's services provider.
    * @param router The router of the component.
    */
-  constructor(private caminoService: CaminoService,private router: Router) { }
+  constructor(private caminoService: CaminoService, private router: Router, private route: ActivatedRoute) { }
 
   /**
     * The list of caminos that belong to the Requirement Management System.
@@ -29,8 +29,8 @@ export class CaminoListComponent implements OnInit {
   /**
    * Id of the selected camino
    */
-  camino_id:number;
-  
+  camino_id: number;
+
   /**
    * caminoDetail, which shows the selected camino to be shown. 
    */
@@ -40,7 +40,11 @@ export class CaminoListComponent implements OnInit {
     * Asks the service to update the list of caminos.
     */
   getCaminos(): void {
-    this.caminoService.getCaminos().subscribe(caminos => this.caminos = caminos);
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    this.caminoService.getCaminos(proyectoId, objetivoId, requisitoId, casoDeUsoId).subscribe(caminos => this.caminos = caminos);
   }
 
   /**
@@ -48,13 +52,17 @@ export class CaminoListComponent implements OnInit {
    * @param camino_id id of the selected camino 
    */
   onSelected(camino_id: number): void {
-        console.log("camino: ", camino_id);
-    this.caminoService.getCaminosDetail(camino_id).subscribe(o => {
+    console.log("camino: ", camino_id);
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    this.caminoService.getCaminosDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId, camino_id).subscribe(o => {
       this.camino_id = camino_id;
       this.selectedCamino = new CaminoDetail();
       this.selectedCamino = o;
-      console.log("EN  ls lista") ;
-     console.log(o) ;
+      console.log("EN  ls lista");
+      console.log(o);
     });
   }
 

@@ -2,7 +2,10 @@ import { Component, OnInit, Input, ViewChild} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProyectoService } from '../proyecto.service';
 import { ProyectoDetail } from '../proyecto-detail';
+import {Objetivo} from '../../objetivo/objetivo';
 import { UpdateProyectoComponent } from '../update-proyecto/update-proyecto.component';
+import { ObjetivoService } from '../../objetivo/objetivo.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-detail-proyecto',
@@ -16,14 +19,15 @@ export class DetailProyectoComponent implements OnInit {
    */
   public isCollapsed = false;
 
-  proyecto : ProyectoDetail;
+  proyecto : any;
+  objetivos: Objetivo[];
 
   /**
     * The component's constructor
     * @param proyectoService The project's service
     * @param route The route element which helps to obtain the project's id
     */
-  constructor(private router: Router, private proyectoService: ProyectoService,
+  constructor(private router: Router, private proyectoService: ProyectoService, private objetivoService: ObjetivoService,
     private route: ActivatedRoute) 
     {
       console.log(this.proyectoDetail);
@@ -47,9 +51,12 @@ export class DetailProyectoComponent implements OnInit {
 
     const id = +this.route.snapshot.paramMap.get('proyectoId');
     this.proyectoService.getProyectoDetail(id)
-      .subscribe(proyecto => this.proyectoDetail = proyecto); 
-  
+      .subscribe(proyecto => this.proyectoDetail = proyecto);   
+    this.objetivoService.getObjetivos(id).subscribe(objs => this.objetivos = objs);
   }
+
+ 
+
 
   /*
   onLoad(params) {
@@ -87,7 +94,6 @@ export class DetailProyectoComponent implements OnInit {
     this.proyectoService.deleteProyecto(this.proyectoDetail.id).subscribe((res)=>{
       this.router.navigate(['/proyectos']);
     });
-    alert ("Eliminaste el proyecto actual");
       
   }
 

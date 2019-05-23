@@ -1,7 +1,8 @@
+<div class="todo">
 <div class="container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/objetivos">Objetivos</a></li>
+      <li class="breadcrumb-item"><a routerLink="../..">Objetivos</a></li>
       <li class="breadcrumb-item active" aria-current="page">Crear Objetivo</li>
     </ol>
   </nav>
@@ -35,6 +36,7 @@
         [ngModelOptions]="{standalone: true}"></textarea>
     </div>
     <button type="submit" class="btn btn-primary" (click)='crearObjeto()' routerLink="..">Crear</button>
-    <button type="submit" class="btn btn-default" routerLink="..">Cancelar</button>
+    <button type="submit" class="btn btn-default" >Cancelar</button>
   </form>
+</div>
 </div>

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+* {
+    font-family: 'Roboto';
+  }
+  
+  .content{
+    margin-top: 67px;
+    top: 45px;  
+    background: #313237;
+    background-image: #313237;
+    width:100%;
+    height: 100%;
+  }
+
+  .align{
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-self: center;
+    justify-self: center;
+    
+  }
+  
+  .blue {
+    color: #29b6f6;
+  }
+  
+  .green {
+    color: #9ccc65;
+  }
+  
+  .purple {
+    color: #ba68c8;
+  }
+  
+  .cyan {
+    color: #4dd0e1;
+  }
+  
+  .red {
+    color: #ef5350;
+  }
+
+  h1,h2{
+    text-justify: center;
+    align-items: center;
+    text-align: center;
+    color:white;
+  }
+
+  .titulos{
+    margin-top: 67px;
+    width: 100vmax;
+    
+  }
+  
+  
+  .content {
+    top: 45px;
+    height: 100vmax;
+    width: 100vmax;
+  }
+
+  .cards {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+    color: #313237;
+    width: 30rem;
+    position: relative;
+    height: 15em;
+    display: grid;
+    perspective: 150em;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-perspective: 150rem;
+            perspective: 150rem;
+    width: 30rem;
+    height: -5rem;
+    left: 10rem;
+    right: 10rem;
+    position: relative;*/
+  }
+  .card__side {
+    height: 15em;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 30rem;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  }
+  .card__side--front {
+    background-color: #fff;
+    
+  }
+  .card__side--back {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-color: #fff;
+  }
+  .card:hover .card__side--front {
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+  }
+  .card:hover .card__side--back {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  .card__cont {
+    height: 15rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 90%;
+    color: #313237;
+  }
+  .card__cta p {
+    margin-left: 1rem;
+  }
+  .card__cta p > .space {
+    margin-left: 2rem;
+  }
+  
+

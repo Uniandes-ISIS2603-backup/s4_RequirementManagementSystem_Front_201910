@@ -45,8 +45,12 @@ camino:Camino;
 * Creates a new camino. 
 */
 createCamino(): Camino {
+  const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+  const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+  const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+  const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
   console.log(this.camino);
- this.caminoService.createCamino(this.camino)
+ this.caminoService.createCamino(proyectoId, objetivoId, requisitoId, casoDeUsoId, this.camino)
      .subscribe((camino) => {
          this.camino = camino;
          this.create.emit();

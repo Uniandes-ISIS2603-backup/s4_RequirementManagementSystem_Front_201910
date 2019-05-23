@@ -47,7 +47,11 @@ export class DetailAprobacionComponent implements OnInit {
     * The method which retrieves the comment (detail) of an approbation
     */
   getCambioDetail(): void {
-    this.aprobacionService.getAprobacionDetail(this.aprobacion_id)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const aprobacionId = +this.route.snapshot.paramMap.get('aprobacionId');
+    this.aprobacionService.getAprobacionDetail(proyectoId, objetivoId, requisitoId, aprobacionId)
       .subscribe(aprobacionDetail => {
         
         this.aprobacionDetail = aprobacionDetail;
@@ -58,7 +62,8 @@ export class DetailAprobacionComponent implements OnInit {
    * The method that aims to send the id of the current approbation, to the update component.
    */
   updateAprobacion(): void{
-    this.update.getAprobacion(this.aprobacionDetail.id);
+    
+    this.update.getAprobacion();
   }
 
   /**

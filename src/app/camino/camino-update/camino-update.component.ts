@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CaminoService } from '../camino.service';
 import { ToastrService } from 'ngx-toastr';
 import { CaminoDetail } from '../camino-detail';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-camino-update',
@@ -19,7 +20,7 @@ export class CaminoUpdateComponent implements OnInit {
   * @param toastrService The toastr to show messages to the user 
   */
   constructor(private caminoService: CaminoService,
-    private toastrService: ToastrService) { }
+    private toastrService: ToastrService, private route: ActivatedRoute) { }
 
    /**
   * The output which tells the parent component
@@ -42,7 +43,12 @@ export class CaminoUpdateComponent implements OnInit {
   * Retrieves the information of the camino
   */
   getCamino(id: number): void {
-    this.caminoService.getCaminosDetail(id)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    const caminoId = +this.route.snapshot.paramMap.get('caminoId');
+    this.caminoService.getCaminosDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId, caminoId)
         .subscribe(camino => {
             this.caminoDetail = camino;
         });
@@ -52,7 +58,12 @@ export class CaminoUpdateComponent implements OnInit {
   * Updates the camino's information
   */
   editCamino(): void {
-    this.caminoService.updateCamino(this.caminoDetail)
+    const proyectoId = +this.route.snapshot.paramMap.get('proyectoId');
+    const objetivoId = +this.route.snapshot.paramMap.get('objetivoId');
+    const requisitoId = +this.route.snapshot.paramMap.get('requisitoId');
+    const casoDeUsoId = +this.route.snapshot.paramMap.get('casoDeUsoId');
+    const caminoId = +this.route.snapshot.paramMap.get('caminoId');
+    this.caminoService.updateCamino(proyectoId, objetivoId, requisitoId, casoDeUsoId, caminoId, this.caminoDetail)
         .subscribe(() => {
             this.update.emit();
             this.toastrService.success("The camino information was updated", "camino edition");

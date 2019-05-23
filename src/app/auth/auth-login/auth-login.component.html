@@ -6,13 +6,13 @@
         
         <hr />
         
-        <form name="login" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <form name="login" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
           <input type="text" name="usuario" id="username" placeholder="Usuario" [(ngModel)]="usuario.usuario" required />
           <input input name="contrasena" type="password" name="password" id="password" [(ngModel)]="usuario.contrasena" required  placeholder="Contraseña"/>
           <select class="select" placeholder="Escoja un tipo" name="tipo" id="tipo" [(ngModel)]="usuario.tipo" required>
                     <option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
                 </select>
-          <input type="submit" value="Ingresar"/>
+          <input type="submit" [routerLink]="['/start']" routerLinkActive="router-link-active"  value="Ingresar"/>
         </form>
       </div> 
       
