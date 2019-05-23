@@ -4,8 +4,8 @@ import 'rxjs/add/operator/filter';
 
 import { Organizacion } from '../organizacion';
 import { OrganizacionService } from '../organizacion.service';
-import { identifierModuleUrl } from '@angular/compiler';
-import { Proyecto } from 'src/app/proyecto/proyecto';
+
+
 
 
 @Component({

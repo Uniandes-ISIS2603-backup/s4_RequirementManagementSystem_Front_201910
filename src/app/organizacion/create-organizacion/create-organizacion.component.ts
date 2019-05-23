@@ -5,7 +5,7 @@ import 'rxjs/add/operator/filter';
 import { Organizacion } from '../organizacion';
 import { OrganizacionService } from '../organizacion.service';
 import { ListarOrganizacionComponent } from '../listar-organizacion/listar-organizacion.component';
-import { Proyecto } from 'src/app/proyecto/proyecto';
+import { Proyecto } from '../../proyecto/proyecto';
 
 @Component({
   selector: 'app-create-organizacion',
