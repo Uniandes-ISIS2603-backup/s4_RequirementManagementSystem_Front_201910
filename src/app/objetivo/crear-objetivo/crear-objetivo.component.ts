@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Objetivo } from '../objetivo';
 import { ObjetivoService } from '../objetivo.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ProyectoDetail } from '../../proyecto/proyecto-detail';
 
 @Component({
   selector: 'app-crear-objetivo',
@@ -17,7 +16,7 @@ export class CrearObjetivoComponent implements OnInit {
   //Objetivo a crear
   objetivo: Objetivo;
 
-  constructor(private service:ObjetivoService, private router: Router, private route: ActivatedRoute, private lista: ProyectoDetail) 
+  constructor(private service:ObjetivoService, private router: Router, private route: ActivatedRoute) 
   {
     
   }
@@ -34,6 +33,5 @@ export class CrearObjetivoComponent implements OnInit {
     this.objetivo.fuentes = [this.objeto.fuentes];
     console.log(this.objetivo);
     this.service.addObjetivo(proyectoId, this.objetivo).subscribe((obj)=> {this.objetivo = obj})
-    this.router.navigate(['/objetivos']);
   }
 }

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 
 * {
     font-family: 'Roboto';
@@ -141,7 +143,6 @@
   }
   
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
  .p-1 {
 	 padding: 5px !important;
 }
@@ -741,7 +742,6 @@
   .searchbar::placeholder {
 	opacity: .5;
   }
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
  .p-1 {
 	 padding: 5px !important;
 }
