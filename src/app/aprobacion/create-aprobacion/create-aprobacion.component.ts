@@ -82,6 +82,7 @@ cancelCreation(): void {
 */
 ngOnInit() {
     this.aprobacionDetail = new AprobacionDetail();
+  
     this.fecha = new Date();
         this.fecha.toLocaleString();
         this.aprobacionDetail.fechaYHora = this.fecha.toLocaleString();
