@@ -29,7 +29,7 @@ import {ProyectoModule} from './proyecto/proyecto.module';
 import { ObjetivoModule } from './objetivo/objetivo.module';
 import { MenuModule } from './menu/menu.module';
 import { StartModule } from './start/start.module';
-
+import 'hammerjs';
 
 @NgModule({
     declarations: [
