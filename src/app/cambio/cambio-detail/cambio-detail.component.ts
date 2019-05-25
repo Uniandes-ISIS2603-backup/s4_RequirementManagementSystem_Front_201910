@@ -62,7 +62,7 @@ export class CambioDetailComponent implements OnInit {
    * The method that aims to send the id of the current change, to the update component.
    */
   updateCambio(): void{
-    this.update.getCambio();
+    this.update.editCambio();
   }
 
     /**

@@ -90,6 +90,9 @@ cancelEdition(): void {
 */
 ngOnInit() {
     this.cambioDetail = new CambioDetail();
+    this.fecha = new Date();
+    this.fecha.toLocaleString();
+    this.cambioDetail.fechaYHora = this.fecha.toLocaleString();
 }
 
 /**

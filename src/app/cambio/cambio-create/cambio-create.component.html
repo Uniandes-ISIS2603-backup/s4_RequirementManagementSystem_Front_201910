@@ -1,3 +1,9 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="../..">Ir atrás</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Cambio</li>
+    </ol>
+  </nav>
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
@@ -13,41 +19,6 @@
                     <div>No ha ingresado su nombre y apellido</div>
                 </div>
                 </div>
-                <label for="cambioOrganizaciones"><b>Seleccione su organizacion</b></label>
-                    <select name="cambioOrganizaciones" class="form-control" id="cambioOrganizaciones" [(ngModel)]="cambioDetail.organizacion"
-                    #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cambioDetail.invalid }" required>
-                      <option>Startech</option>
-                      <option>Alpina</option>
-                      <option>Microsoft</option>
-                      <option>Universidad de los Andes</option>
-                    </select>
-                    <div>
-                            <label for="cambioObjReq"><b>Seleccione el objetivo/requisito a aprobar/revisar/desaprobar</b></label>
-                            <select name="cambioObjReq" class="form-control" id="cambioObjReq" [(ngModel)]="cambioDetail.nombre_aprobado"
-                            #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cambioDetail.invalid }" required>
-                              <option>Objetivo 1</option>
-                              <option>Objetivo 2</option>
-                              <option>Objetivo 3</option>
-                              <option>Objetivo 4</option>
-                              <option>Objetivo 5</option>
-                              <option>Requisito 1</option>
-                              <option>Requisito 2</option>
-                              <option>Requisito 3</option>
-                              <option>Requisito 4</option>
-                              <option>Requisito 5</option>
-                            </select>
-                          </div>
-                          <div>
-                              <label for="cambioObjReq"><b>Seleccione el id del objetivo/requisito a aprobar/revisar/desaprobar</b></label>
-                              <select name="cambioObjReq" class="form-control" id="cambioObjReq" [(ngModel)]="cambioDetail.id_aprobado"
-                              #cambioName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cambioDetail.invalid }" required>
-                                <option type="number">1</option>
-                                <option type="number">2</option>
-                                <option type="number">3</option>
-                                <option type="number">4</option>
-                                <option type="number">5</option>
-                              </select>
-                            </div>
                 <label for="cambioTipo"><b>Tipo de cambio</b></label>
                 <select name="cambioObjReq" class="form-control" id="cambioObjReq" [(ngModel)]="cambioDetail.tipo"
                 #cambioTipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cambioDetail.invalid }" required>
@@ -63,13 +34,7 @@
                     <div class="invalid-feedback">
                         <div>Falta la descripción del cambio</div>
                     </div> 
-                    </div>  
-                    <div class="col-5">
-                      <p> </p>
-                      <p> </p>
-                      <p> </p>
-                      <img align='center' src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" width="270" height='150'>
-                    </div>
+                    </div> 
                   </div>
                   <label for="cambioFechaYHora"><b>Fecha y Hora de publicación</b></label>
                   <input class="form-control" name="cambioFechaYHora" type="text" placeholder= {{fecha}} readonly [(ngModel)]="cambioDetail.fechaYHora"
