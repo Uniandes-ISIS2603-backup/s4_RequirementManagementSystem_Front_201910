@@ -108,8 +108,13 @@
           <a routerLink="../.."><i class="fa fa fa-book fa-fw" aria-hidden="true"><span class="ml-2 align-middle">Proyecto</span></i></a>         
           <ul class="list-group flex-column d-inline-block submenu" >
             <li class="list-group-item pl-4">
-              <a routerLink="./">Objetivo</a>         
-            </li> 
+              <a routerLink="./">{{objetivoDetail.descripcion}}</a>         
+            <ul class="list-group flex-column d-inline-block sub-submenu" *ngFor="let r of requisitos">
+                <li class="list-group-item pl-4">
+                  <a routerLink="requisitos/{{r.id}}">{{r.descripcion}}</a>  
+                </li>
+              </ul>  
+              </li>
           </ul> <!-- /.submenu --> 
         </li> <!-- /.list-group-item -->
      

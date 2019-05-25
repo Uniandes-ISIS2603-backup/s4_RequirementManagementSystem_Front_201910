@@ -3,6 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CasodeusoService } from '../casodeuso.service';
 import { CasodeusoDetail } from '../casodeuso-detail';
 import { CasodeusoUpdateComponent } from '../casodeuso-update/casodeuso-update.component';
+import { Condicion } from '../../condicion/condicion';
+import { Camino } from '../../camino/camino';
+import { CaminoService } from '../../camino/camino.service';
+import { CondicionService } from '../../condicion/condicion.service';
 
 /**
  * Component that shows the detail of a specific case of use.
@@ -18,6 +22,8 @@ export class CasodeusoDetailComponent implements OnInit {
    * This attribute is initialized in false so that the view is not collapsed when one opens the component.
    */
   public isCollapsed = false;
+  condiciones : Condicion[];
+  caminos: Camino[];
 
   /**
     * The component's constructor
@@ -25,7 +31,7 @@ export class CasodeusoDetailComponent implements OnInit {
     * @param route The route element which helps to obtain the condition's id
     */
   constructor(private router: Router, private casodeusoService: CasodeusoService,
-    private route: ActivatedRoute) 
+    private route: ActivatedRoute, private caminoService: CaminoService, private condicionService: CondicionService) 
     {
       console.log(this.casodeusoDetail);
       
@@ -57,7 +63,12 @@ export class CasodeusoDetailComponent implements OnInit {
     // .subscribe(req => this.req = req);
     this.casodeusoService.getCasosdeusoDetail(proyectoId, objetivoId, requisitoId, casoDeUsoId)
     .subscribe(casoDeUso => this.casodeusoDetail = casoDeUso);
+    this.caminoService.getCaminos(proyectoId, objetivoId, requisitoId, casoDeUsoId)
+    .subscribe(caminos => this.caminos = caminos); 
+    this.condicionService.getCondiciones(proyectoId, objetivoId, requisitoId, casoDeUsoId)
+    .subscribe(condiciones => this.condiciones = condiciones);
    }
+   
 
   /*
   onLoad(params) {

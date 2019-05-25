@@ -1,21 +1,35 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="../..">Ir a requisito</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Caso de uso</li>
+    </ol>
+  </nav>
 <div class="row">
     <div class="col-4" align= 'center'>
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 40rem;">
         <img class="card-img-top" src= "http://cpscba.org.ar/wp-content/uploads/2018/08/cambio-1024x538.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"align = 'center'>Caso de uso: {{casodeusoDetail.id}}</h5>
           <p class="card-text">Nombre: {{casodeusoDetail.nombre}}</p>
-          <p>
+          <a routerLink="condiciones/new"> Crear nueva condicion</a><p>  </p>
+          <a routerLink="caminos/new"> Crear nuevo camino</a>
+              <h6>Condiciones:</h6>
+            <div *ngFor="let condicion of condiciones">
+              <p>Descripcion: {{condicion.id}}. {{condicion.descripcion}}</p><a routerLink="condiciones/{{condicion.id}}"> Ver mas informacion</a>
+            </div>
+            <h6>Caminos:</h6>
+            <div *ngFor="let camino of caminos">
+              <p>Tipo: {{camino.tipoPaso}}</p><a routerLink="caminos/{{camino.id}}">Ver mas informacion</a>
+
+            </div>
               <button type="button" class="btn btn-outline-primary" (click)="updateCasodeuso()" (click)="isCollapsed = !isCollapsed"
                       [attr.aria-expanded]="!isCollapsed" aria-controls="collapseUpdate">
                 Editar caso de uso
               </button>
-          </p>
-          <p>
-            <button type="button" (click)="deleteCasodeuso()" routerLink="/casosdeuso" class="btn btn-outline-danger">
+              &nbsp;
+            <button type="button" (click)="deleteCasodeuso()" routerLink="../.." class="btn btn-outline-danger">
               Eliminar caso de uso
             </button>
-        </p>
         </div>
       </div>
     </div>
