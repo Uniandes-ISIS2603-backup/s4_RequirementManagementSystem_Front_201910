@@ -1,3 +1,9 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="../..">Ir atrás</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Aprobación</li>
+    </ol>
+  </nav>
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
@@ -5,41 +11,13 @@
         <h2 class="text-center">Editar una aprobacion</h2>
         <br>
         <form name="aprobacion" (ngSubmit)="f.form.valid && editAprobacion()" #f="ngForm" novalidate>
-                <div>
-                    <label for="aprobacionObjReq"><b>Seleccione el objetivo/requisito a aprobar/revisar/desaprobar</b></label>
-                        <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.nombre_aprobado"
-                        #aprobacionName="ngModel">
-                          <option>Objetivo 1</option>
-                          <option>Objetivo 2</option>
-                          <option>Objetivo 3</option>
-                          <option>Objetivo 4</option>
-                          <option>Objetivo 5</option>
-                          <option>Requisito 1</option>
-                          <option>Requisito 2</option>
-                          <option>Requisito 3</option>
-                          <option>Requisito 4</option>
-                          <option>Requisito 5</option>
-                        </select>
-                      </div>
-                      <div>
-                            <label for="aprobacionObjReq"><b>Seleccione el id del objetivo/requisito a aprobar/revisar/desaprobar</b></label>
-                            <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.id_aprobado"
-                            #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
-                              <option type="number">1</option>
-                              <option type="number">2</option>
-                              <option type="number">3</option>
-                              <option type="number">4</option>
-                              <option type="number">5</option>
-                            </select>
-                          </div>
-            <div class="form-group">
-                <label for="aprobacionTipo"><b>Tipo de la aprobacion</b></label>
-                <select name="aprobacionObjReq" class="form-control" id="aprobacionObjReq" [(ngModel)]="aprobacionDetail.tipo"
-                #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
-                  <option>OBJETIVO</option>
-                  <option>REQUISITO</option>
-                </select>
-            </div>
+            <label for="aprobacionEstado"><b>Seleccione el estado de su aprobación</b></label>
+            <select name="aprobacionEstado" class="form-control" id="aprobacionEstado" [(ngModel)]="aprobacionDetail.estado"
+            #aprobacionName="ngModel">
+              <option value="APROBADO">Aprobado</option>
+              <option value="EN REVISION">En proceso</option>
+              <option value="NO APROBADO">No aprobado</option>
+            </select>
             <div class="form-group">
                     <label for="cambioTipo"><b>Comentario sobre la aprobación</b></label>
                     <textarea name="aprobacionDescripcion" class="form-control" id="aprobacionDescripcion" [(ngModel)]="aprobacionDetail.comentario"
@@ -49,21 +27,14 @@
                         <div>Falta editar el comentario de la aprobación</div>
                     </div>
                 </div>
-                <label for="aprobacionEstado"><b>Seleccione el estado de su aprobación</b></label>
-                    <select name="aprobacionEstado" class="form-control" id="aprobacionEstado" [(ngModel)]="aprobacionDetail.estado"
-                    #aprobacionName="ngModel">
-                      <option>Aprobado</option>
-                      <option>En proceso</option>
-                      <option>No aprobado</option>
-                    </select>
                     <label for="aprobacionFechaYHora"><b>Fecha y Hora de edición</b></label>
                 <input name="aprobacionFechaYHora" class="form-control" id="aprobacionFechaYHora" [(ngModel)]="aprobacionDetail.fechaYHora"
                 #aprobacionFechaYHora="ngModel" value="{{fecha}}" disabled> 
                     <p> </p>
             <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary" >Edit</button>
                 <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()" routerLink="../..">Cancel</button>
             </div>
             
         </form>
