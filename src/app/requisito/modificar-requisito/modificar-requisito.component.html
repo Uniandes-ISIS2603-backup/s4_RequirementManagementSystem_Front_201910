@@ -1,7 +1,7 @@
 <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink="/requisitos">Requisito</a></li>
+        <li class="breadcrumb-item"><a routerLink="../">Requisito</a></li>
         <li class="breadcrumb-item active" aria-current="page">Modificar Requisito</li>
       </ol>
     </nav>
@@ -41,8 +41,8 @@
         <textarea id ="comments"  class="form-control" rows="3" [(ngModel)]="objeto.comentarios"
           [ngModelOptions]="{standalone: true}"></textarea>
       </div>
-      <button type="submit" class="btn btn-outline-primary" (click)='actualizarRequisito()'>Modificar</button>
+      <button type="submit" class="btn btn-outline-primary" (click)='actualizarRequisito()' routerLink="../">Modificar</button>
       &nbsp;
-      <button type="submit" class="btn btn-outline-danger"(click)='cancelarActualizacion()'>Cancelar</button>
+      <button type="submit" class="btn btn-outline-danger"(click)='cancelarActualizacion()' routerLink="../">Cancelar</button>
     </form>
   </div>
