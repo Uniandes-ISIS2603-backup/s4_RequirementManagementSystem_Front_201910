@@ -1,6 +1,5 @@
-<div class="row">
   <div class="col-4" align= 'center'>
-    <div class="card" style="width: 20rem;">
+    <div class="card" style="width: 30rem;">
       <img class="card-img-top" src= "../../../assets/aprobacion.jpg" alt="Card image cap">
       <div class="card-body">
       <h5 class="card-title" align = 'center'>Tipo aprobación: {{aprobacionDetail.tipo}}</h5>
@@ -8,20 +7,12 @@
       <p class="card-text" align = 'justify'>Descripción: {{aprobacionDetail.comentario}}</p>
       <p class="card-text" align = 'justify'>Estado: {{aprobacionDetail.estado}}</p>
       <p>
-          <button type="button" class="btn btn-outline-primary" (click)="updateAprobacion()" (click)="isCollapsed = !isCollapsed"
-                  [attr.aria-expanded]="!isCollapsed" aria-controls="collapseUpdate">
+          <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed" aria-controls="collapseUpdate" routerLink="{{aprobacionDetail.id}}/update">
             Editar aprobación
           </button>
         </p>
     </div>
   </div>
 </div>
-<div class="col-8" align = 'center'>
 
-    <div id="collapseUpdate" [ngbCollapse]="!isCollapsed">
-     
-        <app-update-aprobacion></app-update-aprobacion>
-     
-    </div>
-    </div>
-  </div>

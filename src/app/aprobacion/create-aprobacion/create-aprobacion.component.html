@@ -1,3 +1,9 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="..">Ir atrás</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Aprobación</li>
+    </ol>
+  </nav>
   <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
@@ -13,8 +19,6 @@
                     <div>No ha ingresado su nombre y apellido</div>
                 </div>  
               </div>
-              
-               
                     <div class="row">
                     <div class='col-7'>
                         <label for="aprobacionDescripcion"><b>Comentario sobre la aprobacion</b></label>
@@ -24,27 +28,20 @@
                         <div>Falta el comentario sobre la aprobacion</div>
                     </div> 
                     </div>  
-                    <div class="col-5">
-                      <p> </p>
-                      <p> </p>
-                      <p> </p>
-                      <p> </p>
-                      <img align='center' src= "../../../assets/aprobacion.jpg" width="270" height='150'>
-                    </div>
                   </div>
                   <label for="aprobacionEstado"><b>Seleccione el estado de su aprobación</b></label>
                     <select name="aprobacionEstado" class="form-control" id="aprobacionEstado" [(ngModel)]="aprobacionDetail.estado"
                     #aprobacionName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aprobacionDetail.invalid }" required>
                       <option value="APROBADO">Aprobado</option>
-                      <option>En proceso</option>
-                      <option>No aprobado</option>
+                      <option value="EN REVISION">En revision</option>
+                      <option value="NO APROBADO">No aprobado</option>
                     </select>
               <label for="aprobacionFechaYHora"><b>Fecha y Hora de publicación</b></label>
                 <input name="aprobacionFechaYHora" class="form-control" id="aprobacionFechaYHora" [(ngModel)]="aprobacionDetail.fechaYHora"
                 #aprobacionFechaYHora="ngModel" value="{{fecha}}" disabled> 
                 <p> </p>
                   <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Crear</button><p> </p>
+                <button type="submit" class="btn btn-primary" >Crear</button><p> </p>
                 <div class="divider"></div>
                 <p> </p>
                 <button type="button" class="btn btn-danger" routerLink="../.." (click)="cancelCreation()">Cancelar</button>

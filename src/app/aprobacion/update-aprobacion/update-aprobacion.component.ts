@@ -93,6 +93,9 @@ cancelEdition(): void {
 */
 ngOnInit() {
     this.aprobacionDetail = new AprobacionDetail();
+    this.fecha = new Date();
+    this.fecha.toLocaleString();
+    this.aprobacionDetail.fechaYHora = this.fecha.toLocaleString();
 }
 
 /**
@@ -100,6 +103,9 @@ ngOnInit() {
 */
 ngOnChanges() {
     this.ngOnInit();
+    this.fecha = new Date();
+    this.fecha.toLocaleString();
+    this.aprobacionDetail.fechaYHora = this.fecha.toLocaleString();
 
 }
 }

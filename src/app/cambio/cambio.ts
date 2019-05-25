@@ -17,19 +17,9 @@ export class Cambio {
      */
     autor: string;
      /**
-     * The organization of the author who made the change.
-     */
-    organizacion: string;
-     /**
      * Date and time of creation of the change.
      */
     fechaYHora: string;
-     /**
-     * Id of the requirement or objective.
-     */
-    id_aprobado: string;
-    /**
-     * Name of the requirement or objective.
-     */
-    nombre_aprobado: string;
+
+
 }

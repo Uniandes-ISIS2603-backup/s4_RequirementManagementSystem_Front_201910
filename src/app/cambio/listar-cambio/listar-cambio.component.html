@@ -1,53 +1,46 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="..">Ir atrás</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Cambio</li>
+    </ol>
+	</nav>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-12">
+	<div class = "row">
+		<div class="col-6">
 			<table class="table table-striped">
 				<thead class="thead-dark" align = 'center'>
 					<tr>
 						<th>#</th>
-						<th>ID obj/req</th>
-						<th>Nombre</th>
-            <th>Tipo</th>
-            <th>Autor</th>
-            <th>Organización</th>
+						<th>Tipo</th>
+						<th>Autor</th>
             <th>Fecha y Hora</th>
 					</tr>
 				</thead>
 				<tbody align = 'center'> 
 					<tr *ngFor="let i of cambios">
 						<td style="cursor: pointer;">
-							<a class="figure-caption" (click)="onSelected(i.id)">{{i.id}}</a>
+							<a class="figure-caption" (mouseenter)="onSelected(i.id)" >{{i.id}}</a>
 						</td>
-						<td >
-								<p class="figure-caption">{{i.id_aprobado}}</p>
-						</td>
-						<td >
-									<p class="figure-caption">{{i.nombre_aprobado}}</p>
-							</td>
-            <td>
+						<td>
 								<p class="figure-caption">{{i.tipo}}</p>
             </td>
             <td >
 							<p class="figure-caption">{{i.autor}}</p>
 						</td>
-            <td >
-							<p class="figure-caption">{{i.organizacion}}</p>
-            </td>
             <td>
               <p class="figure-caption" >{{i.fechaYHora}}</p>
           </td>
 					</tr>
 				</tbody>
 			</table>
-			<div class="col">
+		</div>
+			<div class="col-6">
 					<div *ngIf="selectedCambio">
 							<app-cambio-detail [cambioDetail]="selectedCambio"> </app-cambio-detail>
 						</div>
 		</div>
-		</div>
 	</div>
 	</div>
-
 	
 
 

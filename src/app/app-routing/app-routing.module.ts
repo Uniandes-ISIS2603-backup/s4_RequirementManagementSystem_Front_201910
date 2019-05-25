@@ -219,12 +219,9 @@ const routes: Routes = [
                     component: CambioCreateComponent
                 },
                 {
-                    path: 'cambios/:cambioId',
-                    component: CambioDetailComponent
-                },
-                {
                     path: 'cambios/:cambioId/update',
                     component: CambioUpdateComponent
+                                    
                 },
                 {
                     path: 'aprobaciones',
